@@ -1,14 +1,25 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper, 11pt, twoside]{article} %twoside
 \title{Programación y Código Libre}
-\author{David Davó\\Julio}
+\author{David Davó \and Julio}
 \date{\today{}}
 
 %Packages
-
-\usepackage{fontspec}
+\usepackage[utf8]{inputenc} %Para saber el encoding del archivo
+\usepackage[no-math]{fontspec} %Para usar fuentes del sistema
+\usepackage{unicode-math} %Para símbolos matemagicos
+%\setmathfont{Latin Modern Math}
+\setmathfont{Asana-Math.otf}
+\usepackage[type={CC}, modifier={by-sa}, version={4.0}]{doclicense} %Muestra la licencia
+\usepackage[usenames,svgnames]{xcolor} %Para darle color
 \usepackage{dirtytalk} %Usado para citar
+\usepackage{csquotes} %lo mismo qu eel anterior pero con estilo
 \usepackage[spanish]{babel} %Hace que el idioma de los defaults esté en Español
-\usepackage{hyperref}
+\usepackage{fancyhdr} %Para poner encabezados y pies de página
+\usepackage[colorlinks = true,
+urlcolor = blue,
+citecolor = black,
+anchorcolor = black,
+linkcolor = black]{hyperref} %Insertar enlaces
 \usepackage[style=numeric-comp, 
 backend=bibtex, 
 style=authortitle,
@@ -17,11 +28,19 @@ sorting=nty
 ]{biblatex} %Bibliografía
 \addbibresource{Bibl.bib}
 
-%\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+%Decoraciones y formato del texto
+\usepackage[left=3cm, right=2cm, top=3cm, bottom=3cm]{geometry}
 
 \setmainfont{Arial}
 \setmonofont{Inconsolata}
 \fontsize{11}{14}
+%Pies de pagina y eso
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE, RO]{David Davó}
+\fancyhead[RE, LO]{Programación y Código Libre}
+\fancyfoot[LE, RO]{\thepage}
+\fancyfoot[C]{\leftmark}
 
 %Document
 \begin{document}
@@ -43,28 +62,44 @@ sorting=nty
 \section{Introducción}
 
 \begin{abstract}
-Test
+I create a Networking Simulation software using Software Libre tools.
 \end{abstract}
 
 \section{Herramientas}
 El programa ha sido creado con herramientas de software libre. Según la Free Software Foundation
 \say{«Software libre» es el software que respeta la libertad de los usuarios y la comunidad. A grandes rasgos, significa que los usuarios tienen la libertad de ejecutar, copiar, distribuir, estudiar, modificar y mejorar el software. Es decir, el «software libre» es una cuestión de libertad, no de precio. Para entender el concepto, piense en «libre» como en «libre expresión», no como en «barra libre». En inglés a veces decimos «libre software», en lugar de «free software», para mostrar que no queremos decir que es gratuito.}
-\cite{FSF-Ph}
+--\cite{FSF-Ph}
+
+Todas las herramientas citadas a continuación, son o están basadas en Software Libre.
 
 \subsection{GNU/Linux}
+GNU/Linux, también llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS GNU, ambos software son libres y de código abierto. Normalmente Linux se distribuye en distribuciones o 'distros', las cuales contienen paquetes de software preinstalados, dependiendo del grupo de usuarios al que este dirigida.
 
 \subsubsection{Distros}
 
 \subsection{Git y Github}
-Git es un software diseñado por Linus Torvalds con el que puedes crear un Sistema de Control de Versiones o VCS (\textit{Version Control System}. Este programa te permite de forma sencilla volver a una versión o \textit{commit} anterior del programa, así como enviarlas a un repositorio remoto e incluso publicarlas en línea.
+Git es un software diseñado por Linus Torvalds con el que puedes crear un Sistema de Control de Versiones o VCS (\textit{Version Control System}). Este programa te permite de forma sencilla volver a una versión o \textit{commit} anterior del programa, así como enviarlas a un repositorio remoto e incluso publicarlas en línea.
 
 GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener, una wiki y una página web para tu proyecto, junto a otras funciones.
 Tanto el programa como este documento están disponibles en GitHub en el siguiente enlace. \url{https://github.com/daviddavo/InvProy}
 
-\section{Desglose del programa}
+\subsection{LaTeX}
+\LaTeX\space o, en texto plano, LaTeX, pronunciado con la letra griega 
+Ji ($\Chi\alpha$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas e importar paquetes que cumplan tus necesidades. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la aparencia de éste.
 
+\subsection{Python}
+
+\section{Desglose del programa}
 \newpage{}
 \section{Bibliografía}
 \printbibliography
 
+\newpage
+\thispagestyle{empty}
+\topskip0pt
+\vspace*{\fill}
+\begin{displayquote}"La inteligencia es la habilidad de evitar hacer el trabajo, consiguiendo el trabajo hecho". --- Linus Torvalds
+\end{displayquote} 
+\doclicenseThis
+\vspace*{\fill}
 \end{document}

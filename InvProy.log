@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2016.7.17)  17 JUL 2016 17:10
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2016.7.17)  19 JUL 2016 01:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2015/10/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 79 languages loaded.
 (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/share/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -23,7 +23,15 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2015/09/24 v2.4e Font selection for XeLaTeX and LuaLaTeX
 
 (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -194,6 +202,9 @@ File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
 other characters in Unicode lower plane
 
+*** you should *not* be loading the inputenc package
+*** XeTeX expects the source to be in UTF8 encoding
+*** some features of other encodings may conflict, resulting in poor output.
 (/usr/share/texmf-dist/tex/latex/tipa/t3enc.def
 File: t3enc.def 2001/12/31 T3 encoding
 LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
@@ -203,15 +214,15 @@ LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
 File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
 \tipaTiiicode=\count117
-\tipasavetokens=\toks14
-\tipachecktokens=\toks15
+\tipasavetokens=\toks16
+\tipachecktokens=\toks17
 
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks18
 )
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
@@ -349,8 +360,194 @@ LaTeX Info: Redefining \scshape on input line 2237.
 LaTeX Info: Redefining \upshape on input line 2242.
 
 (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
-(/usr/share/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
-Package: dirtytalk 2010/11/21 A package making "quoting" easier
+(/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+Package: unicode-math 2015/09/24 v0.8c Unicode maths in XeLaTeX and LuaLaTeX
+
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-dist/tex/latex/ucharcat/ucharcat.sty
+Package: ucharcat 2015/08/23 v0.02 ucharcat for luaLaTeX (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2015/11/04 v6224 LaTeX2e option processing using LaTeX3 keys
+)
+(/usr/share/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
+
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+))
+(/usr/share/texmf-dist/tex/latex/filehook/filehook.sty
+Package: filehook 2011/10/12 v0.5d Hooks for input files
+)
+\g__um_fam_int=\count119
+\g__um_primekern_muskip=\muskip16
+\l__um_primecount_int=\count120
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \unimathsetup with sig. 'm' on line 168.
+.................................................
+
+(/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathfontface with sig. 'mO{}mO{}' on line 165.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setoperatorfont with sig. 'm' on line 169.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathfont with sig. 'O{}mO{}' on line 278.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addnolimits with sig. 'm' on line 520.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \removenolimits with sig. 'm' on line 524.
+.................................................
+\g__file_internal_ior=\read1
+
+(/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+\g__fontspec_family_Asana-Math.otf_int=\count121
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Asana-Math.otf(0)' created for font 'Asana-Math.otf' with
+. options
+. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=10-},{Size=7
+-10,Font=Asana-Math.otf,Style=MathScript},{Size=-7,Font=Asana-Math.otf,Style=Ma
+thScriptScript}}].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. 
+. <10->"[Asana-Math]/OT:script=math;language=DFLT;"<7-10>"[Asana-Math]/OT:scrip
+t=math;language=DFLT;+ssty=0;"<-7>"[Asana-Math]/OT:script=math;language=DFLT;+s
+sty=1;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+.................................................
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 11.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> EU1/Asana-Math.otf(0)/m/n on input line
+ 11.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 11.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> EU1/Asana-Math.otf(0)/bx/n on input li
+ne 11.
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Asana-Math.otf(1)' created for font 'Asana-Math.otf' with
+. options
+. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=10-},{Size=7
+-10,Font=Asana-Math.otf,Style=MathScript},{Size=-7,Font=Asana-Math.otf,Style=Ma
+thScriptScript}},Scale=1.00001,FontAdjustment={\fontdimen
+. 8\font =7.25pt\relax \relax \fontdimen 9\font =6.0pt\relax \relax \fontdimen
+. 10\font =0.5pt\relax \relax \fontdimen 11\font =7.1pt\relax \relax
+. \fontdimen 12\font =5.0pt\relax \relax \fontdimen 13\font =3.61pt\relax
+. \relax \fontdimen 14\font =3.61pt\relax \relax \fontdimen 15\font
+. =2.96pt\relax \relax \fontdimen 16\font =2.1pt\relax \relax \fontdimen
+. 17\font =2.1pt\relax \relax \fontdimen 18\font =2.3pt\relax \relax
+. \fontdimen 19\font =2.22pt\relax \relax \fontdimen 20\font =0pt\relax
+. \fontdimen 21\font =0pt\relax \fontdimen 22\font =2.71pt\relax \relax }].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. 
+. <10->s*[1.00001]"[Asana-Math]/OT:script=math;language=DFLT;"<7-10>s*[1.00001]
+"[Asana-Math]/OT:script=math;language=DFLT;+ssty=0;"<-7>s*[1.00001]"[Asana-Math
+]/OT:script=math;language=DFLT;+ssty=1;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. \fontdimen 8\font =7.25pt\relax \relax \fontdimen 9\font =6.0pt\relax \relax
+. \fontdimen 10\font =0.5pt\relax \relax \fontdimen 11\font =7.1pt\relax
+. \relax \fontdimen 12\font =5.0pt\relax \relax \fontdimen 13\font
+. =3.61pt\relax \relax \fontdimen 14\font =3.61pt\relax \relax \fontdimen
+. 15\font =2.96pt\relax \relax \fontdimen 16\font =2.1pt\relax \relax
+. \fontdimen 17\font =2.1pt\relax \relax \fontdimen 18\font =2.3pt\relax
+. \relax \fontdimen 19\font =2.22pt\relax \relax \fontdimen 20\font =0pt\relax
+. \fontdimen 21\font =0pt\relax \fontdimen 22\font =2.71pt\relax \relax 
+.................................................
+LaTeX Font Info:    Encoding `OMS' has changed to `EU1' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 11.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> EU1/Asana-Math.otf(1)/m/n on input lin
+e 11.
+LaTeX Font Info:    Encoding `OMS' has changed to `EU1' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 11.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> EU1/Asana-Math.otf(1)/bx/n on input li
+ne 11.
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Asana-Math.otf(2)' created for font 'Asana-Math.otf' with
+. options
+. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=10-},{Size=7
+-10,Font=Asana-Math.otf,Style=MathScript},{Size=-7,Font=Asana-Math.otf,Style=Ma
+thScriptScript}},Scale=0.99999,FontAdjustment={\fontdimen
+. 8\font =0.59pt\relax \relax \fontdimen 9\font =1.11pt\relax \relax
+. \fontdimen 10\font =1.67pt\relax \relax \fontdimen 11\font =2.0pt\relax
+. \relax \fontdimen 12\font =6.0pt\relax \relax \fontdimen 13\font =0pt\relax
+. }].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. 
+. <10->s*[0.99999]"[Asana-Math]/OT:script=math;language=DFLT;"<7-10>s*[0.99999]
+"[Asana-Math]/OT:script=math;language=DFLT;+ssty=0;"<-7>s*[0.99999]"[Asana-Math
+]/OT:script=math;language=DFLT;+ssty=1;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. \fontdimen 8\font =0.59pt\relax \relax \fontdimen 9\font =1.11pt\relax
+. \relax \fontdimen 10\font =1.67pt\relax \relax \fontdimen 11\font
+. =2.0pt\relax \relax \fontdimen 12\font =6.0pt\relax \relax \fontdimen
+. 13\font =0pt\relax 
+.................................................
+LaTeX Font Info:    Encoding `OMX' has changed to `EU1' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 1
+1.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> EU1/Asana-Math.otf(2)/m/n on input lin
+e 11.
+LaTeX Font Info:    Encoding `OMX' has changed to `EU1' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 11.
+
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> EU1/Asana-Math.otf(2)/bx/n on input li
+ne 11.
+
+(/usr/share/texmf-dist/tex/latex/doclicense/doclicense.sty
+Package: doclicense 2015/08/04 v1.3 Support for putting documents under a licen
+se
 
 (/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
@@ -360,21 +557,92 @@ Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-
-(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
+(/usr/share/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2009/04/17 v1.3 Extended ifthen features
+
+(/usr/share/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 2015/09/02 v2.4 eTeX basic definition package (PEB,DPC)
+\et@xins=\count122
+)
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count123
+\calc@Bcount=\count124
+\calc@Adimen=\dimen139
+\calc@Bdimen=\dimen140
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count125
+\calc@Cskip=\skip51
+)
 (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@dirtytalk@qdepth=\count119
+(/usr/share/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
+))
+(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count126
 )
+(/usr/share/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\doclicense@hsize=\skip52
+
+(/usr/share/texmf-dist/tex/latex/doclicense/doclicense-english.ldf
+File: doclicense-english.ldf 
+))
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/share/texmf-dist/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2007/01/21 v2.11 Predefined colors according to SVG 1.1 (UK)
+))
+(/usr/share/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+Package: dirtytalk 2010/11/21 A package making "quoting" easier
+\c@dirtytalk@qdepth=\count127
+)
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2015/07/18 v5.1f context-sensitive quotations (JAW)
+\csq@reset=\count128
+\csq@gtype=\count129
+\csq@glevel=\count130
+\csq@qlevel=\count131
+\csq@maxlvl=\count132
+\csq@tshold=\count133
+\csq@ltx@everypar=\toks19
+
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2015/07/18 v5.1f csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
 (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2015/08/03 3.9m The Babel package
 
@@ -383,17 +651,28 @@ Language: spanish.ldf 2014/04/24 v5.0n Spanish support from the babel system
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2015/08/03 3.9m Babel common definitions
-\babel@savecnt=\count120
-\U@D=\dimen139
+\babel@savecnt=\count134
+\U@D=\dimen141
 
 (/usr/share/texmf-dist/tex/generic/babel/xebabel.def))
-\es@quottoks=\toks17
-\es@quotdepth=\count121
+\es@quottoks=\toks20
+\es@quotdepth=\count135
 Package babel Info: Making " an active character on input line 516.
 Package babel Info: Making . an active character on input line 617.
 Package babel Info: Making < an active character on input line 662.
 Package babel Info: Making > an active character on input line 662.
 ))
+(/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip53
+\f@ncyO@elh=\skip54
+\f@ncyO@erh=\skip55
+\f@ncyO@olh=\skip56
+\f@ncyO@orh=\skip57
+\f@ncyO@elf=\skip58
+\f@ncyO@erf=\skip59
+\f@ncyO@olf=\skip60
+\f@ncyO@orf=\skip61
+)
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -433,29 +712,26 @@ Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
 Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
 Package: xcolor-patch 2011/01/30 xcolor patch
 Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
 (/usr/share/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen140
-\Hy@linkcounter=\count122
-\Hy@pagecounter=\count123
+\@linkdim=\dimen142
+\Hy@linkcounter=\count136
+\Hy@pagecounter=\count137
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count124
+\Hy@SavedSpaceFactor=\count138
 
 (/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
 Package hyperref Info: Hyper figures OFF on input line 4443.
 Package hyperref Info: Link nesting OFF on input line 4448.
 Package hyperref Info: Hyper index ON on input line 4451.
@@ -463,29 +739,29 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count125
+\c@Hy@tempcnt=\count139
 
 (/usr/share/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip16
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen141
-\Fld@menulength=\count126
-\Field@Width=\dimen142
-\Fld@charsize=\dimen143
+\XeTeXLinkMargin=\dimen143
+\Fld@menulength=\count140
+\Field@Width=\dimen144
+\Fld@charsize=\dimen145
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
 Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring ON on input line 6313.
 Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count127
-\c@Item=\count128
-\c@Hfootnote=\count129
+\Hy@abspage=\count141
+\c@Item=\count142
+\c@Hfootnote=\count143
 )
 
 Package hyperref Message: Driver (autodetected): hxetex.
@@ -501,10 +777,10 @@ Package: stringenc 2011/12/02 v1.10 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box41
-\c@Hy@AnnotLevel=\count130
-\HyField@AnnotCount=\count131
-\Fld@listcount=\count132
-\c@bookmark@seq@number=\count133
+\c@Hy@AnnotLevel=\count144
+\HyField@AnnotCount=\count145
+\Fld@listcount=\count146
+\c@bookmark@seq@number=\count147
 
 (/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -515,7 +791,7 @@ Package rerunfilecheck Info: Feature \pdfmdfivesum is not available
 tly
 (rerunfilecheck)             and the loading of the package is aborted.
 )
-\Hy@SectionHShift=\skip49
+\Hy@SectionHShift=\skip62
 )
 (/usr/share/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2015/10/21 v3.1 programmable bibliographies (PK/JW/AB)
@@ -524,132 +800,129 @@ Package: biblatex 2015/10/21 v3.1 programmable bibliographies (PK/JW/AB)
 Package: biblatex1 2015/10/21 v3.1 programmable bibliographies (bibtex) (PK/JW/
 AB)
 
-(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count134
-)
 (/usr/share/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count135
+\lrq@indent=\count148
 
 (/usr/share/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count136
-\c@listtotal=\count137
-\c@listcount=\count138
-\c@liststart=\count139
-\c@liststop=\count140
-\c@citecount=\count141
-\c@citetotal=\count142
-\c@multicitecount=\count143
-\c@multicitetotal=\count144
-\c@instcount=\count145
-\c@maxnames=\count146
-\c@minnames=\count147
-\c@maxitems=\count148
-\c@minitems=\count149
-\c@citecounter=\count150
-\c@savedcitecounter=\count151
-\c@uniquelist=\count152
-\c@uniquename=\count153
-\c@refsection=\count154
-\c@refsegment=\count155
-\c@maxextrayear=\count156
-\c@maxextraalpha=\count157
-\c@abbrvpenalty=\count158
-\c@highnamepenalty=\count159
-\c@lownamepenalty=\count160
-\c@maxparens=\count161
-\c@parenlevel=\count162
-\blx@tempcnta=\count163
-\blx@tempcntb=\count164
-\blx@tempcntc=\count165
-\blx@maxsection=\count166
-\blx@maxsegment=\count167
-\blx@notetype=\count168
-\blx@parenlevel@text=\count169
-\blx@parenlevel@foot=\count170
-\labelnumberwidth=\skip50
-\labelalphawidth=\skip51
-\shorthandwidth=\skip52
-\biblabelsep=\skip53
-\bibitemsep=\skip54
-\bibnamesep=\skip55
-\bibinitsep=\skip56
-\bibparsep=\skip57
-\bibhang=\skip58
-\blx@auxin=\read1
+\c@tabx@nest=\count149
+\c@listtotal=\count150
+\c@listcount=\count151
+\c@liststart=\count152
+\c@liststop=\count153
+\c@citecount=\count154
+\c@citetotal=\count155
+\c@multicitecount=\count156
+\c@multicitetotal=\count157
+\c@instcount=\count158
+\c@maxnames=\count159
+\c@minnames=\count160
+\c@maxitems=\count161
+\c@minitems=\count162
+\c@citecounter=\count163
+\c@savedcitecounter=\count164
+\c@uniquelist=\count165
+\c@uniquename=\count166
+\c@refsection=\count167
+\c@refsegment=\count168
+\c@maxextrayear=\count169
+\c@maxextraalpha=\count170
+\c@abbrvpenalty=\count171
+\c@highnamepenalty=\count172
+\c@lownamepenalty=\count173
+\c@maxparens=\count174
+\c@parenlevel=\count175
+\blx@tempcnta=\count176
+\blx@tempcntb=\count177
+\blx@tempcntc=\count178
+\blx@maxsection=\count179
+\blx@maxsegment=\count180
+\blx@notetype=\count181
+\blx@parenlevel@text=\count182
+\blx@parenlevel@foot=\count183
+\labelnumberwidth=\skip63
+\labelalphawidth=\skip64
+\shorthandwidth=\skip65
+\biblabelsep=\skip66
+\bibitemsep=\skip67
+\bibnamesep=\skip68
+\bibinitsep=\skip69
+\bibparsep=\skip70
+\bibhang=\skip71
+\blx@auxin=\read2
 \blx@auxout=\write3
-\c@mincomprange=\count171
-\c@maxcomprange=\count172
-\c@mincompwidth=\count173
-\c@labelname=\count174
-\c@savedlabelname=\count175
-\c@author=\count176
-\c@savedauthor=\count177
-\c@shortauthor=\count178
-\c@savedshortauthor=\count179
-\c@editor=\count180
-\c@savededitor=\count181
-\c@editora=\count182
-\c@savededitora=\count183
-\c@editorb=\count184
-\c@savededitorb=\count185
-\c@editorc=\count186
-\c@savededitorc=\count187
-\c@shorteditor=\count188
-\c@savedshorteditor=\count189
-\c@bookauthor=\count190
-\c@savedbookauthor=\count191
-\c@translator=\count192
-\c@savedtranslator=\count193
-\c@annotator=\count194
-\c@savedannotator=\count195
-\c@commentator=\count196
-\c@savedcommentator=\count197
-\c@introduction=\count198
-\c@savedintroduction=\count199
-\c@foreword=\count266
-\c@savedforeword=\count267
-\c@afterword=\count268
-\c@savedafterword=\count269
-\c@holder=\count270
-\c@savedholder=\count271
-\c@namea=\count272
-\c@savednamea=\count273
-\c@nameb=\count274
-\c@savednameb=\count275
-\c@namec=\count276
-\c@savednamec=\count277
-\c@institution=\count278
-\c@savedinstitution=\count279
-\c@language=\count280
-\c@savedlanguage=\count281
-\c@location=\count282
-\c@savedlocation=\count283
-\c@organization=\count284
-\c@savedorganization=\count285
-\c@origlocation=\count286
-\c@savedoriglocation=\count287
-\c@origpublisher=\count288
-\c@savedorigpublisher=\count289
-\c@pageref=\count290
-\c@savedpageref=\count291
-\c@publisher=\count292
-\c@savedpublisher=\count293
-\c@lista=\count294
-\c@savedlista=\count295
-\c@listb=\count296
-\c@savedlistb=\count297
-\c@listc=\count298
-\c@savedlistc=\count299
-\c@listd=\count300
-\c@savedlistd=\count301
-\c@liste=\count302
-\c@savedliste=\count303
-\c@listf=\count304
-\c@savedlistf=\count305
+\c@mincomprange=\count184
+\c@maxcomprange=\count185
+\c@mincompwidth=\count186
+\c@labelname=\count187
+\c@savedlabelname=\count188
+\c@author=\count189
+\c@savedauthor=\count190
+\c@shortauthor=\count191
+\c@savedshortauthor=\count192
+\c@editor=\count193
+\c@savededitor=\count194
+\c@editora=\count195
+\c@savededitora=\count196
+\c@editorb=\count197
+\c@savededitorb=\count198
+\c@editorc=\count199
+Normal \count register pool exhausted, switching to extended pool.
+\c@savededitorc=\count277
+\c@shorteditor=\count278
+\c@savedshorteditor=\count279
+\c@bookauthor=\count280
+\c@savedbookauthor=\count281
+\c@translator=\count282
+\c@savedtranslator=\count283
+\c@annotator=\count284
+\c@savedannotator=\count285
+\c@commentator=\count286
+\c@savedcommentator=\count287
+\c@introduction=\count288
+\c@savedintroduction=\count289
+\c@foreword=\count290
+\c@savedforeword=\count291
+\c@afterword=\count292
+\c@savedafterword=\count293
+\c@holder=\count294
+\c@savedholder=\count295
+\c@namea=\count296
+\c@savednamea=\count297
+\c@nameb=\count298
+\c@savednameb=\count299
+\c@namec=\count300
+\c@savednamec=\count301
+\c@institution=\count302
+\c@savedinstitution=\count303
+\c@language=\count304
+\c@savedlanguage=\count305
+\c@location=\count306
+\c@savedlocation=\count307
+\c@organization=\count308
+\c@savedorganization=\count309
+\c@origlocation=\count310
+\c@savedoriglocation=\count311
+\c@origpublisher=\count312
+\c@savedorigpublisher=\count313
+\c@pageref=\count314
+\c@savedpageref=\count315
+\c@publisher=\count316
+\c@savedpublisher=\count317
+\c@lista=\count318
+\c@savedlista=\count319
+\c@listb=\count320
+\c@savedlistb=\count321
+\c@listc=\count322
+\c@savedlistc=\count323
+\c@listd=\count324
+\c@savedlistd=\count325
+\c@liste=\count326
+\c@savedliste=\count327
+\c@listf=\count328
+\c@savedlistf=\count329
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -661,13 +934,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/share/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 
-\c@textcitecount=\count306
-\c@textcitetotal=\count307
-\c@textcitemaxnames=\count308
-\c@biburlnumpenalty=\count309
-\c@biburlucpenalty=\count310
-\c@biburllcpenalty=\count311
-\c@smartand=\count312
+\c@textcitecount=\count330
+\c@textcitetotal=\count331
+\c@textcitemaxnames=\count332
+\c@biburlnumpenalty=\count333
+\c@biburlucpenalty=\count334
+\c@biburllcpenalty=\count335
+\c@smartand=\count336
 )
 Package biblatex Info: Trying to load bibliography style 'authortitle'...
 Package biblatex Info: ... file 'authortitle.bbx' found.
@@ -679,8 +952,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/share/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2015/10/21 v3.1 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count313
-\c@bbx:relatedtotal=\count314
+\c@bbx:relatedcount=\count337
+\c@bbx:relatedtotal=\count338
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
@@ -701,13 +974,27 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (/usr/share/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )))
-\g__file_internal_ior=\read2
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count339
+\Gm@cntv=\count340
+\c@Gm@tempcnt=\count341
+\Gm@bindingoffset=\dimen146
+\Gm@wd@mp=\dimen147
+\Gm@odd@mp=\dimen148
+\Gm@even@mp=\dimen149
+\Gm@layoutwidth=\dimen150
+\Gm@layoutheight=\dimen151
+\Gm@layouthoffset=\dimen152
+\Gm@layoutvoffset=\dimen153
+\Gm@dimlist=\toks21
+)
 .................................................
 . fontspec info: "no-scripts"
 . 
 . Font Arial does not contain any OpenType `Script' information.
 .................................................
-\g__fontspec_family_Arial_int=\count315
+\g__fontspec_family_Arial_int=\count342
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -751,9 +1038,60 @@ File: biblatex.cfg
 .................................................
 . fontspec info: "no-scripts"
 . 
+. Font Arial does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Arial(1)' created for font 'Arial' with options [].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"Arial/OT:"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold' with NFSS spec.:
+. <->"Arial/B/OT:"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'italic' with NFSS spec.:
+. <->"Arial/I/OT:"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"Arial/BI/OT:"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+.................................................
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  EU1/Asana-Math.otf(0)/m/n --> EU1/Arial(1)/m/n on input
+ line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> EU1/Arial(1)/m/it on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> EU1/Arial(1)/bx/n on input line 34.
+.................................................
+. fontspec info: "no-scripts"
+. 
 . Font Inconsolata does not contain any OpenType `Script' information.
 .................................................
-\g__fontspec_family_Inconsolata_int=\count316
+\g__fontspec_family_Inconsolata_int=\count343
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -794,128 +1132,131 @@ File: biblatex.cfg
 . \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
 . \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font 
 .................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Inconsolata does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font Inconsolata/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Inconsolata(1)' created for font 'Inconsolata' with options [].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"Inconsolata/OT:"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold' with NFSS spec.:
+. <->"Inconsolata/B/OT:"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"Inconsolata/BI/OT:"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+.................................................
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> EU1/Inconsolata(1)/m/n on input line 3
+5.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> EU1/Inconsolata(1)/bx/n on input line 
+35.
+
+(/usr/share/texmf-dist/tex/latex/ccicons/ccicons.sty
+Package: ccicons 2013/04/16 v1.5 LaTeX support for Creative Commons icons
+
+(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks22
+\XKV@tempa@toks=\toks23
+)
+\XKV@depth=\count344
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'spanish'.
 Package biblatex Info: Trying to load language 'spanish'...
 Package biblatex Info: ... file 'spanish.lbx' found.
 
 (/usr/share/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
 File: spanish.lbx 2015/10/21 v3.1 biblatex localization (PK/JW/AB)
-)
-
-Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
-(biblatex)                Loading 'csquotes' recommended.
-
-\@quotelevel=\count317
-\@quotereset=\count318
-(./InvProy.aux
+) (./InvProy.aux
 LaTeX Info: Redefining \sptext on input line 29.
 LaTeX Info: Redefining \. on input line 29.
 LaTeX Info: Redefining \% on input line 29.
 )
 \openout1 = `InvProy.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 27.
- (/usr/share/texmf-dist/tex/latex/tipa/t3cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 46.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 46.
+
+(/usr/share/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-.................................................
-. fontspec info: "setup-math"
-. 
-. Adjusting the maths setup (use [no-math] to avoid this).
-.................................................
-\symlegacymaths=\mathgroup4
-LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 27.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 27.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 27.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 27.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 27.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 27.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 27.
-LaTeX Font Info:    Redeclaring math accent \check on input line 27.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 27.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 27.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 27.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 27.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 27.
-LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 27.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> EU1/Arial(0)/m/n on input line 27.
-LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 27.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> EU1/Arial(0)/m/n on input line 27.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  EU1/Arial(0)/m/n --> EU1/Arial(0)/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
 
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> EU1/Arial(0)/m/it on input line 27.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> EU1/Arial(0)/bx/n on input line 27.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 27.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/Inconsolata(0)/m/n on input line 2
-7.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  EU1/Arial(0)/m/n --> EU1/Arial(0)/bx/n on input line 27
-.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> EU1/Arial(0)/bx/it on input line 27.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 27.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/Inconsolata(0)/bx/n on input line 
-27.
-LaTeX Info: Redefining \sptext on input line 27.
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+*** you should *not* be loading the inputenc package
+*** XeTeX expects the source to be in UTF8 encoding
+*** some features of other encodings may conflict, resulting in poor output.
+LaTeX Info: Redefining \sptext on input line 46.
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
 \AtBeginShipoutBox=\box42
-Package hyperref Info: Link coloring OFF on input line 27.
-
+Package hyperref Info: Link coloring ON on input line 46.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count319
+\c@section@level=\count345
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 46.
+LaTeX Info: Redefining \pageref on input line 46.
+LaTeX Info: Redefining \nameref on input line 46.
  (./InvProy.out) (./InvProy.out)
 \@outlinefile=\write4
 \openout4 = `InvProy.out'.
@@ -934,245 +1275,394 @@ Package biblatex Warning: Data encoding is 'utf8'.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'InvProy.bbl' found.
 (./InvProy.bbl)
-Package biblatex Info: Reference section=0 on input line 27.
-Package biblatex Info: Reference segment=0 on input line 27.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 30.
+Package biblatex Info: Reference section=0 on input line 46.
+Package biblatex Info: Reference segment=0 on input line 46.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=103.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Font shape `EU1/Asana-Math.otf(1)/m/n' will be
+(Font)              scaled to size 12.00018pt on input line 49.
+LaTeX Font Info:    Font shape `EU1/Asana-Math.otf(1)/m/n' will be
+(Font)              scaled to size 8.00012pt on input line 49.
+LaTeX Font Info:    Font shape `EU1/Asana-Math.otf(1)/m/n' will be
+(Font)              scaled to size 6.00009pt on input line 49.
+LaTeX Font Info:    Font shape `EU1/Asana-Math.otf(2)/m/n' will be
+(Font)              scaled to size 11.99982pt on input line 49.
+LaTeX Font Info:    Font shape `EU1/Asana-Math.otf(2)/m/n' will be
+(Font)              scaled to size 7.99988pt on input line 49.
+LaTeX Font Info:    Font shape `EU1/Asana-Math.otf(2)/m/n' will be
+(Font)              scaled to size 5.99991pt on input line 49.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 32.
- (/usr/share/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+(babel)             in language  on input line 51.
+(/usr/share/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
 )
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 32.
-[1
+(babel)             in language  on input line 51.
+ [1
 
-] (./InvProy.toc
+]
+(./InvProy.toc
 LaTeX Info: Redefining \sptext on input line 3.
 LaTeX Info: Redefining \. on input line 3.
 LaTeX Info: Redefining \% on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 9.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 9.
+LaTeX Font Info:    Font shape `EU1/Asana-Math.otf(1)/m/n' will be
+(Font)              scaled to size 10.95015pt on input line 9.
+LaTeX Font Info:    Font shape `EU1/Asana-Math.otf(2)/m/n' will be
+(Font)              scaled to size 10.94983pt on input line 9.
 )
 \tf@toc=\write5
 \openout5 = `InvProy.toc'.
 
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+LaTeX Info: Redefining \sptext on input line 55.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 36.
- [1
+(babel)             in language  on input line 55.
+[2
 
 ]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 75.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 75.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 75.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 75.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 75.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 75.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 90.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 90.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 90.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 90.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 90.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 90.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 92.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 92.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 92.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 92.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 92.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 66.
- [1]
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 67.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 67.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 67.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 67.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 67.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 92.
 
-Overfull \hbox (8.05995pt too wide) in paragraph at lines 69--69
-[][]\EU1/Arial(0)/m/n/10 FSF. \EU1/Arial(0)/m/it/10 Filosofía del Proyecto GNU\
-EU1/Arial(0)/m/n/10 . 2013. URL: []$[][][][][] [] [] [] [][][] [] [][][] [] [][
-][] [] [][][][][][][][][][] []
- []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+LaTeX Info: Redefining \sptext on input line 93.
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 93.
+[1]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+LaTeX Info: Redefining \sptext on input line 93.
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 93.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 93.
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 94.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+LaTeX Info: Redefining \sptext on input line 97.
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 97.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 97.
+[3]
+File: doclicense-CC-by-sa.pdf Graphic file (type QTm)
+ <use  "doclicense-CC-by-sa.pdf" >
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 105.
+ [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
  (./InvProy.aux
 LaTeX Info: Redefining \sptext on input line 29.
 LaTeX Info: Redefining \. on input line 29.
 LaTeX Info: Redefining \% on input line 29.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 70.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 70.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 105.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 105.
 Package logreq Info: Writing requests to 'InvProy.run.xml'.
 \openout1 = `InvProy.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 26740 strings out of 493668
- 488661 string characters out of 6150756
- 630221 words of memory out of 5000000
- 29936 multiletter control sequences out of 15000+600000
- 6952 words of font info for 51 fonts, out of 8000000 for 9000
+ 32992 strings out of 493668
+ 581199 string characters out of 6150756
+ 976562 words of memory out of 5000000
+ 36072 multiletter control sequences out of 15000+600000
+ 6977 words of font info for 62 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 48i,6n,61p,10398b,1693s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,11n,66p,10410b,1763s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on InvProy.pdf (4 pages).
+Output written on InvProy.pdf (6 pages).
