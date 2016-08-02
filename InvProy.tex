@@ -29,7 +29,7 @@ sorting=nty
 \addbibresource{Bibl.bib}
 
 %Decoraciones y formato del texto
-\usepackage[left=3cm, right=2cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[left=2.75cm, right=2cm, top=3cm, bottom=3cm]{geometry}
 
 \setmainfont{Arial}
 \setmonofont{Inconsolata}
@@ -85,9 +85,19 @@ Tanto el programa como este documento están disponibles en GitHub en el siguien
 
 \subsection{LaTeX}
 \LaTeX\space o, en texto plano, LaTeX, pronunciado con la letra griega 
-Ji ($\Chi\alpha$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas e importar paquetes que cumplan tus necesidades. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la aparencia de éste.
+Ji ($\Chi$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas e importar paquetes que cumplan tus necesidades. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la aparencia de éste.
+El "código" del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, pero he usado una IDE llamada \textbf{texmaker}.
 
 \subsection{Python}
+Python es un lenguaje de programación interpretado (sólo traducen el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca por pretender una sintaxis más legible que la de el resto de lenguajes. Soporta tanto programación imperativo como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que me permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este caso, la versión de Python usada es la 3.4 en adelante.
+
+\subsection{Gtk+}
+Gtk+ es un conjunto de bibliotecas o librerías (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de GUIs (Interfaz Gráfica de Usuario), también, al igual que Linux forma parte del proyecto GNU.
+
+Contiene las bibliotecas de GTK, GDK, ATK, Glib, Pango y Cairo; de las que he usado fundamentalmente GTK para crear la interfaz principal del programa; GDK al usarlo como --interactuador??-- entre los gráficos de bajo nivel y alto nivel y Cairo para la creación de algunos de los elementos del programa.
+
+Al usar este conjunto de librerías, he conseguido que sólo sea necesario descargar una dependencia del programa, que además suele venir instalada en la mayoria de distros de Linux. Para usarlo en Linux se ha tenido que importar la libreria de PyGtk.
+\subsection{Editores de código}
 
 \section{Desglose del programa}
 \newpage{}

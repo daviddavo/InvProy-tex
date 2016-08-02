@@ -16,6 +16,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4}Python}{2}{subsection.2.4}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5}Gtk+}{2}{subsection.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.6}Editores de código}{2}{subsection.2.6}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Desglose del programa}{2}{section.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Bibliografía}{3}{section.4}
