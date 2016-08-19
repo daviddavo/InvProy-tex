@@ -1,61 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
+This is BibTeX, Version 0.99d (TeX Live 2016/Arch Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: InvProy.aux
-The style file: biblatex.bst
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Database file #1: InvProy-blx.bib
-Database file #2: Bibl.bib
-Biblatex version: 3.0
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated wiz_functions (elt_size=8) to 9000 items from 6000.
-You've used 2 entries,
-            6047 wiz_defined-function locations,
-            1135 strings with 8174 characters,
-and the built_in function-call counts, 3884 in all, are:
-= -- 149
-> -- 136
-< -- 26
-+ -- 56
-- -- 50
-* -- 190
-:= -- 439
+I found no \citation commands---while reading file InvProy.aux
+I found no \bibdata command---while reading file InvProy.aux
+I found no \bibstyle command---while reading file InvProy.aux
+You've used 0 entries,
+            0 wiz_defined-function locations,
+            83 strings with 488 characters,
+and the built_in function-call counts, 0 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 0
+:= -- 0
 add.period$ -- 0
-call.type$ -- 2
-change.case$ -- 10
-chr.to.int$ -- 34
-cite$ -- 2
-duplicate$ -- 322
-empty$ -- 398
-format.name$ -- 48
-if$ -- 887
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 0
+format.name$ -- 0
+if$ -- 0
 int.to.chr$ -- 0
-int.to.str$ -- 2
+int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 41
-num.names$ -- 41
-pop$ -- 368
-preamble$ -- 1
-purify$ -- 11
+newline$ -- 0
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 0
+purify$ -- 0
 quote$ -- 0
-skip$ -- 232
+skip$ -- 0
 stack$ -- 0
-substring$ -- 134
-swap$ -- 93
-text.length$ -- 41
-text.prefix$ -- 1
-top$ -- 1
-type$ -- 64
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
 warning$ -- 0
-while$ -- 67
+while$ -- 0
 width$ -- 0
-write$ -- 38
+write$ -- 0
+(There were 3 error messages)

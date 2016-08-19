@@ -2,24 +2,24 @@
 \defcounter {refsection}{0}\relax 
 \select@language {spanish}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Introducción}{1}{section.1}
+\contentsline {chapter}{\numberline {1}Programación y código libre}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Herramientas}{1}{section.2}
+\contentsline {section}{\numberline {1.1}Herramientas}{1}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}GNU/Linux}{1}{subsection.2.1}
+\contentsline {subsection}{\numberline {1.1.1}GNU/Linux}{1}{subsection.1.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.1}Distros}{1}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Git y Github}{1}{subsection.1.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Git y Github}{1}{subsection.2.2}
+\contentsline {subsection}{\numberline {1.1.3}LaTeX}{2}{subsection.1.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}LaTeX}{1}{subsection.2.3}
+\contentsline {subsection}{\numberline {1.1.4}Python}{2}{subsection.1.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Python}{2}{subsection.2.4}
+\contentsline {subsection}{\numberline {1.1.5}Gtk+}{2}{subsection.1.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5}Gtk+}{2}{subsection.2.5}
+\contentsline {subsection}{\numberline {1.1.6}Atom}{2}{subsection.1.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6}Editores de código}{2}{subsection.2.6}
+\contentsline {subsection}{\numberline {1.1.7}Wireshark}{3}{subsection.1.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Desglose del programa}{2}{section.3}
+\contentsline {chapter}{\numberline {2}Redes Informáticas}{4}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Bibliografía}{3}{section.4}
+\contentsline {section}{\numberline {2.1}Capas de Red/Modelo OSI}{4}{section.2.1}
