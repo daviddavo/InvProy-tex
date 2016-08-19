@@ -9,6 +9,8 @@
 
 \usepackage[xindy, nomain, acronym, nonumberlist, nopostdot]{glossaries}
 
+\usepackage{graphicx} %Para insertar gráficos
+\usepackage{float} %PAra posicionar bien los gráficos
 \usepackage{unicode-math} %Para símbolos matemagicos
 %\setmathfont{Latin Modern Math}
 \setmathfont{Asana-Math.otf}
@@ -55,11 +57,6 @@ backend=biber
 \newpage{}
 \pagenumbering{arabic}
 
-%\begin{figure}
-%\includegraphics[width=\textwidth]{picture.png}
-%\caption{This figure shows the logo of my website.}
-%\end{figure}
-
 \chapter{Programación y código libre}
 
 \subsection*{Propuesta}
@@ -78,7 +75,10 @@ GNU/Linux, también llamado incorrectamente sólo Linux, es una manera de llamar
 \subsubsection*{Distros}
 
 \subsection{Git y Github}
-Git es un software diseñado por Linus Torvalds con el que puedes crear un Sistema de Control de Versiones o VCS (\textit{Version Control System}). Este programa te permite de forma sencilla volver a una versión o \textit{commit} anterior del programa, así como enviarlas a un repositorio remoto e incluso publicarlas en línea. Su punto fuerte son las \textit{branches} o "ramificaciones" del código, haciendo que la rama \textit{master} (principal) siempre pueda ser usada. Para ello creamos una nueva rama para cada nueva funcionalidad del programa.
+Git es un software diseñado por Linus Torvalds con el que puedes crear un Sistema de Control de Versiones o VCS (\textit{Version Control System}). Este programa te permite de forma sencilla volver a una versión o \textit{commit} anterior del programa, así como enviarlas a un repositorio remoto e incluso publicarlas en línea. Su punto fuerte son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama \textit{master} (principal) siempre pueda ser usada. Para ello creamos una nueva rama para cada nueva funcionalidad del programa.
+
+%\includegraphics[width=\textwidth]{Resources/01.01.02-01.png}
+\includegraphics[width=0.95\textwidth]{Resources/01.01.02-01.png}
 
 GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener, una wiki y una página web para tu proyecto, junto a otras funciones.
 Tanto el programa como este documento están disponibles en GitHub en el siguiente enlace. \url{https://github.com/daviddavo/InvProy}
