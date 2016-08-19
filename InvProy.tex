@@ -1,6 +1,6 @@
 \documentclass[a4paper, 11pt, twoside]{report} %twoside
-\title{Programación y Código Libre}
-\author{David Davó \and Julio}
+\title{Programación, Redes y Código Libre}
+\author{David Davó}
 \date{\today{}}
 
 %%Packages
@@ -46,9 +46,24 @@ backend=biber
 
 %Document
 \begin{document}
-
+\makeatletter
 \begin{titlepage}
-{\Large\maketitle}
+\centering
+\vspace*{4cm}
+{\scshape\LARGE IES Palas Atenea \par}
+\vspace{1cm}
+{\scshape\Large Proyecto de Investigación Bachillerato de excelencia\par}
+\vspace{1.5cm}
+{\huge\bfseries \@title\par}
+\vspace{2cm}
+{\Large\itshape \@author\par}
+\vfill
+Tutor\par
+Julio Sánchez
+
+\vfill
+
+{\large \@date\par}
 \pagenumbering{gobble}
 \end{titlepage}
 \clearpage
@@ -133,7 +148,7 @@ El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre si
 \end{tabular}
 
 \glsaddall
-\printglossaries
+\printglossary[type=\acronymtype ,title=Glosario y acrónimos, toctitle=Glosario y acrónimos]
 
 \newpage
 \thispagestyle{empty}
