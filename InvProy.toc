@@ -23,3 +23,5 @@
 \contentsline {chapter}{\numberline {2}Redes Informáticas}{4}{chapter.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Capas de Red/Modelo OSI}{4}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Topologías de red}{5}{section.2.2}

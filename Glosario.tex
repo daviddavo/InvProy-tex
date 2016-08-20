@@ -9,7 +9,7 @@
 	description={Secuencia binaria de unos y ceros que contiene información codificada},
 	plural=Datos, 
 }
-\newacronym{gnu}{GNU}{GNU's Not Unix (GNU no es Unix)}
+\newacronym{gnu}{GNU}{\textit{GNU's Not Unix} (GNU no es Unix)}
 \newglossaryentry{Linux}
 {
   name=Linux,
@@ -21,9 +21,25 @@
 	name={Conmutación de paquetes},
 	description={Método para enviar datos por una red de computadoras. Se divide el paquete en dos partes, una con información de control que leen los nodos para enviar el paquete a su destino y los datos a enviar},
 }
-\newacronym{osi}{OSI}{Open Systems Interconnection (Interconexión de Sistemas Abiertos)}
+\newacronym{osi}{OSI}{\textit{Open Systems Interconnection} (Interconexión de Sistemas Abiertos)}
+\newglossaryentry{gls-ISO}{
+	name={\textit{International Organization for Standardization}},
+	description={Organización Internacional de Normalización. Compuesta de varias organizaciones nacionales se encarga de la creación de estándares internacionales desde 1947.},
+}
+\newacronym[see={[Glossary:]{gls-ISO}}]{iso}{ISO}{International Organization for Standardization\glsadd{gls-ISO}}
 \newglossaryentry{capas de abstraccion}{
 	name={capas de abstracción},
 	description={Método de ocultar detalles de implementación de un set de funcionalidades},
 }
 \newacronym{IEEE}{IEEE}{Instituto de Ingeniería Eléctrica y Electrónica}
+\newglossaryentry{topologia de red}{
+	name={topología de red},
+	description={Configuración espacial o física de la red.},
+	plural={topologías de red},
+	see={topologia}
+}
+\newglossaryentry{topologia}{
+	name={topología},
+	description={``Rama de las matemáticas que trata especialmente de la continuidad y de otros conceptos más generales originados de ella, como las propiedades de las figuras con independencia de su tamaño o forma." \cite{rae}[Topología]},
+	plural={topologías},
+}

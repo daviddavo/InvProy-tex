@@ -125,7 +125,7 @@ Internet, tal y como lo conocemos ahora, haciendo uso de IPv6, HTML5, CSS3 no ex
 
 \section{Capas de Red/Modelo OSI}
 El modelo \acrshort{osi} es un modelo de referencia para redes basado en \gls{capas de abstraccion}
-El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre sistemas con la protocolos estandarizados.
+El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre sistemas con la protocolos estandarizados. Fue creado en 1980 por la \gls{iso}.
 
 \definecolor{odd}{HTML}{FFFFFF}
 \definecolor{even}{HTML}{E0E0E0}
@@ -133,22 +133,30 @@ El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre si
 
 \rowcolors{2}{odd}{even}
 \begin{tabular}{l|c|p{7cm}|p{2cm}}
-	\hline
 	\rowcolor{header}
-	\textbf{Capa} & \textbf{PDU} & \textbf{Función} & \textbf{Ejemplos} \\
+	\textbf{Capa} & \textbf{PDU} & \textbf{Función} & \textbf{Ejemplos} \\ \hline
 	1. Física & Bit & Transmisión y recepción de bits físicos sobre un medio físico & 	 RJ45, IEEE 802.11, etc. \\
 	2. Data Link & Frame & Transmisión segura de \textit{frames} entre dos nodos conectados por una capa física. & Ethernet, 802.11, etc...\\
 	3. Red & Paquete & Estructurar y administrar una red multinodo. Incluye enrutamiento, control de tráfico, y asignación de direcciones & IPv4, IPv6, ICMP... \\
 	4. Transporte & \begin{tabular}[t]{@{}c@{}}Datagrama(UDP)\\Segmento(TCP)  \end{tabular} &
 	Transmisión de segmentos de datos entre los puntos de una red, incluyendo ACK & TCP, UDP...\\
-	5. Sesión &  & Administración de sesiones de comunicación, como intercambio continúo de información entre dos nodos. & SSH, RPC, PAP...\\ 
-	6. Presentación & \multirow{3}{*}{Datos} & Translación de datos entre un servicio de red y una aplicación. Incluye comprensión, encriptación/decriptación, y codificación de carácteres. & MIME, TLS \\
-	7. Aplicación & & APIs de alto nivel, incluyendo recursos compartidos y acceso remoto de archivos & HTTP, FTP, SMTP... \\ \hline
+	5. Sesión & Datos & Administración de sesiones de comunicación, como intercambio continúo de información entre dos nodos. & SSH, RPC, PAP...\\ 
+	6. Presentación & Datos & Translación de datos entre un servicio de red y una aplicación. Incluye comprensión, encriptación/decriptación, y codificación de carácteres. & MIME, TLS \\
+	7. Aplicación & Datos & APIs de alto nivel, incluyendo recursos compartidos y acceso remoto de archivos & HTTP, FTP, SMTP... \\
 	
 \end{tabular}
+\subsubsection*{Capa física}
+En esta capa se encuentra la \gls{topologia de red}\space(Ver \ref{topdred} pág.\pageref{topdred})
 
-\glsaddall
-\printglossary[type=\acronymtype ,title=Glosario y acrónimos, toctitle=Glosario y acrónimos]
+\section{Topologías de red}
+\label{topdred}
+La \gls{topologia} de red es la configuración de los elementos que componen una red. Puede ser representada lógica o físicamente. La topología lógica puede ser igual en dos redes, aunque su topología física (distancia entre conexiones, tipo de señales...) pueda ser distinta.
+
+\renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
+\printglossary[title=Glosario y acrónimos, toctitle=Glosario y acrónimos]
+
+\nocite{*}
+\printbibliography
 
 \newpage
 \thispagestyle{empty}
