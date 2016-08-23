@@ -8,6 +8,7 @@
 \usepackage[no-math]{fontspec} %Para usar fuentes del sistema
 
 \usepackage[xindy, nomain, acronym, nonumberlist, nopostdot]{glossaries}
+\usepackage{glossary-mcols}
 
 \usepackage{graphicx} %Para insertar gráficos
 \usepackage{float} %PAra posicionar bien los gráficos
@@ -44,6 +45,9 @@ backend=biber
 \makeglossaries
 \include{Glosario}
 
+%%% Algunas macros
+\newcommand{\acr}[1]{\acrshort{#1} (\acrlong{#1})}
+
 %Document
 \begin{document}
 \makeatletter
@@ -55,6 +59,7 @@ backend=biber
 {\scshape\Large Proyecto de Investigación Bachillerato de excelencia\par}
 \vspace{1.5cm}
 {\huge\bfseries \@title\par}
+\rule{0.5\textwidth}{1pt}\par
 \vspace{2cm}
 {\Large\itshape \@author\par}
 \vfill
@@ -85,15 +90,18 @@ El programa ha sido creado con herramientas de software libre. Según la Free So
 Todas las herramientas citadas a continuación, son o están basadas en Software Libre.
 
 \subsection{GNU/Linux}
-GNU/Linux, también llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \gls{gnu}, ambos software son libres y de código abierto. Normalmente Linux se distribuye en distribuciones o 'distros', las cuales contienen paquetes de software preinstalados, dependiendo del grupo de usuarios al que este dirigida.
+También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \gls{gnu}, ambos software son libres y de código abierto. Normalmente Linux se distribuye en distribuciones o 'distros', las cuales contienen paquetes de software preinstalados, dependiendo del grupo de usuarios al que este dirigida.
 
 \subsubsection*{Distros}
 
 \subsection{Git y Github}
-Git es un software diseñado por Linus Torvalds con el que puedes crear un Sistema de Control de Versiones o VCS (\textit{Version Control System}). Este programa te permite de forma sencilla volver a una versión o \textit{commit} anterior del programa, así como enviarlas a un repositorio remoto e incluso publicarlas en línea. Su punto fuerte son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama \textit{master} (principal) siempre pueda ser usada. Para ello creamos una nueva rama para cada nueva funcionalidad del programa.
+Git es un software diseñado por Linus Torvalds con el que puedes crear un Sistema de Control de Versiones o VCS (\textit{Version Control System}). Este programa te permite de forma sencilla volver a una versión o \textit{commit} anterior del programa, así como enviarlas a un repositorio remoto e incluso publicarlas en línea. Su punto fuerte son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama \textit{master} (principal) siempre pueda ser usada. Para ello creamos una nueva rama para cada nueva funcionalidad del programa. La implementación del nuevo código a otra rama se denomina \textit{merge}.
 
 %\includegraphics[width=\textwidth]{Resources/01.01.02-01.png}
+\begin{figure}
 \includegraphics[width=0.95\textwidth]{Resources/01.01.02-01.png}
+\caption{\textit{Branching} con Git}
+\end{figure}
 
 GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener, una wiki y una página web para tu proyecto, junto a otras funciones.
 Tanto el programa como este documento están disponibles en GitHub en el siguiente enlace. \url{https://github.com/daviddavo/InvProy}
@@ -104,10 +112,10 @@ Ji ($\Chi$), es un software libre orientado a la creación de textos escritos co
 El código del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, pero he usado una IDE llamada \textbf{texmaker}.
 
 \subsection{Python}
-Python es un lenguaje de programación interpretado (sólo traducen el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca por pretender una sintaxis más legible que la de el resto de lenguajes. Soporta tanto programación imperativo como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que me permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este caso, la versión de Python usada es la 3.4 en adelante.
+Es un lenguaje de programación interpretado (sólo traducen el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca por pretender una sintaxis más legible que la de el resto de lenguajes. Soporta tanto programación imperativo como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que me permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este caso, la versión de Python usada es la 3.4 en adelante.
 
 \subsection{Gtk+}
-Gtk+ es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de GUIs (Interfaz Gráfica de Usuario), también, al igual que Linux forma parte del proyecto GNU.
+Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de GUIs (Interfaz Gráfica de Usuario), también, al igual que Linux forma parte del proyecto GNU.
 
 Contiene las bibliotecas de GTK, GDK, ATK, Glib, Pango y Cairo; de las que he usado fundamentalmente GTK para crear la interfaz principal del programa; GDK al usarlo como intermediario entre los gráficos de bajo nivel y alto nivel y Cairo para la creación de algunos de los elementos gráficos del programa.
 
@@ -119,14 +127,12 @@ Atom es un editor de código multiplataforma con soporte para plugins escrito en
 Wireshark es un \textit{packet sniffer} o analizador de paquetes. Te muestra los paquetes de red reales enviados y recibidos por una tarjeta de red, lo que facilita la creación del simulador de redes.
 
 \chapter{Redes Informáticas}
-
 \section*{Historia}
 Internet, tal y como lo conocemos ahora, haciendo uso de IPv6, HTML5, CSS3 no existe hasta hace recientemente, pero el desarrollo de éste transcurre desde los años 60. En 1961 se publican los primeros artículos de \gls{conmutacion de paquetes}
-
 \section{Capas de Red/Modelo OSI}
-El modelo \acrshort{osi} es un modelo de referencia para redes basado en \gls{capas de abstraccion}
-El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre sistemas con la protocolos estandarizados. Fue creado en 1980 por la \gls{iso}.
-
+El modelo \acr{osi} es un modelo de referencia para redes basado en \gls{capas de abstraccion}
+El objetivo del modelo \gls{osi} es conseguir la interoperabilidad entre sistemas con la protocolos estandarizados. Fue creado en 1980 por la \acr{iso}. No es considerado una arquitectura de red porque los protocolos no forman parte del modelo en sí, sino son entidades de distintas normativas internacionales.
+\vspace{1pt}
 \definecolor{odd}{HTML}{FFFFFF}
 \definecolor{even}{HTML}{E0E0E0}
 \definecolor{header}{HTML}{42A5F5}
@@ -136,6 +142,7 @@ El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre si
 	\rowcolor{header}
 	\textbf{Capa} & \textbf{PDU} & \textbf{Función} & \textbf{Ejemplos} \\ \hline
 	1. Física & Bit & Transmisión y recepción de bits físicos sobre un medio físico & 	 RJ45, IEEE 802.11, etc. \\
+	\label{osi}
 	2. Data Link & Frame & Transmisión segura de \textit{frames} entre dos nodos conectados por una capa física. & Ethernet, 802.11, etc...\\
 	3. Red & Paquete & Estructurar y administrar una red multinodo. Incluye enrutamiento, control de tráfico, y asignación de direcciones & IPv4, IPv6, ICMP... \\
 	4. Transporte & \begin{tabular}[t]{@{}c@{}}Datagrama(UDP)\\Segmento(TCP)  \end{tabular} &
@@ -148,17 +155,46 @@ El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre si
 \subsubsection*{Capa física}
 En esta capa se encuentra la \gls{topologia de red}\space(Ver \ref{topdred} pág.\pageref{topdred})
 
+\section{Elementos físicos de una red}
+Servidor, cliente, switch, hub, router, etc...
+
 \section{Topologías de red}
 \label{topdred}
-La \gls{topologia} de red es la configuración de los elementos que componen una red. Puede ser representada lógica o físicamente. La topología lógica puede ser igual en dos redes, aunque su topología física (distancia entre conexiones, tipo de señales...) pueda ser distinta.
+La \gls{topologia} de red es la configuración de los elementos que componen una red. Puede ser representada lógica o físicamente. La topología lógica puede ser igual en dos redes, aunque su topología física (distancia entre conexiones, tipo de señales...) pueda ser distinta. Se distinguen dos elementos: los nodos (Ordenadores, switches, etc.) y los enlaces (medio de transmisión de los datos).
 \subsection{Clasificación de las topologías de red}
-Se distinguen ocho tipos de topologías de red. \cite{bicsi-02}
+Se distinguen ocho tipos de topologías de red: \cite{bicsi-02}
+\begin{description}
+\item \textbf{Punto a punto:} conexión directa entre los dos puntos de la red. También es conocida como \textit{P2P} (\textit{Peer to Peer}).
+\item \textbf{Estrella:} cada host se conecta a un hub central con una conexión P2P. Cada nodo está conectado a un nodo central que puede ser un router, hub o switch.
+\item \textbf{Bus:} cada nodo está conectado a un sólo cable. Una señal de un dispositivo viaja en ambos sentidos por el cable hasta que encuentra el destino deseado.
+\item \textbf{Anillo:} es una topología en bus pero con los extremos conectados. Los datos atraviesan el anillo en una única dirección y van atravesando cada uno de los nodos, por lo que si uno de ellos no funciona, la red tampoco.
+\item \textbf{Malla:} se pueden distinguir dos tipos: completamente conectados, en la que todos los nodos están conectados entre ellos y parcialmente conectados, en la que algunos nodos pueden estar conectados punto a punto y otros pueden tener varias conexiones.
+\item \textbf{Híbrida:} combinan dos o más topologías. La más famosa es la topología de \textbf{árbol}, en la que se conectan varias topologías de estrella mediante bus. 
+\item \textbf{Cadena:} se conecta cada ordenador en serie con el siguiente. Cada ordenador repite el mensaje al siguiente ordenador si éste no es su destino. Si se cierra el circuito se crea una topología en anillo, mientras que si se deja abierto se denomina topología linear.
+\end{description}
 
+\subsection{Nodos de una red}
+\begin{description}
+\item \textbf{\textit{Router} o enrutador:} es un dispositivo de red que reenvía los paquetes mirando en la capa 3 del modelo OSI (IP) y conecta dos redes.
+\item \textbf{Puente de red o \textit{bridge}:} Funciona en la capa 2 del modelo OSI. Es un dispositivo que conecta dos segmentos de red formando una única subred, por lo que las dos ``redes" pueden conectarse e intercambiar datos sin necesidad de un \textit{router}.
+\item \textbf{Conmutadores o \textit{switches}:} dispositivo de red que filtra los datagramas del nivel 2 OSI (\textit{Data Link Layer}, ver \ref{osi}, pág. \pageref{osi}), también conocidos como \textit{frames}, y reenvía los paquetes recibidos entre los puertos, dependiendo de la dirección MAC de cada \textit{frame}. La diferencia entre un \textit{switch} y un \textit{hub} es que el \textit{switch} sólo reenvía los paquetes por el puerto necesario. También existen un tipo especial de \textit{switches} que pueden mirar en el nivel 3 OSI.
+\item \textbf{Repetidores y hubs:} un repetidor es un dispositivo de red que, llegada una señal, limpia el ruido innecesario y la regenera. Un repetidor con múltiples puertos es un hub, trabajan en la capa 1 del modelo \acr{osi}. Los repetidores requieren un pequeño tiempo para regenerar la señal, lo que puede crear un retardo en la señal.
+\item \textbf{Interfaces de Red:} también conocido como tarjeta de red o \textit{Network Interface Controller} (NIC), es un \gls{hardware}, normalmente integrado en la placa base, que permite al ordenador conectarse a una red. Recibe el tráfico de una dirección de red. En las redes de Ethernet, tiene una dirección \acr{MAC} única. Estas direcciones son administradas por el \acr{IEEE} evitando la duplicidad de estas. Cada dirección MAC ocupa 6 octetos, o 48 bits, a lo que suele ser representada como una cadena hexadecimal, por ejemplo: ``43:31:50:30:74:33".
+\item \textbf{Módem:} Dispositivos que transforman señales analógicas a digitales y viceversa. Son usados mayoritariamente en el \acr{ADSL}.
+\item \textbf{Cortafuegos o \textit{firewalls}:} dispositivo que controla la seguridad mediante reglas de acceso. Aceptan determinados paquetes mientras rechazan otros. En una red doméstica, se puede poner un firewall que sólo acepte tráfico de los puertos de uso común (Páginas Web, e-mail, etc.) y rechace otros más peligrosos (Acceso remoto, SSH, SMTP, SOCKS...).
+\end{description}
+
+\subsection{Enlaces de red}
+Según el modelo OSI, los enlaces de red corresponden a las capas 1 y 2. El medio físico puede ser tanto ondas de radio (Wi-Fi), como fibra óptica (FTTH) o impulsos de red (PLC, Ethernet, DSL).
+
+\glsaddall
 \renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
-\printglossary[title=Glosario y acrónimos, toctitle=Glosario y acrónimos]
+\printglossary[style=mcolindex, title=Glosario y acrónimos, toctitle=Glosario y acrónimos]
 
 \nocite{*}
 \printbibliography
+
+\listoffigures
 
 \newpage
 \thispagestyle{empty}
