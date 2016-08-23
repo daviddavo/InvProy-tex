@@ -5,7 +5,8 @@
 
 %%Packages
 \usepackage[utf8]{inputenc} %Para saber el encoding del archivo
-\usepackage[no-math]{fontspec} %Para usar fuentes del sistema
+%\usepackage[no-math]{fontspec} %Para usar fuentes del sistema
+\usepackage{fontspec}
 
 \usepackage[xindy, nomain, acronym, nonumberlist, nopostdot]{glossaries}
 \usepackage{glossary-mcols}
@@ -13,8 +14,8 @@
 \usepackage{graphicx} %Para insertar gráficos
 \usepackage{float} %PAra posicionar bien los gráficos
 \usepackage{unicode-math} %Para símbolos matemagicos
-%\setmathfont{Latin Modern Math}
-\setmathfont{Asana-Math.otf}
+%\setmathfont{Asana-Math.otf}
+\setmathfont{Arial}
 \usepackage[type={CC}, modifier={by-sa}, version={4.0}]{doclicense} %Muestra la licencia
 \usepackage[usenames,svgnames,table]{xcolor} %Para darle color
 \usepackage{dirtytalk} %Usado para citar
@@ -29,6 +30,8 @@ backend=biber
 
 %Decoraciones y formato del texto
 \usepackage[left=2.75cm, right=2cm, top=3cm, bottom=3cm]{geometry}
+
+\usepackage{tabularx} %Para hacer tablas muy bonicas
 \usepackage{multirow}
 
 \setmainfont{Arial}
@@ -99,6 +102,7 @@ Git es un software diseñado por Linus Torvalds con el que puedes crear un Siste
 
 %\includegraphics[width=\textwidth]{Resources/01.01.02-01.png}
 \begin{figure}
+\noindent
 \includegraphics[width=0.95\textwidth]{Resources/01.01.02-01.png}
 \caption{\textit{Branching} con Git}
 \end{figure}
@@ -137,7 +141,10 @@ El objetivo del modelo \gls{osi} es conseguir la interoperabilidad entre sistema
 \definecolor{even}{HTML}{E0E0E0}
 \definecolor{header}{HTML}{42A5F5}
 
+\rowcolors{1}{header}{header}
 \rowcolors{2}{odd}{even}
+\renewcommand{\arraystretch}{1.2}
+\noindent
 \begin{tabular}{l|c|p{7cm}|p{2cm}}
 	\rowcolor{header}
 	\textbf{Capa} & \textbf{PDU} & \textbf{Función} & \textbf{Ejemplos} \\ \hline
@@ -187,6 +194,12 @@ Se distinguen ocho tipos de topologías de red: \cite{bicsi-02}
 \subsection{Enlaces de red}
 Según el modelo OSI, los enlaces de red corresponden a las capas 1 y 2. El medio físico puede ser tanto ondas de radio (Wi-Fi), como fibra óptica (FTTH) o impulsos de red (PLC, Ethernet, DSL).
 
+\subsubsection{Cableado}
+\begin{description}
+\item \textbf{Coaxial:} Cables de cobre o aluminio recubiertos de aislante, rodeado de un conductor, así se reducen las interferencias y la distorsión. Normalmente son usados para la transmisión de radio y TV, pero pueden ser usados para redes informáticas. Pueden llegar hasta a 500 Mbit/s \textbf{<INSERTAR IMAGEN>}
+\item \textbf{Par trenzado o \textit{Ethernet}:} Es el más usado en redes locales. Es un cable formado por finos cables trenzados en pares. En telefonía se usa el RJ11 o 6P4C (6 posiciones, 4 conectores) formado por 2 pares. Para ordenadores, según el estándar \textit{Ethernet} se usa 8P8C o RJ45 de 4 pares, debido al nombre del estándar, este cable suele ser comúnmente llamado "cable de Ethernet". Puede llegar hasta 10 Gbit/s
+\end{description}
+
 \glsaddall
 \renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
 \printglossary[style=mcolindex, title=Glosario y acrónimos, toctitle=Glosario y acrónimos]
@@ -195,6 +208,36 @@ Según el modelo OSI, los enlaces de red corresponden a las capas 1 y 2. El medi
 \printbibliography
 
 \listoffigures
+
+\appendix
+\chapter{Unidades de transferencia de datos}
+Cantidad de datos transferidos por unidad de tiempo. La unidad de tiempo es el segundo y la cantidad de datos puede ser medida en \textit{\glspl{bit}} (bitrate), carácteres/símbolos (\textit{baudrate}) o bytes (8 bits), en ocasiones también se utilizan \textit{nibbles} (4 bits). Para expresar esta velocidad, se suelen usar múltiplos, que pueden ser en base binaria o decimal.
+
+Se usa la ``b" para designar los bits, y ``B" para los Bytes. Después, se usan los prefijos del sistema internacional cuando es en base decimal, y los prefijos del SI cambiando la segunda sílaba por ``bi" (e.g: kilobit / kibibit, kbit/s / Kibit/s) cuando se trata de múltiplos binarios.
+
+\section{Tabla de múltiplos}
+\noindent
+\begin{tabularx}{\columnwidth}{| X >{\centering}X X|}
+\hline \rowcolor{header}
+\textbf{Unidad} & \textbf{Símbolo} & \textbf{Equivalencia} \\ \hline
+Kilobit/s & kbit/s o kb/s & 1000 bit/s \\
+Megabit/s & Mbit/s o Mb/s & $10^{6}$ bit/s o 10³ kbit/s  \\
+Gigabit/s & Gbit/s o Gb/s & $10^{9}$ bit/s o 10³ Mb/s \\
+Terabit/s & Tbit/s o TB/s & $10^{12}$ bit/s o 10³ Gb/s \\ \hline
+Kibibit/s & Kibit/s & $2^{10}$ bit/s o 1024 bit/s \\
+Mebibit/s & Mibit/s & $2^{20}$ bit/s o 1024 Kibit/s \\
+Gibibit/s & Gibit/s & $2^{30}$ bit/s o 1024 Mibit/s \\
+Tebibit/s & Tibit/s & $2^{40}$ bit/s o 1024 Gibit/s \\ \hline \hline
+Byte/s    & Byte/s & 8 bit/s \\
+Kilobyte/s & kB/s & 1000 Byte/s o 8000 bits/s \\
+Megabyte/s & MB/s & $10^{6}$ Byte/s o 1000 kB/s \\
+Gigabyte/s & GB/s & $10^{9}$ Byte/s o 1000 MB/s \\
+Terabyte/s & TB/s & $10^{12}$ Byte/s o 1000 GB/s \\
+Kibibyte/s & KiB/s & 1024 Byte/s \\
+Mebibyte/s & MiB/s & $2^{20}$ Byte/s \\
+Gibibyte/s & GiB/s & $2^{30}$ Byte/s \\
+Tebibyte/s & TiB/s & $2^{40}$ Byte/s \\ \hline
+\end{tabularx}
 
 \newpage
 \thispagestyle{empty}
