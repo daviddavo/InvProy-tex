@@ -1,10 +1,11 @@
-\documentclass[a4paper, 11pt, twoside]{report} %twoside
+\documentclass[a4paper, 11pt]{report} %twoside
 \title{Programación, Redes y Código Libre}
 \author{David Davó}
 \date{\today{}}
 
 %%Packages
 \usepackage[utf8]{inputenc} %Para saber el encoding del archivo
+\usepackage[T1]{fontenc}
 %\usepackage[no-math]{fontspec} %Para usar fuentes del sistema
 \usepackage{fontspec}
 
@@ -31,6 +32,8 @@ backend=biber
 %Decoraciones y formato del texto
 \usepackage[left=2.75cm, right=2cm, top=3cm, bottom=3cm]{geometry}
 
+\usepackage[cache=false]{minted} %Para insertar código
+
 \usepackage{tabularx} %Para hacer tablas muy bonicas
 \usepackage{multirow}
 
@@ -40,8 +43,9 @@ backend=biber
 %Pies de pagina y eso
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE, RO]{David Davó}
-\fancyhead[RE, LO]{Programación y Código Libre}
+\makeatletter
+\fancyhead[LE, RO]{\@author}
+\fancyhead[RE, LO]{\@title}
 \fancyfoot[LE, RO]{\thepage}
 \fancyfoot[C]{\leftmark}
 
@@ -123,7 +127,7 @@ Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya 
 
 Contiene las bibliotecas de GTK, GDK, ATK, Glib, Pango y Cairo; de las que he usado fundamentalmente GTK para crear la interfaz principal del programa; GDK al usarlo como intermediario entre los gráficos de bajo nivel y alto nivel y Cairo para la creación de algunos de los elementos gráficos del programa.
 
-Al usar este conjunto de librerías, he conseguido que sólo sea necesario descargar una dependencia del programa, que además suele venir instalada en la mayoria de distros de Linux, por ejemplo en una instalación limpia de Ubuntu 16 (sin descargar paquetes adiccionales) el programa funciona perfectamente. Para usarlo en Linux se ha tenido que importar la libreria de PyGtk.
+Al usar este conjunto de librerías, he conseguido que sólo sea necesario descargar una dependencia del programa, que además suele venir instalada en la mayoria de distros de Linux, por ejemplo en una instalación limpia de Ubuntu 16 (sin descargar paquetes adiccionales) el programa funciona perfectamente. Para usarlo en Python se ha tenido que importar la libreria de PyGtk.
 \subsection{Atom}
 Atom es un editor de código multiplataforma con soporte para plugins escrito en Node.js, también tiene soporte para Git. También es un programa de código libre haciendo uso de la licencia MIT.
 
@@ -145,10 +149,10 @@ El objetivo del modelo \gls{osi} es conseguir la interoperabilidad entre sistema
 \rowcolors{2}{odd}{even}
 \renewcommand{\arraystretch}{1.2}
 \noindent
-\begin{tabular}{l|c|p{7cm}|p{2cm}}
-	\rowcolor{header}
+\begin{tabularx}{\columnwidth}{|l c X p{2cm}|}
+	\rowcolor{header} \hline
 	\textbf{Capa} & \textbf{PDU} & \textbf{Función} & \textbf{Ejemplos} \\ \hline
-	1. Física & Bit & Transmisión y recepción de bits físicos sobre un medio físico & 	 RJ45, IEEE 802.11, etc. \\
+	1. Física & Bit & Transmisión y recepción de bits físicos sobre un medio físico (topología de red) & 	 RJ45, IEEE 802.11, etc. \\
 	\label{osi}
 	2. Data Link & Frame & Transmisión segura de \textit{frames} entre dos nodos conectados por una capa física. & Ethernet, 802.11, etc...\\
 	3. Red & Paquete & Estructurar y administrar una red multinodo. Incluye enrutamiento, control de tráfico, y asignación de direcciones & IPv4, IPv6, ICMP... \\
@@ -156,11 +160,8 @@ El objetivo del modelo \gls{osi} es conseguir la interoperabilidad entre sistema
 	Transmisión de segmentos de datos entre los puntos de una red, incluyendo ACK & TCP, UDP...\\
 	5. Sesión & Datos & Administración de sesiones de comunicación, como intercambio continúo de información entre dos nodos. & SSH, RPC, PAP...\\ 
 	6. Presentación & Datos & Translación de datos entre un servicio de red y una aplicación. Incluye comprensión, encriptación/decriptación, y codificación de carácteres. & MIME, TLS \\
-	7. Aplicación & Datos & APIs de alto nivel, incluyendo recursos compartidos y acceso remoto de archivos & HTTP, FTP, SMTP... \\
-	
-\end{tabular}
-\subsubsection*{Capa física}
-En esta capa se encuentra la \gls{topologia de red}\space(Ver \ref{topdred} pág.\pageref{topdred})
+	7. Aplicación & Datos & APIs de alto nivel, incluyendo recursos compartidos y acceso remoto de archivos & HTTP, FTP, SMTP... \\ \hline
+\end{tabularx}
 
 \section{Elementos físicos de una red}
 Servidor, cliente, switch, hub, router, etc...
@@ -196,9 +197,39 @@ Según el modelo OSI, los enlaces de red corresponden a las capas 1 y 2. El medi
 
 \subsubsection{Cableado}
 \begin{description}
-\item \textbf{Coaxial:} Cables de cobre o aluminio recubiertos de aislante, rodeado de un conductor, así se reducen las interferencias y la distorsión. Normalmente son usados para la transmisión de radio y TV, pero pueden ser usados para redes informáticas. Pueden llegar hasta a 500 Mbit/s \textbf{<INSERTAR IMAGEN>}
+\item \textbf{Coaxial:} Cables de cobre o aluminio recubiertos de aislante, rodeado de un conductor, así se reducen las interferencias y la distorsión. Normalmente son usados para la transmisión de radio y TV, pero pueden ser usados para redes informáticas. Pueden llegar hasta a 500 Mbit/s \textbf{<INSERTAR IMAGENES>}
 \item \textbf{Par trenzado o \textit{Ethernet}:} Es el más usado en redes locales. Es un cable formado por finos cables trenzados en pares. En telefonía se usa el RJ11 o 6P4C (6 posiciones, 4 conectores) formado por 2 pares. Para ordenadores, según el estándar \textit{Ethernet} se usa 8P8C o RJ45 de 4 pares, debido al nombre del estándar, este cable suele ser comúnmente llamado "cable de Ethernet". Puede llegar hasta 10 Gbit/s
+\item \textbf{Fibra óptica:} Hilo de cristal o plástico flexible que permite que la luz se refleje en su interior, transmitiéndola de un extremo a otro del cable. No tienen apenas pérdida por distancia y son inmunes a las interferencias electromagnéticas. Además, permiten varias frecuencias de onda, lo que equivale a una transferencia de datos más rápida. Son usados para salvar las largas distancias entre continentes.
 \end{description}
+
+\subsubsection{Comunicación inalámbrica o \textit{Wireless}}
+\begin{description}
+\item \textbf{Microondas terrestres:} Transmisores, receptores y repetidores terrestres que operan en frecuencias de entre 300 MHz y 300 GHz de propagación de alcance visual, por lo que los repetidores no se separan más de 48 km.
+\item \textbf{Comunicación satelital:} Microondas y ondas de radio que no sean reflejadas por la atmósfera terrestre. Los satélites mantienen una órbita geosíncrona, es decir, el periodo de rotación es el mismo que el de la tierra, lo que se produce a una altura de $~35786$ km.
+\item \textbf{Celular o PCS:} Ondas electromagnéticas de entre 1800 y 1900 MHz. Son las usadas por los teléfonos móviles. A partir del 2G o GPRS, se podia acceder a Internet con de TCP/IP. El sistema divide la cobertura en áreas geográficas, cada una con un repetidor. Repiten los datos entre un repetidor y el otro.
+\item \textbf{Ondas de radio:} Ondas de 0.9, 2.4, 3.6, o 5 GHz. El estándar más usado es el \textit{IEEE 802.11}, también conocido como wifi o Wi-Fi que opera en la banda de 2.4 GHz, a excepción de la versión IEEE 802.11ac que opera a 5GHz que tiene menos interferencias, pero también menor alcance.
+\end{description}
+
+\chapter{El simulador de redes}
+\section{Instalación}
+\textbf{PONER INFORMACIÓN SOBRE LA INSTALACION CON UN ADMINISTRADOR DE PAQUETES}
+\subsection{Ejecución manual / instalación portable}
+Lo primero que necesitarás es descargar las dependencias. Esto depende de el Sistema Operativo. En el caso de GNU/Linux, sólo es necesario descargar \texttt{python3-gobject}. 
+
+Después, clonamos el repositorio de git:
+\begin{minted}{bash}
+cd Descargas
+git clone https://github.com/daviddavo/InvProy.git
+\end{minted}
+
+\noindent Una vez ya tenemos el repositorio de git clonado:
+\begin{minted}{bash}
+cd InvProy
+python3 Main.py
+\end{minted}
+\subsection{Uso del programa}
+
+
 
 \glsaddall
 \renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
@@ -215,10 +246,10 @@ Cantidad de datos transferidos por unidad de tiempo. La unidad de tiempo es el s
 
 Se usa la ``b" para designar los bits, y ``B" para los Bytes. Después, se usan los prefijos del sistema internacional cuando es en base decimal, y los prefijos del SI cambiando la segunda sílaba por ``bi" (e.g: kilobit / kibibit, kbit/s / Kibit/s) cuando se trata de múltiplos binarios.
 
-\section{Tabla de múltiplos}
+\section*{Tabla de múltiplos}
 \noindent
-\begin{tabularx}{\columnwidth}{| X >{\centering}X X|}
-\hline \rowcolor{header}
+\begin{tabularx}{\columnwidth}{|X >{\centering}X X|}
+\rowcolor{header} \hline
 \textbf{Unidad} & \textbf{Símbolo} & \textbf{Equivalencia} \\ \hline
 Kilobit/s & kbit/s o kb/s & 1000 bit/s \\
 Megabit/s & Mbit/s o Mb/s & $10^{6}$ bit/s o 10³ kbit/s  \\
@@ -232,12 +263,14 @@ Byte/s    & Byte/s & 8 bit/s \\
 Kilobyte/s & kB/s & 1000 Byte/s o 8000 bits/s \\
 Megabyte/s & MB/s & $10^{6}$ Byte/s o 1000 kB/s \\
 Gigabyte/s & GB/s & $10^{9}$ Byte/s o 1000 MB/s \\
-Terabyte/s & TB/s & $10^{12}$ Byte/s o 1000 GB/s \\
+Terabyte/s & TB/s & $10^{12}$ Byte/s o 1000 GB/s \\ \hline
 Kibibyte/s & KiB/s & 1024 Byte/s \\
 Mebibyte/s & MiB/s & $2^{20}$ Byte/s \\
 Gibibyte/s & GiB/s & $2^{30}$ Byte/s \\
 Tebibyte/s & TiB/s & $2^{40}$ Byte/s \\ \hline
 \end{tabularx}
+
+\include{AnCode}
 
 \newpage
 \thispagestyle{empty}
