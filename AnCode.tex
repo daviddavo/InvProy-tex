@@ -1,7 +1,12 @@
 \chapter{Código del programa}
-\section{Main.py}
 %\begin{listing}
-\texttt{\inputminted[baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{python}{Codigo/Main.py}}
-%\end{listing}
+\newcommand{\ipm}[1]{
+	\section{#1}
+	\inputminted[baselinestretch=1, fontsize=\tiny, linenos, breaklines]{python}{Codigo/#1}
+}
+\ipm{Main.py}
+\ipm{Modules/logmod.py}
+\ipm{Modules/save.py}
+%\section{Interface2.glade} \inputminted[baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{XML}{Codigo/Interface2.glade}
 
-\section{modules/Save.py}
+%\end{listing}
