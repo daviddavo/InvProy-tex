@@ -2,8 +2,13 @@
 %\begin{listing}
 \newcommand{\ipm}[1]{
 	\section{#1}
-	\inputminted[baselinestretch=1, fontsize=\tiny, linenos, breaklines]{python}{Codigo/#1}
+	\inputminted[baselinestretch=1,
+	fontsize=\scriptsize,
+	linenos,
+	breaklines
+	]{python}{Codigo/#1}
 }
+
 \ipm{Main.py}
 \ipm{Modules/logmod.py}
 \ipm{Modules/save.py}

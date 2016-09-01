@@ -9,6 +9,9 @@
 %\usepackage[no-math]{fontspec} %Para usar fuentes del sistema
 \usepackage{fontspec}
 
+\usepackage{inconsolata}
+\usepackage{uarial}
+
 \usepackage[xindy, nomain, acronym, nonumberlist, nopostdot]{glossaries}
 \usepackage{glossary-mcols}
 
@@ -17,8 +20,6 @@
 \usepackage{graphicx} %Para insertar gráficos
 \usepackage{float} %PAra posicionar bien los gráficos
 \usepackage{unicode-math} %Para símbolos matemagicos
-%\setmathfont{Asana-Math.otf}
-\setmathfont{Arial}
 \usepackage[type={CC}, modifier={by-sa}, version={4.0}]{doclicense} %Muestra la licencia
 \usepackage[usenames,svgnames,table]{xcolor} %Para darle color
 \usepackage{dirtytalk} %Usado para citar
@@ -42,6 +43,11 @@ backend=biber
 
 \setmainfont{Arial}
 \setmonofont{Inconsolata}
+
+\setmathrm{Asana-Math.otf}
+\setmathsf{Arial}
+\setmathtt{Inconsolata}
+
 \fontsize{11}{14}
 %Pies de pagina y eso
 \pagestyle{fancy}
@@ -91,6 +97,12 @@ Julio Sánchez
 \chapter{Programación y código libre}
 
 \textbf{\texttt{\f@family{}, \f@series{}, \f@shape{}, \f@size{}}}
+\texttt{\hookrightarrow}
+\hookrightarrow
+$\hookrightarrow$
+$\mathsf{\hookrightarrow}$
+
+{\fontfamily{Asana-Math.otf}\selectfont $\hookrightarrow$}
 
 \subsection*{Propuesta}
 El objetivo es el desarrollo de un software programado en Python de código libre con el que los alumnos puedan aprender tanto sobre redes como de programación en Python.
@@ -299,7 +311,7 @@ Hay dos tipos de ataques de red. Son ataques pasivos cuando el intruso intercept
 \end{easylist}
 \subsection{Contramedidas}
 \subsubsection{Encriptación}
-Se suele denominar también E2EE o \textit{End-to-end encryption}, es decir, encriptación de punto a punto. Se suelen usar claves PGP (\textit{Pretty Good Privacy}, Privacidad bastante buena) para cifrar correos electrónicos y otros archivos. Para HTTP lo más común es la encriptación TLS, aunque también se está utilizando actualmente para email.
+Se suele denominar también E2EE o \textit{End-to-end encryption}, es decir, encriptación de punto a punto. Se suelen usar claves PGP (\textit{Pretty Good Privacy}, Privacidad bastante buena) para cifrar correos electrónicos y otros archivos. Para HTTP lo más común es la encriptación TLS, aunque también se está utilizando actualmente para email. El servidor genera o contiene una clave o certificado, luego el cliente, debe recibir o tener esa clave para poder desencriptar el mensaje.
 \subsubsection{Cortafuegos}
 Primero necesitamos definir lo que es un \textbf{puerto}. Un puerto es un punto final de comunicación en un Sistema Operativo. El puerto siempre está asociado a una dirección IP y a un tipo de protocolo. Así completa el origen o destino de un paquete de red. Se aplica en la capa de transporte del modelo OSI. El puerto es un número de 16 bits, por lo que será un número comprendido entre 0 y 65536. Multitud de puertos están ya reservados por diversos protocolos y programas, como el 80 para HTTP, 22 para SSH o 25 para SMTP.
 
@@ -386,22 +398,22 @@ Se usa la ``b" para designar los bits, y ``B" para los Bytes. Después, se usan 
 \rowcolor{header} \hline
 \textbf{Unidad} & \textbf{Símbolo} & \textbf{Equivalencia} \\ \hline
 Kilobit/s & kbit/s o kb/s & 1000 bit/s \\
-Megabit/s & Mbit/s o Mb/s & $10^{6}$ bit/s o 10³ kbit/s  \\
-Gigabit/s & Gbit/s o Gb/s & $10^{9}$ bit/s o 10³ Mb/s \\
-Terabit/s & Tbit/s o TB/s & $10^{12}$ bit/s o 10³ Gb/s \\ \hline
-Kibibit/s & Kibit/s & $2^{10}$ bit/s o 1024 bit/s \\
-Mebibit/s & Mibit/s & $2^{20}$ bit/s o 1024 Kibit/s \\
-Gibibit/s & Gibit/s & $2^{30}$ bit/s o 1024 Mibit/s \\
-Tebibit/s & Tibit/s & $2^{40}$ bit/s o 1024 Gibit/s \\ \hline \hline
+Megabit/s & Mbit/s o Mb/s & $\mathsf{10^{6}}$ bit/s o 10³ kbit/s  \\
+Gigabit/s & Gbit/s o Gb/s & $\mathsf{10^{9}}$ bit/s o 10³ Mb/s \\
+Terabit/s & Tbit/s o TB/s & $\mathsf{10^{12}}$ bit/s o 10³ Gb/s \\ \hline
+Kibibit/s & Kibit/s & $\mathsf{2^{10}}$ bit/s o 1024 bit/s \\
+Mebibit/s & Mibit/s & $\mathsf{2^{20}}$ bit/s o 1024 Kibit/s \\
+Gibibit/s & Gibit/s & $\mathsf{2^{30}}$ bit/s o 1024 Mibit/s \\
+Tebibit/s & Tibit/s & $\mathsf{2^{40}}$ bit/s o 1024 Gibit/s \\ \hline \hline
 Byte/s    & Byte/s & 8 bit/s \\
 Kilobyte/s & kB/s & 1000 Byte/s o 8000 bits/s \\
-Megabyte/s & MB/s & $10^{6}$ Byte/s o 1000 kB/s \\
-Gigabyte/s & GB/s & $10^{9}$ Byte/s o 1000 MB/s \\
-Terabyte/s & TB/s & $10^{12}$ Byte/s o 1000 GB/s \\ \hline
+Megabyte/s & MB/s & $\mathsf{10^{6}}$ Byte/s o 1000 kB/s \\
+Gigabyte/s & GB/s & $\mathsf{10^{9}}$ Byte/s o 1000 MB/s \\
+Terabyte/s & TB/s & $\mathsf{10^{12}}$ Byte/s o 1000 GB/s \\ \hline
 Kibibyte/s & KiB/s & 1024 Byte/s \\
-Mebibyte/s & MiB/s & $2^{20}$ Byte/s \\
-Gibibyte/s & GiB/s & $2^{30}$ Byte/s \\
-Tebibyte/s & TiB/s & $2^{40}$ Byte/s \\ \hline
+Mebibyte/s & MiB/s & $\mathsf{2^{20}}$ Byte/s \\
+Gibibyte/s & GiB/s & $\mathsf{2^{30}}$ Byte/s \\
+Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 \end{tabularx}
 
 \include{AnCode}
