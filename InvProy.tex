@@ -42,6 +42,9 @@ backend=biber
 \usepackage{multirow}
 \usepackage{array}
 
+\usepackage{caption}%Para insertar cosillas
+\usepackage{subcaption}
+
 \usepackage[normalem]{ulem}
 
 \setmainfont{Arial}
@@ -103,6 +106,7 @@ Julio Sánchez
 \setcounter{chapter}{-1}
 
 \chapter{Introducción??}
+Internet, El Internet o La Internet consiste en una caja negra misteriosa con un indicador LED rojo que parpadea y contiene todo el poder del mundo en su interior. El internet no tiene cables, es muy ligero e increíblemente pequeño. Internet se encuentra en lo alto del Big Ben (donde hay mejor recepción) y antes de sacarlo de allí debe ser desmagnetizado por un Gran Maestro del Internet (\textit{Elders of the Internet})como Stephen Hawking, Linus Torvalds o Richard Stallman. \cite{ITCr}
 
 \chapter{Programación y código libre}
 
@@ -117,12 +121,12 @@ El programa ha sido creado con herramientas de software libre. Según la Free So
 Todas las herramientas citadas a continuación, son o están basadas en Software Libre.
 
 \subsection{GNU/Linux}
-También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \gls{gnu}, ambos software son libres y de código abierto. Está basado en, y es uno de los ejemplos de, el código libre. Es el sistema operativo más instalado, ya que la mayoría de los servidores lo usan, y 
+También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \gls{gnu}, ambos softwares son libres y de código abierto. Está basado en, y es uno de los ejemplos de, el código libre. Es el sistema operativo más utilizado, ya que la mayoría de los servidores lo usan, y además, otros sistemas operativos como Android están basado en éste.
 
 \subsubsection{Distros}
 Son las distintas distribuciones de software de GNU/Linux. Es decir, un conjunto de software preconfigurado y compilado formado por el Sistema Operativo GNU, el kernel de Linux y otros tantos paquetes, dependiendo de los usuarios a los que esté dirigida esta. Pueden crearse con el soporte de una empresa; como Ubuntu (\sout{Amazon} Canonical Ltd.), openSUSE (Novell) o Fedora (Red Hat); y otras mantenidas por comunidades como Debian, Gentoo o Arch Linux.
 
-He usado dos distros diferentes. Una llamada \texttt{Arch}, que es \textit{rolling release} (No tiene "versiones", sino que siempre se va actualizando con los últimos paquetes disponibles, por lo que siempre está actualizado) y otra es Ubuntu 16, basado en Debian, por lo que está bastante menos actualizado y se han tenido que hacer correcciones en el programa para que pueda funcionar con versiones más antiguas de las \glspl{dependencia}.
+He usado dos distros diferentes. Una llamada \texttt{Arch Linux}, que es \textit{rolling release} (No tiene "versiones", sino que siempre se va actualizando con los últimos paquetes disponibles, por lo que siempre está actualizado) y otra es Ubuntu 16, basado en Debian, por lo que está bastante menos actualizado y se han tenido que hacer correcciones en el programa para que pueda funcionar con versiones más antiguas de las \glspl{dependencia}.
 
 \subsection{Git y Github}
 Git es un software diseñado por Linus Torvalds con el que puedes crear un Sistema de
@@ -137,26 +141,26 @@ Para usar Git, se suele recomendar seguir un \textit{Git workflow} o flujo de tr
 \item \textbf{\textit{Develop:}} es la rama de desarrollo. Se van aplicando las nuevas funcionalidades a esta rama, para luego convergerlas en la rama \texttt{Release} que se va a publicar.
 \item \textbf{\textit{Release:}} una vez hayamos terminado en la rama de desarrollo, se converge \texttt{Develop} con \texttt{Release} y se procede a solucionar los bugs que se vayan descubriendo. Cuando se hayan solucionado todos los bugs y la siguiente versión del programa esté disponible para el público, se hace \texttt{merge} en \texttt{Develop} y en \texttt{Master}, además de aplicarle al \texttt{commit} una etiqueta con el nombre de la versión. (2.2.1, por ejemplo).
 \item \textbf{\textit{Hotfix}:} Es una rama dedicada a solventar los \glspl{bug} que un usuario descubra en una versión ya lanzada de la aplicación. Cuando un usuario descubre un bug, se crea una nueva rama a partir de la última versión de master, se soluciona el bug en esa rama y luego se vuelve a hacer \texttt{merge} en master.
-\item \textbf{\textit{Feature <x>}:} Donde <x> el nombre de la funcionalidad. Es una rama dedicada a una nueva funcionalidad, se crea a partir de \texttt{Develop}, y una vez terminada, se hace \texttt{merge} en \texttt{Develop} de nuevo.
+\item \textbf{\textit{Feature <x>}:} Donde <x> el nombre de la funcionalidad. Es una rama dedicada a una nueva funcionalidad, se crea a partir de \texttt{Develop}, y una vez terminada, se hace \texttt{merge} en \texttt{Develop} de nuevo. Una cosa nueva.
 \end{description}
-
 %\includegraphics[width=\textwidth]{Resources/01.01.02-01.png}
-\begin{figure}
+\begin{figure}[H]
 \noindent
-\includegraphics[width=0.95\textwidth]{Resources/Gitflow.png}
+\includegraphics[width=\textwidth]{Resources/Gitflow.png}
 \caption{\textit{Gitflow} o flujo de trabajo de Git}
 \end{figure}
 
-GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener, una wiki y una página web para tu proyecto, junto a otras funciones.
-Tanto el programa como este documento están disponibles en GitHub en el siguiente enlace. \url{https://github.com/daviddavo/InvProy}
+GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener una wiki y una página web para tu proyecto, junto a otras funciones.
+Una de sus funciones estrella es la visualización online del repositorio, con la que cualquier persona tiene acceso al código y los archivos antes de descargarlos. Otra función útil es el apartado de \textit{Issues}, en el que los usuarios de tu código pueden reportar los bugs del programa o aportar nuevas ideas en forma de "foro".
+Tanto el programa como este documento están disponibles en GitHub en los siguientes enlaces. \url{https://github.com/daviddavo/InvProy} y \url{https://github.com/daviddavo/InvProy-tex}
 
 \subsection{LaTeX}
 \LaTeX\space o, en texto plano, LaTeX, pronunciado con la letra griega 
-Ji ($\mathsf{\Chi}$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas e importar paquetes que cumplan tus necesidades. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la aparencia de éste.
-El código del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, pero he usado una IDE llamada \textbf{texmaker}.
+Ji ($\Chi$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas o código e importar paquetes que cumplan tus necesidades. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la apariencia de éste.
+El código del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, aunque he usado una IDE llamada \textbf{texmaker}.
 
 \subsection{Python}
-Es un lenguaje de programación interpretado (sólo traducen el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca por pretender una sintaxis más legible que la de el resto de lenguajes. Soporta tanto \gls{programacion imperativa} como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que me permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este caso, la versión de Python usada es la 3.4 en adelante.
+Es un lenguaje de programación interpretado (sólo traducen el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca por pretender una sintaxis más legible que la de el resto de lenguajes. Soporta tanto \gls{programacion imperativa} como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este caso, la versión de Python usada es la 3.4 en adelante.
 
 \subsection{Gtk+}
 Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de GUIs (Interfaz Gráfica de Usuario), también, al igual que Linux forma parte del proyecto GNU.
@@ -169,7 +173,7 @@ Atom es un editor de código multiplataforma con soporte para plugins escrito en
 
 \subsection{Wireshark}
 \label{wireshark}
-Wireshark es un \textit{packet sniffer} o analizador de paquetes. Te muestra los paquetes de red reales enviados y recibidos por una tarjeta de red, lo que facilita la creación del simulador de redes. También te separa las distintas partes de la encapsulación del paquete.
+Wireshark es un \textit{packet sniffer} o analizador de paquetes. Te muestra los paquetes de red reales enviados y recibidos por una tarjeta de red, lo que facilita la creación del simulador de redes. También te separa las distintas partes de la encapsulación del paquete, además te permite añadir distintos filtros para las distintas capas.
 
 \chapter{Redes Informáticas}
 \section*{Historia}
@@ -216,6 +220,39 @@ Se distinguen ocho tipos de topologías de red: \cite{bicsi-02}
 \item \textbf{Cadena:} se conecta cada ordenador en serie con el siguiente. Cada ordenador repite el mensaje al siguiente ordenador si éste no es su destino. Si se cierra el circuito se crea una topología en anillo, mientras que si se deja abierto se denomina topología linear.
 \end{description}
 
+\begin{figure}[H]
+\centering
+\begin{subfigure}[p]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Resources/Top/P2P.png}
+\caption{Topología P2P}
+\end{subfigure}
+\begin{subfigure}[p]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Resources/Top/Estrella.png}
+\caption{Topología en estrella}
+\end{subfigure}
+\begin{subfigure}[p]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Resources/Top/BUS.png}
+\caption{Topología en BUS}
+\end{subfigure}
+\begin{subfigure}[p]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Resources/Top/Anillo.png}
+\caption{Topología en Anillo}
+\end{subfigure}
+\begin{subfigure}[p]{0.3\textwidth}
+\includegraphics[width=\textwidth]{Resources/Top/Malla.png}
+\caption{Topología en malla}
+\end{subfigure}
+\begin{subfigure}[p]{0.2\textwidth}
+\includegraphics[width=\textwidth]{Resources/Top/Hibrida.png}
+\caption{Topología Híbrida}
+\end{subfigure}
+\begin{subfigure}[p]{0.4\textwidth}
+\includegraphics[width=\textwidth]{Resources/Top/Cadena.png}
+\caption{Topología en Cadena}
+\end{subfigure}
+\caption{Distintas topologías de red}
+\end{figure}
+
 \subsection{Nodos de una red}
 \begin{description}
 \item \textbf{\textit{Router} o enrutador:} es un dispositivo de red que reenvía los paquetes mirando en la capa 3 del modelo OSI (IP) y conecta dos redes.
@@ -246,18 +283,20 @@ Según el modelo OSI, los enlaces de red corresponden a las capas 1 y 2. El medi
 \end{description}
 
 \section{Paquetes de red}
-Un paquete de red es cada serie de bits en la que se divide la información enviada por una red. Según el modelo OSI, un paquete es estrictamente el PDU de la capa de red. El término corrector para el PDU de la capa 2, es un \textit{frame} o marco, y en la capa 4 se denomina segmento o datagrama. Por ejemplo, en éstandares de comunicación TCP/IP, un segmento TCP puede ser llevado por varios paquetes IP transportados por varios frames de Ethernet .Está formado por varios protocolos y en él se distinguen tres partes:
+Es cada serie de bits en la que se divide la información enviada por una red. Según el modelo OSI, un paquete es estrictamente el PDU de la capa de red. El paquete de red se encuentra encapsulado en la capa anterior del modelo OSI. Por ejemplo, en éstandares de comunicación TCP/IP, un segmento TCP puede ser llevado por varios paquetes IP transportados por varios frames de Ethernet .Está formado por varios protocolos y en él se distinguen tres partes:
 \begin{description}
 \item \textbf{Header} o cabecera: Datos e información sobre el paquete. (Dirección IP, MAC, versión, etc)
 \item \textbf{Payload} o carga: Los datos que se quieren transferir.
 \item \textbf{Trailer} o cola: En ocasiones es inexistente (como en UDP) pero suele ser un código de comprobación de errores.
 \end{description}
-\subsection{Ejemplo: Paquete de red}
-Para ahorrar espacio, he el paquete en octetos, y estos octetos los he transformado a hexadecimal. Vamos a analizar el paquete de red por el que se ha recibido una página web en HTML. El paquete completo (sin el texto HTML) sería \texttt{50465d57cff2f88e855b1ccb0800450004ad848f40003906793f25985812c0a8012a0050b3ead62571e9d5e84082801800f00b4f00000101080a4e65f57f013fe48a485454502f312e3120323030204f4b0d0a446174653a205475652c2033302041756720323031362031383a33323a353920474d540d0a5365727665723a204170616368650d0a4c6173742d4d6f6469666965643a204d6f6e2c2030312041756720323031362031383a30383a303220474d540d0a455461673a20226333312d353339303637623234363433382d677a6970220d0a4163636570742d52616e6765733a2062797465730d0a566172793a204163636570742d456e636f64696e670d0a436f6e74656e742d456e636f64696e673a20677a69700d0a436f6e74656e742d4c656e6774683a203832340d0a4b6565702d416c6976653a2074696d656f75743d322c206d61783d3130300d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a436f6e74656e742d547970653a20746578742f68746d6c0d0a0d0a1f8b0800000000000003d557cd6edb300c3e274fa17ad84eb365676db1758e81a13f5b81fe0c6d7ad8a9a02d26566b4b86a5a6cb73ed11f662a36caf689bb44937b4d87c712852a4f891a2bfc46b3bc7dba36f5f77596ecb22e9c7eec5a4187a250a095ed2a7250491f4193db195b6c06454430a17dac4bc95fbbdb8440b4c4189436f2af1bad2b5f558a695456587deb514361f0a9cca0cfd4678cba4925642e19b0c0a1c4641e8393f855497ccce2af263f1bbe599311eabb1187ac6ce0a34392239ce6b1c772b81b3e0375b1f30cdadadcc16e7257ccf840a52adadb135544ec874c9c774521faed1e812f97ab011842ef29de5a094aa09d641d1649ce5501ba40ccf467bfefb268335df7f7a16e765ebdaf7a904bc05bc1fa75acce8dd8bf3e80673e6332160aa8312c93072112da4053228e4440dbd8c00c7dabb5342d63db1ad17aeb7bafcb62e4e936ffc90efc43c4da8ccf932e343a0a8125635efb259d57c4fd725d805e624d5abe6276eeba20d1e0d78f8811c88470d47fb476c7fa9550c5d354f4ecf824a8c3d66a19eb8c6384f0b50975ec27615d61309869da0d2535732b3c54e82d3e02ce6902c8f2059568031436f0c6c0cfe5816e853245f938ecb7b0efe1297285c0197ede3a546db3f7f0839d1ccb6e56602d9be9aa2b1720299fcf943c5699dec9258e8adbb7e3a3c5d141e6d4483283c17505f06cd78ba8fed0e691c88eccdab68b0fe71e16eba1db95dbcfdc0a9fea8089916f80cf00f36ff35f8079b2bc3bf70f37f82fe260fdfbd6cf32f84dd6ba1db0cdf456103dafc38f92ced97abf48f609b489b5fa50f03d7eb3d11b2f5d5203b5a7d8a1e82c01a160fd2ee4bd38ccfd6eed9e6e73c123db774c7efc1a7d1eee9a8dd3dafa5823fa4fadd1e55ad6798d9a63fe47c7fb88d708fc5b4156c880b5101d9f0014ea1be92abe5ad327f94e51d425b9ede1bb7a179c4ec06a3c7ba8758d452a8165ea55530f389a4bdc015a35feeb3df09c41389bb55949ab12e212c537226f456cc2bc7ea849c3621dc2548629d5e50e64c8085db24a3a198505585ccc04aad78b3dcd26d2f0ac3d7c432d10dd8df9274ec50115754c682cad04588d6dd49db08f48302b7476cc9684742896c367f107e01774a942c310c0000}-
-La primera parte, \texttt{50465d57cff2f88e855b1ccb0800}, sería la capa de Ethernet. Indicando 48 primeros bits la dirección MAC de destino, y los 48 siguientes, la de origen. Además, los últimos dos octetos (0800) nos indican que se trata de un paquete IPv4.
+\begin{figure}[H]
+\noindent
+\centering
+\includegraphics[width=\textwidth]{Resources/Encapsulación OSI.pdf}
+\caption{Encapsulación de red. El Datagrama IP es lo considerado 'Paquete de red'}
+\end{figure}
 
-Ahora, procedemos a analizar la cabecera IP del paquete,
-\texttt{450004ad848f40003906793f25985812c0a8012a}. El primer octeto (\texttt{45}) nos indica que se trata de la versión 4 del protocolo IP, y es de 20 bytes de largo. Los dos siguientes octetos indican la longitud total del paquete: 1197 bits. 
+\subsection{Ejemplo: Paquete de red}
 
 \section{Protocolos}
 Un protocolo de comunicación es un conjunto de reglas para intercambiar información entre enlaces de red. En una pila de protocolos, cada protocolo cubre los servicios del protocolo de la capa anterior. Por ejemplo, un e-mail se envía mediante el protocolo \acr{POP3} en la capa de Aplicación, sobre TCP en la capa de transporte, sobre IP en la capa de Red, sobre Ethernet para la capa \textit{Data Link}. 
@@ -272,7 +311,7 @@ También conocido como \textit{Internet Protocol Suite}, y más conocido como TC
 
 \subsubsection{Aplicación}
 Es la capa en la que se envían los datos a otras aplicaciones en otro ordenador o en el mismo. Las aplicaciones hacen uso de las capas inferiores para asegurarse que los datos lleguen a su destino. Algunos de los protocolos más usados son:
-\begin{description}
+\begin{itemize}
 \item \textbf{HTTP} \textit{Hypertex Transfer Protocol:} Protocolo de Transferencia de Hipertexto. Es el protocolo base de la World Wide Web. Se trata de texto estructurado que usa hiperenlaces entre nodos que también contienen texto. El cliente, al entrar en una \acr{url}, el agente de usuario (navegador) envía al servidor una petición de la página web, mediante HTTP. El servidor, envía como respuesta un documento HTML u otro recurso.
 \item \textbf{DNS} \textit{Domain Name System:} Sistema de Nombres de Dominio. Un servidor DNS almacena una base de datos distribuida y jerárquica con información sobre el nombre del dominio y la dirección IP a la que está vinculada. Al intentar conectar a  \texttt{http://www.4chan.org}, el cliente pregunta al servidor cual es la dirección IP asociada a esa dirección, y se conecta a tal IP, en este caso 104.16.66.203. Para evitar tener que consultar continuamente con el servidor, se almacenan en una \gls{cache} en el cliente.
 \item \textbf{TLS/SSL} \textit{Transport Layer Security}, y su predecesor \textit{Secure Sockets Layer}. <VER APARTADO DE SEGURIDAD>
@@ -281,23 +320,23 @@ Es la capa en la que se envían los datos a otras aplicaciones en otro ordenador
 \item \textbf{FTP} \textit{File Transfer Protocol:} Protocolo de Transferencia de Archivos, te permite enviar archivos entre un cliente y un servidor. El protocolo TLS aplicado a FTP se denomina FTPS. Te permite acceder, mediante un usuario y contraseña, o de forma anónima, a un sistema de archivos jerárquico con nombres de archivo codificados. Utiliza el puerto 21 de forma predeterminada.
 \item \textbf{SSH} \textit{Secure Shell:} Terminal seguro. Es un protocolo de red criptográfico que permite a un cliente conectarse a un servidor y ejecutar comandos de terminal como un usuario (conociendo el usuario y contraseña). Además, permite la creación de túneles, lo que permite asegurar cualquier aplicación a través de SSH, y el acceso a puertos bloqueados por el cortafuegos en el cliente. La mayoría de servidores de SSH incluyen un servidor de SFTP, el protocolo FTP con SSH aplicado.
 \item \textbf{IMAP} \textit{Internet Message Access Protocol:} Protocolo de acceso a mensajes de Internet. Usa una conexión TCP/IP para conectarse a un servidor de e-mail y ver el contenido de los mensajes, sin necesidad de descargarlos. A diferencia de POP, te permite usar una bandeja de entrada desde varios clientes.
-\end{description}
+\end{itemize}
 DHCP, DNS, FTP, HTTP, IMAP, POP, TLS/SSL, SMTP, RIP, SSH, Telnet
 \subsubsection{Transporte}
-\begin{description}
+\begin{itemize}
 \item \textbf{TCP} \textit{Transmission Control Protocol:} Protocolo de Control de Transmisión. Se aplica a los paquetes para administrarles un orden y un sistema de comprobación de errores. Con todas las funcionalidades, ocupa bastante espacio, lo que aumenta la latencia, aunque es más fiable para el envío de la mayoría de los datos.
 \item \textbf{UDP} \textit{User Datagram Protocol:} Es un protocolo muy minimalista. A diferencia del TCP, no garantiza que los paquetes lleguen, o lleguen en orden, o protección ante duplicados. Reduce mucho la latencia ya que no usa \textit{handshaking}. Por ello es usado por ejemplo para \textit{streamings} de televisión o videollamadas.
-\end{description}
+\end{itemize}
 \subsubsection{Red}
-\begin{description}
+\begin{itemize}
 \item \textbf{IP} \textit{Internet Protocol}: Protocolo de Internet. Envía datagramas o paquetes de red a través de redes. Tiene una función de enrutamiento que es la que permite la interconexión de redes, y la existencia de Internet. Es un protocolo que encapsula el paquete definiendo en el \textit{header} (cabecera) las direcciones IP del servidor y el cliente, o remitente y destinatario. La versión usada actualmente es IPv4 desarrollado en 1981, pero poco a poco se va abriendo paso la versión IPv6. La mayor diferencia es que la versión cuatro cuenta con direcciones de 32 bits lo que permite tan sólo unas 4.3 millardos ($\mathsf{2^{32}}$) de direcciones, mientras que la versión 6 tiene direcciones de 128 bits, lo que permite más de 340 sextillones ($\mathsf{2^{128}}$)de direcciones
 \item \textbf{ICMP} \textit{Internect Control Message Protocol}: Es un protocolo que no es usado por aplicaciones de usuario (a excepción de herramientas de diagnóstico como ping o traceroute). Lo usan los dispositivos de red, como los routers, para enviar notificaciones o mensajes de error indicando que un servicio no está disponible.
-\end{description}
+\end{itemize}
 \subsubsection{Link}
-\begin{description}
+\begin{itemize}
 \item \textbf{ARP} \textit{Address Resolution Protocol:} Protocolo de resolución de direcciones. Es un protocolo que convierte direcciones de la capa de Red a la capa de Enlace (dir. IP a dir. MAC). 
 %\item \textbf{MAC} \textit{Media access control}: Control de acceso al medio. 
-\end{description}
+\end{itemize}
 ARP, MAC, ETHERNET
 
 \section{Seguridad de redes}
@@ -385,8 +424,6 @@ Descargas $ python3 Main.py
 En el caso de querer usar el programa con una interfaz gráfica, vamos con nuestro explorador de archivos a la carpeta donde queramos descargarlo. Abrimos una terminal y descargamos el programa con \mintinline{bash}|git clone https://github.com/daviddavo/InvProy.git|. Luego entramos en la carpeta y ejecutamos el archivo \texttt{Main.py}
 \section{Uso del programa}
 
-
-
 \glsaddall
 \renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
 \printglossary[style=mcolindex, title=Glosario y acrónimos, toctitle=Glosario y acrónimos]
@@ -426,7 +463,7 @@ Gibibyte/s & GiB/s & $\mathsf{2^{30}}$ Byte/s \\
 Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 \end{tabularx}
 
-%\include{AnCode}
+\include{AnCode}
 
 \newpage
 \thispagestyle{empty}
