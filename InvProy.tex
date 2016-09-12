@@ -13,7 +13,8 @@
 \usepackage{uarial}
 
 \usepackage[xindy, nomain, acronym, nonumberlist, nopostdot, toc]{glossaries}
-\usepackage{glossary-mcols}
+%\usepackage{glossary-mcols}
+\usepackage{glossary-custom}
 
 \usepackage[ampersand]{easylist} %Cosas de listas
 
@@ -44,6 +45,7 @@ backend=biber
 
 \usepackage{caption}%Para insertar cosillas
 \usepackage{subcaption}
+\usepackage{sidecap}
 
 \usepackage[normalem]{ulem}
 
@@ -222,35 +224,7 @@ Se distinguen ocho tipos de topologías de red: \cite{bicsi-02}
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}[p]{0.24\textwidth}
-\includegraphics[width=\textwidth]{Resources/Top/P2P.png}
-\caption{Topología P2P}
-\end{subfigure}
-\begin{subfigure}[p]{0.24\textwidth}
-\includegraphics[width=\textwidth]{Resources/Top/Estrella.png}
-\caption{Topología en estrella}
-\end{subfigure}
-\begin{subfigure}[p]{0.24\textwidth}
-\includegraphics[width=\textwidth]{Resources/Top/BUS.png}
-\caption{Topología en BUS}
-\end{subfigure}
-\begin{subfigure}[p]{0.24\textwidth}
-\includegraphics[width=\textwidth]{Resources/Top/Anillo.png}
-\caption{Topología en Anillo}
-\end{subfigure}
-\begin{subfigure}[p]{0.3\textwidth}
-\includegraphics[width=\textwidth]{Resources/Top/Malla.png}
-\caption{Topología en malla}
-\end{subfigure}
-\begin{subfigure}[p]{0.2\textwidth}
-\includegraphics[width=\textwidth]{Resources/Top/Hibrida.png}
-\caption{Topología Híbrida}
-\end{subfigure}
-\begin{subfigure}[p]{0.4\textwidth}
-\includegraphics[width=\textwidth]{Resources/Top/Cadena.png}
-\caption{Topología en Cadena}
-\end{subfigure}
-\caption{Distintas topologías de red}
+\includegraphics[width=\textwidth]{Resources/Top/Topdered.pdf}
 \end{figure}
 
 \subsection{Nodos de una red}
@@ -292,7 +266,7 @@ Es cada serie de bits en la que se divide la información enviada por una red. S
 \begin{figure}[H]
 \noindent
 \centering
-\includegraphics[width=\textwidth]{Resources/Encapsulación OSI.pdf}
+\includegraphics[width=\textwidth]{Resources/Encapsulación_OSI.pdf}
 \caption{Encapsulación de red. El Datagrama IP es lo considerado 'Paquete de red'}
 \end{figure}
 
@@ -382,15 +356,14 @@ Un cortafuegos es un software que supervisa el tráfico de entrada y salida de d
 \section{Instalación}
 \subsection{Ubuntu / Debian}
 Tan sólo se debe descargar el paquete del programa. Para ello usa apt-get:
-\mint{bash}|Descargas $ sudo apt-get install invproy|
+\mint{bash}|~ $ sudo apt-get install invproy|
 
-En caso de no estar en los repositorios, hay que hacerlo manualmente:
+En caso de no estar en los repositorios, hay que hacerlo manualmente. Descarga el paquete de \url{https://github.com/daviddavo/InvProy/releases/latest}. Una vez descargado, abre una terminal donde se haya descargado el paquete e instálelo.
 \begin{minted}{bash}
-Descargas $ wget <url>
-Descargas $ sudo dpkg -i InvProy.deb
-Descargas $ invproy
+Descargas $ sudo dpkg -i invproy_x.y.z_all.deb
 \end{minted}
-Para iniciar el programa también puedes usar la lista de programas.
+Donde `x', `y', y `z' son la versión del paquete descargado.
+Para iniciar el programa debes usar la lista de programas de tu escritorio.
 
 \subsection{Arch Linux}
 Puedes encontrar el programa en el AUR <ENLACE>, pero si nunca has instalado nada desde el AUR, debes seguir el siguiente procedimiento.
@@ -423,6 +396,50 @@ Descargas $ python3 Main.py
 
 En el caso de querer usar el programa con una interfaz gráfica, vamos con nuestro explorador de archivos a la carpeta donde queramos descargarlo. Abrimos una terminal y descargamos el programa con \mintinline{bash}|git clone https://github.com/daviddavo/InvProy.git|. Luego entramos en la carpeta y ejecutamos el archivo \texttt{Main.py}
 \section{Uso del programa}
+Nota: Esta guía ha sido creada usando la versión v0.2.3-alpha, por lo que algunos apartados pueden haber cambiado en versiones posteriores.
+
+\begin{figure}[H]
+\noindent\centering
+\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-07-134612_1000x700_scrot.png}
+\caption[Interfaz de InvProy Alpha]{Interfaz de InvProy Alpha. Al usar Gtk+, los temas se pueden cambiar, así que la apariencia del programa puede ser distinta dependiendo del tema de escritorio que estés usando.}
+\end{figure}
+\newenvironment{mydescr}
+{ \begin{enumerate}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}     }
+{ \end{enumerate}                  } 
+\begin{mydescr}
+\item [1-5.] También se puede activar con las letras Q, W, E, R, T; respectivamente. Los botones, te permiten (de izquierda a derecha): colocar un router, colocar un switch, conectar dos objetos, colocar un ordenador y colocar un hub.
+\item [6.] Abre el menú de "Información de dispositivos", que proporciona información como la dirección IP y MAC, el nombre, o los dispositivos a los que está conectado. (Ver figura \ref{dispinfo}
+\item [7.] Te permite enviar un ping de un ordenador a otro (El botón funciona a partir de v0.3).
+\item [8.] Abre el menú de archivo, en el que puedes cargar un archivo, crear uno nuevo, guardarlo, y cerrar el programa.
+\item [9.] Es la ventana donde puedes colocar los objetos. Puedes moverte a través de ella y en el menú de `Ver' puedes cambiar el que se vea la rejilla de fondo.
+\item [10.] Aquí se encuentra una barra con información sobre el funcionamiento actual del programa.
+\end{mydescr}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Resources/Screenshots/2016-09-07-140130_728x437_scrot.png}
+\caption{Menú de \textbf{Información de Dispositivos} junto a una red de topología de malla \label{dispinfo}}
+\end{figure}
+
+\subsection{Configuración}
+Al no haber una ventana de configuración del programa, la configuración debe hacerse de forma manual editando el archivo \texttt{Config.ini}. Este es un archivo de texto sin formato en el que se le asigna un valor a cada variable.
+\begin{easylist}[itemize]
+\ListProperties(Style*=)
+& \texttt{wres} y \texttt{hres}: El tamaño (en píxeles) del ancho y el alto de la ventana principal.
+& \texttt{viewport-sqres}: El tamaño en píxeles del lado de los cuadrados de la rejilla.
+& \texttt{viewport-wres} y \texttt{viewport-hres}: El número de cuadrados que tendrá de alto y de lancho la rejilla.
+& \texttt{cable-color}: Color por defecto de los cables en HTML.
+& \texttt{start-centered}: Al iniciar el programa, iniciar en el centro de la rejilla en lugar de arriba a la izquierda.
+& \texttt{revealer-show-default}: (True o False). Mostrar por defecto la ventana con la información sobre los dispositivos.
+& \texttt{respack}: Directorio del ``Pack de recursos"
+& \texttt{routing-ttl}: Tiempo de vida en segundos de las entradas en la tabla de redireccionamiento de los switches.
+\end{easylist}
+
+\subsection{Dispositivos}
+Existen cuatro tipos dispositivos: los Computadores, que tienen la mayor programación; los Switches, que se encargan de manejar los paquetes de red; los Hubs, que son como los Switches, pero reenvían los paquetes por todos sus puertos y los Routers, que tan sólo existen de forma visual, pero no tienen ninguna función de momento.
+
 
 \glsaddall
 \renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
