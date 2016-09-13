@@ -13,8 +13,8 @@
 \usepackage{uarial}
 
 \usepackage[xindy, nomain, acronym, nonumberlist, nopostdot, toc]{glossaries}
-%\usepackage{glossary-mcols}
-\usepackage{glossary-custom}
+\usepackage{glossary-mcols}
+%\usepackage{glossary-custom}
 
 \usepackage[ampersand]{easylist} %Cosas de listas
 
@@ -78,7 +78,8 @@ backend=biber
 \DeclareFontShape{EU1}{Inconsolata(0)}{bx}{n}{<->ssub*Inconsolata(0)/m/n}{}
 
 %Document
-\begin{document}
+\begin{document} %#######################
+
 \makeatletter
 \begin{titlepage}
 \centering
@@ -101,8 +102,10 @@ Julio Sánchez
 \pagenumbering{gobble}
 \end{titlepage}
 \clearpage
+\pagenumbering{Roman}
 
 \tableofcontents
+\listoffigures
 \newpage{}
 \pagenumbering{arabic}
 \setcounter{chapter}{-1}
@@ -401,7 +404,7 @@ Nota: Esta guía ha sido creada usando la versión v0.2.3-alpha, por lo que algu
 \begin{figure}[H]
 \noindent\centering
 \includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-07-134612_1000x700_scrot.png}
-\caption[Interfaz de InvProy Alpha]{Interfaz de InvProy Alpha. Al usar Gtk+, los temas se pueden cambiar, así que la apariencia del programa puede ser distinta dependiendo del tema de escritorio que estés usando.}
+\caption[Interfaz de InvProy Alpha]{Interfaz de InvProy Alpha. Al usar Gtk+, los temas se pueden cambiar, así que la apariencia del programa puede ser distinta dependiendo del tema de escritorio que estés usando. \footnote{No aparece el Título de la ventana, debido a que en mí escritorio lo tengo desactivado, pero el título y los botones de cerrar y minimizar sí aparecerían con otra configuración de escritorio.}}
 \end{figure}
 \newenvironment{mydescr}
 { \begin{enumerate}
@@ -423,6 +426,10 @@ Nota: Esta guía ha sido creada usando la versión v0.2.3-alpha, por lo que algu
 \caption{Menú de \textbf{Información de Dispositivos} junto a una red de topología de malla \label{dispinfo}}
 \end{figure}
 
+Para incluir un objeto en la rejilla, se hace click en el icono del objeto y luego  en el lugar donde se quiera poner. Cuando tenemos dos objetos podemos conectarlos si hacemos click primero en el icono del cable, luego en un objeto y después en otro.
+
+Para poder enviar un paquete entre dos Computadores, necesitaremos que estén conectados mediante nodos (Hubs o Switches).
+
 \subsection{Configuración}
 Al no haber una ventana de configuración del programa, la configuración debe hacerse de forma manual editando el archivo \texttt{Config.ini}. Este es un archivo de texto sin formato en el que se le asigna un valor a cada variable.
 \begin{easylist}[itemize]
@@ -438,17 +445,24 @@ Al no haber una ventana de configuración del programa, la configuración debe h
 \end{easylist}
 
 \subsection{Dispositivos}
-Existen cuatro tipos dispositivos: los Computadores, que tienen la mayor programación; los Switches, que se encargan de manejar los paquetes de red; los Hubs, que son como los Switches, pero reenvían los paquetes por todos sus puertos y los Routers, que tan sólo existen de forma visual, pero no tienen ninguna función de momento.
+Existen cuatro tipos dispositivos: los Computadores, que tienen la mayor programación; los Switches, que se encargan de manejar los paquetes de red; los Hubs, que son como los Switches, pero reenvían los paquetes por todos sus puertos y los Routers, que tan sólo existen de forma visual, pero no tienen ninguna función de momento. Por lo que sólo vamos a hablar de los Switches y los Ordenadores.
+
+Los ordenadores tienen una función especial que es la de reenviar los paquetes de red. Para ello, en el menú emergente que aparece al hacer click derecho en el objeto, hacemos click en la ventana de ping. Para que el paquete llegue al otro computador, ambos deben tener una dirección IP, y estar conectados a la misma red (Ver Fig. \ref{fig:pingwindow} y Fig. \ref{fig:pingwindow2}).
 
 
 \glsaddall
 \renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
+\renewglossarystyle{mcolindex}{%
+  \setglossarystyle{index}%
+  \renewenvironment{theglossary}%
+    {%
+     \begin{multicols}{\glsmcols}
+     \setlength{\parindent}{0pt}%
+     \setlength{\parskip}{0pt plus 0.3pt}%
+     \renewcommand\item{\par\hangindent20pt}}%
+    {\end{multicols}}%
+}
 \printglossary[style=mcolindex, title=Glosario y acrónimos, toctitle=Glosario y acrónimos]
-
-\nocite{*}
-\printbibliography
-
-\listoffigures
 
 \appendix
 \chapter{Unidades de transferencia de datos}
@@ -480,7 +494,47 @@ Gibibyte/s & GiB/s & $\mathsf{2^{30}}$ Byte/s \\
 Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 \end{tabularx}
 
-\include{AnCode}
+\chapter{Capturas de pantalla del programa}
+\noindent\begin{figure}[H]
+\centering
+\begin{minipage}{0.3\textwidth}
+	\centering
+	\includegraphics[scale=0.6]{Resources/Screenshots/2016-09-12-172627_1000x700_scrot.png}
+	\captionof{figure}{Captura: Click derecho en un computador}	
+\end{minipage}
+\hspace*{0.01\textwidth}
+\begin{minipage}{0.3\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-12-225752_233x131_scrot.png}
+	\caption[Captura: Ventana para enviar ping.]{Captura: Ventana para enviar ping. Está en rojo porque la IP introducida no es válida.}
+	\label{fig:pingwindow}
+\end{minipage}
+\hspace*{0.01\textwidth}
+\begin{minipage}{0.3\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-12-230329_233x131_scrot.png}
+	\caption{Captura: Igual que \ref{fig:pingwindow}, pero con una IP válida.}
+	\label{fig:pingwindow2}
+\end{minipage}
+
+\centering
+\begin{minipage}{0.5\textwidth}
+	\centering
+	\includegraphics[scale=0.6]{Resources/Screenshots/2016-09-12-230428_269x225_scrot.png}
+	\caption{Captura: Ventana con la tabla que poseé el Switch.}
+	\label{fig:switchingtable}
+\end{minipage}
+
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-12-230644_1000x700_scrot.png}
+\caption{Captura: Paquetes viajando por una red de ejemplo.}
+\end{figure}
+
+%\include{AnCode}
+
+\nocite{*}
+\printbibliography[heading=bibintoc]
 
 \newpage
 \thispagestyle{empty}
