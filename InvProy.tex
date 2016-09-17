@@ -1,6 +1,6 @@
 \documentclass[a4paper, 11pt]{report} %twoside
 \title{Programación, Redes y Código Libre}
-\author{David Davó}
+\author{David Davó Laviña}
 \date{\today{}}
 
 %%Packages
@@ -25,7 +25,7 @@
 \usepackage[usenames,svgnames,table]{xcolor} %Para darle color
 \usepackage{dirtytalk} %Usado para citar
 \usepackage{fvextra}
-\usepackage{csquotes} %lo mismo qu eel anterior pero con estilo
+\usepackage{csquotes} %lo mismo que el anterior pero con estilo
 \usepackage[spanish]{babel} %Hace que el idioma de los defaults esté en Español
 \usepackage{fancyhdr} %Para poner encabezados y pies de página
 %De la bibliografía y las citas.
@@ -76,6 +76,10 @@ backend=biber
 %%% Algunas macros
 \newcommand{\acr}[1]{\acrshort{#1} (\acrlong{#1})}
 \DeclareFontShape{EU1}{Inconsolata(0)}{bx}{n}{<->ssub*Inconsolata(0)/m/n}{}
+\usepackage{setspace}
+%\onehalfspacing
+%\linespread{1.25}
+\linespread{1.5}
 
 %Document
 \begin{document} %#######################
@@ -107,48 +111,68 @@ Julio Sánchez
 \tableofcontents
 \listoffigures
 \newpage{}
-\pagenumbering{arabic}
-\setcounter{chapter}{-1}
+\setlength{\parskip}{5pt plus4pt minus3pt}
 
-\chapter{Introducción??}
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción}
 Internet, El Internet o La Internet consiste en una caja negra misteriosa con un indicador LED rojo que parpadea y contiene todo el poder del mundo en su interior. El internet no tiene cables, es muy ligero e increíblemente pequeño. Internet se encuentra en lo alto del Big Ben (donde hay mejor recepción) y antes de sacarlo de allí debe ser desmagnetizado por un Gran Maestro del Internet (\textit{Elders of the Internet})como Stephen Hawking, Linus Torvalds o Richard Stallman. \cite{ITCr}
 
+\include{Abstract}
+
+\chapter*{Agradecimientos}
+
+\setcounter{chapter}{0}
 \chapter{Programación y código libre}
+\pagenumbering{arabic}
 
 \subsection*{Propuesta}
-El objetivo es el desarrollo de un software programado en Python de código libre con el que los alumnos puedan aprender tanto sobre redes como de programación en Python.
+El objetivo es el desarrollo abierto  y colaborativo a largo plazo de un software programado en Python de código libre con el que los alumnos puedan aprender tanto sobre redes como de programación en Python. Debe soportar los protocolos más utilizados en la actualidad y permitir una gran personalización por los usuarios. Además debe ser compatible con Ubuntu, MaX y Windows, y ser de fácil instalación para el alumnado. Debe ser intuitivo y fácil de usar e incluir una gran documentación.
 
 \section{Herramientas}
 El programa ha sido creado con herramientas de software libre. Según la Free Software Foundation
 \say{«Software libre» es el software que respeta la libertad de los usuarios y la comunidad. A grandes rasgos, significa que los usuarios tienen la libertad de ejecutar, copiar, distribuir, estudiar, modificar y mejorar el software. Es decir, el «software libre» es una cuestión de libertad, no de precio. Para entender el concepto, piense en «libre» como en «libre expresión», no como en «barra libre». En inglés a veces decimos «libre software», en lugar de «free software», para mostrar que no queremos decir que es gratuito.}
 --\cite{FSF-Ph}
 
-Todas las herramientas citadas a continuación, son o están basadas en Software Libre.
+La idea de Software Libre nace con Richard Stallman en 1983, cuando anuncia la creación del Proyecto GNU (Sistema Operativo libre alternativo a Unix y BSD). En 1985 se publica el Manifiesto GNU en el que se declara la filosofía GNU, la definición de software libre y algunas ideas sobre copyleft, más tarde ese año se crea la Fundación del Software Libre (FSF por sus siglas en inglés).
+Al sistema operativo GNU aún le faltaba una pieza bastante grande, a lo que en 1991 Linus Torvals lanza el Kernel Linux, que licenció con la licencia GNU General Public License (GPL)[Ver anexo \ref{gnugpl}]. A partir de aquí comenzaron a salir nuevas licencias, como la licencia Apache, o la del MIT. Algunos ejemplos de software libre son GNU/Linux, emacs, LaTeX, GIMP, GNOME, o los servidores Apache y las librerías MySQL, usadas en todo el mundo.
+
+No debemos confundir `Software Libre' con `Código abierto', ya que, aunque el código pueda ser leído por todo el mundo no significa que el resto de personas tengan licencia para redistribuir y/o editar el código. Software libre es el que cumple las cuatro libertades del software libre.
+Según Richard Stallman las cuatro libertades son estas: \cite{FSF-talk1, FSF-talk2}
+\begin{easylist}[itemize]
+\ListProperties(Style*=$\bullet$ , Style2*=--)
+& \textbf{Libertad 0:} La libertad de ejecutar el programa cuando quieras, para cualquier propósito.
+& \textbf{Libertad 1:} La libertad de estudiar cómo el programa funciona, y la posibilidad de cambiarlo para que se ejecute como tú deseas. (Acceso al código del programa).
+& \textbf{Libertad 2:} La libertad de redistribuir las copias para ayudar a tus colegas.
+& \textbf{Libertad 3:} La libertad de distribuir copias de tu versión modificada a otras personas.
+\end{easylist}
+
+Una de las grandes ventajas del software libre, aparece en la educación. Es muy útil para aprender ya que, si un alumno tiene curiosidad sobre el programa que está usando, puede consultar el código fuente en internet. Además, al ser licencias gratuitas, se puede destinar ese presupuesto a otras áreas como el hardware o el profesorado. También es útil en el desarrollo, pues cualquier programador puede solucionar un error que afecta a todos los usuarios.
+
+A continuación, citaré las herramientas que se han usado para la creación tanto del programa como de este documento.
 
 \subsection{GNU/Linux}
-También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \gls{gnu}, ambos softwares son libres y de código abierto. Está basado en, y es uno de los ejemplos de, el código libre. Es el sistema operativo más utilizado, ya que la mayoría de los servidores lo usan, y además, otros sistemas operativos como Android están basado en éste.
+También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \acrshort{gnu} (Acrónimo recursivo \textit{GNU's Not Unix}, o GNU no es Unix). Es el gran ejemplo por excelencia del Software Libre. Es el sistema operativo más utilizado, ya que es usado en la mayoría de los servidores, y además, otros sistemas operativos como Android están basado en éste.
 
 \subsubsection{Distros}
-Son las distintas distribuciones de software de GNU/Linux. Es decir, un conjunto de software preconfigurado y compilado formado por el Sistema Operativo GNU, el kernel de Linux y otros tantos paquetes, dependiendo de los usuarios a los que esté dirigida esta. Pueden crearse con el soporte de una empresa; como Ubuntu (\sout{Amazon} Canonical Ltd.), openSUSE (Novell) o Fedora (Red Hat); y otras mantenidas por comunidades como Debian, Gentoo o Arch Linux.
+Son las distintas distribuciones de software de GNU/Linux. Es decir, un conjunto de software preconfigurado y compilado formado por el Sistema Operativo GNU, el kernel de Linux y otros tantos paquetes, dependiendo de los usuarios a los que esté dirigida esta. Pueden crearse con el soporte de una empresa; como Ubuntu (Canonical Ltd.), openSUSE (Novell) o Fedora (Red Hat); y otras mantenidas por comunidades como Debian, Gentoo o Arch Linux.
 
 He usado dos distros diferentes. Una llamada \texttt{Arch Linux}, que es \textit{rolling release} (No tiene "versiones", sino que siempre se va actualizando con los últimos paquetes disponibles, por lo que siempre está actualizado) y otra es Ubuntu 16, basado en Debian, por lo que está bastante menos actualizado y se han tenido que hacer correcciones en el programa para que pueda funcionar con versiones más antiguas de las \glspl{dependencia}.
 
 \subsection{Git y Github}
 Git es un software diseñado por Linus Torvalds con el que puedes crear un Sistema de
-Control de Versiones o VCS (\textit{Version Control System}). Este programa te permite
+Control de Versiones (VCS [\textit{Version Control System}]). Este programa te permite
 de forma sencilla volver a una versión o \textit{commit} anterior del programa, así
 como enviarlas a un \gls{repositorio} remoto e incluso publicarlas en línea. Su punto fuerte
 son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama
-\textit{master} (principal) siempre pueda ser usada. Para ello creamos una nueva rama para cada nueva funcionalidad del programa. La implementación del nuevo código a otra rama se denomina \textit{merge}. Otra de las funcionalidades que implementa es clone, que te permite descargar un proyecto si tienes la URL del \gls{repositorio} git.
+\textit{master} (principal) siempre sea funcional. Para ello creamos una nueva rama para cada nueva funcionalidad del programa. La implementación del nuevo código a otra rama se denomina \textit{merge}. Otra de las funcionalidades que implementa es clone, que te permite descargar un proyecto si tienes la URL del \gls{repositorio} git.
 
-Para usar Git, se suele recomendar seguir un \textit{Git workflow} o flujo de trabajo de Git. El más común es el basado en 4 nuevas ramas, a parte de \texttt{master}.
+Para usar Git, se suele recomendar seguir un \textit{Git workflow} o flujo de trabajo de Git, en ocasiones denominado \textit{gitflow}. El más común es el basado en 4 nuevas ramas, a parte de \texttt{master}.
 \begin{description}
 \item \textbf{\textit{Develop:}} es la rama de desarrollo. Se van aplicando las nuevas funcionalidades a esta rama, para luego convergerlas en la rama \texttt{Release} que se va a publicar.
 \item \textbf{\textit{Release:}} una vez hayamos terminado en la rama de desarrollo, se converge \texttt{Develop} con \texttt{Release} y se procede a solucionar los bugs que se vayan descubriendo. Cuando se hayan solucionado todos los bugs y la siguiente versión del programa esté disponible para el público, se hace \texttt{merge} en \texttt{Develop} y en \texttt{Master}, además de aplicarle al \texttt{commit} una etiqueta con el nombre de la versión. (2.2.1, por ejemplo).
-\item \textbf{\textit{Hotfix}:} Es una rama dedicada a solventar los \glspl{bug} que un usuario descubra en una versión ya lanzada de la aplicación. Cuando un usuario descubre un bug, se crea una nueva rama a partir de la última versión de master, se soluciona el bug en esa rama y luego se vuelve a hacer \texttt{merge} en master.
-\item \textbf{\textit{Feature <x>}:} Donde <x> el nombre de la funcionalidad. Es una rama dedicada a una nueva funcionalidad, se crea a partir de \texttt{Develop}, y una vez terminada, se hace \texttt{merge} en \texttt{Develop} de nuevo. Una cosa nueva.
+\item \textbf{\textit{Hotfix}:} Es una rama dedicada a solventar los \glspl{bug} que un usuario descubra en una versión ya lanzada de la aplicación. Cuando un usuario descubre un bug, se crea una nueva rama a partir de la última versión de master, se soluciona el bug en esa rama y luego se vuelve a hacer \texttt{merge} en master y develop.
+\item \textbf{\textit{Feature <x>}:} Donde <x> el nombre de la funcionalidad. Es una rama dedicada a una nueva funcionalidad, se crea a partir de \texttt{Develop}, y una vez terminada, se hace \texttt{merge} en \texttt{Develop} de nuevo.
 \end{description}
-%\includegraphics[width=\textwidth]{Resources/01.01.02-01.png}
 \begin{figure}[H]
 \noindent
 \includegraphics[width=\textwidth]{Resources/Gitflow.png}
@@ -162,30 +186,29 @@ Tanto el programa como este documento están disponibles en GitHub en los siguie
 \subsection{LaTeX}
 \LaTeX\space o, en texto plano, LaTeX, pronunciado con la letra griega 
 Ji ($\Chi$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas o código e importar paquetes que cumplan tus necesidades. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la apariencia de éste.
-El código del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, aunque he usado una IDE llamada \textbf{texmaker}.
+El código del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, aunque he usado una \acrshort{IDE} llamada \textbf{texmaker}.
 
 \subsection{Python}
-Es un lenguaje de programación interpretado (sólo traducen el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca por pretender una sintaxis más legible que la de el resto de lenguajes. Soporta tanto \gls{programacion imperativa} como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este caso, la versión de Python usada es la 3.4 en adelante.
+Es un lenguaje de programación interpretado (sólo se traduce  el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca porque sus programas poseen una sintaxis más legible que la de el resto de lenguajes. Soporta tanto \gls{programacion imperativa} como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este caso, la versión de Python usada es la 3.4 en adelante.
 
 \subsection{Gtk+}
-Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de GUIs (Interfaz Gráfica de Usuario), también, al igual que Linux forma parte del proyecto GNU.
+Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de Interfaces Gráficas de Usuario (\acrshort{GUI}), también, al igual que Linux forma parte del proyecto GNU.
 
 Contiene las bibliotecas de GTK, GDK, ATK, Glib, Pango y Cairo; de las que he usado fundamentalmente GTK para crear la interfaz principal del programa; GDK al usarlo como intermediario entre los gráficos de bajo nivel y alto nivel y Cairo para la creación de algunos de los elementos gráficos del programa.
 
-Al usar este conjunto de librerías, he conseguido que sólo sea necesario descargar una dependencia del programa, que además suele venir instalada en la mayoria de distros de Linux. Por ejemplo en una instalación limpia de Ubuntu 16 (sin descargar paquetes adiccionales) el programa funciona perfectamente. Para usarlo en Python se ha tenido que importar la libreria de PyGtk, que también suele venir incluida en la distribución.
-\subsection{Atom}
-Atom es un editor de código multiplataforma con soporte para plugins escrito en Node.js, también tiene soporte para Git. También es un programa de código libre haciendo uso de la licencia MIT.
+Al usar este conjunto de librerías, se ha conseguido que sólo sea necesario descargar una dependencia del programa, que además suele venir instalada en la mayoria de distros de Linux. Por ejemplo en una instalación limpia de Ubuntu 16 (sin descargar paquetes adiccionales) el programa funciona perfectamente. Para usarlo en Python se ha tenido que importar la libreria de PyGtk, que también suele venir incluida en la distribución.
 
 \subsection{Wireshark}
 \label{wireshark}
-Wireshark es un \textit{packet sniffer} o analizador de paquetes. Te muestra los paquetes de red reales enviados y recibidos por una tarjeta de red, lo que facilita la creación del simulador de redes. También te separa las distintas partes de la encapsulación del paquete, además te permite añadir distintos filtros para las distintas capas.
+Wireshark es un \textit{packet sniffer} o analizador de paquetes. Te muestra los paquetes de red reales enviados y recibidos por una tarjeta de red, lo que facilita la creación del simulador de redes. También te separa las distintas partes de la encapsulación del paquete. Además te permite buscar entre los paquetes de red añadidos y recibidos, pudiendo añadir filtros de búsqueda para los distintos campos del paquete y para las distintas capas.
 
 \chapter{Redes Informáticas}
 \section*{Historia}
-Internet, tal y como lo conocemos ahora, haciendo uso de IPv6, HTML5, CSS3 no existía hasta hace poco, pero el desarrollo de éste transcurre desde los años 60. En 1961 se publican los primeros artículos de \gls{conmutacion de paquetes}
+El uso de redes informáticas nace en la década de 1960, para suplir la necesidad de las universidades y laboratorios de investigación de conectar los distintos ordenadores. En la década de 1970 se comienza a experimentar con tecnologías de redes LAN, algunas de ellas usadas actualmente o recientemente, como Ethernet, desarrollado en 1975 por Xerox PARC (Palo Alto Research \& Development).  Las redes se usaban sobre todo para aprovechar el almacenamiento y las impresoras. Cada vendedor incluía su propio tipo de tarjeta de red, cableado, protocolo y sistema operativo de red, hasta que Novell NetWare (Sistema Operativo de red desarrollado por Novell inc.) salió al mercado en 1983 soportando la mayoría de tipos de tarjetas de red y cables. Fue el SO de Red dominante hasta que en 1993 Microsoft lanzó Windows NT AS y Microsoft Windows para Trabajo en Grupo. Al mismo tiempo, los dispositivos Unix usaban sistemas basados en TCP/IP.
+
 \section{Capas de Red/Modelo OSI}
-El modelo \acr{osi} es un modelo de referencia para redes basado en \gls{capas de abstraccion}.
-El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre sistemas con la protocolos estandarizados. Fue creado en 1980 por la \acr{iso}. No es considerado una arquitectura de red porque los protocolos no forman parte del modelo, sino son entidades de distintas normativas internacionales.
+El modelo \acrshort{osi} es un modelo de referencia para redes basado en \gls{capas de abstraccion}.
+El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre sistemas con la protocolos estandarizados. Fue creado en 1980 por la Organización Internacional de Estandarización (\acrshort{iso}). No es considerado una arquitectura de red porque los protocolos no forman parte del modelo, sino son entidades de distintas normativas internacionales.
 \definecolor{odd}{HTML}{FFFFFF}
 \definecolor{even}{HTML}{E0E0E0}
 \definecolor{header}{HTML}{42A5F5}
@@ -193,8 +216,8 @@ El objetivo del modelo \acrshort{osi} es conseguir la interoperabilidad entre si
 
 \rowcolors{1}{header}{header}
 \rowcolors{2}{odd}{even}
-\renewcommand{\arraystretch}{1.1}
-\noindent
+\renewcommand{\arraystretch}{1} %Antes 1.1
+\noindent\linespread{1}
 \begin{tabularx}{\linewidth}{ | l >{\footnotesize}c >{\footnotesize}X >{\footnotesize}c | }
 	\rowcolor{header} \hline
 	\textbf{Capa} & \textbf{PDU\footnote{\textit{Protocol Data Unit} o Unidad de Datos de Protocolo.}} & \textbf{Función} & \textbf{Ejemplos} \\ \hline
@@ -228,36 +251,21 @@ Se distinguen ocho tipos de topologías de red: \cite{bicsi-02}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{Resources/Top/Topdered.pdf}
+\caption{Representación esquemática de las diferentes topologías de red.}
 \end{figure}
 
 \subsection{Nodos de una red}
 \begin{description}
-\item \textbf{\textit{Router} o enrutador:} es un dispositivo de red que reenvía los paquetes mirando en la capa 3 del modelo OSI (IP) y conecta dos redes.
+\item \textbf{\textit{Router} o enrutador:} es un dispositivo de red que reenvía los paquetes analizando la capa 3 del modelo OSI (IP) y conecta dos redes.
 \item \textbf{Puente de red o \textit{bridge}:} Funciona en la capa 2 del modelo OSI. Es un dispositivo que conecta dos segmentos de red formando una única subred, por lo que las dos ``redes" pueden conectarse e intercambiar datos sin necesidad de un \textit{router}.
 \item \textbf{Conmutadores o \textit{switches}:} dispositivo de red que filtra los datagramas del nivel 2 OSI (\textit{Data Link Layer}, ver \ref{osi}, pág. \pageref{osi}), también conocidos como \textit{frames}, y reenvía los paquetes recibidos entre los puertos, dependiendo de la dirección MAC de cada \textit{frame}. La diferencia entre un \textit{switch} y un \textit{hub} es que el \textit{switch} sólo reenvía los paquetes por el puerto necesario. También existen un tipo especial de \textit{switches} que pueden mirar en el nivel 3 OSI.
-\item \textbf{Repetidores y hubs:} un repetidor es un dispositivo de red que, llegada una señal, limpia el ruido innecesario y la regenera. Un repetidor con múltiples puertos es un hub, trabajan en la capa 1 del modelo \acr{osi}. Los repetidores requieren un pequeño tiempo para regenerar la señal, lo que puede crear un retardo en la señal.
-\item \textbf{Interfaces de Red:} también conocido como tarjeta de red o \textit{Network Interface Controller} (NIC), es un \gls{hardware}, normalmente integrado en la placa base, que permite al ordenador conectarse a una red. Recibe el tráfico de una dirección de red. En las redes de Ethernet, tiene una dirección \acr{MAC} única. Estas direcciones son administradas por el \acr{IEEE} evitando la duplicidad de estas. Cada dirección MAC ocupa 6 octetos, o 48 bits, a lo que suele ser representada como una cadena hexadecimal, por ejemplo: ``43:31:50:30:74:33".
+\item \textbf{Repetidores y hubs:} un repetidor es un dispositivo de red que, llegada una señal, limpia el ruido innecesario y la regenera. Un repetidor con múltiples puertos es un hub, trabajan en la capa 1 del modelo \acrshort{osi}. Los repetidores requieren de un pequeño tiempo para regenerar la señal, lo que puede crear un retardo en el tiempo de envío de la señal.
+\item \textbf{Interfaces de Red:} también conocido como tarjeta de red o \textit{Network Interface Controller} (NIC), es un \gls{hardware}, normalmente integrado en la placa base, que permite al ordenador conectarse a una red. Recibe el tráfico de una dirección de red. En las redes de Ethernet, tiene una dirección de Control de Acceso al Medio (\acrshort{MAC}) única. Estas direcciones son administradas por el Instituto de Ingeniería Eléctrica y Electrónica (\acrshort{IEEE}) evitando la duplicidad de estas. Cada dirección MAC ocupa 6 octetos, o 48 bits, a lo que suele ser representada como una cadena hexadecimal, por ejemplo: ``43:31:50:30:74:33".
 \item \textbf{Módem:} Dispositivos que transforman señales analógicas a digitales y viceversa. Son usados mayoritariamente en el \acr{ADSL}.
 \item \textbf{Cortafuegos o \textit{firewalls}:} dispositivo que controla la seguridad mediante reglas de acceso. Aceptan determinados paquetes mientras rechazan otros. En una red doméstica, se puede poner un firewall que sólo acepte tráfico de los puertos de uso común (Páginas Web, e-mail, etc.) y rechace otros más peligrosos (Acceso remoto, SSH, SMTP, SOCKS...).
 \end{description}
 
-\subsection{Enlaces de red}
-Según el modelo OSI, los enlaces de red corresponden a las capas 1 y 2. El medio físico puede ser tanto ondas de radio (Wi-Fi), como fibra óptica (FTTH) o impulsos de red (PLC, Ethernet, DSL).
-
-\subsubsection{Cableado}
-\begin{description}
-\item \textbf{Coaxial:} Cables de cobre o aluminio recubiertos de aislante, rodeado de un conductor, así se reducen las interferencias y la distorsión. Normalmente son usados para la transmisión de radio y TV, pero pueden ser usados para redes informáticas. Pueden llegar hasta a 500 Mbit/s \textbf{<INSERTAR IMAGENES>}
-\item \textbf{Par trenzado o \textit{Ethernet}:} Es el más usado en redes locales. Es un cable formado por finos cables trenzados en pares. En telefonía se usa el RJ11 o 6P4C (6 posiciones, 4 conectores) formado por 2 pares. Para ordenadores, según el estándar \textit{Ethernet} se usa 8P8C o RJ45 de 4 pares, debido al nombre del estándar, este cable suele ser comúnmente llamado "cable de Ethernet". Puede llegar hasta 10 Gbit/s
-\item \textbf{Fibra óptica:} Hilo de cristal o plástico flexible que permite que la luz se refleje en su interior, transmitiéndola de un extremo a otro del cable. No tienen apenas pérdida por distancia y son inmunes a las interferencias electromagnéticas. Además, permiten varias frecuencias de onda, lo que equivale a una transferencia de datos más rápida. Son usados para salvar las largas distancias entre continentes.
-\end{description}
-
-\subsubsection{Comunicación inalámbrica o \textit{Wireless}}
-\begin{description}
-\item \textbf{Microondas terrestres:} Transmisores, receptores y repetidores terrestres que operan en frecuencias de entre 300 MHz y 300 GHz de propagación de alcance visual, por lo que los repetidores no se separan más de 48 km.
-\item \textbf{Comunicación satelital:} Microondas y ondas de radio que no sean reflejadas por la atmósfera terrestre. Los satélites mantienen una órbita geosíncrona, es decir, el periodo de rotación es el mismo que el de la tierra, lo que se produce a una altura de $\mathsf{~35786}$ km.
-\item \textbf{Celular o PCS:} Ondas electromagnéticas de entre 1800 y 1900 MHz. Son las usadas por los teléfonos móviles. A partir del 2G o GPRS, se podia acceder a Internet con de TCP/IP. El sistema divide la cobertura en áreas geográficas, cada una con un repetidor. Repiten los datos entre un repetidor y el otro.
-\item \textbf{Ondas de radio:} Ondas de 0.9, 2.4, 3.6, o 5 GHz. El estándar más usado es el \textit{IEEE 802.11}, también conocido como wifi o Wi-Fi que opera en la banda de 2.4 GHz, a excepción de la versión IEEE 802.11ac que opera a 5GHz que tiene menos interferencias, pero también menor alcance.
-\end{description}
+%\include{Enlaces de red}
 
 \section{Paquetes de red}
 Es cada serie de bits en la que se divide la información enviada por una red. Según el modelo OSI, un paquete es estrictamente el PDU de la capa de red. El paquete de red se encuentra encapsulado en la capa anterior del modelo OSI. Por ejemplo, en éstandares de comunicación TCP/IP, un segmento TCP puede ser llevado por varios paquetes IP transportados por varios frames de Ethernet .Está formado por varios protocolos y en él se distinguen tres partes:
@@ -272,8 +280,6 @@ Es cada serie de bits en la que se divide la información enviada por una red. S
 \includegraphics[width=\textwidth]{Resources/Encapsulación_OSI.pdf}
 \caption{Encapsulación de red. El Datagrama IP es lo considerado 'Paquete de red'}
 \end{figure}
-
-\subsection{Ejemplo: Paquete de red}
 
 \section{Protocolos}
 Un protocolo de comunicación es un conjunto de reglas para intercambiar información entre enlaces de red. En una pila de protocolos, cada protocolo cubre los servicios del protocolo de la capa anterior. Por ejemplo, un e-mail se envía mediante el protocolo \acr{POP3} en la capa de Aplicación, sobre TCP en la capa de transporte, sobre IP en la capa de Red, sobre Ethernet para la capa \textit{Data Link}. 
@@ -343,15 +349,15 @@ Primero necesitamos definir lo que es un \textbf{puerto}. Un puerto es un punto 
 
 Un cortafuegos es un software que supervisa el tráfico de entrada y salida de datos, basado en unas reglas. Si un paquete de red cumple esas reglas, es rechazado. Pueden bloquear un paquete destinado a un puerto, de un protocolo (Bloquear SSH de Internet, pero no local), de una IP específica, entre otros atributos. También pueden configurarse en modo negativo o whitelist, aceptando tan sólo los paquetes que cumplan las reglas. Por ejemplo, puedes especificar que no acepte tráfico en el puerto 23. Pero igualmente puedes especificar que sólo acepte tráfico en el puerto 23.
 
-\begin{figure}[H]
-\noindent
-\includegraphics[width=\textwidth]{Resources/Wireshark02.png}
-\caption[Wireshark: SMTP sin encriptación]{Captura de pantalla de Wireshark (Véase \ref{wireshark}, pg. \pageref{wireshark}) en la que se muestra un paquete SMTP (email enviado) sin ningún tipo de encriptación. Se puede acceder a este paquete desde cualquier nodo de la red.}
-\end{figure}
+%\begin{figure}[H]
+%\noindent
+%\includegraphics[width=\textwidth]{Resources/Wireshark02.png}
+%\caption[Wireshark: SMTP sin encriptación]{Captura de pantalla de Wireshark (Véase \ref{wireshark}, pg. \pageref{wireshark}) en la que se muestra un paquete SMTP (email enviado) sin ningún tipo de encriptación. Se puede acceder a este paquete desde cualquier nodo de la red.}
+%\end{figure}
 \begin{figure}[H]
 \noindent
 \includegraphics[width=\textwidth]{Resources/Wireshark03.png}
-\caption[Wireshark: HTTP Form sin encriptación]{Otro ejemplo de captura de paquetes. Esta vez de un formulario de HTTP en el que personas autorizadas podrían ver el usuario y la contraseña.}
+\caption[Wireshark: HTTP Form sin encriptación]{Captura de pantalla de Wireshark (Véase \ref{wireshark}, pg. \pageref{wireshark}) en la que se muestra un formulario de HTTP en el que personas autorizadas podrían ver el usuario y la contraseña.}
 \end{figure}
 
 
@@ -413,7 +419,7 @@ Nota: Esta guía ha sido creada usando la versión v0.2.3-alpha, por lo que algu
     \setlength{\parsep}{0pt}     }
 { \end{enumerate}                  } 
 \begin{mydescr}
-\item [1-5.] También se puede activar con las letras Q, W, E, R, T; respectivamente. Los botones, te permiten (de izquierda a derecha): colocar un router, colocar un switch, conectar dos objetos, colocar un ordenador y colocar un hub.
+\item [1-5.] También se puede activar con las letras Q, W, E, R, T; respectivamente. Los botones, te permiten (de izquierda a derecha): colocar un router, colocar un switch, conectar dos objetos, colocar un ordenador y colocar un hub. Para ello primero haces click en el botón y luego haces click en el lugar donde quieras colocar el objeto. En el caso de los cables debes hacer dos clicks, uno en cada objeto que quieras conectar. 
 \item [6.] Abre el menú de "Información de dispositivos", que proporciona información como la dirección IP y MAC, el nombre, o los dispositivos a los que está conectado. (Ver figura \ref{dispinfo}
 \item [7.] Te permite enviar un ping de un ordenador a otro (El botón funciona a partir de v0.3).
 \item [8.] Abre el menú de archivo, en el que puedes cargar un archivo, crear uno nuevo, guardarlo, y cerrar el programa.
@@ -432,8 +438,9 @@ Para poder enviar un paquete entre dos Computadores, necesitaremos que estén co
 
 \subsection{Configuración}
 Al no haber una ventana de configuración del programa, la configuración debe hacerse de forma manual editando el archivo \texttt{Config.ini}. Este es un archivo de texto sin formato en el que se le asigna un valor a cada variable.
+
 \begin{easylist}[itemize]
-\ListProperties(Style*=)
+\ListProperties(Style*=, Space*=-5pt, Space=0pt)
 & \texttt{wres} y \texttt{hres}: El tamaño (en píxeles) del ancho y el alto de la ventana principal.
 & \texttt{viewport-sqres}: El tamaño en píxeles del lado de los cuadrados de la rejilla.
 & \texttt{viewport-wres} y \texttt{viewport-hres}: El número de cuadrados que tendrá de alto y de lancho la rejilla.
@@ -445,10 +452,34 @@ Al no haber una ventana de configuración del programa, la configuración debe h
 \end{easylist}
 
 \subsection{Dispositivos}
-Existen cuatro tipos dispositivos: los Computadores, que tienen la mayor programación; los Switches, que se encargan de manejar los paquetes de red; los Hubs, que son como los Switches, pero reenvían los paquetes por todos sus puertos y los Routers, que tan sólo existen de forma visual, pero no tienen ninguna función de momento. Por lo que sólo vamos a hablar de los Switches y los Ordenadores.
+Existen cuatro tipos dispositivos: los Computadores, que tienen la mayor programación; los Switches, que se encargan de manejar los paquetes de red; los Hubs, que son como los Switches, pero reenvían los paquetes por todos sus puertos y los Routers, que tan sólo existen de forma visual, pero no tienen ninguna función de momento. Por lo que sólo vamos a hablar de los Switches y los Ordenadores. Para cambiar los parámetros hay que hacer click derecho en el dispositivo al que se le deseen cambiar los parámetros y luego en la entrada de `Editar objeto'. A lo que aparecerá una ventana como la de Fig. \ref{fig:editwindow} en la que se podrán cambiar parámetros como el nombre, la dirección MAC o la dirección IP.
 
-Los ordenadores tienen una función especial que es la de reenviar los paquetes de red. Para ello, en el menú emergente que aparece al hacer click derecho en el objeto, hacemos click en la ventana de ping. Para que el paquete llegue al otro computador, ambos deben tener una dirección IP, y estar conectados a la misma red (Ver Fig. \ref{fig:pingwindow} y Fig. \ref{fig:pingwindow2}).
+Los ordenadores tienen una función especial que es la de crear y enviar los paquetes de red. Para ello, en el menú emergente que aparece al hacer click derecho en el objeto, hacemos click en la entrada de `Ping'. Para que el paquete llegue al otro computador, ambos deben tener una dirección IP, y estar conectados a la misma red. Se introduce la dirección IP del dispositivo y se pulsa en el botón de `Ping!' (Ver Fig. \ref{fig:pingwindow} y Fig. \ref{fig:pingwindow2}). A continuación veremos el paquete de red buscando su objetivo, la primera vez no irá directamente, ya que los Switches están aún aprendiendo el camino, pero el paquete de vuelta y todos los siguientes paquetes seguirán la misma ruta (Ver Fig. \ref{fig:samplenet}). El ordenador crea un paquete de red usando los protocolos de Ethernet (IEEE 802.11), TCP, IPv4 e ICMP. Aquí la parte del código que, dadas dos direcciones IP's crea el binario de un Ping.
 
+\inputminted[firstline=1782, lastline=1818, baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{python}{Codigo/Main.py}
+
+Los Switches se encargan de redireccionar los paquetes de red. La primera vez que les llega un paquete, al no saber la ubicación física del destino, siguen este algoritmo:
+\inputminted[firstline=1268, lastline=1296,baselinestretch=1,
+	fontsize=\scriptsize,
+	linenos,
+	breaklines]{python}{Codigo/Main.py}
+Que, traducido a lenguaje mortal, vendría a ser:
+\begin{easylist}[itemize]
+\ListProperties(Style*=,Space*=6pt)
+& Si la dirección MAC de destino del paquete recibido se encuentra directamente conectado al Switch y el TTL del paquete es mayor que cero:
+&& Enviar el paquete a ese dispositivo.
+& Al no cumplirse la condición anterior, si el paquete se encuentra en mi tabla de enrutamiento y el TTL del paquete es mayor que cero:
+&& Enviamos el paquete por el puerto al que está asignada la dirección MAC en la tabla.
+& Al no cumplirse las condiciones anteriores, si hay un Switch en mis conexiones y el TTL del paquete es mayor a 0:
+&& Enviar el paquete a uno de los Switches de forma aleatoria.
+\end{easylist}
+
+Cuando recibe un paquete, también añade a la \textit{Routing Table} o tabla de enrutación una entrada con la dirección MAC del remitente del paquete y el puerto por el que ha llegado, así cuando le llegue un paquete el router conocerá el puerto por el que enviarlo.
+\inputminted[firstline=1231, lastline=1247, baselinestretch=1,fontsize=\scriptsize, linenos,breaklines]{python}{Codigo/Main.py}
+Este es el código que cumple esta función. Cada elemento en la tabla tiene un tiempo establecido en el que caduca la entrada. Lo que hace esta parte del código es comprobar si éste tiempo a caducado, actualizar la fecha de caducidad si la dirección MAC ya está en la tabla o añadirlo de nuevo en la tabla si la dirección no está.
+
+\subsection{Ejemplo: Envío de Ping entre dos dispositivos}
+Lo primero que vamos a hacer, es colocar un Switch al que poder conectar los ordenadores. Después colocamos y conectamos hasta 5 ordenadores (es el máximo de conexiones por defecto) al Switch. Después, para cada ordenador, hacemos click derecho y en el menú emergente pulsamos "Editar Objeto", con lo que se abrirá una ventana como la de la Figura \ref{fig:editwindow}. Aquí podemos asignar una dirección IP al ordenador. Tras asignar 5 direcciones IP diferentes a los ordenadores, en cualquiera de ellos hacemos click derecho y clickamos en "Ping", haciendo que aparezca una ventana con un cuadro de texto como en Fig. \ref{fig:pingwindow2}. En este cuadro introducimos la dirección IP del dispositivo al que queremos enviar el Ping y pulsamos la tecla Intro, así el ordenador enviará un paquete Ping Request a la IP especificada. Cuando el paquete llega al equipo con esa dirección IP, este responderá con un paquete parecido, pero en este caso será un ping de respuesta (simbolizado en rojo), por lo que el destino será el primer ordenador. En el caso de que se produzcan cambios en la red mientras el paquete viaja por esta, el paquete dispone de un tiempo de vida, por lo que cuando llega a 0 se destruye.
 
 \glsaddall
 \renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
@@ -494,44 +525,62 @@ Gibibyte/s & GiB/s & $\mathsf{2^{30}}$ Byte/s \\
 Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 \end{tabularx}
 
+\chapter[Licencia GNU GPL]{Licencia GNU General Public License}
+\label{gnugpl}
+Es la licencia más usada en el desarrollo de software. Permite las cuatro libertades del software libre y fue creada por la Free Software Foundation. La versión más reciente, la GPLv3, ha sido publicada el 29 de junio de 2007. Al distribuir el programa, debe distribuirse también una copia de la licencia que usa. 
+
+InvProy usa la licencia GPLv3, aquí una traducción no oficial\cite{gpltranslation}:
+\inputminted[baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{text}{GPLv3-spanish.txt}
+
 \chapter{Capturas de pantalla del programa}
 \noindent\begin{figure}[H]
 \centering
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
+	%\vtop{
 	\centering
-	\includegraphics[scale=0.6]{Resources/Screenshots/2016-09-12-172627_1000x700_scrot.png}
-	\captionof{figure}{Captura: Click derecho en un computador}	
+	\includegraphics[scale=0.6]{Resources/Screenshots/2016-09-12-172627_1000x700_scrot.png}%}
+	\caption{Captura: Click derecho en un computador}
 \end{minipage}
-\hspace*{0.01\textwidth}
-\begin{minipage}{0.3\textwidth}
+\hspace*{0.15\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
+	%\vtop{
 	\centering
-	\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-12-225752_233x131_scrot.png}
+	\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-12-225752_233x131_scrot.png}%}
 	\caption[Captura: Ventana para enviar ping.]{Captura: Ventana para enviar ping. Está en rojo porque la IP introducida no es válida.}
 	\label{fig:pingwindow}
 \end{minipage}
-\hspace*{0.01\textwidth}
-\begin{minipage}{0.3\textwidth}
+
+\centering
+\begin{minipage}[t]{0.4\textwidth}
 	\centering
 	\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-12-230329_233x131_scrot.png}
 	\caption{Captura: Igual que \ref{fig:pingwindow}, pero con una IP válida.}
 	\label{fig:pingwindow2}
 \end{minipage}
-
-\centering
-\begin{minipage}{0.5\textwidth}
+\hspace*{0.15\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 	\centering
 	\includegraphics[scale=0.6]{Resources/Screenshots/2016-09-12-230428_269x225_scrot.png}
 	\caption{Captura: Ventana con la tabla que poseé el Switch.}
 	\label{fig:switchingtable}
 \end{minipage}
 
+\centering
+\begin{minipage}[t]{0.5\textwidth}
+	\centering
+	\includegraphics[scale=0.6]{Resources/Screenshots/2016-09-13-200254_406x108_scrot.png}
+	\caption{Captura: Ventana de edición de propiedades de objeto.}
+	\label{fig:editwindow}
+\end{minipage}
+
 \end{figure}
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-12-230644_1000x700_scrot.png}
 \caption{Captura: Paquetes viajando por una red de ejemplo.}
+\label{fig:samplenet}
 \end{figure}
 
-%\include{AnCode}
+\include{AnCode}
 
 \nocite{*}
 \printbibliography[heading=bibintoc]
