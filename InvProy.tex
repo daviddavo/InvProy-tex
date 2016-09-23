@@ -171,7 +171,7 @@ También, como prometí, incluyo a los agradecimientos a la gran comunidad de \t
 	{\color{subsubsectioncolour}\thesubsubsection}{1em}{}
 
 \setcounter{chapter}{0}    
-\chapter{Programación y código libre}
+\chapter{Programación y software libre}
 \pagenumbering{arabic}
 
 \subsection*{Propuesta}
@@ -293,6 +293,28 @@ def esnatural(numero): #Definimos la función, asumiendo que no hay números com
     print("Es un numero Racional")
     return False
 \end{minted}
+
+\section{Fases del desarrollo de software}
+Durante el desarrollo de software existen distintas fases, desde el comienzo hasta el lanzamiento del programa.
+\subsection{Estadios de desarrollo}
+\begin{description}
+\item \textbf{Pre-alpha:} Todas las actividades realizadas antes de las pruebas formales. Actividades como diseño, programación, análisis de requisitos... En software libre, hay distintos tipos de versiones pre-alpha. Se añaden funcionalidades al software.
+\item \textbf{Alpha:} Se añaden más funcionalidades al software. El software es inestable (tiene muchos \textit{bugs}) y puede causar pérdidas de datos. Normalmente aún no está disponible para el uso por usuarios; aunque, en software libre, la versión Alpha suele estar ya disponible para el público. Esta fase termina cuando se hace una `\textbf{congelación de funcionalidades}, es decir, se determina que ya no se van a añadir más funcionalidades a la versión.
+\item \textbf{Beta:} Se inicia esta fase cuando el programa se considera \textbf{completo de funcionalidades} (cuando se hace una congelación). Aún así el programa puede contener muchos \textit{bugs} conocidos o desconocidos, además de problemas de rendimiento y cuelgues. Se prueba el programa con tests de usabilidad.
+Aquí ya se publica una versión para el usuario, denominada \textit{Beta Release}, en ocasiones también es llamada \textbf{TP}(\textit{Technical preview} o avance técnico). En ocasiones, como en algunos programas de software libre, el programa se mantiene en fase Beta y nunca se dejan de añadir funcionalidades. Se considera beta abierta si la versión está disponible al público, y beta cerrada en caso contrario.
+\item \textbf{RC}: \textit{Release Candidate}. Es una versión beta que tiene el potencial de convertirse en una versión final del programa, que está lista para lanzar si no surgen \textit{bugs} importantes. En esta fase se estabiliza el programa y se prepara para el lanzamiento con numerosos tests.
+\end{description}
+\subsection{Publicación}
+Cuando el programa es publicado, la versión del programa se considera `versión estable'.
+\begin{description}
+\item \textbf{RTM:} \textit{Release to manufacturing} o Versión para producción, también llamada `gold master' o `versión de oro'.  Es la versión que va a ser enviada al centro de distribución, se eliminan archivos de funcionalidades de pruebas y se hacen muchas comprobaciones de la integridad de los archivos.
+\item \textbf{GA:} \textit{General availability} o disponibilidad general. Fase en la que se produce el \textit{marketing} y la venta del programa. Éste ya está disponible para su compra, dependiendo de la región, el idioma, o el método de adquisición del programa (DVD, BD, Web).
+\end{description}
+\subsection{Soporte}
+Después de ser lanzada una versión de un programa, durante un tiempo denominado `tiempo de vida' la versión aún tiene soporte oficial, en el que se pueden aplicar todavía actualizaciones de servicio y parches para solucionar \textit{bugs} o, en ocasiones, incluir nuevas funcionalidades.
+\begin{description}
+\item \textbf{Fin de soporte:} Cuando la versión deja de ser distribuida y se deja de dar soporte, se dice que ha alcanzado el `fin de vida', o pasa a ser obsoleto, retirado o descontinuado. A pesar de esto, la gente puede seguir queriendo usar el programa, como con Windows XP.
+\end{description}
 
 \definecolor{chaptercolour}{HTML}{051C38}
 \definecolor{sectioncolour}{HTML}{143153}
