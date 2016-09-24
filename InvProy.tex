@@ -225,6 +225,8 @@ Una de las grandes ventajas del software libre, aparece en la educación. Es muy
 
 \newpage
 \section{Fundamentos básicos de programación}
+Conceptos básicos sobre la programación en general. Los ejemplos son dados con el lenguaje de programación Python (Ver \ref{python})
+
 Una variable no es más que un hueco en la memoria del ordenador, reservado para algo que queremos recordar. Así, podemos establecer una variable llamada `pi' con valor $\mathsf{3.1415...}$, para que luego, en una función, en lugar de escribir `3.14...' múltiples veces, sólo haga falta escribir `pi'. Esto es un ejemplo bastante básico, ya que las variables pueden ser también valores booleanos\footnote{Valores del álgebra de Boole; Verdadero/Falso, 1/0, True/False...}, listas, diccionarios (listas de tipo clave:valor), objetos, series de carácteres...
 Las variables se establecen así: \mintinline{python3}|variable = valor|.
 
@@ -337,9 +339,10 @@ Su objetivo es conseguir la interoperabilidad entre sistemas haciendo uso de los
 \section{Topologías de red}
 \label{topdred}
 La \gls{topologia} de red es la configuración de los elementos que componen una red. Puede ser representada lógica o físicamente. \\
-La topología lógica puede ser igual en dos redes, aunque su topología física (distancia entre conexiones, tipo de señales...) pueda ser distinta. Se distinguen dos elementos: los nodos (distintos dispositivos de red) y los enlaces (medio de transmisión de los datos).
+La topología lógica puede ser igual en dos redes, aunque su topología física (distancia entre conexiones, tipo de señales...) sea distinta. 
+Se distinguen dos elementos: los nodos (distintos dispositivos de red) y los enlaces (medio de transmisión de los datos).
 \subsection{Clasificación de las topologías de red}
-Se distinguen ocho tipos de topologías de red: \cite{bicsi-02}
+Se distinguen ocho tipos de topologías de red lógicas: \cite{bicsi-02}
 \renewcommand{\labelitemi}{$\bullet$}
 \begin{description}
 \item \textbf{Punto a punto:} conexión directa entre los dos puntos de la red. También es conocida como \textit{P2P} (\textit{Peer to Peer}).
@@ -363,6 +366,8 @@ Se distinguen ocho tipos de topologías de red: \cite{bicsi-02}
 \item \textbf{Puente de red o \textit{bridge}:} Funciona en la capa 2 del modelo OSI. Es un dispositivo que conecta dos segmentos de red formando una única subred, por lo que las dos ``redes" pueden conectarse e intercambiar datos sin necesidad de un \textit{router}.
 \item \textbf{Conmutadores o \textit{switches}:} dispositivo de red que filtra los datagramas del nivel 2 OSI (\textit{Data Link Layer}, ver \ref{osi}, pág. \pageref{osi}), también conocidos como \textit{frames}, y reenvía los paquetes recibidos entre los puertos, dependiendo de la dirección MAC de cada datagrama. La diferencia entre un conmutador y un concentrador es que el conmutador sólo reenvía los paquetes por el puerto necesario. También existen un tipo especial de conmutadores que pueden hacer uso de la capa 3 OSI.
 \item \textbf{Repetidores y concentradores:} un repetidor es un dispositivo de red que, llegada una señal, limpia el ruido innecesario y la regenera. Un repetidor con múltiples puertos es un concentrador o \textit{hub}, trabajan en la capa 1 del modelo \acrshort{osi}. Los repetidores requieren de un pequeño tiempo para regenerar la señal, lo que puede crear un retardo en el tiempo de envío de la señal.
+
+\newpage
 \item \textbf{Interfaces de Red:} también conocido como tarjeta de red o \textit{Network Interface Controller} (NIC), es un \gls{hardware}, normalmente integrado en la placa base, que permite al ordenador conectarse a una red. Recibe el tráfico de una dirección de red. En las redes que hacen uso de Ethernet, tiene una dirección de Control de Acceso al Medio (\acrshort{MAC}) única. Estas direcciones son administradas por el Instituto de Ingeniería Eléctrica y Electrónica (\acrshort{IEEE}) evitando la duplicidad de estas. Cada dirección MAC ocupa 6 octetos, o 48 bits, a lo que suele ser representada como una cadena hexadecimal, por ejemplo: ``4C:33:31:64:59".
 \item \textbf{Módem:} Dispositivos que transforman señales analógicas a digitales y viceversa. Son usados mayoritariamente en el \acrshort{ADSL}.
 \item \textbf{Cortafuegos o \textit{firewalls}:} dispositivo que controla la seguridad mediante reglas de acceso. Aceptan determinados paquetes mientras rechazan otros. En una red doméstica, se puede poner un firewall que sólo acepte tráfico de los puertos de uso común (Páginas Web, e-mail, etc.) y rechace otros más peligrosos (Acceso remoto, SSH, SMTP, SOCKS...).
@@ -371,23 +376,24 @@ Se distinguen ocho tipos de topologías de red: \cite{bicsi-02}
 %\include{Enlaces de red}
 \newpage
 \section{Paquetes de red}
-Son cada serie de bits en los que se divide la información enviada por una red. \\ Según el modelo OSI, un paquete es estrictamente el PDU de la capa de red. El paquete de red se encuentra encapsulado en la capa anterior del modelo OSI. Por ejemplo, en éstandares de comunicación TCP/IP, un segmento TCP puede ser llevado por varios paquetes IP transportados por varios frames de Ethernet. \\Está formado por varios protocolos y en él se distinguen tres partes:
+Son cada serie de bits en los que se divide la información enviada por una red. \\ Según el modelo OSI, un paquete es estrictamente el PDU de la capa de red. El paquete de red se encuentra encapsulado en la capa anterior del modelo OSI. Por ejemplo, en éstandares de comunicación TCP/IP, un segmento TCP puede ser llevado por varios paquetes IP transportados por varios frames de Ethernet. Es parecido a las unidades lingüísticas. \\Está formado por varios protocolos y en él se distinguen tres partes:
 \begin{description}
 \item \textbf{Header} o cabecera: Datos e información sobre el paquete. (Dirección IP, MAC, etc)
 \item \textbf{Payload} o carga: Los datos que se quieren transferir.
 \item \textbf{Trailer} o cola: En ocasiones es inexistente (como en UDP) pero suele ser un código de comprobación de errores.
 \end{description}
-\vspace*{0.5cm}
+\vspace{\fill}
 \begin{figure}[H]
 \noindent
 \centering
 \includegraphics[width=\textwidth]{Resources/Encapsulación_OSI.pdf}
 \caption{Encapsulación de red. El Datagrama IP es lo considerado 'Paquete de red'}
 \end{figure}
+\vspace{\fill}
 \newpage
 
 \section{Protocolos}
-Un protocolo de comunicación es un conjunto de reglas para intercambiar información entre enlaces de red. En una pila de protocolos, cada protocolo cubre los servicios del protocolo de la capa anterior. Por ejemplo, un e-mail se envía mediante el protocolo \acr{POP3} en la capa de Aplicación, sobre TCP en la capa de transporte, sobre IP en la capa de Red, sobre Ethernet para la capa \textit{Data Link}. Para entenderlo mejor, es como la gramática de la lengua. Un sustantivo forma parte de un sintagma nominal, que forma parte de un sujeto, que a su vez forma parte de una oración. Siendo las ondas sonoras producidas la capa física.
+Un protocolo de comunicación es un conjunto de reglas para intercambiar información entre enlaces de red. En una pila de protocolos, cada protocolo cubre los servicios del protocolo de la capa anterior. Por ejemplo, un e-mail se envía mediante el protocolo \acr{POP3} en la capa de Aplicación, sobre TCP en la capa de transporte, sobre IP en la capa de Red, sobre Ethernet para la capa \textit{Data Link}, que está formado por bits. Para entenderlo mejor, es como la gramática de la lengua. Un sustantivo forma parte de un sintagma nominal, que forma parte de un sujeto, que a su vez forma parte de una oración. Siendo las ondas sonoras producidas la capa física y fonemas los bits.
 \begin{figure}[H]
 \noindent
 \includegraphics[width=\textwidth]{Resources/Wireshark01.png}
@@ -401,8 +407,8 @@ También conocido como \textit{Internet Protocol Suite}, y más conocido como TC
 \subsubsection{Aplicación}
 Es la capa en la que se envían los datos a otras aplicaciones en otro ordenador o en el mismo. Las aplicaciones hacen uso de las capas inferiores para asegurarse que los datos lleguen a su destino. Algunos de los protocolos más usados son:
 \begin{itemize}
-\item \textbf{HTTP} \textit{Hypertex Transfer Protocol:} Protocolo de Transferencia de Hipertexto. Es el protocolo base de la World Wide Web. Se trata de texto estructurado que usa hiperenlaces entre nodos que también contienen texto. El cliente, al entrar en una \acr{url}, el agente de usuario (navegador) envía al servidor una petición de la página web, mediante HTTP. El servidor, envía como respuesta un documento HTML u otro recurso.
-\item \textbf{DNS} \textit{Domain Name System:} Sistema de Nombres de Dominio. Un servidor DNS almacena una base de datos distribuida y jerárquica con información sobre el nombre del dominio y la dirección IP a la que está vinculada. Al intentar conectar a  \texttt{http://www.4chan.org}, el cliente pregunta al servidor cual es la dirección IP asociada a esa dirección, y se conecta a tal IP, en este caso 104.16.66.203. Para evitar tener que consultar continuamente con el servidor, se almacenan en una \gls{cache} en el cliente.
+\item \textbf{HTTP} \textit{Hypertex Transfer Protocol:} Protocolo de Transferencia de Hipertexto. Es el protocolo base de la World Wide Web. Se trata de texto estructurado que usa hiperenlaces entre nodos que también contienen texto. El cliente, al entrar en una \acr{url} a través de el agente de usuario (navegador) envía al servidor una petición de la página web, mediante HTTP. El servidor, envía como respuesta un documento HTML u otro recurso.
+\item \textbf{DNS} \textit{Domain Name System:} Sistema de Nombres de Dominio. Un servidor DNS almacena una base de datos distribuida y jerárquica con información sobre el nombre del dominio y la dirección IP a la que está vinculada. Al intentar conectar a  \texttt{ddavo.me}, el cliente pregunta al servidor cual es la dirección IP asociada a esa dirección, y se conecta a tal IP, en este caso 37.152.88.18. Para evitar tener que consultar continuamente con el servidor, se almacenan en una \gls{cache} en el cliente.
 \item \textbf{TLS/SSL} \textit{Transport Layer Security}, y su predecesor \textit{Secure Sockets Layer} (Ver \ref{seguridad}).
 \item \textbf{HTTPS} HTTP Seguro. Es HTTP con TLS aplicado.
 \item \textbf{DHCP} \textit{Dynamic Host Configuration Protocol}: Protocolo de configuración dinámica del host. Este protocolo es controlado por un servidor DHCP que envía parámetros de configuración automática a los clientes. El ejemplo más común es el de cualquier Router doméstico, que asigna automáticamente a cada dispositivo una dirección IP diferente, pero dejando un rango en el que se pueden establecer IP's estáticas.
@@ -411,7 +417,7 @@ Es la capa en la que se envían los datos a otras aplicaciones en otro ordenador
 \item \textbf{IMAP} \textit{Internet Message Access Protocol:} Protocolo de acceso a mensajes de Internet. Usa una conexión TCP/IP para conectarse a un servidor de e-mail y ver el contenido de los mensajes, sin necesidad de descargarlos. A diferencia de POP, te permite usar una bandeja de entrada desde varios clientes.
 \end{itemize}
 \subsubsection{Transporte}
-Se encapsulan los datos de aplicación en un segmento o datagrama, dependiendo si el protocolo usado es TCP o UDP. Se encarga de transportar los datos por una red independientemente de la red física.
+Se encapsulan los datos de aplicación en un segmento o datagrama, dependiendo si el protocolo usado es TCP o UDP. Se encarga de transportar los datos por una red independientemente de la topología física.
 \begin{itemize}
 \item \textbf{TCP} \textit{Transmission Control Protocol:} Protocolo de Control de Transmisión. Se aplica a los paquetes para administrarles un orden y un sistema de comprobación de errores. Con todas las funcionalidades, ocupa bastante espacio, lo que aumenta la latencia, aunque es más fiable para el envío de la mayoría de los datos.
 \item \textbf{UDP} \textit{User Datagram Protocol:} Es un protocolo muy minimalista. A diferencia del TCP, no garantiza que los paquetes lleguen, o lleguen en orden, o protección ante duplicados. Reduce mucho la latencia ya que no usa \textit{handshaking}. Por ello es usado por ejemplo para \textit{streamings} de televisión o videollamadas.
@@ -419,7 +425,7 @@ Se encapsulan los datos de aplicación en un segmento o datagrama, dependiendo s
 \subsubsection{Red}
 El objetivo es que los datos lleguen del origen al destino, aún cuando no están conectados directamente. Los enrutadores o \textit{routers} son los dispositivos que cumplen esta función.
 \begin{itemize}
-\item \textbf{IP} \textit{Internet Protocol}: Protocolo de Internet. Envía datagramas o paquetes de red a través de redes. Tiene una función de enrutamiento que es la que permite la interconexión de redes, y la existencia de Internet. Es un protocolo que encapsula el paquete definiendo en el \textit{header} (cabecera) las direcciones IP del servidor y el cliente, o remitente y destinatario. La versión usada actualmente es IPv4 desarrollado en 1981, pero poco a poco se va abriendo paso la versión IPv6. La mayor diferencia es que la versión cuatro cuenta con direcciones de 32 bits lo que permite tan sólo unas 4.3 millardos ($\mathsf{2^{32}}$) de direcciones, mientras que la versión 6 tiene direcciones de 128 bits, lo que permite más de 340 sextillones ($\mathsf{2^{128}}$)de direcciones
+\item \textbf{IP} \textit{Internet Protocol}: Protocolo de Internet. Envía datagramas o paquetes de red a través de redes. Tiene una función de enrutamiento que es la que permite la interconexión de redes, y la existencia de Internet. Es un protocolo que encapsula el paquete definiendo en el \textit{header} (cabecera) las direcciones IP del servidor y el cliente, o remitente y destinatario. La versión usada actualmente es IPv4 desarrollado en 1981, pero poco a poco se va abriendo paso la versión IPv6. La mayor diferencia es que la versión cuatro cuenta con direcciones de 32 bits lo que permite tan sólo unos 4.3 millardos ($\mathsf{2^{32}}$) de direcciones, mientras que la versión 6 tiene direcciones de 128 bits, lo que permite más de 340 sextillones ($\mathsf{2^{128}}$) de direcciones
 \item \textbf{ICMP} \textit{Internect Control Message Protocol}: Es un protocolo que no es usado por aplicaciones de usuario (a excepción de herramientas de diagnóstico como ping o traceroute). Lo usan los dispositivos de red, como los routers, para enviar notificaciones o mensajes de error indicando que un servicio no está disponible.
 \end{itemize}
 \subsubsection{Link}
@@ -441,7 +447,7 @@ Algunos de los ejemplos de los ataques más comunes son:
 \ListProperties(Style*=$\bullet$ , Style2*=--)
 & \textbf{Ataques pasivos}
 && \textbf{Sniffing o analizador de paquetes:} Mediante un software se muestran los datos de los paquetes de red enviados y recibidos por la red.
-&& \textbf{Escáner de puertos:} Se envían numerosas peticiones al servidor por los servidores más comunes, así se comprueba que puertos están abiertos. Por ello es recomendable cambiar los puertos por defecto de los servidores importantes.
+&& \textbf{Escáner de puertos:} Se envían numerosas peticiones al servidor por los puertos más comunes, así se comprueba que puertos están abiertos. Por ello es recomendable cambiar los puertos por defecto de los servidores importantes.
 && \textbf{Escáner IDLE:} Se realiza un escáner de puertos para saber que servicios están disponibles, pero a traves de otro ordenador "zombie", y observando el comportamiento de éste.
 & \textbf{Ataques activos}
 && \textbf{Ataque de Denegación de Servicio:} Se ``desborda`` el ancho de banda mediante el envío de muchas peticiones a un servidor, además de ser de un tamaño excesivo.
@@ -451,6 +457,8 @@ Algunos de los ejemplos de los ataques más comunes son:
 && \textbf{Ataque Smurf:} Es una especie de ataque DDoS. Se envían paquetes ICMP (probablemente pings) a distintas máquinas, pero estos paquetes que se envían, el valor de la dirección IP del remitente es la dirección IP del objetivo al que se quiere atacar. Por lo que, las máquinas a las que se las ha enviado el mensaje ICMP responderán todas al objetivo, haciendo así un DDoS.
 && \textbf{DNS poisoning:} Se modifica la caché de DNS de un ordenador, redireccionando a una IP incorrecta, de esta manera se puede realizar un ataque de phishing sin que lo sepa el usuario del ordenador. En el caso de hacerlo con las tablas de ARP, se denomina \textit{ARP Poisoning}.
 \end{easylist}
+
+\newpage
 \subsection{Contramedidas}
 Acciones que se pueden tomar para evitar algunos de los ataques de red más comunes.
 \subsubsection{Encriptación}
@@ -466,11 +474,11 @@ Un cortafuegos es un software que supervisa el tráfico de entrada y salida de d
 %\includegraphics[width=\textwidth]{Resources/Wireshark02.png}
 %\caption[Wireshark: SMTP sin encriptación]{Captura de pantalla de Wireshark (Véase \ref{wireshark}, pg. \pageref{wireshark}) en la que se muestra un paquete SMTP (email enviado) sin ningún tipo de encriptación. Se puede acceder a este paquete desde cualquier nodo de la red.}
 %\end{figure}
-\begin{figure}[H]
-\noindent
-\includegraphics[width=\textwidth]{Resources/Wireshark03.png}
-\caption[Wireshark: HTTP Form sin encriptación]{Captura de pantalla de Wireshark (Véase \ref{wireshark}, pg. \pageref{wireshark}) en la que se muestra un formulario de HTTP en el que personas autorizadas podrían ver el usuario y la contraseña.}
-\end{figure}
+%\begin{figure}[H]
+%\noindent
+%\includegraphics[width=\textwidth]{Resources/Wireshark03.png}
+%\caption[Wireshark: HTTP Form sin encriptación]{Captura de pantalla de Wireshark (Véase \ref{wireshark}, pg. \pageref{wireshark}) en la que se muestra un formulario de HTTP en el que personas autorizadas podrían ver el usuario y la contraseña.}
+%\end{figure}
 
 %\definecolor{chaptercolour}{HTML}{375000}
 %\definecolor{sectioncolour}{HTML}{597814}
@@ -503,6 +511,12 @@ como enviarlas a un \gls{repositorio} remoto e incluso publicarlas en línea. Su
 son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama
 \textit{master} (principal) siempre sea funcional. Para ello creamos una nueva rama para cada nueva funcionalidad del programa. La implementación del nuevo código a otra rama se denomina \textit{merge}. Otra de las funcionalidades que implementa es \texttt{clone}, que te permite descargar un proyecto si tienes la URL del \gls{repositorio} git.
 
+\begin{figure}[H]
+\noindent
+\includegraphics[width=\textwidth]{Resources/Gitflow.png}
+\caption{\textit{Gitflow} o flujo de trabajo de Git}
+\end{figure}
+
 Para usar Git, se suele recomendar seguir un \textit{Git workflow} o flujo de trabajo de Git, en ocasiones denominado \textit{gitflow}. El más común es el basado en 4 nuevas ramas, aparte de \texttt{master}.
 \begin{description}
 \item \textbf{\textit{Develop:}} es la rama de desarrollo. Se van aplicando las nuevas funcionalidades a esta rama, para luego convergerlas en la rama \texttt{Release} que se va a publicar.
@@ -510,22 +524,19 @@ Para usar Git, se suele recomendar seguir un \textit{Git workflow} o flujo de tr
 \item \textbf{\textit{Hotfix}:} Es una rama dedicada a solventar los \glspl{bug} que un usuario descubra en una versión ya lanzada de la aplicación. Cuando un usuario descubre un bug, se crea una nueva rama a partir de la última versión de master, se soluciona el bug en esa rama y luego se vuelve a hacer \texttt{merge} en master y develop.
 \item \textbf{\textit{Feature <x>}:} Donde <x> el nombre de la funcionalidad. Es una rama dedicada a una nueva funcionalidad, se crea a partir de \texttt{Develop}, y una vez terminada, se hace \texttt{merge} en \texttt{Develop} de nuevo.
 \end{description}
-\begin{figure}[H]
-\noindent
-\includegraphics[width=\textwidth]{Resources/Gitflow.png}
-\caption{\textit{Gitflow} o flujo de trabajo de Git}
-\end{figure}
 
 GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener una wiki y una página web para tu proyecto, junto a otras funciones.
 Una de sus funciones estrella es la visualización online del repositorio, con la que cualquier persona tiene acceso al código y los archivos antes de descargarlos. Otra función útil es el apartado de \textit{Issues}, en el que los usuarios de tu código pueden reportar los bugs del programa o aportar nuevas ideas en forma de "foro".
 Tanto el programa como este documento están disponibles en GitHub en los siguientes enlaces. \url{https://github.com/daviddavo/InvProy} y \url{https://github.com/daviddavo/InvProy-tex}
 
+\newpage
 \subsection{LaTeX}
 \LaTeX\space o, en texto plano, LaTeX, pronunciado con la letra griega 
 Ji ($\Chi$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas o código e importar paquetes que cumplan las necesidades de los usuarios. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la apariencia de éste.
 El código del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, aunque he usado una \acrshort{IDE} llamada \textbf{texmaker}.
 
 \subsection{Python}
+\label{python}
 Es un lenguaje de programación interpretado (sólo se traduce  el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca porque sus programas poseen una sintaxis más legible que la de el resto de lenguajes. Soporta tanto \gls{programacion imperativa} como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este proyecto, la versión de Python utilizada es la 3.4 en adelante.
 
 \subsection{Gtk+}
@@ -610,10 +621,7 @@ A continuación, se incluye una captura de pantalla de la interfaz de InvProy Al
 \includegraphics[width=0.9\textwidth]{Resources/Screenshots/2016-09-07-140130_728x437_scrot.png}
 \caption{Menú de \textbf{Información de Dispositivos} junto a una red de topología de malla \label{dispinfo}}
 \end{figure}
-
 Para incluir un objeto en la rejilla, se hace click en el icono del objeto y luego  en el lugar donde se quiera poner. Cuando tenemos dos objetos podemos conectarlos si hacemos click primero en el icono del cable, luego en un objeto y después en otro.
-
-Para poder enviar un paquete entre dos Computadores, necesitaremos que estén conectados mediante nodos (Hubs o Switches).
 
 \subsection{Configuración}
 Al no haber una ventana de configuración del programa, la configuración debe hacerse de forma manual editando el archivo \texttt{Config.ini} (Ver \ref{Config.ini}). Este es un archivo de texto sin formato en el que se le asigna un valor a cada variable.
@@ -631,36 +639,61 @@ Al no haber una ventana de configuración del programa, la configuración debe h
 & \texttt{def-max-connections}: Conexiones máximas por defecto de un conmutador/concentrador.
 \end{easylist}
 
-\section{Funcionamiento del programa}
-Un programa funciona haciendo uso de todas las herramientas anteriormente mencionadas.
+\subsection{Ejemplo: Envío de Ping entre dos dispositivos}
+Lo primero que vamos a hacer, es colocar un Switch al que poder conectar los ordenadores. Después colocamos y conectamos hasta 5 ordenadores (es el máximo de conexiones por defecto) al Switch. Después, para cada ordenador, hacemos click derecho y en el menú emergente pulsamos ``Editar Objeto", con lo que se abrirá una ventana como la de la Figura \ref{fig:editwindow}. Aquí podemos asignar una dirección IP al ordenador. Tras asignar 5 direcciones IP diferentes a los ordenadores, en cualquiera de ellos hacemos click derecho y clickamos en ``Ping", haciendo que aparezca una ventana con un cuadro de texto como en Fig. \ref{fig:pingwindow2}. En este cuadro introducimos la dirección IP del dispositivo al que queremos enviar el Ping y pulsamos la tecla Intro, así el ordenador enviará un paquete Ping Request a la IP especificada. Cuando el paquete llega al equipo con esa dirección IP, este responderá con un paquete parecido, pero en este caso será un ping de respuesta (simbolizado en rojo), por lo que el destino será el primer ordenador. En el caso de que se produzcan cambios en la red mientras el paquete viaja por esta, el paquete dispone de un tiempo de vida, por lo que cuando llega a 0 se destruye.
 
-El programa está basado en distintas clases. Se pueden diferenciar en cuatro tipos: Clases de Interfaz (\class{MainClase}, \class{w\char`_changethings}...), 
+\section{Funcionamiento del programa}
+Se ha creado haciendo uso de todas las herramientas anteriormente mencionadas.
+
+El programa posee distintas clases. Se pueden diferenciar en cuatro tipos: Clases de Interfaz (\class{MainClase}, \class{w\char`_changethings}...), 
 Clases de Dispositivos (\class{ObjetoBase, Switch, Computador}), Clases de Red (\class{packet}, \class{frame}) y clases de apoyo (\class{MAC}, \class{IP}, \class{Port}, \class{Cable}).
 
 Todas las clases poseen, como mínimo, una función llamada \function{\char`_\char`_init\char`_\char`_}, que es la encargada de crear el objeto y establecer las variables más importantes (Coordenadas, variables vacías, dirección MAC...).
 
+\newpage
 \subsection{Main.py}
-Es el archivo principal del programa. Contiene las funciones más importantes, además de las clases con los objetos. Primero trata de importar los módulos necesarios, comprobando uno a uno si están instalados, y advirtiendo al usuario en el caso de que no estén instalados. Podemos encontrar bastantes partes curiosas como la función \function{on\char`_key\char`_press\char`_event} de la clase \class{MainClase}, que se encarga de hacer distintas funciones cuando el usuario pulsa las distintas teclas.
+Es el archivo principal del programa. Contiene las funciones más importantes, además de las clases para crear los objetos. Primero trata de importar los módulos necesarios, comprobando uno a uno si están instalados, y advirtiendo al usuario en el caso de que no estén instalados.
 
-\subsubsection{ObjetoBase}
-En Python, existe la herencia de clases. Esto quiere decir que una clase puede heredar las funciones y los atributos de otra, en forma de cascada. La clase principal de la que heredan el resto de dispositivos de red, es esta, \class{ObjetoBase}. Algunas de sus funciones son estas:
+\subsubsection{MainClase}
+Es la clase principal de la interfaz del programa. Se encarga de administrar la ventana principal de la interfaz.
+
+Posee varias funciones como \function{on\char`_key\char`_press\char`_event} y \function{on\char`_key\char`_release\char`_event} (\texttt{370:416}), que actúan cada vez que se pulsa una tecla y se encargan de hacer las acciones necesarias para esa tecla (o combinación de teclas). Otra función importante es \function{toolbutton\char`_clicked}, que se acciona cada vez que se pulsa un botón (de arriba) y se encarga de comunicarlo a la rejilla.
+
+También contiene una subclase, llamada \class{ObjLst} (\texttt{263:332\footnote{Notación para escribir la ubicación del código. Línea inicial:Línea final@Archivo. Si se omite el nombre de archivo, es porque ha sido anteriormente mencionado.}}), encargada de la lista de objetos de la parte izquierda de la interfaz.
 
 \newpage
+\subsubsection{Grid}
+Es la clase de la rejilla, se desarrolla de la línea 498 hasta la 677. Tiene varias `capas', una para los cables, otra para el fondo, otra para los dispositivos... Así, en el caso de que dos elementos se solapen, los dispositivos siempre permanecerán al frente del fondo y los cables. El fondo se hace creando una línea horizontal cada \texttt{sq} píxeles, y otras tantas verticales del mismo modo, siendo \texttt{sq} el parámetro \texttt{viewport-sqres} del archivo \texttt{Config.ini}.
+
+\begin{description}
+\item \function{clicked\char`_on\char`_grid}: \texttt{578:639} Función que se encarga de realizar distintas acciones dependiendo de dónde se haya hecho click dentro de la rejilla. Para ello, primero debe comprobar si ahí hay o no un objeto, y una vez lo ha comprobado, comprobar si uno de los botones para colocar un objeto ha sido pulsado.
+\item \function{gridparser} \texttt{641:651}: Es una función muy sencilla. Te convierte coordenadas de la rejilla, a coordenadas en píxeles (usadas por Gtk).
+\item \function{resizetogrid} \texttt{653:657}: Otra función sencilla. Dada una imagen, la convierte al tamaño de un cuadrado de la rejilla.
+\item \function{searchforobject} \texttt{659:672}: Encargada de comprobar si, dadas unas coordenadas, hay un objeto en estas.
+\item \function{moveto} \texttt{563:576}: Te mueve una imagen dada a unas coordenadas dadas. En el caso de que de que no esté en la rejilla, crea la imagen, y en el caso de que ya esté en ella, la mueve al lugar designado.
+\end{description}
+
+\newpage
+\subsubsection{ObjetoBase}
+En Python, existe la herencia de clases. Esto quiere decir que una clase puede heredar las funciones y los atributos de otra, en forma de cascada. La clase principal de la que heredan el resto de dispositivos de red es \class{ObjetoBase}. Algunas de sus funciones son estas:
 
 \begin{itemize}
-\item \function{compcon}: Es una función que poseen todos los dispositivos de red, que dado un objeto \class{Computador}, retorna todos los ordenadores que están conectados a la misma red. Se encuentra en \texttt{822:864@Main.py\footnote{Notación para describir ubicación del código. Línea inicial:Línea final@Archivo. Si se omite el nombre de archivo, es el anteriormente mencionado.}}. Está formada por una lista que contendrá los ordenadores conectados y una función llamada subcompcon (\texttt{827:847}), que comprueba las conexiones del objeto, añadiendo la conexión a la lista si es un ordenador. En el caso de que sea un conmutador o un concentrador, llama a la función \texttt{subcompcon} con ese objeto como argumento, por lo que comprueba las conexiones de ese objeto y las añade a la lista del primero, entrando en un bucle hasta que ha comprobado toda la red. La función es usada por el programa cuando es necesario comprobar si dos ordenadores están conectados, por ejemplo.
-\item \function{load}: \texttt{877:896} Al cargar un objeto de un archivo, hay determinadas propiedades del objeto que deben ser establecidas de cero, y determinadas funciones que deben accionarse, para ello existe esta función.
+\item \function{compcon}: Es una función que poseen todos los dispositivos de red, que dado un objeto \class{Computador}, retorna todos los ordenadores que están conectados a la misma red. Se encuentra en \texttt{822:864}. Está formada por una lista que contendrá los ordenadores conectados y una función llamada subcompcon (\texttt{827:847}), que comprueba las conexiones del objeto, añadiendo la conexión a la lista si es un ordenador. En el caso de que sea un conmutador o un concentrador, llama a la función \texttt{subcompcon} con ese objeto como argumento, por lo que comprueba las conexiones de ese objeto y las añade a la lista del primero, entrando en un bucle hasta que ha comprobado toda la red. La función es usada por el programa cuando es necesario comprobar si dos ordenadores están conectados, por ejemplo. Ver <insertar diagrama de flujo>
+\item \function{load}: \texttt{877:896} Al cargar un objeto de un archivo, hay determinadas propiedades del objeto que deben ser establecidas de cero, y determinadas funciones que deben ser llamadas, para ello existe esta función.
 \item \function{update}: Esta función, bastante importante se encarga de actualizar la información del objeto en la interfaz de usuario. Es llamada cada vez que se produce un cambio en el objeto; como al conectarlo, editar el nombre, o desconectarlo de otros objetos.
 \item \function{connect}: \texttt{898:941} Esta función se encarga de establecer las conexiones entre dos objetos.
 \item \function{disconnect}: \texttt{942:989}. Realiza lo contrario de \function{connect}, desconecta un objeto de otro. O un objeto de todos a los que está conectado.
 \item \function{packet\char`_received}: Esta es la función por defecto que se ejecuta cuando un dispositivo ha recibido un paquete. Todos los dispositivos de red tienen una función diferente que sobreescribe a esta (pues no es el mismo comportamiento el de un conmutador que el de un ordenador).
 \end{itemize}
 
-\begin{figure}[H]
-\noindent\centering
-\includegraphics[width=\textwidth]{Resources/Diagramas/Compcon}
-\caption[Diagrama de flujo de la función compcon]{Diagrama de flujo de la función compcon. Entra en un bucle al volver a llamar a la función de forma recursiva.}
-\end{figure}
+%\newpage
+%\vspace{\fill}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.9\textwidth]{Resources/Diagramas/Compcon.pdf}
+%\caption[Diagrama de flujo de la función compcon]{Diagrama de flujo de la función compcon. Entra en un bucle al volver a llamar a la función de forma recursiva.}
+%\end{figure}
+%\vspace{\fill}
 
 \subsubsection{mac}
 Esta clase es la que crea los objetos que serán una dirección MAC. Transcurre de la línea 1024 a la 1059 y contiene varias funciones técnicas, pero la única importante es \function{genmac}, encargada de generar una dirección MAC aleatoria de 48 bits de longitud.
@@ -673,15 +706,14 @@ La clase \class{w\char`_switch\char`_table} es la encargada de la ventana de vis
 Ocupan entre el 25\% y el 30\% del código. Son clases como \class{packet} (la clase base), \class{eth} (paquete con \textit{frame} aplicado, \class{icmp} (paquete con ICMP) y la última clase \class{Ping}, que hereda de \class{icmp} y se encarga de crear un paquete de red, bit a bit, dados una dirección IP de destino y de origen.
 Entre todas estas clases debemos destacar dos funciones:
 \begin{itemize}
-\item \function{animate} es una función que poseen todos los tipos de paquetes de red y se encarga de poner un paquete de red en la interfaz, y de que este se mueva. Para ello, hace una combinación de dos movimientos, uno en el eje x y otro en el eje y, la longitud que debe de moverse en total la divide entre el número total de fotogramas y así consigue la distancia que debe moverse cada fotograma. Cuenta dentro con una subfunción, \function{iteration}, que se encarga de poner la imagen cada fotograma en su sitio y eliminar la imagen del fotograma anterior. Esta función ha sido posible gracias a los conocimientos adquiridos durante primero de 
-Bachillerato.\texttt{162
-7:1717}
-\item \function{create} es una función propiedad de \class{Ping}, dadas una dirección IP de destino y origen, crea un paquete de red, bit a bit, basado en el modelo real de paquetes de Ping inspeccionado por Wireshark, y confirmado en libros de teoría. Es una función que, aunque parezca sencilla, fueron bastantes horas de trabajo, pues es bastante complejo tratar con bits.
+\item \function{animate} es una función que poseen todos los tipos de paquetes de red y se encarga de poner un paquete de red en la interfaz, y de que este se mueva. Para ello, hace una combinación de dos movimientos, uno en el eje x y otro en el eje y, la longitud que debe de moverse en total la divide entre el número total de fotogramas y así consigue la distancia que debe moverse cada fotograma. Cuenta dentro con una subfunción, \function{iteration}, que se encarga de poner la imagen cada fotograma en su sitio y eliminar la imagen del fotograma anterior. Esta función ha sido posible gracias a los conocimientos sobre vectores adquiridos durante primero de 
+Bachillerato.\texttt{1627:1717}
+\item \function{create} es una función propiedad de \class{Ping}, que dadas una dirección IP de destino y origen, crea un paquete de red, bit a bit, basado en el modelo real de paquetes de Ping inspeccionado por Wireshark, y confirmado en libros de teoría. Es una función que, aunque parezca sencilla, fueron bastantes horas de trabajo, pues es bastante complejo tratar con bits.
 \end{itemize}
 \inputminted[firstline=1782, lastline=1818, baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{python}{Codigo/Main.py}
 
 \subsection{save.py}
-Es un archivo que se encarga de guardar y cargar archivos. Está compuesto por dos funciones: \texttt{save} y \texttt{load}, encargadas de guardar a un archivo y cargar a un archivo, respectivamente. Para ello, usan una librería nativa de Python llamada \texttt{pickle}, que se encarga de la \gls{serializar} de los objetos, y la posterior deserialización de estos. Este método de serialización debería ser cambiado en una versión posterior, ya que no es retrocompatible, es decir, no te permite cargar archivos creados con una versión anterior del programa.
+Es un archivo que se encarga de guardar y cargar archivos. Está compuesto por dos funciones: \texttt{save} y \texttt{load}, encargadas de guardar a un archivo y cargar a un archivo, respectivamente. Para ello, usan una librería nativa de Python llamada \texttt{pickle}, que se encarga de la \gls{serializar} de los objetos, y la posterior deserialización de estos. Este método de serialización debería ser cambiado en una versión posterior, ya que no es retrocompatible, es decir, no te permite cargar archivos creados con una versión anterior del programa, además de que hace que los archivos de guardado sean demasiado pesados.
 
 \subsection{Interface.glade}
 Este archivo, de mil trescientas veinticinco líneas, es el encargado de establecer las propiedades de la interfaz. No ha podido ser incluido en el anexo debido a su larga extensión, ya que usa XML, un lenguaje que es bastante redundante, aunque sencillo de usar.
@@ -696,7 +728,7 @@ Los Switches se encargan de redireccionar los paquetes de red. La primera vez qu
 	fontsize=\scriptsize,
 	linenos,
 	breaklines]{python}{Codigo/Main.py}
-Este algoritmo esta basado en el que usan los conmutadores reales y, traducido a lenguaje mortal, vendría a ser:
+Este algoritmo esta basado en el que usan los conmutadores reales y, traducido a lenguaje humano, vendría a ser:
 \begin{easylist}[itemize]
 \ListProperties(Style*=,Space*=6pt)
 & Si la dirección MAC de destino del paquete recibido se encuentra directamente conectado al Switch y el TTL del paquete es mayor que cero:
@@ -711,9 +743,6 @@ Cuando recibe un paquete, también añade a la \textit{Routing Table} o tabla de
 \inputminted[firstline=1231, lastline=1247, baselinestretch=1,fontsize=\scriptsize, linenos,breaklines]{python}{Codigo/Main.py}
 Este es el código que cumple esta función. Cada elemento en la tabla tiene un tiempo establecido en el que caduca la entrada. Lo que hace esta parte del código es comprobar si este tiempo ha caducado, actualizar la fecha de caducidad si la dirección MAC ya está en la tabla o añadirlo de nuevo en la tabla si la dirección no está.
 
-\subsection{Ejemplo: Envío de Ping entre dos dispositivos}
-Lo primero que vamos a hacer, es colocar un Switch al que poder conectar los ordenadores. Después colocamos y conectamos hasta 5 ordenadores (es el máximo de conexiones por defecto) al Switch. Después, para cada ordenador, hacemos click derecho y en el menú emergente pulsamos ``Editar Objeto", con lo que se abrirá una ventana como la de la Figura \ref{fig:editwindow}. Aquí podemos asignar una dirección IP al ordenador. Tras asignar 5 direcciones IP diferentes a los ordenadores, en cualquiera de ellos hacemos click derecho y clickamos en ``Ping", haciendo que aparezca una ventana con un cuadro de texto como en Fig. \ref{fig:pingwindow2}. En este cuadro introducimos la dirección IP del dispositivo al que queremos enviar el Ping y pulsamos la tecla Intro, así el ordenador enviará un paquete Ping Request a la IP especificada. Cuando el paquete llega al equipo con esa dirección IP, este responderá con un paquete parecido, pero en este caso será un ping de respuesta (simbolizado en rojo), por lo que el destino será el primer ordenador. En el caso de que se produzcan cambios en la red mientras el paquete viaja por esta, el paquete dispone de un tiempo de vida, por lo que cuando llega a 0 se destruye.
-
 \section{Versión actual del programa (0.2.3-alpha)}
 \label{01}
 En la versión 0.1 se introdujo toda la interfaz, las conexiones, los dispositivos... Pero aún no se podían enviar ni recibir paquetes de red. En la versión 0.2 se introdujo esta posibilidad, junto a otras cosas como el enrutamiento de paquetes. El programa es considerado una versión \textit{alpha}, ya que aún está en desarrollo y no es un programa terminado.
@@ -721,7 +750,7 @@ En la versión 0.1 se introdujo toda la interfaz, las conexiones, los dispositiv
 El programa te permite, por el momento, hacer una simulación de red simple. Se podría decir que es una base sobre la que se pueden ir añadiendo más funcionalidades, como el soporte para otros protocolos, o un modo `explicatorio' que enseñe a los alumnos lo que está pasando en la red. En la versión 0.2.3-alpha del programa sólo se ha introducido el ``Ping", es decir, la posibilidad de enviar un paquete de prueba a otro dispositivo de la misma red. También se han introducido algunos cambios en la interfaz, uno de ellos, bastante útil para el aprendizaje: los cuadros de texto en los que se introducen direcciones IP, cambian de color entre rojo, naranja o verde, dependiendo si la IP introducida no es válida, está incompleta o es válida, respectivamente.
 
 \section{Desarrollo del proyecto}
-En cuanto al código, a pesar de la gran extensión del programa, han sido escritas muchas más líneas, que han sido en algún momento eliminadas o reemplazadas. El desarrollo del proyecto puede dividirse en 4 fases, una por trimestre, aproximadamente.
+En cuanto al código, a pesar de la gran extensión del programa, han sido escritas muchas más líneas, que han sido en algún momento eliminadas o reemplazadas. El desarrollo del proyecto puede dividirse en 4 fases a lo largo de 3 trimestres.
 
 En la primera fase, de Noviembre a Febrero/Marzo he ido aprendiendo sobre todo de Gtk+, la librería para la interfaz del programa. Al empezar el proyecto mis conocimientos sobre esta librería eran nulos; y sobre Python, el lenguaje de programación, eran demasiado básicos. También aprendí bastante sobre redes informáticas.
 
@@ -731,15 +760,15 @@ En la tercera fase se desarrolla la gran parte del programa, aquí es cuando lle
 
 La cuarta fase transcurre solapada con la tercera, comienza en Julio y acaba el día \@date, con la entrega de la memoria del proyecto. Es la fase en la que se desarrolla esta memoria.
 
-He notado bastante la adquisición de experiencia, ya que tardé prácticamente 5-6 meses en hacer las primeras 500 líneas; pero en verano, conforme iba programando más, conseguí llegar a hacer más de 1000 líneas en una semana.
+He notado bastante la adquisición de experiencia, ya que tardé prácticamente 5-6 meses en hacer las primeras 500 líneas; pero en verano, conforme iba programando más, conseguí llegar a hacer más de 1000 líneas en una semana. También, al leer el código antiguo se notan bastantes errores debidos a la falta de experiencia, que tiene que ser corregidos si aún no se ha hecho.
 
 \subsection{Obstaculos en el desarrollo del proyecto}
 Durante el desarrollo del proyecto han surgido bastantes trabas y contratiempos, que he conseguido solucionar. Muchos de ellos surgen por la falta del gran conocimiento técnico necesario para la creación de un software tan específico, han sido muchas horas de mirar la documentación de las librerías \cite{PyGiApi}, y pedir ayuda por foros para intentar solucionar dudas y bugs.
 
-En algunas ocasiones no han sido errores, sino falta de conocimiento para el desarrollo de determinadas funciones lo que ha creado pausas de hasta dos semanas en la acción de escribir el programa.
+En algunas ocasiones no han sido errores, sino falta de conocimiento para el desarrollo de determinadas funciones lo que ha creado pausas de hasta dos semanas en la acción de escribir el programa. Gracias a comunidades como \textbf{\textit{stackoverflow}} he conseguido solucionar muchas de las dudas y errores básicos del programa.
 
 \section{Conclusión}
-Lo más difícil fue empezar. El tratar de aprender tanta información de golpe de forma autodidacta... Aunque ya supiese un poco sobre programación en Python, no tenía casi experiencia, aprender a usar la librería de Gtk+, aprender sobre redes, aprender sobre un uso más extenso de GNU/Linux, aprender sobre \LaTeX , etc. fue bastante cansado. pero eso es lo mejor, todo lo que he aprendido y, sobre todo, la experiencia que he adquirido en el campo de la programación.
+Lo más difícil fue empezar. El tratar de aprender tanta información de golpe de forma autodidacta. Aunque ya supiese un poco sobre programación en Python, no tenía casi experiencia, aprender a usar la librería de Gtk+, aprender sobre redes, aprender sobre un uso más extenso de GNU/Linux, aprender sobre \LaTeX , etc. fue bastante cansado. pero eso es lo mejor, todo lo que he aprendido y, sobre todo, la experiencia que he adquirido en el campo de la programación.
 
 A la hora de programar, al principio el ritmo era muy lento, de unas 200 líneas al mes, con pausas de semanas para solucionar problemas y errores. Poco a poco se fue acelerando hasta llegar a finales de Julio, donde hacía más de 100 líneas diarias.
 
