@@ -1,0 +1,13 @@
+.atomignore
+.directory
+cmd.exe
+logfiles/
+*.log
+*~
+__pycache__/
+*.inv
+Test.py
+Test.glade
+Bytes
+#*#
+*#
