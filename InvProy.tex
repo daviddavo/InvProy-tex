@@ -23,7 +23,8 @@
 \usepackage{graphicx} %Para insertar gráficos
 \usepackage{float} %PAra posicionar bien los gráficos
 \usepackage{unicode-math} %Para símbolos matemagicos
-\usepackage[type={CC}, modifier={by-sa}, version={4.0}]{doclicense} %Muestra la licencia
+\usepackage[type={CC}, modifier={by-sa}, version={4.0},
+lang=spanish]{doclicense} %Muestra la licencia
 \usepackage[usenames,svgnames,table]{xcolor} %Para darle color
 \usepackage{dirtytalk} %Usado para citar
 \usepackage{fvextra}
@@ -93,9 +94,9 @@ style=ieee
 \makeatletter
 \begin{titlepage}
 \centering
-\vspace*{4cm}
+\vspace*{1cm}
 {\scshape\LARGE IES Palas Atenea \par}
-\vspace{1cm}
+\vspace{2cm}
 {\scshape\Large Proyecto de Investigación Bachillerato de excelencia:\\
 Programación, redes y software libre\par}
 \vspace{1.5cm}
@@ -116,11 +117,18 @@ Julio Sánchez Olías
 \clearpage
 \pagenumbering{Roman}
 
-\definecolor{chaptercolour}{HTML}{540006}
-\definecolor{sectioncolour}{HTML}{7B1018}
-\definecolor{subsectioncolour}{HTML}{A22F37}
+%\definecolor{chaptercolour}{HTML}{540006}
+%\definecolor{sectioncolour}{HTML}{7B1018}
+%\definecolor{subsectioncolour}{HTML}{A22F37}
+%\definecolor{subsubsectioncolour}{HTML}{CDB380} %TERRA
+%%\definecolor{subsubsectioncolour}{HTML}{D46A6A}
+
+\definecolor{chaptercolour}{HTML}{710000}
+\definecolor{sectioncolour}{HTML}{8B0000}
+\definecolor{subsectioncolour}{HTML}{A20E0E}
 \definecolor{subsubsectioncolour}{HTML}{CDB380} %TERRA
 %\definecolor{subsubsectioncolour}{HTML}{D46A6A}
+
 \renewcommand\cftchapfont{\bf\color{chaptercolour}}
 \renewcommand\cftchappagefont{\bf\color{chaptercolour}}
 
@@ -139,7 +147,7 @@ Julio Sánchez Olías
 	{\color{subsubsectioncolour}\thesubsubsection}{1em}{}
 
 \tableofcontents
-\listoffigures Todas las imágenes son de autoría propia y siguen la licencia de este documento.
+\listoffigures Todas las imágenes son de autoría propia y siguen la licencia de este documento. \doclicenseName \doclicenseIcon
 \newpage{}
 \setlength{\parskip}{5pt plus4pt minus3pt}
 \setlength{\footskip}{1cm plus4pt minus3pt}
@@ -172,7 +180,7 @@ That is why we created InvProy a Software Libre network simulation program (stil
 \centerline{\color{chaptercolour}\normalfont\huge\bfseries Agradecimientos}
 \vspace*{20pt}
 
-Lo primero, me gustaría agradecer a mi familia; sobre todo a mis padres, \textbf{Anselmo y Gloria}, por aguantarme durante los meses de creación de este proyecto; y a mi tía, \textbf{Toñi}, por ayudarme a corregir poco a poco todas las impurezas del proyecto.
+Lo primero, me gustaría agradecer a mi familia; sobre todo a mis padres, \textbf{Anselmo y Gloria}, por aguantarme durante los meses de creación de este proyecto; y a mi tía, \textbf{Toñi}, por ayudarme a corregir poco a poco todas las impurezas de la memoria.
 
 Quiero agradecer también a mis antiguos profesores del \textbf{IES Miguel Delibes} pues, sin ellos, sí que no habría sido posible la realización de este trabajo ya que no estaría en este programa de bachillerato. Gracias \textbf{David Miguel}, \textbf{Alicia Valiente}, \textbf{Óscar Pintado}, \textbf{Raúl Castellano} y \textbf{Mercedes Pinilla}.
 
@@ -201,7 +209,7 @@ Según la Free Software Foundation
 -- R. Stallman \cite{FSF-Ph}
 
 La idea de Software Libre nace con Richard Stallman en 1983, cuando anuncia la creación del Proyecto GNU (Sistema Operativo libre alternativo a Unix y BSD). En 1985 se publica el Manifiesto GNU en el que se declara la filosofía GNU, la definición de software libre y algunas ideas sobre copyleft, más tarde ese año se crea la Fundación del Software Libre (FSF por sus siglas en inglés).
-Al su sistema operativo aún le faltaba una pieza bastante grande, a lo que en 1991 Linus Torvals lanza el Kernel Linux, que licenció con la licencia GNU General Public License (GPL)[Ver anexo \ref{gnugpl}]. A partir de aquí comenzaron a salir nuevas licencias, como la licencia Apache, o la del MIT. Algunos ejemplos de software libre son GNU/Linux, emacs, LaTeX, GIMP, GNOME, o los servidores Apache y las librerías MySQL, usadas en todo el mundo.
+A su sistema operativo aún le faltaba una pieza bastante grande, a lo que en 1991 Linus Torvals lanza el Kernel Linux, que licenció con la licencia GNU General Public License (GPL)[Ver anexo \ref{gnugpl}]. A partir de aquí comenzaron a salir nuevas licencias, como la licencia Apache, o la del MIT. Algunos ejemplos de software libre son GNU/Linux, emacs, LaTeX, GIMP, GNOME, o los servidores Apache y las librerías MySQL, usadas en todo el mundo.
 
 No debemos confundir `Software Libre' con `Código abierto', ya que, aunque el código pueda ser leído por todo el mundo no significa que el resto de personas tengan licencia para redistribuir y/o editar el código. Software libre es el que cumple las cuatro libertades del software libre.
 Según Richard Stallman las cuatro libertades son estas: \cite{FSF-talk1, FSF-talk2}
@@ -215,61 +223,6 @@ Según Richard Stallman las cuatro libertades son estas: \cite{FSF-talk1, FSF-ta
 
 Una de las grandes ventajas del software libre, aparece en la educación. Es muy útil para aprender ya que, si un alumno tiene curiosidad sobre el programa que está usando, puede consultar el código fuente en internet. Además, al ser licencias gratuitas, se puede destinar ese presupuesto a otras áreas como el hardware o el profesorado. También es útil en el desarrollo, pues cualquier programador puede solucionar un error que afecta a todos los usuarios.
 
-\section{Herramientas}
-Todo el software que se ha usado para la creación de este programa, es software libre, debido a las ventajas citadas anteriormente. A continuación, se citan las herramientas que se han usado para la creación tanto del programa como de este documento.
-
-\subsection{GNU/Linux}
-También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \acrshort{gnu} (Acrónimo recursivo \textit{GNU's Not Unix}, o GNU no es Unix). Es el gran ejemplo por excelencia del Software Libre. Es el sistema operativo más utilizado, ya que es usado en la mayoría de los servidores, y además, otros sistemas operativos como Android están basados en éste. Puedes instalar Linux desde el código fuente o instalar distribuciones o \textit{distros}.
-
-\subsubsection{Distros}
-Son las distintas distribuciones de software de GNU/Linux. Es decir, un conjunto de software preconfigurado y compilado formado por el Sistema Operativo GNU, el kernel de Linux y otros tantos paquetes, dependiendo de los usuarios a los que esté dirigida la distribución. Pueden crearse con el soporte de una empresa; como Ubuntu (Canonical Ltd.), openSUSE (Novell) o Fedora (Red Hat); y otras mantenidas por comunidades como Debian, Gentoo o Arch Linux.
-
-Para el desarrollo de este proyecto he usado dos distros diferentes. Una llamada \textbf{Arch Linux}, que es \textit{rolling release} (No tiene "versiones", sino que siempre se va actualizando con los últimos paquetes disponibles, por lo que siempre está actualizado) en la que se ha ido haciendo la programación, y \textbf{Ubuntu 16}, basado en Debian, por lo que está bastante menos actualizado y se han tenido que hacer correcciones en el programa para que pueda funcionar con versiones más antiguas de las \glspl{dependencia}. Se ha usado Ubuntu para comprobar el funcionamiento del software, ya que es la distribución más usada en los hogares y en educación.
-
-\subsection{Git y Github}
-Git es un software diseñado por Linus Torvalds con el que se puede crear un Sistema de
-Control de Versiones (VCS [\textit{Version Control System}]). Este programa te permite
-de forma sencilla volver a una versión o \textit{commit} anterior del programa, así
-como enviarlas a un \gls{repositorio} remoto e incluso publicarlas en línea. Su punto fuerte
-son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama
-\textit{master} (principal) siempre sea funcional. Para ello creamos una nueva rama para cada nueva funcionalidad del programa. La implementación del nuevo código a otra rama se denomina \textit{merge}. Otra de las funcionalidades que implementa es \texttt{clone}, que te permite descargar un proyecto si tienes la URL del \gls{repositorio} git.
-
-Para usar Git, se suele recomendar seguir un \textit{Git workflow} o flujo de trabajo de Git, en ocasiones denominado \textit{gitflow}. El más común es el basado en 4 nuevas ramas, aparte de \texttt{master}.
-\begin{description}
-\item \textbf{\textit{Develop:}} es la rama de desarrollo. Se van aplicando las nuevas funcionalidades a esta rama, para luego convergerlas en la rama \texttt{Release} que se va a publicar.
-\item \textbf{\textit{Release:}} una vez hayamos terminado en la rama de desarrollo, se converge \texttt{Develop} con \texttt{Release} y se procede a solucionar los bugs que se vayan descubriendo. Cuando se hayan solucionado todos los bugs y la siguiente versión del programa esté disponible para el público, se hace \texttt{merge} en \texttt{Develop} y en \texttt{Master}, además de aplicarle al \texttt{commit} una etiqueta con el nombre de la versión. (2.2.1, por ejemplo).
-\item \textbf{\textit{Hotfix}:} Es una rama dedicada a solventar los \glspl{bug} que un usuario descubra en una versión ya lanzada de la aplicación. Cuando un usuario descubre un bug, se crea una nueva rama a partir de la última versión de master, se soluciona el bug en esa rama y luego se vuelve a hacer \texttt{merge} en master y develop.
-\item \textbf{\textit{Feature <x>}:} Donde <x> el nombre de la funcionalidad. Es una rama dedicada a una nueva funcionalidad, se crea a partir de \texttt{Develop}, y una vez terminada, se hace \texttt{merge} en \texttt{Develop} de nuevo.
-\end{description}
-\begin{figure}[H]
-\noindent
-\includegraphics[width=\textwidth]{Resources/Gitflow.png}
-\caption{\textit{Gitflow} o flujo de trabajo de Git}
-\end{figure}
-
-GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener una wiki y una página web para tu proyecto, junto a otras funciones.
-Una de sus funciones estrella es la visualización online del repositorio, con la que cualquier persona tiene acceso al código y los archivos antes de descargarlos. Otra función útil es el apartado de \textit{Issues}, en el que los usuarios de tu código pueden reportar los bugs del programa o aportar nuevas ideas en forma de "foro".
-Tanto el programa como este documento están disponibles en GitHub en los siguientes enlaces. \url{https://github.com/daviddavo/InvProy} y \url{https://github.com/daviddavo/InvProy-tex}
-
-\subsection{LaTeX}
-\LaTeX\space o, en texto plano, LaTeX, pronunciado con la letra griega 
-Ji ($\Chi$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas o código e importar paquetes que cumplan las necesidades de los usuarios. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la apariencia de éste.
-El código del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, aunque he usado una \acrshort{IDE} llamada \textbf{texmaker}.
-
-\subsection{Python}
-Es un lenguaje de programación interpretado (sólo se traduce  el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca porque sus programas poseen una sintaxis más legible que la de el resto de lenguajes. Soporta tanto \gls{programacion imperativa} como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este proyecto, la versión de Python utilizada es la 3.4 en adelante.
-
-\subsection{Gtk+}
-Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de Interfaces Gráficas de Usuario (\acrshort{GUI}), también, al igual que Linux forma parte del proyecto GNU.
-
-Contiene las bibliotecas de GTK, GDK, ATK, Glib, Pango y Cairo; de las que he usado fundamentalmente GTK para crear la interfaz principal del programa; \textbf{GDK} al utilizarlo como intermediario entre los gráficos de bajo nivel y alto nivel y \textbf{Cairo} para la creación de algunos de los elementos gráficos del programa.
-
-Al utilizar este conjunto de librerías, se ha conseguido que sólo sea necesario descargar una dependencia del programa, que además suele venir instalada en la mayoria de distros de Linux. Por ejemplo en una instalación limpia de Ubuntu 16 (sin descargar paquetes adicionales) el programa funciona perfectamente. Para usarlo en Python se ha tenido que importar la libreria de PyGtk, que también suele venir incluida en la distribución.
-
-\subsection{Wireshark}
-\label{wireshark}
-Wireshark es un \textit{packet sniffer} o analizador de paquetes; te muestra los paquetes de red reales enviados y recibidos por una tarjeta de red, lo que facilita la creación del simulador de redes. También te separa las distintas partes de la encapsulación del paquete y además te permite buscar entre los paquetes de red añadidos y recibidos, pudiendo añadir filtros de búsqueda para los distintos campos del paquete y para las distintas capas.
-
 \newpage
 \section{Fundamentos básicos de programación}
 Una variable no es más que un hueco en la memoria del ordenador, reservado para algo que queremos recordar. Así, podemos establecer una variable llamada `pi' con valor $\mathsf{3.1415...}$, para que luego, en una función, en lugar de escribir `3.14...' múltiples veces, sólo haga falta escribir `pi'. Esto es un ejemplo bastante básico, ya que las variables pueden ser también valores booleanos\footnote{Valores del álgebra de Boole; Verdadero/Falso, 1/0, True/False...}, listas, diccionarios (listas de tipo clave:valor), objetos, series de carácteres...
@@ -277,9 +230,11 @@ Las variables se establecen así: \mintinline{python3}|variable = valor|.
 
 Una función, es un conjunto de instrucciones, que, dados unos argumentos (o ninguno) realiza una serie de acciones y/o retorna información (un número, objeto, valor, etc.). Por ejemplo, podríamos crear una función \texttt{sum(a,b)}, que dados dos números, retorne la suma de estos. Se dice `llamar a una función' cuando se le da al programa la instrucción de que ejecute la función. Para ello, usamos \mintinline{python3}|funcion(argumento1,argumento2...)|. Los argumentos pueden ser cualquier cosa, desde una variable binaria (1 o 0, Verdadero o Falso) a un Objeto. Además, al terminar una función retorna un valor; que puede ser usado si la función es llamada para establecer una variable. (P.ej: \mintinline{python3}|sumatorio = sum(3, 8)|
 
-Las clases sirven para crear objetos, por ejemplo, un Switch, un cable, una ventana, o una dirección MAC son objetos. Las clases, contienen variables y funciones. Las variables pueden ser distintas para cada objeto, mientras que las funciones son las mismas. Así todos los conmutadores tienen una función que actúa cuando reciben un paquete, pero cada uno posee una dirección MAC distinta, unas coordenadas distintas, un nombre distinto... Para crear un objeto, simplemente tenemos que `llamar' a la clase mediante una variable, p.ej: \mintinline{python3}|objeto = Clase()|. Como la función que crea el objeto también acepta argumentos, hay objetos que necesitan argumentos para ser creados (\mintinline{python3}|P = punto(5,7)|. También, podemos establecer variables de objeto: \mintinline{python3}|objeto.nombre = "Objeto Guay"|.
+Las clases sirven para crear objetos, por ejemplo, un Switch, un cable, una ventana, o una dirección MAC son objetos. Las clases contienen variables y funciones. Las variables pueden ser distintas para cada objeto, mientras que las funciones son las mismas. Así todos los conmutadores tienen una función que actúa cuando reciben un paquete, pero cada uno posee una dirección MAC distinta, unas coordenadas distintas, un nombre distinto... Para crear un objeto, simplemente tenemos que `llamar' a la clase mediante una variable, p.ej: \mintinline{python3}|objeto = Clase()|. Como la función que crea el objeto también acepta argumentos, hay objetos que necesitan argumentos para ser creados (\mintinline{python3}|P = punto(5,7)|. También, podemos establecer variables de objeto: \mintinline{python3}|objeto.nombre = "Objeto Guay"|.
 
 Al final, todo programa se basa en condiciones y funciones. ``Si ocurre esto, haz esto otro; si no ocurre, haz aquello". Para ello, se simplifica cualquier expresión en VERDADERO o FALSO, parecido a la lógica aristotélica. Si la expresión dada es verdadera, se ejecutará el código de dentro del condicional. También existe la expresión \texttt{elif}, donde se especifica otra condición, que se ejecutará en caso de que no se cumpla la anterior pero sí esta; y la expresión \texttt{else}, en caso de que no se cumpla ninguna de las anteriores.
+
+\newpage
 \begin{minted}[baselinestretch=1,	linenos,
 	breaklines
 	]{python3}
@@ -292,7 +247,7 @@ elif condicionN:
 else:
   print("Algo no funciona")
 \end{minted}
-En condición, puede haber cualquier expresión que pueda ser verdadera. Las que unen condiciones son \texttt{and} y \texttt{or}, en lenguaje matemático, intersección y unión. Y las condiciones suelen ser expresiones matemáticas, como a > b, a >= b, a == b, o a != b. Aunque en ocasiones pueden usarse con otros tipos de variables, como las series de caracteres. Por ejemplo \mintinline{python3}|if entrada == "Yes":|, en la que si la variable \texttt{entrada}, que hemos definido anteriormente como texto introducido por el usuario, es igual a "Yes", ejecutaremos código. En mi programa tiene aplicaciones como `Si el objeto es un conmutador' o `si la coordenada x buscada es igual a la coordenada x del objeto y la coordenada y buscada es igual a la coordenada y del objeto'.
+Como condición, puede haber cualquier expresión que pueda ser verdadera. Las que unen condiciones son \texttt{and} y \texttt{or}, en lenguaje matemático, intersección y unión. Y las condiciones suelen ser expresiones matemáticas, como a > b, a >= b, a == b, o a != b. Aunque en ocasiones pueden usarse con otros tipos de variables, como las series de caracteres. Por ejemplo \mintinline{python3}|if entrada == "Yes":|, en la que si la variable \texttt{entrada}, que hemos definido anteriormente como texto introducido por el usuario, es igual a "Yes", ejecutaremos código. En mi programa tiene aplicaciones como `Si el objeto es un conmutador' o `si la coordenada x buscada es igual a la coordenada x del objeto y la coordenada y buscada es igual a la coordenada y del objeto'.
 
 Ahora, veremos un pequeño ejemplo práctico, que junta todo:
 \begin{minted}[baselinestretch=1,linenos,
@@ -323,6 +278,8 @@ Durante el desarrollo de un programa existen distintas fases, desde el comienzo 
 Aquí ya se publica una versión para el usuario, denominada \textit{Beta Release}, en ocasiones también es llamada \textbf{TP}(\textit{Technical preview} o avance técnico). En ocasiones, como en algunos programas de software libre, el programa se mantiene en fase Beta y nunca se dejan de añadir funcionalidades. Se considera beta abierta si la versión está disponible al público, y beta cerrada en caso contrario.
 \item \textbf{RC}: \textit{Release Candidate}. Es una versión beta que tiene el potencial de convertirse en una versión final del programa, que está lista para lanzar si no surgen \textit{bugs} importantes. En esta fase se estabiliza el programa y se prepara para el lanzamiento con numerosos tests.
 \end{description}
+
+\newpage
 \subsection{Publicación}
 Cuando el programa es publicado, la versión del programa se considera `versión estable'.
 \begin{description}
@@ -332,7 +289,7 @@ Cuando el programa es publicado, la versión del programa se considera `versión
 \subsection{Soporte}
 Después de ser lanzada una versión de un programa, durante un tiempo denominado `tiempo de vida' la versión aún tiene soporte oficial, en el que se pueden aplicar todavía actualizaciones de servicio y parches para solucionar \textit{bugs} o, en ocasiones, incluir nuevas funcionalidades.
 \begin{description}
-\item \textbf{Fin de soporte:} Cuando la versión deja de ser distribuida y se deja de dar soporte, se dice que ha alcanzado el `fin de vida', o pasa a ser obsoleto, retirado o descontinuado. A pesar de esto, la gente puede seguir queriendo usar el programa, como con Windows XP.
+\item \textbf{Fin de soporte:} Cuando la versión deja de ser distribuida y se deja de dar soporte, se dice que ha alcanzado el `fin de vida', o pasa a ser obsoleto, retirado o descontinuado. A pesar de esto, la gente puede seguir queriendo usar el programa, como con Windows XP, lo que causa grandes brechas de seguridad si se hace dentro de una corporación.
 \end{description}
 
 %\definecolor{chaptercolour}{HTML}{051C38}
@@ -344,7 +301,7 @@ Después de ser lanzada una versión de un programa, durante un tiempo denominad
 \section*{Historia}
 El uso de redes informáticas nace en la década de 1960, para suplir la necesidad de las universidades y laboratorios de investigación de conectar los distintos ordenadores. En la década de 1970 se comienza a experimentar con tecnologías de redes LAN, algunas de ellas usadas actualmente o recientemente, como Ethernet, desarrollado en 1975 por Xerox PARC (Palo Alto Research \& Development). 
 
-Las redes se usaban sobre todo para aprovechar el almacenamiento y las impresoras. Cada vendedor incluía su propio tipo de tarjeta de red, cableado, protocolo y sistema operativo de red, hasta que Novell NetWare (Sistema Operativo de red desarrollado por Novell inc.) salió al mercado en 1983 soportando la mayoría de tipos de tarjetas de red y cables. Fue el SO de Red dominante hasta que en 1993 Microsoft lanzó Windows NT AS y Microsoft Windows para Trabajo en Grupo. Al mismo tiempo, los dispositivos Unix usaban sistemas basados en TCP/IP.
+Las redes se usaban sobre todo para aprovechar el almacenamiento y las impresoras, así no era necesario comprar una impresora para cada equipo. Cada vendedor incluía su propio tipo de tarjeta de red, cableado, protocolo y sistema operativo de red, hasta que Novell NetWare (Sistema Operativo de red desarrollado por Novell inc.) salió al mercado en 1983 soportando la mayoría de tipos de tarjetas de red y cables. Fue el SO de Red dominante hasta que en 1993 Microsoft lanzó Windows NT AS y Microsoft Windows para Trabajo en Grupo. Al mismo tiempo, los dispositivos Unix usaban sistemas basados en TCP/IP.
 
 Actualmente el protocolo TCP/IP es considerado un estándar y ha reemplazado el resto de protocolos usados hasta principios de los 2000.
 
@@ -525,6 +482,62 @@ Un cortafuegos es un software que supervisa el tráfico de entrada y salida de d
 \newcommand{\class}[1]{\texttt{\color{DarkRed}#1}}
 \chapter{El simulador de redes}
 La parte práctica del Proyecto de Investigación, el simulador de redes de nombre \textit{InvProy}, ha sido la parte más extensa del proyecto, que más tiempo, esfuerzo y recursos ha ocupado. Se podría decir que el proyecto entero es la parte práctica. Como curiosidad, el nombre de \textit{InvProy} viene del acrónimo formado mediante la permutación de las palabras ``Proyecto de Investigación", quedando \textit{``Investigación \sout{de} Proyecto"} y de ahí \textit{InvProy}.
+
+\section{Herramientas usadas en la creación del software}
+Todo el software que se ha usado para la creación de este programa, es software libre, debido a las ventajas citadas anteriormente. A continuación, se listan las herramientas que se han usado para la creación tanto del programa como de este documento.
+
+\subsection{GNU/Linux}
+También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \acrshort{gnu} (Acrónimo recursivo \textit{GNU's Not Unix}, o GNU no es Unix). Es el gran ejemplo por excelencia del Software Libre. Es el sistema operativo más utilizado, pues es usado en la mayoría de los servidores, y además, otros sistemas operativos como Android están basados en éste. Puedes instalar Linux desde el código fuente o instalar distribuciones o \textit{distros}.
+
+\subsubsection{Distros}
+Son las distintas distribuciones de software de GNU/Linux. Es decir, un conjunto de software preconfigurado y compilado formado por el Sistema Operativo GNU, el kernel de Linux y otros tantos paquetes, dependiendo de los usuarios a los que esté dirigida la distribución. Pueden crearse con el soporte de una empresa; como Ubuntu (Canonical Ltd.), openSUSE (Novell) o Fedora (Red Hat); y otras mantenidas por comunidades como Debian, Gentoo o Arch Linux.
+
+\newpage
+Para el desarrollo de este proyecto he usado dos distros diferentes. Una llamada \textbf{Arch Linux}, que es \textit{rolling release} (No tiene "versiones", sino que siempre se va actualizando con los últimos paquetes disponibles, por lo que siempre está actualizado) en la que se ha ido haciendo la programación, y \textbf{Ubuntu 16}, basado en Debian, por lo que está bastante menos actualizado y se han tenido que hacer correcciones en el programa para que pueda funcionar con versiones más antiguas de las \glspl{dependencia}. Se ha usado Ubuntu para comprobar el funcionamiento del software, ya que es la distribución más usada en los hogares y en educación.
+
+\subsection{Git y Github}
+Git es un software diseñado por Linus Torvalds con el que se puede crear un Sistema de
+Control de Versiones (VCS [\textit{Version Control System}]). Este programa te permite
+de forma sencilla volver a una versión o \textit{commit} anterior del programa, así
+como enviarlas a un \gls{repositorio} remoto e incluso publicarlas en línea. Su punto fuerte
+son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama
+\textit{master} (principal) siempre sea funcional. Para ello creamos una nueva rama para cada nueva funcionalidad del programa. La implementación del nuevo código a otra rama se denomina \textit{merge}. Otra de las funcionalidades que implementa es \texttt{clone}, que te permite descargar un proyecto si tienes la URL del \gls{repositorio} git.
+
+Para usar Git, se suele recomendar seguir un \textit{Git workflow} o flujo de trabajo de Git, en ocasiones denominado \textit{gitflow}. El más común es el basado en 4 nuevas ramas, aparte de \texttt{master}.
+\begin{description}
+\item \textbf{\textit{Develop:}} es la rama de desarrollo. Se van aplicando las nuevas funcionalidades a esta rama, para luego convergerlas en la rama \texttt{Release} que se va a publicar.
+\item \textbf{\textit{Release:}} una vez hayamos terminado en la rama de desarrollo, se converge \texttt{Develop} con \texttt{Release} y se procede a solucionar los bugs que se vayan descubriendo. Cuando se hayan solucionado todos los bugs y la siguiente versión del programa esté disponible para el público, se hace \texttt{merge} en \texttt{Develop} y en \texttt{Master}, además de aplicarle al \texttt{commit} una etiqueta con el nombre de la versión. (2.2.1, por ejemplo).
+\item \textbf{\textit{Hotfix}:} Es una rama dedicada a solventar los \glspl{bug} que un usuario descubra en una versión ya lanzada de la aplicación. Cuando un usuario descubre un bug, se crea una nueva rama a partir de la última versión de master, se soluciona el bug en esa rama y luego se vuelve a hacer \texttt{merge} en master y develop.
+\item \textbf{\textit{Feature <x>}:} Donde <x> el nombre de la funcionalidad. Es una rama dedicada a una nueva funcionalidad, se crea a partir de \texttt{Develop}, y una vez terminada, se hace \texttt{merge} en \texttt{Develop} de nuevo.
+\end{description}
+\begin{figure}[H]
+\noindent
+\includegraphics[width=\textwidth]{Resources/Gitflow.png}
+\caption{\textit{Gitflow} o flujo de trabajo de Git}
+\end{figure}
+
+GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener una wiki y una página web para tu proyecto, junto a otras funciones.
+Una de sus funciones estrella es la visualización online del repositorio, con la que cualquier persona tiene acceso al código y los archivos antes de descargarlos. Otra función útil es el apartado de \textit{Issues}, en el que los usuarios de tu código pueden reportar los bugs del programa o aportar nuevas ideas en forma de "foro".
+Tanto el programa como este documento están disponibles en GitHub en los siguientes enlaces. \url{https://github.com/daviddavo/InvProy} y \url{https://github.com/daviddavo/InvProy-tex}
+
+\subsection{LaTeX}
+\LaTeX\space o, en texto plano, LaTeX, pronunciado con la letra griega 
+Ji ($\Chi$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas o código e importar paquetes que cumplan las necesidades de los usuarios. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la apariencia de éste.
+El código del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, aunque he usado una \acrshort{IDE} llamada \textbf{texmaker}.
+
+\subsection{Python}
+Es un lenguaje de programación interpretado (sólo se traduce  el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca porque sus programas poseen una sintaxis más legible que la de el resto de lenguajes. Soporta tanto \gls{programacion imperativa} como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este proyecto, la versión de Python utilizada es la 3.4 en adelante.
+
+\subsection{Gtk+}
+Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de Interfaces Gráficas de Usuario (\acrshort{GUI}), también, al igual que Linux forma parte del proyecto GNU.
+
+Contiene las bibliotecas de GTK, GDK, ATK, Glib, Pango y Cairo; de las que he usado fundamentalmente GTK para crear la interfaz principal del programa; \textbf{GDK} al utilizarlo como intermediario entre los gráficos de bajo nivel y alto nivel y \textbf{Cairo} para la creación de algunos de los elementos gráficos del programa.
+
+Al utilizar este conjunto de librerías, se ha conseguido que sólo sea necesario descargar una dependencia del programa, que además suele venir instalada en la mayoria de distros de Linux. Por ejemplo en una instalación limpia de Ubuntu 16 (sin descargar paquetes adicionales) el programa funciona perfectamente. Para usarlo en Python se ha tenido que importar la libreria de PyGtk, que también suele venir incluida en la distribución.
+
+\subsection{Wireshark}
+\label{wireshark}
+Wireshark es un \textit{packet sniffer} o analizador de paquetes; te muestra los paquetes de red reales enviados y recibidos por una tarjeta de red, lo que facilita la creación del simulador de redes. También te separa las distintas partes de la encapsulación del paquete y además te permite buscar entre los paquetes de red añadidos y recibidos, pudiendo añadir filtros de búsqueda para los distintos campos del paquete y para las distintas capas.
 
 \section{Instalación}
 \subsection{Ubuntu / Debian}
@@ -759,7 +772,7 @@ Cantidad de datos transferidos por unidad de tiempo. La unidad de tiempo es el s
 
 Se usa la ``b" para designar los bits, y ``B" para los Bytes. Después, se usan los prefijos del sistema internacional cuando es en base decimal, y los prefijos del SI cambiando la segunda sílaba por ``bi" (e.g: kilobit / kibibit, kbit/s / Kibit/s) cuando se trata de múltiplos binarios.
 }
-\vfill
+\vspace{\fill}
 {\setstretch{1.3}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \section*{Tabla de múltiplos}
@@ -785,6 +798,7 @@ Mebibyte/s & MiB/s & $\mathsf{2^{20}}$ Byte/s \\
 Gibibyte/s & GiB/s & $\mathsf{2^{30}}$ Byte/s \\
 Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 \end{tabularx}}
+\vspace{\fill}
 
 \chapter{Capturas de pantalla del programa}
 \noindent\begin{figure}[H]
@@ -804,7 +818,7 @@ Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 	\label{fig:pingwindow}
 \end{minipage}
 
-\vspace*{0.5cm}
+\vspace{\fill}
 \centering
 \begin{minipage}[t]{0.4\textwidth}
 	\centering
@@ -820,6 +834,7 @@ Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 	\label{fig:switchingtable}
 \end{minipage}
 
+\vspace{\fill}
 \centering
 \begin{minipage}[t]{0.5\textwidth}
 	\centering
@@ -837,12 +852,23 @@ Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 
 \chapter[Licencia GNU GPL]{Licencia Pública General GNU}
 \label{gnugpl}
-Es la licencia más usada en el desarrollo de software. Permite las cuatro libertades del software libre y fue creada por la Free Software Foundation. La versión más reciente, la GPLv3, ha sido publicada el 29 de junio de 2007. Al distribuir el programa, debe distribuirse también una copia de la licencia que usa. 
+Es la licencia más usada en el desarrollo de software. Permite las cuatro libertades del software libre y fue creada por la Free Software Foundation. La versión más reciente, la GPLv3, ha sido publicada el 29 de junio de 2007. Al distribuir el programa, debe distribuirse también una copia de la licencia que usa.
+
+Este documento está licenciado con licencia \doclicenseLongNameRef, compatible con la GNU GPL.
 
 InvProy usa la licencia GPLv3, aquí una traducción no oficial\cite{gpltranslation}:
 \inputminted[baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{text}{GPLv3-spanish.txt}
 
 \include{AnCode}
+
+\newpage
+\chapter*{Página de prueba}
+Esto es un poco de texto de prueba.
+\section*{Sección}
+Para imprimir y ver que tal queda
+\subsection*{Subsección}
+Ya no sé que más poner xd
+\subsubsection*{Subsubsección}
 
 \newpage
 \thispagestyle{empty}
