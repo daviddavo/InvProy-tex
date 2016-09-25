@@ -102,7 +102,7 @@ Programación, redes y software libre\par}
 \vspace{1.5cm}
 {\fontsize{35pt}{40pt}\bfseries\color{DarkRed} \@title\par}
 {\huge\bfseries Un simulador de redes por y para alumnos \par}
-{\color{DarkRed}\rule{0.5\textwidth}{2pt}\par}
+{\color{DarkRed}\rule{0.5\textwidth}{1pt}\par}
 \vspace{2cm}
 {\Large\itshape \@author\par}
 \vfill
@@ -128,6 +128,8 @@ Julio Sánchez Olías
 \definecolor{subsectioncolour}{HTML}{A20E0E}
 \definecolor{subsubsectioncolour}{HTML}{CDB380} %TERRA
 %\definecolor{subsubsectioncolour}{HTML}{D46A6A}
+%\usemintedstyle{friendly}
+\usemintedstyle{borland}
 
 \renewcommand\cftchapfont{\bf\color{chaptercolour}}
 \renewcommand\cftchappagefont{\bf\color{chaptercolour}}
@@ -145,8 +147,12 @@ Julio Sánchez Olías
 \titleformat{\subsubsection}
 	{\color{subsubsectioncolour}\normalfont\normalsize\bfseries}
 	{\color{subsubsectioncolour}\thesubsubsection}{1em}{}
+\renewcommand{\cfttoctitlefont}{\huge\bfseries\color{chaptercolour}}
+\renewcommand{\cftloftitlefont}{\huge\bfseries\color{chaptercolour}}
 
 \tableofcontents
+
+\vspace*{1cm}
 \listoffigures Todas las imágenes son de autoría propia y siguen la licencia de este documento. \doclicenseName \doclicenseIcon
 \newpage{}
 \setlength{\parskip}{5pt plus4pt minus3pt}
@@ -164,7 +170,7 @@ Son dos cosas muy importantes, que apenas son enseñadas en las clases de la ESO
 
 \newgeometry{left=5cm,right=5cm}
 \newpage
-\renewcommand{\abstractname}{Abstract}
+\renewcommand{\abstractname}{\color{sectioncolour}Abstract}
 \addcontentsline{toc}{section}{Abstract}
 \begin{abstract}
 \setcounter{page}{5}
@@ -176,9 +182,9 @@ That is why we created InvProy a Software Libre network simulation program (stil
 \newpage
 \setcounter{page}{6}
 %\chapter*{Agradecimientos}
-\vspace*{\fill}
+\vspace*{2.5cm}
 \centerline{\color{chaptercolour}\normalfont\huge\bfseries Agradecimientos}
-\vspace*{20pt}
+\vspace*{50pt}
 
 Lo primero, me gustaría agradecer a mi familia; sobre todo a mis padres, \textbf{Anselmo y Gloria}, por aguantarme durante los meses de creación de este proyecto; y a mi tía, \textbf{Toñi}, por ayudarme a corregir poco a poco todas las impurezas de la memoria.
 
@@ -224,9 +230,7 @@ Según Richard Stallman las cuatro libertades son estas: \cite{FSF-talk1, FSF-ta
 Una de las grandes ventajas del software libre, aparece en la educación. Es muy útil para aprender ya que, si un alumno tiene curiosidad sobre el programa que está usando, puede consultar el código fuente en internet. Además, al ser licencias gratuitas, se puede destinar ese presupuesto a otras áreas como el hardware o el profesorado. También es útil en el desarrollo, pues cualquier programador puede solucionar un error que afecta a todos los usuarios.
 
 \newpage
-\section{Fundamentos básicos de programación}
-Conceptos básicos sobre la programación en general. Los ejemplos son dados con el lenguaje de programación Python (Ver \ref{python})
-
+\section{Fundamentos básicos de programación en Python}
 Una variable no es más que un hueco en la memoria del ordenador, reservado para algo que queremos recordar. Así, podemos establecer una variable llamada `pi' con valor $\mathsf{3.1415...}$, para que luego, en una función, en lugar de escribir `3.14...' múltiples veces, sólo haga falta escribir `pi'. Esto es un ejemplo bastante básico, ya que las variables pueden ser también valores booleanos\footnote{Valores del álgebra de Boole; Verdadero/Falso, 1/0, True/False...}, listas, diccionarios (listas de tipo clave:valor), objetos, series de carácteres...
 Las variables se establecen así: \mintinline{python3}|variable = valor|.
 
@@ -313,15 +317,17 @@ Actualmente el protocolo TCP/IP es considerado un estándar y ha reemplazado el 
 El modelo \acrshort{osi} es un modelo de referencia para redes basado en \gls{capas de abstraccion}.
 Su objetivo es conseguir la interoperabilidad entre sistemas haciendo uso de los protocolos estandarizados. Fue creado en 1980 por la Organización Internacional de Estandarización (\acrshort{iso}). No es considerado una arquitectura de red porque los protocolos no forman parte del modelo, sino que son entidades de distintas normativas internacionales.
 \definecolor{odd}{HTML}{FFFFFF}
-\definecolor{even}{HTML}{E0E0E0}
-\definecolor{header}{HTML}{42A5F5}
-\vspace*{5pt}
+%\definecolor{even}{HTML}{E0E0E0}
+\definecolor{even}{HTML}{FCE4EC}
+\definecolor{header}{HTML}{EF9A9A}
+%\definecolor{header}{HTML}{F48FB1}
+\vspace*{20pt}
 
 \rowcolors{1}{header}{header}
 \rowcolors{2}{odd}{even}
 \renewcommand{\arraystretch}{1} %Antes 1.1
 \noindent\linespread{1}
-\begin{tabularx}{\linewidth}{ | l >{\footnotesize}c >{\footnotesize}X >{\footnotesize}c | }
+\begin{tabularx}{\linewidth}{ | l >{\small}c >{\small}X >{\small}c | }
 	\rowcolor{header} \hline
 	\textbf{Capa} & \textbf{PDU\footnote{\textit{Protocol Data Unit} o Unidad de Datos de Protocolo.}} & \textbf{Función} & \textbf{Ejemplos} \\ \hline
 	1. Física & Bit & Transmisión y recepción de bits físicos sobre un medio físico (topología de red) & 	 RJ45, IEEE 802.11, etc. \\
@@ -382,7 +388,8 @@ Son cada serie de bits en los que se divide la información enviada por una red.
 \item \textbf{Payload} o carga: Los datos que se quieren transferir.
 \item \textbf{Trailer} o cola: En ocasiones es inexistente (como en UDP) pero suele ser un código de comprobación de errores.
 \end{description}
-\vspace{\fill}
+
+\vspace{1cm}
 \begin{figure}[H]
 \noindent
 \centering
@@ -510,7 +517,6 @@ de forma sencilla volver a una versión o \textit{commit} anterior del programa,
 como enviarlas a un \gls{repositorio} remoto e incluso publicarlas en línea. Su punto fuerte
 son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama
 \textit{master} (principal) siempre sea funcional. Para ello creamos una nueva rama para cada nueva funcionalidad del programa. La implementación del nuevo código a otra rama se denomina \textit{merge}. Otra de las funcionalidades que implementa es \texttt{clone}, que te permite descargar un proyecto si tienes la URL del \gls{repositorio} git.
-
 \begin{figure}[H]
 \noindent
 \includegraphics[width=\textwidth]{Resources/Gitflow.png}
@@ -642,6 +648,7 @@ Al no haber una ventana de configuración del programa, la configuración debe h
 \subsection{Ejemplo: Envío de Ping entre dos dispositivos}
 Lo primero que vamos a hacer, es colocar un Switch al que poder conectar los ordenadores. Después colocamos y conectamos hasta 5 ordenadores (es el máximo de conexiones por defecto) al Switch. Después, para cada ordenador, hacemos click derecho y en el menú emergente pulsamos ``Editar Objeto", con lo que se abrirá una ventana como la de la Figura \ref{fig:editwindow}. Aquí podemos asignar una dirección IP al ordenador. Tras asignar 5 direcciones IP diferentes a los ordenadores, en cualquiera de ellos hacemos click derecho y clickamos en ``Ping", haciendo que aparezca una ventana con un cuadro de texto como en Fig. \ref{fig:pingwindow2}. En este cuadro introducimos la dirección IP del dispositivo al que queremos enviar el Ping y pulsamos la tecla Intro, así el ordenador enviará un paquete Ping Request a la IP especificada. Cuando el paquete llega al equipo con esa dirección IP, este responderá con un paquete parecido, pero en este caso será un ping de respuesta (simbolizado en rojo), por lo que el destino será el primer ordenador. En el caso de que se produzcan cambios en la red mientras el paquete viaja por esta, el paquete dispone de un tiempo de vida, por lo que cuando llega a 0 se destruye.
 
+\newpage
 \section{Funcionamiento del programa}
 Se ha creado haciendo uso de todas las herramientas anteriormente mencionadas.
 
@@ -650,7 +657,7 @@ Clases de Dispositivos (\class{ObjetoBase, Switch, Computador}), Clases de Red (
 
 Todas las clases poseen, como mínimo, una función llamada \function{\char`_\char`_init\char`_\char`_}, que es la encargada de crear el objeto y establecer las variables más importantes (Coordenadas, variables vacías, dirección MAC...).
 
-\newpage
+%\newpage
 \subsection{Main.py}
 Es el archivo principal del programa. Contiene las funciones más importantes, además de las clases para crear los objetos. Primero trata de importar los módulos necesarios, comprobando uno a uno si están instalados, y advirtiendo al usuario en el caso de que no estén instalados.
 
@@ -767,6 +774,7 @@ Durante el desarrollo del proyecto han surgido bastantes trabas y contratiempos,
 
 En algunas ocasiones no han sido errores, sino falta de conocimiento para el desarrollo de determinadas funciones lo que ha creado pausas de hasta dos semanas en la acción de escribir el programa. Gracias a comunidades como \textbf{\textit{stackoverflow}} he conseguido solucionar muchas de las dudas y errores básicos del programa.
 
+\newpage
 \section{Conclusión}
 Lo más difícil fue empezar. El tratar de aprender tanta información de golpe de forma autodidacta. Aunque ya supiese un poco sobre programación en Python, no tenía casi experiencia, aprender a usar la librería de Gtk+, aprender sobre redes, aprender sobre un uso más extenso de GNU/Linux, aprender sobre \LaTeX , etc. fue bastante cansado. pero eso es lo mejor, todo lo que he aprendido y, sobre todo, la experiencia que he adquirido en el campo de la programación.
 
@@ -780,10 +788,11 @@ Pese a que es verdad que falta incluir más protocolos y algunas funcionalidades
   \setglossarystyle{index}%
   \renewenvironment{theglossary}%
     {%
+    \setlength{\columnsep}{30pt}
      \begin{multicols}{\glsmcols}
      \setlength{\parindent}{0pt}%
-     \setlength{\parskip}{0pt plus 0.3pt}%
-     \renewcommand\item{\par\hangindent7pt}}%
+     \setlength{\parskip}{0pt}%
+     \renewcommand\item{\par\hangindent0pt}}%
     {\end{multicols}}%
 }
 
@@ -795,6 +804,7 @@ Pese a que es verdad que falta incluir más protocolos y algunas funcionalidades
 {\setstretch{1.2}
 \printglossary[type=\acronymtype, style=mcolindex, title=Glosario y acrónimos, toctitle=Glosario y acrónimos]}
 
+\newpage
 \chapter{Unidades de transferencia de datos}
 {\setstretch{1.5}
 Cantidad de datos transferidos por unidad de tiempo. La unidad de tiempo es el segundo y la cantidad de datos puede ser medida en \textit{\glspl{bit}} (bitrate), carácteres/símbolos (\textit{baudrate}) o bytes (8 bits), en ocasiones también se utilizan \textit{nibbles} (4 bits). Para expresar esta velocidad, se suelen usar múltiplos, que pueden ser en base binaria (Sistema del IEEE) o decimal (Sistema Internacional).
@@ -847,7 +857,7 @@ Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 	\label{fig:pingwindow}
 \end{minipage}
 
-\vspace{\fill}
+\vspace*{1cm}
 \centering
 \begin{minipage}[t]{0.4\textwidth}
 	\centering
@@ -863,7 +873,7 @@ Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 	\label{fig:switchingtable}
 \end{minipage}
 
-\vspace{\fill}
+\vspace*{1cm}
 \centering
 \begin{minipage}[t]{0.5\textwidth}
 	\centering
@@ -887,6 +897,7 @@ Este documento está licenciado con licencia \doclicenseLongNameRef, compatible 
 
 InvProy usa la licencia GPLv3, aquí una traducción no oficial\cite{gpltranslation}:
 \inputminted[baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{text}{GPLv3-spanish.txt}
+%\include{GPLv3-spanish}
 
 \include{AnCode}
 
