@@ -46,7 +46,7 @@ style=ieee
 \titlespacing*{\chapter}{0pt}{-10pt}{10pt}
 
 %Decoraciones y formato del texto
-\usepackage[a4paper, left=3cm, right=3cm, top=3cm, bottom=2cm, headheight=14pt]{geometry}
+\usepackage[a4paper, left=3.5cm, right=2.5cm, top=3cm, bottom=2cm, headheight=14pt]{geometry}
 
 \usepackage[cache=false]{minted} %Para insertar código
 
@@ -93,28 +93,31 @@ style=ieee
 
 \makeatletter
 \begin{titlepage}
+\newgeometry{a4paper, left=1.2cm, right=1cm, top=3cm, bottom=2cm, headheight=14pt}
 \centering
 \vspace*{1cm}
-{\scshape\LARGE IES Palas Atenea \par}
+{\scshape\huge IES Palas Atenea \par}
 \vspace{2cm}
-{\scshape\Large Proyecto de Investigación Bachillerato de excelencia:\\
+{\scshape\LARGE Proyecto de Investigación Bachillerato de excelencia:\\
 Programación, redes y software libre\par}
 \vspace{1.5cm}
-{\fontsize{35pt}{40pt}\bfseries\color{DarkRed} \@title\par}
-{\huge\bfseries Un simulador de redes por y para alumnos \par}
+{\fontsize{42pt}{42pt}\bfseries\color{DarkRed} \@title\par}
+{\fontsize{24pt}{24pt}\bfseries Un simulador de redes por y para alumnos \par}
 {\color{DarkRed}\rule{0.5\textwidth}{1pt}\par}
 \vspace{2cm}
-{\Large\itshape \@author\par}
+{\LARGE\itshape \@author\par}
 \vfill
-Tutor\par
-Julio Sánchez Olías
+{\Large Tutor\par
+Julio Sánchez Olías}
 
 \vfill
 
-{\large \@date\par}
+{\Large \@date\par}
 \pagenumbering{gobble}
+\restoregeometry
 \end{titlepage}
 \clearpage
+
 \pagenumbering{Roman}
 
 %\definecolor{chaptercolour}{HTML}{540006}
@@ -327,7 +330,7 @@ Su objetivo es conseguir la interoperabilidad entre sistemas haciendo uso de los
 \rowcolors{2}{odd}{even}
 \renewcommand{\arraystretch}{1} %Antes 1.1
 \noindent\linespread{1}
-\begin{tabularx}{\linewidth}{ | l >{\small}c >{\small}X >{\small}c | }
+\begin{tabularx}{\linewidth}{ | c >{\small}c >{\small}X >{\small}c | }
 	\rowcolor{header} \hline
 	\textbf{Capa} & \textbf{PDU\footnote{\textit{Protocol Data Unit} o Unidad de Datos de Protocolo.}} & \textbf{Función} & \textbf{Ejemplos} \\ \hline
 	1. Física & Bit & Transmisión y recepción de bits físicos sobre un medio físico (topología de red) & 	 RJ45, IEEE 802.11, etc. \\
@@ -627,7 +630,7 @@ A continuación, se incluye una captura de pantalla de la interfaz de InvProy Al
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{Resources/Screenshots/2016-09-07-140130_728x437_scrot.png}
-\caption{Menú de \textbf{Información de Dispositivos} junto a una red de topología de malla \label{dispinfo}}
+\caption[Menú de Información de Dispositivos]{Menú de \textbf{Información de Dispositivos} junto a una red de topología de malla \label{dispinfo}}
 \end{figure}
 Para incluir un objeto en la rejilla, se hace click en el icono del objeto y luego  en el lugar donde se quiera poner. Cuando tenemos dos objetos podemos conectarlos si hacemos click primero en el icono del cable, luego en un objeto y después en otro.
 
@@ -914,8 +917,37 @@ Ya no sé que más poner xd
 
 \newpage
 \thispagestyle{empty}
+\newgeometry{left=2.5cm, top=1cm, right=2cm, bottom=2cm, headheight=14pt}
 \topskip0pt
-\vspace*{\fill}
+\vspace*{2.5cm}
 \doclicenseThis
-\vspace*{\fill}
+
+\noindent
+\begin{minipage}{0.7\textwidth}
+\noindent El software InvProy está realizado bajo la licencia \href{https://www.gnu.org/licenses/quick-guide-gplv3.html}{GNU GPLv3}
+\end{minipage}
+\hspace*{\fill}
+\begin{minipage}{0.3\textwidth}
+\hspace*{\fill}
+\includegraphics[height=1.4cm]{Resources/gplv3-127x51.png}
+\end{minipage}
+
+\noindent
+Encontrará una copia del código y la licencia en \url{https://github.com/daviddavo/InvProy} \\
+Encontrará una copia de este documento en \url{https://github.com/daviddavo/InvProy-tex}\\
+
+\centering
+InvProy \hspace*{15pt} Copyright \hspace*{10pt} \copyright\hspace*{10pt} 2016 \hspace*{15pt} David Davó Laviña \\ \hspace*{15pt} david@ddavo.me \hspace*{10pt} \url{http://ddavo.me}
+
+\vspace{0.7cm}
+\noindent\centering
+\begin{minipage}{13cm}
+\centering Podrá encontrar una copia del documento, el programa, las licencias y las imágenes usadas en el CD adjunto.
+\end{minipage}
+
+\vspace*{0.5cm}
+\centering\framebox[12.5cm]{\raisebox{0pt}[12.5cm][0pt]{}} \par
+%\vspace*{\fill}
+
+%\restoregeometry
 \end{document}
