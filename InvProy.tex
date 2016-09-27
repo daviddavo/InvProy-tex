@@ -182,21 +182,21 @@ That is why we created InvProy a Software Libre network simulation program (stil
 \end{abstract}
 \restoregeometry
 
-%\newpage
-%\setcounter{page}{6}
-%%\chapter*{Agradecimientos}
-%\vspace*{2.5cm}
-%\centerline{\color{chaptercolour}\normalfont\huge\bfseries Agradecimientos}
-%\vspace*{50pt}
-%
-%Lo primero, me gustaría agradecer a mi familia; sobre todo a mis padres, \textbf{Anselmo y Gloria}, por aguantarme durante los meses de creación de este proyecto; y a mi tía, \textbf{Toñi}, por ayudarme a corregir poco a poco todas las impurezas de la memoria.
-%
-%Quiero agradecer también a mis antiguos profesores del \textbf{IES Miguel Delibes} pues, sin ellos, sí que no habría sido posible la realización de este trabajo ya que no estaría en este programa de bachillerato. Gracias \textbf{David Miguel}, \textbf{Alicia Valiente}, \textbf{Óscar Pintado}, \textbf{Raúl Castellano} y \textbf{Mercedes Pinilla}.
-%
-%No pueden faltar, por supuesto, los profesores del IES Palas Atenea que nos acompañaron durante el curso anterior y han tenido que responder decenas de correos con correcciones y consejos.
-%
-%También, como les había prometido, incluyo en los agradecimientos a la gran comunidad de \textbf{stackoverflow}, que ha estado las 24 horas del día para solucionar las dudas que he ido teniendo en cuanto a programación.
-%\vspace*{\fill}
+\newpage
+\setcounter{page}{6}
+%\chapter*{Agradecimientos}
+\vspace*{2.5cm}
+\centerline{\color{chaptercolour}\normalfont\huge\bfseries Agradecimientos}
+\vspace*{50pt}
+
+Lo primero, me gustaría agradecer a mi familia; sobre todo a mis padres, \textbf{Anselmo y Gloria}, por aguantarme durante los meses de creación de este proyecto; y a mi tía, \textbf{Toñi}, por ayudarme a corregir poco a poco todas las impurezas de la memoria.
+
+Quiero agradecer también a mis antiguos profesores del \textbf{IES Miguel Delibes} pues, sin ellos, sí que no habría sido posible la realización de este trabajo ya que no estaría en este programa de bachillerato. Gracias \textbf{David Miguel}, \textbf{Alicia Valiente}, \textbf{Óscar Pintado}, \textbf{Raúl Castellano} y \textbf{Mercedes Pinilla}.
+
+No pueden faltar, por supuesto, los profesores del IES Palas Atenea que nos acompañaron durante el curso anterior y han tenido que responder decenas de correos con correcciones y consejos.
+
+También, como les había prometido, incluyo en los agradecimientos a la gran comunidad de \textbf{stackoverflow}, que ha estado las 24 horas del día para solucionar las dudas que he ido teniendo en cuanto a programación.
+\vspace*{\fill}
 
 %LA GRANA ANTIGUA
 %\definecolor{chaptercolour}{HTML}{550000}
@@ -779,6 +779,8 @@ Durante el desarrollo del proyecto han surgido bastantes trabas y contratiempos,
 
 En algunas ocasiones no han sido errores, sino falta de conocimiento para el desarrollo de determinadas funciones lo que ha creado pausas de hasta dos semanas en la acción de escribir el programa. Gracias a comunidades como \textbf{\textit{stackoverflow}} he conseguido solucionar muchas de las dudas y errores básicos del programa.
 
+Otro inconveniente ha sido el tiempo, que no me ha dejado implementar funciones útiles, como un visor de paquetes de red, más protocolos, o interconexión de redes.
+
 \newpage
 \section{Conclusión}
 Lo más difícil fue empezar. El tratar de aprender tanta información de golpe de forma autodidacta. Aunque ya supiese un poco sobre programación en Python, no tenía casi experiencia, aprender a usar la librería de Gtk+, aprender sobre redes, aprender sobre un uso más extenso de GNU/Linux, aprender sobre \LaTeX , etc. fue bastante cansado. pero eso es lo mejor, todo lo que he aprendido y, sobre todo, la experiencia que he adquirido en el campo de la programación.
@@ -786,6 +788,16 @@ Lo más difícil fue empezar. El tratar de aprender tanta información de golpe 
 A la hora de programar, al principio el ritmo era muy lento, de unas 200 líneas al mes, con pausas de semanas para solucionar problemas y errores. Poco a poco se fue acelerando hasta llegar a finales de Julio, donde hacía más de 100 líneas diarias.
 
 Pese a que es verdad que falta incluir más protocolos y algunas funcionalidades bastante básicas (como mover objetos), estoy bastante satisfecho con la versión actual del programa, que se ha realizado con bastante poco tiempo, ya que tiene las bases, y creo que añadir un nuevo protocolo, o una nueva funcionalidad no serían más que unas horas delante de la pantalla y el teclado del ordenador.
+
+Resumiendo:
+\begin{easylist}[itemize]
+\ListProperties(Style*=$\bullet$, Space*=-5pt, Space=0pt)
+& Se ha creado un simulador de redes escrito en Python que demuestra el uso de Ping's y enrutamiento de paquetes
+& Con el programa actual, es fácil añadir nuevos paquetes, dispositivos o funcionalidades, entre otras cosas
+& Se ha desarrollado íntegramente con software libre
+& Tiene uso didáctico en 4º de la ESO, 1º y 2º de Bachillerato, pues se incluye `Redes informáticas' en el temario de Informática y TICO, además de `Programación'
+& Los alumnos pueden modificar y ampliar el programa, para toda la comunidad educativa, en GitHub
+\end{easylist}
 
 \glsaddall
 \renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
@@ -907,15 +919,6 @@ InvProy usa la licencia GPLv3, aquí una traducción no oficial\cite{gpltranslat
 \include{AnCode}
 
 \newpage
-\chapter*{Página de prueba}
-Esto es un poco de texto de prueba.
-\section*{Sección}
-Para imprimir y ver que tal queda
-\subsection*{Subsección}
-Ya no sé que más poner xd
-\subsubsection*{Subsubsección}
-
-\newpage
 \thispagestyle{empty}
 \newgeometry{left=2.5cm, top=1cm, right=2cm, bottom=2cm, headheight=14pt}
 \topskip0pt
@@ -937,7 +940,7 @@ Encontrará una copia del código y la licencia en \url{https://github.com/david
 Encontrará una copia de este documento en \url{https://github.com/daviddavo/InvProy-tex}\\
 
 \centering
-InvProy \hspace*{10pt} Copyright \hspace*{5pt} \copyright\hspace*{10pt} 2016 \hspace*{15pt} David Davó Laviña \\ \hspace*{15pt} david@ddavo.me \hspace*{10pt} \url{http://ddavo.me}
+InvProy \hspace*{10pt} Copyright \copyright\hspace*{10pt} 2016 \hspace*{15pt} David Davó Laviña \\ \hspace*{15pt} david@ddavo.me \hspace*{10pt} \url{http://ddavo.me}
 
 \vspace{0.7cm}
 \noindent\centering
@@ -946,7 +949,16 @@ InvProy \hspace*{10pt} Copyright \hspace*{5pt} \copyright\hspace*{10pt} 2016 \hs
 \end{minipage}
 
 \vspace*{1cm}
-\centering\framebox[12.5cm]{\raisebox{0pt}[12.5cm][0pt]{}} \par
+\centering\framebox[12.5cm]{
+%\begin{tabularx}{1cm}{|c|} 
+%\rowcolor{chaptercolour} \\
+%\rowcolor{sectioncolour} \\
+%\rowcolor{subsectioncolour} \\
+%\rowcolor{subsubsectioncolour} \\
+%\rowcolor{header} \\
+%\end{tabularx}
+\raisebox{0pt}[12.5cm][0pt]{
+}} %\par
 %\vspace*{\fill}
 
 %\restoregeometry
