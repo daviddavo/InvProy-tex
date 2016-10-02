@@ -187,13 +187,18 @@ That is why we created InvProy a Software Libre network simulation program (stil
 %\chapter*{Agradecimientos}
 \vspace*{2.5cm}
 \centerline{\color{chaptercolour}\normalfont\huge\bfseries Agradecimientos}
+\thispagestyle{empty}
 \vspace*{50pt}
 
 Lo primero, me gustaría agradecer a mi familia; sobre todo a mis padres, \textbf{Anselmo y Gloria}, por aguantarme durante los meses de creación de este proyecto; y a mi tía, \textbf{Toñi}, por ayudarme a corregir poco a poco todas las impurezas de la memoria.
 
-Quiero agradecer también a mis antiguos profesores del \textbf{IES Miguel Delibes} pues, sin ellos, sí que no habría sido posible la realización de este trabajo ya que no estaría en este programa de bachillerato. Gracias \textbf{David Miguel}, \textbf{Alicia Valiente}, \textbf{Óscar Pintado}, \textbf{Raúl Castellano} y \textbf{Mercedes Pinilla}.
+Igualmente quiero dar las gracias a \textbf{mis amigos} y a mi novia, \textbf{Leidy}, por sacarme de casa y evitar la momificación de mi cuerpo desidioso durante la realización de este proyecto.
 
-No pueden faltar, por supuesto, los profesores del IES Palas Atenea que nos acompañaron durante el curso anterior y han tenido que responder decenas de correos con correcciones y consejos.
+Asimismo, agradezco a mis \textbf{compañeros de clase} por transigir mis socarronerías y agudezas, sobre todo a los desdichados que en algún momento han tenido que padecer ser mis compañeros de mesa.
+
+Quiero agradecer a mis antiguos profesores del \textbf{IES Miguel Delibes} pues, sin ellos, sí que no habría sido posible la realización de este trabajo ya que no estaría en este programa de bachillerato. Gracias sobre todo a \textbf{David Miguel}, \textbf{Alicia Valiente}, \textbf{Óscar Pintado}, \textbf{Raúl Castellano} y \textbf{Mercedes Pinilla}.
+
+No pueden faltar, por supuesto, los profesores del \textbf{IES Palas Atenea} que nos acompañaron durante el curso anterior y han tenido que responder docenas de correos con correcciones y consejos. No sólo Julio, mi tutor, sino al resto de profesores que también tienen que sufrir mis intrincadas consultas.
 
 También, como les había prometido, incluyo en los agradecimientos a la gran comunidad de \textbf{stackoverflow}, que ha estado las 24 horas del día para solucionar las dudas que he ido teniendo en cuanto a programación.
 \vspace*{\fill}
@@ -674,6 +679,7 @@ Posee varias funciones como \function{on\char`_key\char`_press\char`_event} y \f
 También contiene una subclase, llamada \class{ObjLst} (\texttt{263:332\footnote{Notación para escribir la ubicación del código. Línea inicial:Línea final@Archivo. Si se omite el nombre de archivo, es porque ha sido anteriormente mencionado.}}), encargada de la lista de objetos de la parte izquierda de la interfaz.
 
 \newpage
+
 \subsubsection{Grid}
 Es la clase de la rejilla, se desarrolla de la línea 498 hasta la 677. Tiene varias `capas', una para los cables, otra para el fondo, otra para los dispositivos... Así, en el caso de que dos elementos se solapen, los dispositivos siempre permanecerán al frente del fondo y los cables. El fondo se hace creando una línea horizontal cada \texttt{sq} píxeles, y otras tantas verticales del mismo modo, siendo \texttt{sq} el parámetro \texttt{viewport-sqres} del archivo \texttt{Config.ini}.
 
@@ -690,13 +696,27 @@ Es la clase de la rejilla, se desarrolla de la línea 498 hasta la 677. Tiene va
 En Python, existe la herencia de clases. Esto quiere decir que una clase puede heredar las funciones y los atributos de otra, en forma de cascada. La clase principal de la que heredan el resto de dispositivos de red es \class{ObjetoBase}. Algunas de sus funciones son estas:
 
 \begin{itemize}
-\item \function{compcon}: Es una función que poseen todos los dispositivos de red, que dado un objeto \class{Computador}, retorna todos los ordenadores que están conectados a la misma red. Se encuentra en \texttt{822:864}. Está formada por una lista que contendrá los ordenadores conectados y una función llamada subcompcon (\texttt{827:847}), que comprueba las conexiones del objeto, añadiendo la conexión a la lista si es un ordenador. En el caso de que sea un conmutador o un concentrador, llama a la función \texttt{subcompcon} con ese objeto como argumento, por lo que comprueba las conexiones de ese objeto y las añade a la lista del primero, entrando en un bucle hasta que ha comprobado toda la red. La función es usada por el programa cuando es necesario comprobar si dos ordenadores están conectados, por ejemplo. Ver <insertar diagrama de flujo>
+\item \function{compcon}: Es una función que poseen todos los dispositivos de red, que dado un objeto \class{Computador}, retorna todos los ordenadores que están conectados a la misma red. Se encuentra en \texttt{822:864}. Está formada por una lista que contendrá los ordenadores conectados y una función llamada subcompcon (\texttt{827:847}), que comprueba las conexiones del objeto, añadiendo la conexión a la lista si es un ordenador. En el caso de que sea un conmutador o un concentrador, llama a la función \texttt{subcompcon} con ese objeto como argumento, por lo que comprueba las conexiones de ese objeto y las añade a la lista del primero, entrando en un bucle hasta que ha comprobado toda la red. La función es usada por el programa cuando es necesario comprobar si dos ordenadores están conectados, por ejemplo. (Ver figura \ref{fig:compcon})
 \item \function{load}: \texttt{877:896} Al cargar un objeto de un archivo, hay determinadas propiedades del objeto que deben ser establecidas de cero, y determinadas funciones que deben ser llamadas, para ello existe esta función.
 \item \function{update}: Esta función, bastante importante se encarga de actualizar la información del objeto en la interfaz de usuario. Es llamada cada vez que se produce un cambio en el objeto; como al conectarlo, editar el nombre, o desconectarlo de otros objetos.
 \item \function{connect}: \texttt{898:941} Esta función se encarga de establecer las conexiones entre dos objetos.
 \item \function{disconnect}: \texttt{942:989}. Realiza lo contrario de \function{connect}, desconecta un objeto de otro. O un objeto de todos a los que está conectado.
 \item \function{packet\char`_received}: Esta es la función por defecto que se ejecuta cuando un dispositivo ha recibido un paquete. Todos los dispositivos de red tienen una función diferente que sobreescribe a esta (pues no es el mismo comportamiento el de un conmutador que el de un ordenador).
 \end{itemize}
+
+\newpage
+
+\thispagestyle{empty}
+\begin{figure}
+\includegraphics[width=\textwidth]{Resources/Diagramas/Compcon.pdf}
+
+\vspace*{1cm}
+\caption[Diagrama de flujo de la función \texttt{compcon}]{\label{fig:compcon}
+Diagrama de flujo del funcionamiento de la función \function{compcon}.
+}
+\end{figure}
+
+\clearpage
 
 %\newpage
 %\vspace{\fill}
@@ -791,7 +811,7 @@ Pese a que es verdad que falta incluir más protocolos y algunas funcionalidades
 
 Resumiendo:
 \begin{easylist}[itemize]
-\ListProperties(Style*=$\bullet$\space, Space*=-5pt, Space=0pt)
+\ListProperties(Style*=\color{chaptercolour}$\bullet$\hspace*{10pt}, Space*=-5pt, Space=0pt)
 & Se ha creado un simulador de redes escrito en Python que demuestra el uso de Ping's y enrutamiento de paquetes
 & Con el programa actual, es fácil añadir nuevos paquetes, dispositivos o funcionalidades, entre otras cosas
 & Se ha desarrollado íntegramente con software libre
