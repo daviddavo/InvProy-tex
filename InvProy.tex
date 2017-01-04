@@ -11,6 +11,7 @@
 
 \usepackage{inconsolata}
 \usepackage{uarial}
+\usepackage{palatino}
 
 \usepackage[xindy, nomain, acronym, acronyms, nonumberlist, nopostdot, toc]{glossaries}
 \usepackage{glossary-mcols}
@@ -46,7 +47,7 @@ style=ieee
 \titlespacing*{\chapter}{0pt}{-10pt}{10pt}
 
 %Decoraciones y formato del texto
-\usepackage[a4paper, left=3.5cm, right=2.5cm, top=3cm, bottom=2cm, headheight=14pt]{geometry}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm, headheight=14pt]{geometry}
 
 \usepackage[cache=false]{minted} %Para insertar código
 
@@ -60,20 +61,21 @@ style=ieee
 
 \usepackage[normalem]{ulem}
 
-\setmainfont{Arial}
+\setmainfont{Palatino Linotype}
 \setmonofont{Inconsolata}
+\setsansfont{Arial}
 
 \setmathrm{Asana-Math.otf}
 \setmathsf{Arial}
 \setmathtt{Inconsolata}
 
-\fontsize{11}{14}
+\fontsize{12}{14}
 %Pies de pagina y eso
 \pagestyle{fancy}
 \fancyhf{}
 \makeatletter
 \fancyhead[LE, RO]{\@author}
-\fancyhead[RE, LO]{\bf\color{DarkRed}\@title}
+\fancyhead[RE, LO]{\bf\sffamily\color{DarkRed}\@title}
 \fancyfoot[LE, RO]{\thepage}
 \fancyfoot[C]{\leftmark}
 
@@ -92,29 +94,33 @@ style=ieee
 \begin{document} %#######################
 
 \makeatletter
-\begin{titlepage}
+\begin{titlepage}{\fontsize{11}{14}
+\definecolor{notecolour}{HTML}{CDB380} %TERRA
 \newgeometry{a4paper, left=1.2cm, right=1cm, top=3cm, bottom=2cm, headheight=14pt}
 \centering
 \vspace*{1cm}
-{\scshape\huge IES Palas Atenea \par}
+{\sffamily\scshape\huge IES Palas Atenea \par}
 \vspace{2cm}
-{\scshape\LARGE Proyecto de Investigación Bachillerato de excelencia:\\
+{\sffamily\scshape\LARGE Proyecto de Investigación Bachillerato de excelencia:\\
 Programación, redes y software libre\par}
 \vspace{1.5cm}
-{\fontsize{42pt}{42pt}\bfseries\color{DarkRed} \@title\par}
-{\fontsize{24pt}{24pt}\bfseries Un simulador de redes por y para alumnos \par}
-{\color{DarkRed}\rule{0.5\textwidth}{1pt}\par}
-\vspace{2cm}
-{\LARGE\itshape \@author\par}
+{\sffamily\fontsize{42pt}{42pt}\bfseries\color{DarkRed} \@title\par}
+{\sffamily\fontsize{24pt}{24pt}\bfseries Un simulador de redes por y para alumnos \par}
+{\sffamily\color{DarkRed}\rule{0.5\textwidth}{1pt}\par}
+\vspace{.3cm}
+{\sffamily\small Adaptación para el \textit{II Encuentro Preuniversitario Jóvenes Investigadores}\par}
+\vspace{1.6cm}
+{\sffamily\LARGE\itshape \@author\par}
 \vfill
-{\Large Tutor\par
+{\sffamily\Large Tutor\par
 Julio Sánchez Olías}
 
 \vfill
 
-{\Large \@date\par}
+{\sffamily\Large \@date\par}
 \pagenumbering{gobble}
 \restoregeometry
+}
 \end{titlepage}
 \clearpage
 
@@ -169,40 +175,9 @@ Más tarde, se extendió el uso de esta tecnología del uso militar y científic
 
 La tecnología del mundo contemporáneo no habría sido posible, en parte, también gracias al software libre y al desarrollo colaborativo, pues ha permitido el desarrollo de sistemas operativos como GNU/Linux de la \textit{Free Software Foundation} (Usado actualmente por el 90\% de los servidores de red) o CUPS, el software para servidores de administración de impresoras más completo y competente usado en la mayoría de oficinas.
 
-Son dos cosas muy importantes, que apenas son enseñadas en las clases de la ESO y Bachillerato, por eso he creado InvProy, un pequeño simulador de redes con la ambición de enseñar tanto de redes como de programación. Podrán experimentar, de una forma sencilla y muy visual como funciona una red y cómo se comportan los distintos protocolos. También, al ser software libre, los alumnos podrán aprender sobre programación al observar el código y tener la licencia para modificarlo y colaborar en el desarrollo del programa. Aunque el programa este aún en fase Alpha (fase de desarrollo), ya tiene la base para que sea muy sencillo añadir más protocolos, funcionalidades o dispositivos de red. A día de hoy tiene como dispositivos los ordenadores, conmutadores y concentradores. En cuanto a paquetes de red, permite enviar un Ping, usando los protocolos ICMP, IPv4 y Ethernet. 
-
-\newgeometry{left=5cm,right=5cm}
-\newpage
-\renewcommand{\abstractname}{\color{sectioncolour}Abstract}
-\addcontentsline{toc}{section}{Abstract}
-\begin{abstract}
-\setcounter{page}{5}
-There is a lot of software with the sole purpose of learning, but almost all of it is propietary software, and is also created by professionals; but there is some software with which students can learn how to code: software libre. Learning is even better if it is created by enthusiastic learners, because the code is easier to read by non-professionals and enthusiasts. \\
-That is why we created InvProy a Software Libre network simulation program (still in Alpha version) that contains more than four thousand lines of source code. Designed with learning and teaching purposes, both on networking and programming, it is written in the Python programming language and uses the Gtk+ library for the Graphics User Interface. At the moment it supports sending Ping’s while using the IEEE 802.11, TCP/IP and ICMP protocols. But as it is software libre, everybody can contribute to it so it will become a more complete program soon, in terms of functionalities and usability.
-\end{abstract}
-\restoregeometry
+Son dos cosas muy importantes, que apenas son enseñadas en las clases de la ESO y Bachillerato, por eso he creado InvProy, un pequeño simulador de redes con la ambición de enseñar tanto de redes como de programación. Podrán experimentar, de una forma sencilla y muy visual como funciona una red y cómo se comportan los distintos protocolos. También, al ser software libre, los alumnos podrán aprender sobre programación al observar el código y tener la licencia para modificarlo y colaborar en el desarrollo del programa. Aunque el programa este aún en fase Alpha (fase de desarrollo), ya tiene la base para que sea muy sencillo añadir más protocolos, funcionalidades o dispositivos de red. A día de hoy tiene como dispositivos los ordenadores, conmutadores y concentradores. En cuanto a paquetes de red, permite enviar un Ping, usando los protocolos ICMP, IPv4 y Ethernet.
 
 \newpage
-\setcounter{page}{6}
-%\chapter*{Agradecimientos}
-\vspace*{2.5cm}
-\centerline{\color{chaptercolour}\normalfont\huge\bfseries Agradecimientos}
-\thispagestyle{empty}
-\vspace*{50pt}
-
-Lo primero, me gustaría agradecer a mi familia; sobre todo a mis padres, \textbf{Anselmo y Gloria}, por aguantarme durante los meses de creación de este proyecto; y a mi tía, \textbf{Toñi}, por ayudarme a corregir poco a poco todas las impurezas de la memoria.
-
-Igualmente quiero dar las gracias a \textbf{mis amigos} y a mi novia, \textbf{Leidy}, por sacarme de casa y evitar la momificación de mi cuerpo desidioso durante la realización de este proyecto.
-
-Asimismo, agradezco a mis \textbf{compañeros de clase} por transigir mis socarronerías y agudezas, sobre todo a los desdichados que en algún momento han tenido que padecer ser mis compañeros de mesa.
-
-Quiero agradecer a mis antiguos profesores del \textbf{IES Miguel Delibes} pues, sin ellos, sí que no habría sido posible la realización de este trabajo ya que no estaría en este programa de bachillerato. Gracias sobre todo a \textbf{David Miguel}, \textbf{Alicia Valiente}, \textbf{Óscar Pintado}, \textbf{Raúl Castellano} y \textbf{Mercedes Pinilla}.
-
-No pueden faltar, por supuesto, los profesores del \textbf{IES Palas Atenea} que nos acompañaron durante el curso anterior y han tenido que responder docenas de correos con correcciones y consejos. No sólo Julio, mi tutor, sino al resto de profesores que también tienen que sufrir mis intrincadas consultas.
-
-También, como les había prometido, incluyo en los agradecimientos a la gran comunidad de \textbf{stackoverflow}, que ha estado las 24 horas del día para solucionar las dudas que he ido teniendo en cuanto a programación.
-\vspace*{\fill}
-
 %LA GRANA ANTIGUA
 %\definecolor{chaptercolour}{HTML}{550000}
 %\definecolor{sectioncolour}{HTML}{801515}
@@ -282,29 +257,6 @@ def esnatural(numero): #Definimos la función, asumiendo que no hay números com
 \end{minted}
 
 \newpage
-\section{Fases del desarrollo de software}
-Durante el desarrollo de un programa existen distintas fases, desde el comienzo hasta el lanzamiento de este.
-\subsection{Estadios de desarrollo}
-\begin{description}
-\item \textbf{Pre-alpha:} Todas las actividades realizadas antes de las pruebas formales. Actividades como diseño, programación, análisis de requisitos... En software libre, hay distintos tipos de versiones pre-alpha. Se comienza a añadir funcionalidades al software.
-\item \textbf{Alpha:} Se añaden más funcionalidades al software. El software es inestable (tiene muchos \textit{bugs}) y puede causar pérdidas de datos. Normalmente aún no está disponible para el uso por usuarios; aunque, en software libre, la versión Alpha suele estar ya disponible para el público. Esta fase termina cuando se hace una `\textbf{congelación de funcionalidades}', es decir, se determina que ya no se van a añadir más funcionalidades a la versión.
-\item \textbf{Beta:} Se inicia esta fase cuando el programa se considera \textbf{completo de funcionalidades} (cuando se hace una congelación). Aún así el programa puede contener muchos \textit{bugs} conocidos o desconocidos, además de problemas de rendimiento y cuelgues. Se prueba el programa con tests de usabilidad.
-Aquí ya se publica una versión para el usuario, denominada \textit{Beta Release}, en ocasiones también es llamada \textbf{TP}(\textit{Technical preview} o avance técnico). En ocasiones, como en algunos programas de software libre, el programa se mantiene en fase Beta y nunca se dejan de añadir funcionalidades. Se considera beta abierta si la versión está disponible al público, y beta cerrada en caso contrario.
-\item \textbf{RC}: \textit{Release Candidate}. Es una versión beta que tiene el potencial de convertirse en una versión final del programa, que está lista para lanzar si no surgen \textit{bugs} importantes. En esta fase se estabiliza el programa y se prepara para el lanzamiento con numerosos tests.
-\end{description}
-
-\newpage
-\subsection{Publicación}
-Cuando el programa es publicado, la versión del programa se considera `versión estable'.
-\begin{description}
-\item \textbf{RTM:} \textit{Release to manufacturing} o Versión para producción, también llamada `gold master' o `versión de oro'.  Es la versión que va a ser enviada al centro de distribución, se eliminan archivos de funcionalidades de pruebas y se hacen muchas comprobaciones de la integridad de los archivos.
-\item \textbf{GA:} \textit{General availability} o disponibilidad general. Fase en la que se produce el \textit{marketing} y la venta del programa. Éste ya está disponible para su compra, dependiendo de la región, el idioma, o el método de adquisición del programa (DVD, BD, Web).
-\end{description}
-\subsection{Soporte}
-Después de ser lanzada una versión de un programa, durante un tiempo denominado `tiempo de vida' la versión aún tiene soporte oficial, en el que se pueden aplicar todavía actualizaciones de servicio y parches para solucionar \textit{bugs} o, en ocasiones, incluir nuevas funcionalidades.
-\begin{description}
-\item \textbf{Fin de soporte:} Cuando la versión deja de ser distribuida y se deja de dar soporte, se dice que ha alcanzado el `fin de vida', o pasa a ser obsoleto, retirado o descontinuado. A pesar de esto, la gente puede seguir queriendo usar el programa, como con Windows XP, lo que causa grandes brechas de seguridad si se hace dentro de una corporación.
-\end{description}
 
 %\definecolor{chaptercolour}{HTML}{051C38}
 %\definecolor{sectioncolour}{HTML}{143153}
