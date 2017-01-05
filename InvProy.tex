@@ -1,5 +1,5 @@
 \documentclass[a4paper, 11pt]{report} %twoside
-\title{Invproy\space $\alpha$}
+\title{Invproy\space $\alpha$.zip}
 \author{David Davó Laviña}
 \date{\today{}}
 
@@ -144,9 +144,10 @@ Julio Sánchez Olías}
 \renewcommand\cftchappagefont{\bf\color{chaptercolour}}
 
 \titleformat{\chapter}[display]
-    {\color{chaptercolour}\normalfont\huge\bfseries}
-    {\color{chaptercolour}\chaptertitlename\ \thechapter}{20pt}{\Huge}
-    \titlespacing*{\chapter}{0pt}{-10pt}{10pt}
+%    {\color{chaptercolour}\normalfont\huge\bfseries}
+    {\color{chaptercolour}\bfseries}
+    {}{0pt}{\huge\thechapter . }
+    \titlespacing*{\chapter}{0pt}{-50pt}{10pt}
 \titleformat{\section}
 	{\color{sectioncolour}\normalfont\Large\bfseries}
 	{\color{sectioncolour}\thesection}{1em}{}
@@ -197,11 +198,7 @@ Según la Free Software Foundation
 \say{«Software libre» es el software que respeta la libertad de los usuarios y la comunidad. A grandes rasgos, significa que los usuarios tienen la libertad de ejecutar, copiar, distribuir, estudiar, modificar y mejorar el software. Es decir, el «software libre» es una cuestión de libertad, no de precio. Para entender el concepto, piense en «libre» como en «libre expresión», no como en «barra libre». En inglés a veces decimos «libre software», en lugar de «free software», para mostrar que no queremos decir que es gratuito.}
 -- R. Stallman \cite{FSF-Ph}
 
-La idea de Software Libre nace con Richard Stallman en 1983, cuando anuncia la creación del Proyecto GNU (Sistema Operativo libre alternativo a Unix y BSD). En 1985 se publica el Manifiesto GNU en el que se declara la filosofía GNU, la definición de software libre y algunas ideas sobre copyleft, más tarde ese año se crea la Fundación del Software Libre (FSF por sus siglas en inglés).
-A su sistema operativo aún le faltaba una pieza bastante grande, a lo que en 1991 Linus Torvals lanza el Kernel Linux, que licenció con la licencia GNU General Public License (GPL)[Ver anexo \ref{gnugpl}]. A partir de aquí comenzaron a salir nuevas licencias, como la licencia Apache, o la del MIT. Algunos ejemplos de software libre son GNU/Linux, emacs, LaTeX, GIMP, GNOME, o los servidores Apache y las librerías MySQL, usadas en todo el mundo.
-
-No debemos confundir `Software Libre' con `Código abierto', ya que, aunque el código pueda ser leído por todo el mundo no significa que el resto de personas tengan licencia para redistribuir y/o editar el código. Software libre es el que cumple las cuatro libertades del software libre.
-Según Richard Stallman las cuatro libertades son estas: \cite{FSF-talk1, FSF-talk2}
+No debemos confundir `Software Libre' con `Código abierto', ya que, aunque el código pueda ser leído por todo el mundo no significa que el resto de personas tengan licencia para redistribuir y/o editar el código. Software libre es el que cumple: \cite{FSF-talk1, FSF-talk2}
 \begin{easylist}[itemize]
 \ListProperties(Style*=$\bullet$ , Style2*=--)
 & \textbf{Libertad 0:} La libertad de ejecutar el programa cuando quieras, para cualquier propósito.
@@ -213,50 +210,6 @@ Según Richard Stallman las cuatro libertades son estas: \cite{FSF-talk1, FSF-ta
 Una de las grandes ventajas del software libre, aparece en la educación. Es muy útil para aprender ya que, si un alumno tiene curiosidad sobre el programa que está usando, puede consultar el código fuente en internet. Además, al ser licencias gratuitas, se puede destinar ese presupuesto a otras áreas como el hardware o el profesorado. También es útil en el desarrollo, pues cualquier programador puede solucionar un error que afecta a todos los usuarios.
 
 \newpage
-\section{Fundamentos básicos de programación en Python}
-Una variable no es más que un hueco en la memoria del ordenador, reservado para algo que queremos recordar. Así, podemos establecer una variable llamada `pi' con valor $\mathsf{3.1415...}$, para que luego, en una función, en lugar de escribir `3.14...' múltiples veces, sólo haga falta escribir `pi'. Esto es un ejemplo bastante básico, ya que las variables pueden ser también valores booleanos\footnote{Valores del álgebra de Boole; Verdadero/Falso, 1/0, True/False...}, listas, diccionarios (listas de tipo clave:valor), objetos, series de carácteres...
-Las variables se establecen así: \mintinline{python3}|variable = valor|.
-
-Una función, es un conjunto de instrucciones, que, dados unos argumentos (o ninguno) realiza una serie de acciones y/o retorna información (un número, objeto, valor, etc.). Por ejemplo, podríamos crear una función \texttt{sum(a,b)}, que dados dos números, retorne la suma de estos. Se dice `llamar a una función' cuando se le da al programa la instrucción de que ejecute la función. Para ello, usamos \mintinline{python3}|funcion(argumento1,argumento2...)|. Los argumentos pueden ser cualquier cosa, desde una variable binaria (1 o 0, Verdadero o Falso) a un Objeto. Además, al terminar una función retorna un valor; que puede ser usado si la función es llamada para establecer una variable. (P.ej: \mintinline{python3}|sumatorio = sum(3, 8)|
-
-Las clases sirven para crear objetos, por ejemplo, un Switch, un cable, una ventana, o una dirección MAC son objetos. Las clases contienen variables y funciones. Las variables pueden ser distintas para cada objeto, mientras que las funciones son las mismas. Así todos los conmutadores tienen una función que actúa cuando reciben un paquete, pero cada uno posee una dirección MAC distinta, unas coordenadas distintas, un nombre distinto... Para crear un objeto, simplemente tenemos que `llamar' a la clase mediante una variable, p.ej: \mintinline{python3}|objeto = Clase()|. Como la función que crea el objeto también acepta argumentos, hay objetos que necesitan argumentos para ser creados (\mintinline{python3}|P = punto(5,7)|. También, podemos establecer variables de objeto: \mintinline{python3}|objeto.nombre = "Objeto Guay"|.
-
-Al final, todo programa se basa en condiciones y funciones. ``Si ocurre esto, haz esto otro; si no ocurre, haz aquello". Para ello, se simplifica cualquier expresión en VERDADERO o FALSO, parecido a la lógica aristotélica. Si la expresión dada es verdadera, se ejecutará el código de dentro del condicional. También existe la expresión \texttt{elif}, donde se especifica otra condición, que se ejecutará en caso de que no se cumpla la anterior pero sí esta; y la expresión \texttt{else}, en caso de que no se cumpla ninguna de las anteriores.
-
-\newpage
-\begin{minted}[baselinestretch=1,	linenos,
-	breaklines
-	]{python3}
-if condicion:
-  funcion()
-elif condicion2:
-  funcion2()
-elif condicionN:
-  funcionN()
-else:
-  print("Algo no funciona")
-\end{minted}
-Como condición, puede haber cualquier expresión que pueda ser verdadera. Las que unen condiciones son \texttt{and} y \texttt{or}, en lenguaje matemático, intersección y unión. Y las condiciones suelen ser expresiones matemáticas, como a > b, a >= b, a == b, o a != b. Aunque en ocasiones pueden usarse con otros tipos de variables, como las series de caracteres. Por ejemplo \mintinline{python3}|if entrada == "Yes":|, en la que si la variable \texttt{entrada}, que hemos definido anteriormente como texto introducido por el usuario, es igual a "Yes", ejecutaremos código. En mi programa tiene aplicaciones como `Si el objeto es un conmutador' o `si la coordenada x buscada es igual a la coordenada x del objeto y la coordenada y buscada es igual a la coordenada y del objeto'.
-
-Ahora, veremos un pequeño ejemplo práctico, que junta todo:
-\begin{minted}[baselinestretch=1,linenos,
-	breaklines
-	]{python3}
-def esnatural(numero): #Definimos la función, asumiendo que no hay números complejos
-  absoluto = abs(numero) #Absoluto es igual al resultado de la función absoluto del numero
-  entero   = int(numero) 
-  if absoluto == entero: #Si el número absoluto es igual al entero.
-    print("Es un número Natural") #Ponemos eso en la consola
-    return True
-  elif numero == entero: #No es positivo, por lo que miramos a ver si es negativo, pero entero.
-    print("Es un numero Entero, pero no Natural")
-    return False
-  else:
-    print("Es un numero Racional")
-    return False
-\end{minted}
-
-\newpage
 
 %\definecolor{chaptercolour}{HTML}{051C38}
 %\definecolor{sectioncolour}{HTML}{143153}
@@ -264,13 +217,15 @@ def esnatural(numero): #Definimos la función, asumiendo que no hay números com
 %%\definecolor{subsubsectioncolour}{HTML}{CDB380} %TERRA
 %\definecolor{subsubsectioncolour}{HTML}{748BA7}
 \chapter{Redes Informáticas}
-\section*{Historia}
-El uso de redes informáticas nace en la década de 1960, para suplir la necesidad de las universidades y laboratorios de investigación de conectar los distintos ordenadores. En la década de 1970 se comienza a experimentar con tecnologías de redes LAN, algunas de ellas usadas actualmente o recientemente, como Ethernet, desarrollado en 1975 por Xerox PARC (Palo Alto Research \& Development). 
+\section{Nodos de una red}
+\begin{description}
+%\item \textbf{\textit{Router} o enrutador:} es un dispositivo de red que reenvía los paquetes analizando la capa 3 del modelo OSI (IP) y conecta dos redes.
+%\item \textbf{Puente de red o \textit{bridge}:} Funciona en la capa 2 del modelo OSI. Es un dispositivo que conecta dos segmentos de red formando una única subred, por lo que las dos ``redes" pueden conectarse e intercambiar datos sin necesidad de un \textit{router}.
+\item \textbf{Conmutadores o \textit{switches}:} dispositivo de red que filtra los datagramas del nivel 2 OSI (\textit{Data Link Layer}, ver \ref{osi}, pág. \pageref{osi}), también conocidos como \textit{frames}, y reenvía los paquetes recibidos entre los puertos, dependiendo de la dirección MAC de cada datagrama. La diferencia entre un conmutador y un concentrador es que el conmutador sólo reenvía los paquetes por el puerto necesario. También existen un tipo especial de conmutadores que pueden hacer uso de la capa 3 OSI.
+\item \textbf{Repetidores y concentradores:} un repetidor es un dispositivo de red que, llegada una señal, limpia el ruido innecesario y la regenera. Un repetidor con múltiples puertos es un concentrador o \textit{hub}, trabajan en la capa 1 del modelo \acrshort{osi}. Los repetidores requieren de un pequeño tiempo para regenerar la señal, lo que puede crear un retardo en el tiempo de envío de la señal.
+\end{description}
 
-Las redes se usaban sobre todo para aprovechar el almacenamiento y las impresoras, así no era necesario comprar una impresora para cada equipo. Cada vendedor incluía su propio tipo de tarjeta de red, cableado, protocolo y sistema operativo de red, hasta que Novell NetWare (Sistema Operativo de red desarrollado por Novell inc.) salió al mercado en 1983 soportando la mayoría de tipos de tarjetas de red y cables. Fue el SO de Red dominante hasta que en 1993 Microsoft lanzó Windows NT AS y Microsoft Windows para Trabajo en Grupo. Al mismo tiempo, los dispositivos Unix usaban sistemas basados en TCP/IP.
-
-Actualmente el protocolo TCP/IP es considerado un estándar y ha reemplazado el resto de protocolos usados hasta principios de los 2000.
-
+%\include{Enlaces de red}
 \newpage
 
 \section{Capas de Red/Modelo OSI}
@@ -300,47 +255,8 @@ Su objetivo es conseguir la interoperabilidad entre sistemas haciendo uso de los
 	6. Presentación & Datos & Translación de datos entre un servicio de red y una aplicación. Incluye comprensión, encriptación/decriptación, y codificación de carácteres. & MIME, TLS \\
 	7. Aplicación & Datos & APIs de alto nivel, incluyendo recursos compartidos y acceso remoto de archivos & HTTP, FTP, SMTP... \\ \hline
 \end{tabularx}
-
 \newpage
-\section{Topologías de red}
-\label{topdred}
-La \gls{topologia} de red es la configuración de los elementos que componen una red. Puede ser representada lógica o físicamente. \\
-La topología lógica puede ser igual en dos redes, aunque su topología física (distancia entre conexiones, tipo de señales...) sea distinta. 
-Se distinguen dos elementos: los nodos (distintos dispositivos de red) y los enlaces (medio de transmisión de los datos).
-\subsection{Clasificación de las topologías de red}
-Se distinguen ocho tipos de topologías de red lógicas: \cite{bicsi-02}
-\renewcommand{\labelitemi}{$\bullet$}
-\begin{description}
-\item \textbf{Punto a punto:} conexión directa entre los dos puntos de la red. También es conocida como \textit{P2P} (\textit{Peer to Peer}).
-\item \textbf{Estrella:} cada nodo está conectado a un nodo central que puede ser un enrutador, concentrador o conmutador.
-\item \textbf{Bus:} cada nodo está conectado a un único cable. Una señal de un dispositivo viaja en ambos sentidos por el cable hasta que encuentra el destino deseado.
-\item \textbf{Anillo:} es una topología en bus pero con los extremos conectados. Los datos atraviesan el anillo en una única dirección y van atravesando cada uno de los nodos, por lo que si uno de ellos no funciona, la red tampoco.
-\item \textbf{Malla:} se pueden distinguir dos tipos: completamente conectados, en la que todos los nodos están conectados entre ellos, y parcialmente conectados, en la que algunos nodos pueden estar conectados punto a punto y otros pueden tener varias conexiones.
-\item \textbf{Híbrida:} combinan dos o más topologías. La más famosa es la topología de \textbf{árbol}, en la que se conectan varias topologías de estrella, asemejando la forma de un árbol.
-\item \textbf{Cadena:} se conecta cada ordenador en serie con el siguiente. Cada ordenador repite el mensaje al siguiente ordenador si éste no es su destino. Si se cierra el circuito se crea una topología en anillo, mientras que si se deja abierto se denomina topología lineal.
-\end{description}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{Resources/Top/Topdered.pdf}
-\caption{Representación esquemática de las diferentes topologías de red.}
-\end{figure}
-
-\subsection{Nodos de una red}
-\begin{description}
-\item \textbf{\textit{Router} o enrutador:} es un dispositivo de red que reenvía los paquetes analizando la capa 3 del modelo OSI (IP) y conecta dos redes.
-\item \textbf{Puente de red o \textit{bridge}:} Funciona en la capa 2 del modelo OSI. Es un dispositivo que conecta dos segmentos de red formando una única subred, por lo que las dos ``redes" pueden conectarse e intercambiar datos sin necesidad de un \textit{router}.
-\item \textbf{Conmutadores o \textit{switches}:} dispositivo de red que filtra los datagramas del nivel 2 OSI (\textit{Data Link Layer}, ver \ref{osi}, pág. \pageref{osi}), también conocidos como \textit{frames}, y reenvía los paquetes recibidos entre los puertos, dependiendo de la dirección MAC de cada datagrama. La diferencia entre un conmutador y un concentrador es que el conmutador sólo reenvía los paquetes por el puerto necesario. También existen un tipo especial de conmutadores que pueden hacer uso de la capa 3 OSI.
-\item \textbf{Repetidores y concentradores:} un repetidor es un dispositivo de red que, llegada una señal, limpia el ruido innecesario y la regenera. Un repetidor con múltiples puertos es un concentrador o \textit{hub}, trabajan en la capa 1 del modelo \acrshort{osi}. Los repetidores requieren de un pequeño tiempo para regenerar la señal, lo que puede crear un retardo en el tiempo de envío de la señal.
-
-\newpage
-\item \textbf{Interfaces de Red:} también conocido como tarjeta de red o \textit{Network Interface Controller} (NIC), es un \gls{hardware}, normalmente integrado en la placa base, que permite al ordenador conectarse a una red. Recibe el tráfico de una dirección de red. En las redes que hacen uso de Ethernet, tiene una dirección de Control de Acceso al Medio (\acrshort{MAC}) única. Estas direcciones son administradas por el Instituto de Ingeniería Eléctrica y Electrónica (\acrshort{IEEE}) evitando la duplicidad de estas. Cada dirección MAC ocupa 6 octetos, o 48 bits, a lo que suele ser representada como una cadena hexadecimal, por ejemplo: ``4C:33:31:64:59".
-\item \textbf{Módem:} Dispositivos que transforman señales analógicas a digitales y viceversa. Son usados mayoritariamente en el \acrshort{ADSL}.
-\item \textbf{Cortafuegos o \textit{firewalls}:} dispositivo que controla la seguridad mediante reglas de acceso. Aceptan determinados paquetes mientras rechazan otros. En una red doméstica, se puede poner un firewall que sólo acepte tráfico de los puertos de uso común (Páginas Web, e-mail, etc.) y rechace otros más peligrosos (Acceso remoto, SSH, SMTP, SOCKS...).
-\end{description}
-
-%\include{Enlaces de red}
-\newpage
 \section{Paquetes de red}
 Son cada serie de bits en los que se divide la información enviada por una red. \\ Según el modelo OSI, un paquete es estrictamente el PDU de la capa de red. El paquete de red se encuentra encapsulado en la capa anterior del modelo OSI. Por ejemplo, en éstandares de comunicación TCP/IP, un segmento TCP puede ser llevado por varios paquetes IP transportados por varios frames de Ethernet. Es parecido a las unidades lingüísticas. \\Está formado por varios protocolos y en él se distinguen tres partes:
 \begin{description}
@@ -376,12 +292,7 @@ Es la capa en la que se envían los datos a otras aplicaciones en otro ordenador
 \begin{itemize}
 \item \textbf{HTTP} \textit{Hypertex Transfer Protocol:} Protocolo de Transferencia de Hipertexto. Es el protocolo base de la World Wide Web. Se trata de texto estructurado que usa hiperenlaces entre nodos que también contienen texto. El cliente, al entrar en una \acr{url} a través de el agente de usuario (navegador) envía al servidor una petición de la página web, mediante HTTP. El servidor, envía como respuesta un documento HTML u otro recurso.
 \item \textbf{DNS} \textit{Domain Name System:} Sistema de Nombres de Dominio. Un servidor DNS almacena una base de datos distribuida y jerárquica con información sobre el nombre del dominio y la dirección IP a la que está vinculada. Al intentar conectar a  \texttt{ddavo.me}, el cliente pregunta al servidor cual es la dirección IP asociada a esa dirección, y se conecta a tal IP, en este caso 37.152.88.18. Para evitar tener que consultar continuamente con el servidor, se almacenan en una \gls{cache} en el cliente.
-\item \textbf{TLS/SSL} \textit{Transport Layer Security}, y su predecesor \textit{Secure Sockets Layer} (Ver \ref{seguridad}).
-\item \textbf{HTTPS} HTTP Seguro. Es HTTP con TLS aplicado.
 \item \textbf{DHCP} \textit{Dynamic Host Configuration Protocol}: Protocolo de configuración dinámica del host. Este protocolo es controlado por un servidor DHCP que envía parámetros de configuración automática a los clientes. El ejemplo más común es el de cualquier Router doméstico, que asigna automáticamente a cada dispositivo una dirección IP diferente, pero dejando un rango en el que se pueden establecer IP's estáticas.
-\item \textbf{FTP} \textit{File Transfer Protocol:} Protocolo de Transferencia de Archivos, te permite enviar archivos entre un cliente y un servidor. El protocolo TLS aplicado a FTP se denomina FTPS. Te permite acceder, mediante un usuario y contraseña, o de forma anónima, a un sistema de archivos jerárquico con nombres de archivo codificados. Utiliza el puerto 21 de forma predeterminada.
-\item \textbf{SSH} \textit{Secure Shell:} Terminal seguro. Es un protocolo de red criptográfico que permite a un cliente conectarse a un servidor y ejecutar comandos de terminal como un usuario (conociendo el usuario y contraseña). Además, permite la creación de túneles, lo que permite asegurar cualquier aplicación a través de SSH, y el acceso a puertos bloqueados por el cortafuegos en el cliente. La mayoría de servidores de SSH incluyen un servidor de SFTP, el protocolo FTP con SSH aplicado.
-\item \textbf{IMAP} \textit{Internet Message Access Protocol:} Protocolo de acceso a mensajes de Internet. Usa una conexión TCP/IP para conectarse a un servidor de e-mail y ver el contenido de los mensajes, sin necesidad de descargarlos. A diferencia de POP, te permite usar una bandeja de entrada desde varios clientes.
 \end{itemize}
 \subsubsection{Transporte}
 Se encapsulan los datos de aplicación en un segmento o datagrama, dependiendo si el protocolo usado es TCP o UDP. Se encarga de transportar los datos por una red independientemente de la topología física.
@@ -402,57 +313,6 @@ Capa encargada del acceso al medio físico de la red. También cumple otras func
 \item \textbf{MAC} \textit{Media access control}: Control de acceso al medio. Es un conjunto de protocolos (Como Ethernet o IEEE 802.11 [WiFi]) encargados de asignar el medio físico de la red. Evita colisiones entre paquetes asegurándose de que el medio está libre y evitando así la transmisión simultánea.
 \end{itemize}
 
-\section{Seguridad de redes}
-\label{seguridad}
-Consiste en el conjunto de acciones que toma el administrador de redes para prevenir y evitar acceso no autorizado, mal uso, o caída del servicio de red.
-\subsection{Tipos de ataques}
-Hay dos tipos de ataques de red, los activos y los pasivos. Son ataques pasivos cuando el intruso intercepta los datos que viajan por la red, y se considera activo cuando el atacante modifica el funcionamiento normal de la red.
-
-Algunos de los ejemplos de los ataques más comunes son:
-
-\begin{easylist}[itemize]
-\ListProperties(Style*=$\bullet$ , Style2*=--)
-& \textbf{Ataques pasivos}
-&& \textbf{Sniffing o analizador de paquetes:} Mediante un software se muestran los datos de los paquetes de red enviados y recibidos por la red.
-&& \textbf{Escáner de puertos:} Se envían numerosas peticiones al servidor por los puertos más comunes, así se comprueba que puertos están abiertos. Por ello es recomendable cambiar los puertos por defecto de los servidores importantes.
-&& \textbf{Escáner IDLE:} Se realiza un escáner de puertos para saber que servicios están disponibles, pero a traves de otro ordenador "zombie", y observando el comportamiento de éste.
-& \textbf{Ataques activos}
-&& \textbf{Ataque de Denegación de Servicio:} Se ``desborda`` el ancho de banda mediante el envío de muchas peticiones a un servidor, además de ser de un tamaño excesivo.
-&& \textbf{Ataque DDoS:} \textit{Distributed Denial of Service}, o un ataque de Denegación de Servicio distribuido. Varios ordenadores hacen un ataque DoS a un mismo servidor, algunas veces los ordenadores forman parte de una \gls{botnet}, y en ocasiones ocurre sin querer (al haber demasiado tráfico de red).
-&& \textbf{Phishing:} Con el objetivo de obtener información como nombres de usuario y contraseña o tarjetas de crédito, se crea una página de apariencia parecida a la página que trata de simular. Los usuarios más incautos no notarán el cambio e introducirán sus datos en esta página.
-&& \textbf{SQL Injection:} Es una técnica de inserción de código. Al pedir un servidor SQL datos como ``Nombre`` o ``Apellido``, se introduce junto a estos código malicioso que el servidor puede ejecutar. Por ejemplo, \mintinline[breaklines]{SQL}|SELECT * FROM alumnos WHERE nombre = '<nombreintroducido>' ;|. <nombreintroducido> puede ser \texttt{Pablo} o \texttt{Juan}, pero si se introduce \texttt{x'}\mintinline[breaklines]{SQL}|; DROP TABLE alumnos; SELECT * FROM asignaturas WHERE 't' = 't'|, el código que interpreta el servidor eliminaría la tabla \texttt{alumnos} por completo.
-&& \textbf{Ataque Smurf:} Es una especie de ataque DDoS. Se envían paquetes ICMP (probablemente pings) a distintas máquinas, pero estos paquetes que se envían, el valor de la dirección IP del remitente es la dirección IP del objetivo al que se quiere atacar. Por lo que, las máquinas a las que se las ha enviado el mensaje ICMP responderán todas al objetivo, haciendo así un DDoS.
-&& \textbf{DNS poisoning:} Se modifica la caché de DNS de un ordenador, redireccionando a una IP incorrecta, de esta manera se puede realizar un ataque de phishing sin que lo sepa el usuario del ordenador. En el caso de hacerlo con las tablas de ARP, se denomina \textit{ARP Poisoning}.
-\end{easylist}
-
-\newpage
-\subsection{Contramedidas}
-Acciones que se pueden tomar para evitar algunos de los ataques de red más comunes.
-\subsubsection{Encriptación}
-Se suele denominar también E2EE o \textit{End-to-end encryption}, es decir, encriptación de punto a punto.\\
-Se suelen usar claves PGP (\textit{Pretty Good Privacy}, Privacidad bastante buena) para cifrar correos electrónicos y otros archivos. Para HTTP lo más común es la encriptación TLS, aunque también se está utilizando actualmente para email. El servidor genera o contiene una clave o certificado, luego el cliente, debe recibir o tener esa clave para poder desencriptar el mensaje.
-\subsubsection{Cortafuegos}
-Primero necesitamos definir lo que es un \textbf{puerto}. Un puerto es un punto final de comunicación en un Sistema Operativo. El puerto siempre está asociado a una dirección IP y a un tipo de protocolo. Así completa el origen o destino de un paquete de red. Se aplica en la capa de transporte del modelo OSI. El puerto es un número de 16 bits, por lo que será un número comprendido entre 0 y 65536. Multitud de puertos están ya reservados por diversos protocolos y programas, como el 80 para HTTP, 22 para SSH o 25 para SMTP.
-
-Un cortafuegos es un software que supervisa el tráfico de entrada y salida de datos, basado en unas reglas. Si un paquete de red cumple esas reglas, es rechazado. Pueden bloquear un paquete destinado a un puerto, de un protocolo (Bloquear SSH de Internet, pero no local), de una IP específica, entre otros atributos. También pueden configurarse en modo negativo o whitelist, aceptando tan sólo los paquetes que cumplan las reglas. Por ejemplo, puedes especificar que no acepte tráfico en el puerto 23. Pero igualmente puedes especificar que sólo acepte tráfico en el puerto 23.
-
-%\begin{figure}[H]
-%\noindent
-%\includegraphics[width=\textwidth]{Resources/Wireshark02.png}
-%\caption[Wireshark: SMTP sin encriptación]{Captura de pantalla de Wireshark (Véase \ref{wireshark}, pg. \pageref{wireshark}) en la que se muestra un paquete SMTP (email enviado) sin ningún tipo de encriptación. Se puede acceder a este paquete desde cualquier nodo de la red.}
-%\end{figure}
-%\begin{figure}[H]
-%\noindent
-%\includegraphics[width=\textwidth]{Resources/Wireshark03.png}
-%\caption[Wireshark: HTTP Form sin encriptación]{Captura de pantalla de Wireshark (Véase \ref{wireshark}, pg. \pageref{wireshark}) en la que se muestra un formulario de HTTP en el que personas autorizadas podrían ver el usuario y la contraseña.}
-%\end{figure}
-
-%\definecolor{chaptercolour}{HTML}{375000}
-%\definecolor{sectioncolour}{HTML}{597814}
-%\definecolor{subsectioncolour}{HTML}{A8C764}
-%%\definecolor{subsubsectioncolour}{HTML}{CDB380} %TERRA
-%\definecolor{subsubsectioncolour}{HTML}{D6EF9F}
-
 \newcommand{\function}[1]{\texttt{\color{Orange}#1}}
 \newcommand{\class}[1]{\texttt{\color{DarkRed}#1}}
 \chapter{El simulador de redes}
@@ -462,40 +322,28 @@ La parte práctica del Proyecto de Investigación, el simulador de redes de nomb
 Todo el software que se ha usado para la creación de este programa, es software libre, debido a las ventajas citadas anteriormente. A continuación, se listan las herramientas que se han usado para la creación tanto del programa como de este documento.
 
 \subsection{GNU/Linux}
-También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \acrshort{gnu} (Acrónimo recursivo \textit{GNU's Not Unix}, o GNU no es Unix). Es el gran ejemplo por excelencia del Software Libre. Es el sistema operativo más utilizado, pues es usado en la mayoría de los servidores, y además, otros sistemas operativos como Android están basados en éste. Puedes instalar Linux desde el código fuente o instalar distribuciones o \textit{distros}.
+También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \acrshort{gnu} (Acrónimo recursivo \textit{GNU's Not Unix}, o GNU no es Unix). Es el gran ejemplo por excelencia del Software Libre. Es el sistema operativo más utilizado, pues es usado en la mayoría de los servidores, y además, otros sistemas operativos como Android están basados en éste. Puedes instalar Linux desde el código fuente o instalar distribuciones o \textit{distros} (conjunto de software preconfigurado y compilado que contiene GNU, Linux y otros paquetes). Se han usado Arch Linux, Ubuntu 16 y MaX 8.
 
 \subsubsection{Distros}
 Son las distintas distribuciones de software de GNU/Linux. Es decir, un conjunto de software preconfigurado y compilado formado por el Sistema Operativo GNU, el kernel de Linux y otros tantos paquetes, dependiendo de los usuarios a los que esté dirigida la distribución. Pueden crearse con el soporte de una empresa; como Ubuntu (Canonical Ltd.), openSUSE (Novell) o Fedora (Red Hat); y otras mantenidas por comunidades como Debian, Gentoo o Arch Linux.
 
-\newpage
-Para el desarrollo de este proyecto he usado dos distros diferentes. Una llamada \textbf{Arch Linux}, que es \textit{rolling release} (No tiene "versiones", sino que siempre se va actualizando con los últimos paquetes disponibles, por lo que siempre está actualizado) en la que se ha ido haciendo la programación, y \textbf{Ubuntu 16}, basado en Debian, por lo que está bastante menos actualizado y se han tenido que hacer correcciones en el programa para que pueda funcionar con versiones más antiguas de las \glspl{dependencia}. Se ha usado Ubuntu para comprobar el funcionamiento del software, ya que es la distribución más usada en los hogares y en educación.
-
 \subsection{Git y Github}
 Git es un software diseñado por Linus Torvalds con el que se puede crear un Sistema de
-Control de Versiones (VCS [\textit{Version Control System}]). Este programa te permite
+Control de Versiones (VCS). Este programa te permite
 de forma sencilla volver a una versión o \textit{commit} anterior del programa, así
 como enviarlas a un \gls{repositorio} remoto e incluso publicarlas en línea. Su punto fuerte
 son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama
 \textit{master} (principal) siempre sea funcional. Para ello creamos una nueva rama para cada nueva funcionalidad del programa. La implementación del nuevo código a otra rama se denomina \textit{merge}. Otra de las funcionalidades que implementa es \texttt{clone}, que te permite descargar un proyecto si tienes la URL del \gls{repositorio} git.
 \begin{figure}[H]
 \noindent
-\includegraphics[width=\textwidth]{Resources/Gitflow.png}
+\includegraphics[width=0.9\textwidth]{Resources/Gitflow.png}
 \caption{\textit{Gitflow} o flujo de trabajo de Git}
 \end{figure}
-
-Para usar Git, se suele recomendar seguir un \textit{Git workflow} o flujo de trabajo de Git, en ocasiones denominado \textit{gitflow}. El más común es el basado en 4 nuevas ramas, aparte de \texttt{master}.
-\begin{description}
-\item \textbf{\textit{Develop:}} es la rama de desarrollo. Se van aplicando las nuevas funcionalidades a esta rama, para luego convergerlas en la rama \texttt{Release} que se va a publicar.
-\item \textbf{\textit{Release:}} una vez hayamos terminado en la rama de desarrollo, se converge \texttt{Develop} con \texttt{Release} y se procede a solucionar los bugs que se vayan descubriendo. Cuando se hayan solucionado todos los bugs y la siguiente versión del programa esté disponible para el público, se hace \texttt{merge} en \texttt{Develop} y en \texttt{Master}, además de aplicarle al \texttt{commit} una etiqueta con el nombre de la versión. (2.2.1, por ejemplo).
-\item \textbf{\textit{Hotfix}:} Es una rama dedicada a solventar los \glspl{bug} que un usuario descubra en una versión ya lanzada de la aplicación. Cuando un usuario descubre un bug, se crea una nueva rama a partir de la última versión de master, se soluciona el bug en esa rama y luego se vuelve a hacer \texttt{merge} en master y develop.
-\item \textbf{\textit{Feature <x>}:} Donde <x> el nombre de la funcionalidad. Es una rama dedicada a una nueva funcionalidad, se crea a partir de \texttt{Develop}, y una vez terminada, se hace \texttt{merge} en \texttt{Develop} de nuevo.
-\end{description}
 
 GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener una wiki y una página web para tu proyecto, junto a otras funciones.
 Una de sus funciones estrella es la visualización online del repositorio, con la que cualquier persona tiene acceso al código y los archivos antes de descargarlos. Otra función útil es el apartado de \textit{Issues}, en el que los usuarios de tu código pueden reportar los bugs del programa o aportar nuevas ideas en forma de "foro".
 Tanto el programa como este documento están disponibles en GitHub en los siguientes enlaces. \url{https://github.com/daviddavo/InvProy} y \url{https://github.com/daviddavo/InvProy-tex}
 
-\newpage
 \subsection{LaTeX}
 \LaTeX\space o, en texto plano, LaTeX, pronunciado con la letra griega 
 Ji ($\Chi$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas o código e importar paquetes que cumplan las necesidades de los usuarios. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la apariencia de éste.
@@ -507,8 +355,6 @@ Es un lenguaje de programación interpretado (sólo se traduce  el programa a c�
 
 \subsection{Gtk+}
 Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de Interfaces Gráficas de Usuario (\acrshort{GUI}), también, al igual que Linux forma parte del proyecto GNU.
-
-Contiene las bibliotecas de GTK, GDK, ATK, Glib, Pango y Cairo; de las que he usado fundamentalmente GTK para crear la interfaz principal del programa; \textbf{GDK} al utilizarlo como intermediario entre los gráficos de bajo nivel y alto nivel y \textbf{Cairo} para la creación de algunos de los elementos gráficos del programa.
 
 Al utilizar este conjunto de librerías, se ha conseguido que sólo sea necesario descargar una dependencia del programa, que además suele venir instalada en la mayoria de distros de Linux. Por ejemplo en una instalación limpia de Ubuntu 16 (sin descargar paquetes adicionales) el programa funciona perfectamente. Para usarlo en Python se ha tenido que importar la libreria de PyGtk, que también suele venir incluida en la distribución.
 
@@ -528,20 +374,6 @@ Descargas $ sudo dpkg -i invproy_x.y.z_all.deb
 Donde `x', `y', y `z' son la versión del paquete descargado.
 Para iniciar el programa debes usar la lista de programas de tu escritorio.
 
-\subsection{Arch Linux}
-Descarga la versión más reciente para Arch Linux de \url{https://github.com/daviddavo/InvProy/releases/latest}. Una vez descargado, abre una terminal donde se haya descargado el paquete e instálalo.
-\begin{minted}{bash}
-~ $ sudo pacman -S base-devel #Lo necesitas para compilar el paquete
-#Ahora elige el sitio donde descargaras el paquete. Aqui no se va a instalar.
-~ $ cd Builds
-Builds $ curl -O <url> #Lo descargamos
-Builds $ tar -xvzf invproy.tar.gz
-Builds $ cd invproy
-Invproy $ makepkg -sri
-\end{minted}
-
-Y ya lo tendrías instalado en tu ordenador.
-
 \subsection{Ejecución manual / instalación portable}
 Lo primero que necesitará es descargar las dependencias. Esto depende del Sistema Operativo. En el caso de GNU/Linux, sólo es necesario descargar \texttt{python3-gobject}. Después, clonamos el repositorio de git. Ejemplo en Ubuntu:
 \begin{minted}{bash}
@@ -554,12 +386,12 @@ Descargas $ git clone https://github.com/daviddavo/InvProy.git
 \noindent Una vez ya tenemos el repositorio de git clonado:
 \begin{minted}{bash}
 Descargas $ cd InvProy
-Descargas $ python3 Main.py
+Descargas $ python3 -m invproy
 \end{minted}
 
-En el caso de querer usar el programa desde una interfaz gráfica, vamos con nuestro explorador de archivos a la carpeta donde queramos descargarlo. Abrimos una terminal y descargamos el programa con \mintinline{bash}|git clone https://github.com/daviddavo/InvProy.git|. Luego entramos en la carpeta y ejecutamos el archivo \texttt{Main.py}
+En el caso de querer iniciar el programa desde una interfaz gráfica, vamos con nuestro explorador de archivos a la carpeta donde queramos descargarlo. Abrimos una terminal y descargamos el programa con \mintinline{bash}|git clone https://github.com/daviddavo/InvProy.git|. Luego entramos en la carpeta y ejecutamos el archivo \texttt{Main.py}
 \section{Uso del programa}
-Esta guía ha sido creada usando la versión v0.2.3-alpha, por lo que en algunos apartados pueden haberse realizado cambios en versiones posteriores.
+Esta guía ha sido creada usando la versión v0.2.4-alpha, por lo que en algunos apartados pueden haberse realizado cambios en versiones posteriores.
 
 El programa está siendo diseñado para tener una mayor facilidad de uso, pensando en una interfaz intuitiva y simple que pueda ser utilizada sin la necesidad de ningún apoyo externo al programa (instrucciones, documentación, tutor). Para ello, en la versión v0.4 será añadido un asistente o `tutorial' que guíe a los alumnos la primera vez que se acceda al programa; además de añadir más información, dentro de la interfaz, sobre redes.
 
@@ -591,26 +423,6 @@ A continuación, se incluye una captura de pantalla de la interfaz de InvProy Al
 \end{figure}
 Para incluir un objeto en la rejilla, se hace click en el icono del objeto y luego  en el lugar donde se quiera poner. Cuando tenemos dos objetos podemos conectarlos si hacemos click primero en el icono del cable, luego en un objeto y después en otro.
 
-\subsection{Configuración}
-Al no haber una ventana de configuración del programa, la configuración debe hacerse de forma manual editando el archivo \texttt{Config.ini} (Ver \ref{Config.ini}). Este es un archivo de texto sin formato en el que se le asigna un valor a cada variable.
-
-\begin{easylist}[itemize]
-\ListProperties(Style*=, Space*=-5pt, Space=0pt)
-& \texttt{wres} y \texttt{hres}: El tamaño (en píxeles) del ancho y el alto de la ventana principal.
-& \texttt{viewport-sqres}: El tamaño en píxeles del lado de los cuadrados de la rejilla.
-& \texttt{viewport-wres} y \texttt{viewport-hres}: El número de cuadrados que tendrá de alto y de ancho la rejilla.
-& \texttt{cable-color}: Color por defecto de los cables en HTML.
-& \texttt{start-centered}: Al iniciar el programa, iniciar en el centro de la rejilla en lugar de arriba a la izquierda.
-& \texttt{revealer-show-default}: (True o False). Mostrar por defecto la ventana con la información sobre los dispositivos.
-& \texttt{respack}: Directorio del ``Pack de recursos"
-& \texttt{routing-ttl}: Tiempo de vida en segundos de las entradas en la tabla de redireccionamiento de los switches.
-& \texttt{def-max-connections}: Conexiones máximas por defecto de un conmutador/concentrador.
-\end{easylist}
-
-\subsection{Ejemplo: Envío de Ping entre dos dispositivos}
-Lo primero que vamos a hacer, es colocar un Switch al que poder conectar los ordenadores. Después colocamos y conectamos hasta 5 ordenadores (es el máximo de conexiones por defecto) al Switch. Después, para cada ordenador, hacemos click derecho y en el menú emergente pulsamos ``Editar Objeto", con lo que se abrirá una ventana como la de la Figura \ref{fig:editwindow}. Aquí podemos asignar una dirección IP al ordenador. Tras asignar 5 direcciones IP diferentes a los ordenadores, en cualquiera de ellos hacemos click derecho y clickamos en ``Ping", haciendo que aparezca una ventana con un cuadro de texto como en Fig. \ref{fig:pingwindow2}. En este cuadro introducimos la dirección IP del dispositivo al que queremos enviar el Ping y pulsamos la tecla Intro, así el ordenador enviará un paquete Ping Request a la IP especificada. Cuando el paquete llega al equipo con esa dirección IP, este responderá con un paquete parecido, pero en este caso será un ping de respuesta (simbolizado en rojo), por lo que el destino será el primer ordenador. En el caso de que se produzcan cambios en la red mientras el paquete viaja por esta, el paquete dispone de un tiempo de vida, por lo que cuando llega a 0 se destruye.
-
-\newpage
 \section{Funcionamiento del programa}
 Se ha creado haciendo uso de todas las herramientas anteriormente mencionadas.
 
@@ -694,13 +506,7 @@ Entre todas estas clases debemos destacar dos funciones:
 Bachillerato.\texttt{1627:1717}
 \item \function{create} es una función propiedad de \class{Ping}, que dadas una dirección IP de destino y origen, crea un paquete de red, bit a bit, basado en el modelo real de paquetes de Ping inspeccionado por Wireshark, y confirmado en libros de teoría. Es una función que, aunque parezca sencilla, fueron bastantes horas de trabajo, pues es bastante complejo tratar con bits.
 \end{itemize}
-\inputminted[firstline=1782, lastline=1818, baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{python}{Codigo/Main.py}
-
-\subsection{save.py}
-Es un archivo que se encarga de guardar y cargar archivos. Está compuesto por dos funciones: \texttt{save} y \texttt{load}, encargadas de guardar a un archivo y cargar a un archivo, respectivamente. Para ello, usan una librería nativa de Python llamada \texttt{pickle}, que se encarga de la \gls{serializar} de los objetos, y la posterior deserialización de estos. Este método de serialización debería ser cambiado en una versión posterior, ya que no es retrocompatible, es decir, no te permite cargar archivos creados con una versión anterior del programa, además de que hace que los archivos de guardado sean demasiado pesados.
-
-\subsection{Interface.glade}
-Este archivo, de mil trescientas veinticinco líneas, es el encargado de establecer las propiedades de la interfaz. No ha podido ser incluido en el anexo debido a su larga extensión, ya que usa XML, un lenguaje que es bastante redundante, aunque sencillo de usar.
+\inputminted[firstline=1782, lastline=1818, baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{python}{Codigo/invproy/main.py}
 
 \subsection{Dispositivos}
 Existen cuatro tipos dispositivos: los Computadores, que tienen la mayor programación; los Switches, que se encargan de manejar los paquetes de red; los Hubs, que son como los Switches, pero reenvían los paquetes por todos sus puertos y los Routers, que tan sólo existen de forma visual, pero no tienen ninguna función de momento. Por lo que sólo vamos a hablar de los Switches y los Ordenadores. Para cambiar los parámetros hay que hacer click derecho en el dispositivo al que se le deseen cambiar los parámetros y luego en la entrada de `Editar objeto'. A lo que aparecerá una ventana como la de Fig. \ref{fig:editwindow} en la que se podrán cambiar parámetros como el nombre, la dirección MAC o la dirección IP.
@@ -711,7 +517,7 @@ Los Switches se encargan de redireccionar los paquetes de red. La primera vez qu
 \inputminted[firstline=1268, lastline=1296,baselinestretch=1,
 	fontsize=\scriptsize,
 	linenos,
-	breaklines]{python}{Codigo/Main.py}
+	breaklines]{python}{Codigo/invproy/main.py}
 Este algoritmo esta basado en el que usan los conmutadores reales y, traducido a lenguaje humano, vendría a ser:
 \begin{easylist}[itemize]
 \ListProperties(Style*=,Space*=6pt)
@@ -724,10 +530,10 @@ Este algoritmo esta basado en el que usan los conmutadores reales y, traducido a
 \end{easylist}
 
 Cuando recibe un paquete, también añade a la \textit{Routing Table} o tabla de enrutación una entrada con la dirección MAC del remitente del paquete y el puerto por el que ha llegado, así cuando le llegue un paquete el router conocerá el puerto por el que enviarlo.
-\inputminted[firstline=1231, lastline=1247, baselinestretch=1,fontsize=\scriptsize, linenos,breaklines]{python}{Codigo/Main.py}
+\inputminted[firstline=1231, lastline=1247, baselinestretch=1,fontsize=\scriptsize, linenos,breaklines]{python}{Codigo/invproy/main.py}
 Este es el código que cumple esta función. Cada elemento en la tabla tiene un tiempo establecido en el que caduca la entrada. Lo que hace esta parte del código es comprobar si este tiempo ha caducado, actualizar la fecha de caducidad si la dirección MAC ya está en la tabla o añadirlo de nuevo en la tabla si la dirección no está.
 
-\section{Versión actual del programa (0.2.3-alpha)}
+\section{Versión actual del programa (0.2.4-alpha)}
 \label{01}
 En la versión 0.1 se introdujo toda la interfaz, las conexiones, los dispositivos... Pero aún no se podían enviar ni recibir paquetes de red. En la versión 0.2 se introdujo esta posibilidad, junto a otras cosas como el enrutamiento de paquetes. El programa es considerado una versión \textit{alpha}, ya que aún está en desarrollo y no es un programa terminado.
 
@@ -757,7 +563,7 @@ Otro inconveniente ha sido el tiempo, que no me ha dejado implementar funciones 
 \section{Conclusión}
 Lo más difícil fue empezar. El tratar de aprender tanta información de golpe de forma autodidacta. Aunque ya supiese un poco sobre programación en Python, no tenía casi experiencia, aprender a usar la librería de Gtk+, aprender sobre redes, aprender sobre un uso más extenso de GNU/Linux, aprender sobre \LaTeX , etc. fue bastante cansado. pero eso es lo mejor, todo lo que he aprendido y, sobre todo, la experiencia que he adquirido en el campo de la programación.
 
-A la hora de programar, al principio el ritmo era muy lento, de unas 200 líneas al mes, con pausas de semanas para solucionar problemas y errores. Poco a poco se fue acelerando hasta llegar a finales de Julio, donde hacía más de 100 líneas diarias.
+A la hora de programar, al principio el ritmo era muy lento, de unas 200 líneas al mes, con pausas de semanas para solucionar problemas y errores. Poco a poco se fue acelerando hasta llegar a finales de Julio, donde hacía más de 100 líneas diarias. Aprendiendo en el proceso el uso de clases y decoradores.
 
 Pese a que es verdad que falta incluir más protocolos y algunas funcionalidades bastante básicas (como mover objetos), estoy bastante satisfecho con la versión actual del programa, que se ha realizado con bastante poco tiempo, ya que tiene las bases, y creo que añadir un nuevo protocolo, o una nueva funcionalidad no serían más que unas horas delante de la pantalla y el teclado del ordenador.
 
@@ -790,43 +596,6 @@ Resumiendo:
 \printbibliography[heading=bibintoc]
 
 \appendix
-{\setstretch{1.2}
-\printglossary[type=\acronymtype, style=mcolindex, title=Glosario y acrónimos, toctitle=Glosario y acrónimos]}
-
-\newpage
-\chapter{Unidades de transferencia de datos}
-{\setstretch{1.5}
-Cantidad de datos transferidos por unidad de tiempo. La unidad de tiempo es el segundo y la cantidad de datos puede ser medida en \textit{\glspl{bit}} (bitrate), carácteres/símbolos (\textit{baudrate}) o bytes (8 bits), en ocasiones también se utilizan \textit{nibbles} (4 bits). Para expresar esta velocidad, se suelen usar múltiplos, que pueden ser en base binaria (Sistema del IEEE) o decimal (Sistema Internacional).
-
-Se usa la ``b" para designar los bits, y ``B" para los Bytes. Después, se usan los prefijos del sistema internacional cuando es en base decimal, y los prefijos del SI cambiando la segunda sílaba por ``bi" (e.g: kilobit / kibibit, kbit/s / Kibit/s) cuando se trata de múltiplos binarios.
-}
-\vspace{\fill}
-{\setstretch{1.3}
-\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
-\section*{Tabla de múltiplos}
-\noindent
-\begin{tabularx}{\columnwidth}{| l >{\centering}X X|}
-\rowcolor{header} \hline
-\textbf{Unidad} & \textbf{Símbolo} & \textbf{Equivalencia} \\ \hline
-Kilobit/s & kbit/s o kb/s & 1000 bit/s \\
-Megabit/s & Mbit/s o Mb/s & $\mathsf{10^{6}}$ bit/s o 10³ kbit/s  \\
-Gigabit/s & Gbit/s o Gb/s & $\mathsf{10^{9}}$ bit/s o 10³ Mb/s \\
-Terabit/s & Tbit/s o TB/s & $\mathsf{10^{12}}$ bit/s o 10³ Gb/s \\ \hline
-Kibibit/s & Kibit/s & $\mathsf{2^{10}}$ bit/s o 1024 bit/s \\
-Mebibit/s & Mibit/s & $\mathsf{2^{20}}$ bit/s o 1024 Kibit/s \\
-Gibibit/s & Gibit/s & $\mathsf{2^{30}}$ bit/s o 1024 Mibit/s \\
-Tebibit/s & Tibit/s & $\mathsf{2^{40}}$ bit/s o 1024 Gibit/s \\ \hline \hline
-Byte/s    & Byte/s & 8 bit/s \\
-Kilobyte/s & kB/s & 1000 Byte/s o 8000 bits/s \\
-Megabyte/s & MB/s & $\mathsf{10^{6}}$ Byte/s o 1000 kB/s \\
-Gigabyte/s & GB/s & $\mathsf{10^{9}}$ Byte/s o 1000 MB/s \\
-Terabyte/s & TB/s & $\mathsf{10^{12}}$ Byte/s o 1000 GB/s \\ \hline
-Kibibyte/s & KiB/s & 1024 Byte/s \\
-Mebibyte/s & MiB/s & $\mathsf{2^{20}}$ Byte/s \\
-Gibibyte/s & GiB/s & $\mathsf{2^{30}}$ Byte/s \\
-Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
-\end{tabularx}}
-\vspace{\fill}
 
 \chapter{Capturas de pantalla del programa}
 \noindent\begin{figure}[H]
@@ -878,17 +647,7 @@ Tebibyte/s & TiB/s & $\mathsf{2^{40}}$ Byte/s \\ \hline
 \label{fig:samplenet}
 \end{figure}
 
-\chapter[Licencia GNU GPL]{Licencia Pública General GNU}
-\label{gnugpl}
-Es la licencia más usada en el desarrollo de software. Permite las cuatro libertades del software libre y fue creada por la Free Software Foundation. La versión más reciente, la GPLv3, ha sido publicada el 29 de junio de 2007. Al distribuir el programa, debe distribuirse también una copia de la licencia que usa.
-
-Este documento está licenciado con licencia \doclicenseLongNameRef, compatible con la GNU GPL.
-
-InvProy usa la licencia GPLv3, aquí una traducción no oficial\cite{gpltranslation}:
-\inputminted[baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{text}{GPLv3-spanish.txt}
-%\include{GPLv3-spanish}
-
-\include{AnCode}
+%\include{AnCode}
 
 \newpage
 \thispagestyle{empty}
