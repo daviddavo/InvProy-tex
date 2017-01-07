@@ -47,7 +47,8 @@ style=ieee
 \titlespacing*{\chapter}{0pt}{-10pt}{10pt}
 
 %Decoraciones y formato del texto
-\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm, headheight=14pt]{geometry}
+%\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm, headheight=14pt]{geometry}
+\usepackage[papersize={216mm,330mm}, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm, headheight=14pt]{geometry}
 
 \usepackage[cache=false]{minted} %Para insertar código
 
@@ -146,7 +147,7 @@ Julio Sánchez Olías}
 \titleformat{\chapter}[display]
 %    {\color{chaptercolour}\normalfont\huge\bfseries}
     {\color{chaptercolour}\bfseries}
-    {}{0pt}{\huge\thechapter .}
+    {}{0pt}{\huge\thechapter . }
     \titlespacing*{\chapter}{0pt}{-50pt}{10pt}
 \titleformat{\section}
 	{\color{sectioncolour}\normalfont\Large\bfseries}
@@ -309,7 +310,7 @@ Capa encargada del acceso al medio físico de la red. También cumple otras func
 La parte práctica del Proyecto de Investigación, el simulador de redes de nombre \textit{InvProy}, ha sido la parte más extensa del proyecto, que más tiempo, esfuerzo y recursos ha ocupado. Se podría decir que el proyecto entero es la parte práctica. Como curiosidad, el nombre de \textit{InvProy} viene del acrónimo formado mediante la permutación de las palabras ``Proyecto de Investigación", quedando \textit{``Investigación \sout{de} Proyecto"} y de ahí \textit{InvProy}.
 
 \section{Herramientas usadas en la creación del software}
-Todo el software que se ha usado para la creación de este programa, es software libre, debido a las ventajas citadas anteriormente. A continuación, se listan las herramientas que se han usado para la creación tanto del programa como de este documento.
+Todo el software que se ha usado para la creación de este programa, es software libre, debido a las ventajas citadas anteriormente. A continuación, se listan las herramientas que se han usado para la creación del programa.
 
 \subsection{GNU/Linux}
 También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \acrshort{gnu} (Acrónimo recursivo \textit{GNU's Not Unix}, o GNU no es Unix). Es el gran ejemplo por excelencia del Software Libre. Es el sistema operativo más utilizado, pues es usado en la mayoría de los servidores, y además, otros sistemas operativos como Android están basados en éste. Puedes instalar Linux desde el código fuente o instalar distribuciones o \textit{distros} (conjunto de software preconfigurado y compilado que contiene GNU, Linux y otros paquetes). Se han usado Arch Linux, Ubuntu 16 y MaX 8.
@@ -333,11 +334,6 @@ son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama
 GitHub es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener una wiki y una página web para tu proyecto, junto a otras funciones.
 Una de sus funciones estrella es la visualización online del repositorio, con la que cualquier persona tiene acceso al código y los archivos antes de descargarlos. Otra función útil es el apartado de \textit{Issues}, en el que los usuarios de tu código pueden reportar los bugs del programa o aportar nuevas ideas en forma de "foro".
 Tanto el programa como este documento están disponibles en GitHub en los siguientes enlaces. \url{https://github.com/daviddavo/InvProy} y \url{https://github.com/daviddavo/InvProy-tex}
-
-\subsection{LaTeX}
-\LaTeX\space o, en texto plano, LaTeX, pronunciado con la letra griega 
-Ji ($\Chi$), es un software libre orientado a la creación de textos escritos comparable a la calidad tipográfica de las editoriales. Mediante la importación de paquetes y comandos o macros se puede dar formato al texto al igual que con cualquier otro editor, exportándolo posteriormente a PostScript o PDF. Está orientado a documentos técnicos y científicos por su facilidad a la hora de incluir fórmulas o código e importar paquetes que cumplan las necesidades de los usuarios. No es un procesador de textos, pues está más enfocado en el contenido del documento que en la apariencia de éste.
-El código del documento puede ser editado con cualquier editor de texto plano como \textit{nano} o \textit{emacs}, aunque he usado una \acrshort{IDE} llamada \textbf{texmaker}.
 
 \subsection{Python}
 \label{python}
