@@ -146,7 +146,7 @@ Julio Sánchez Olías}
 \titleformat{\chapter}[display]
 %    {\color{chaptercolour}\normalfont\huge\bfseries}
     {\color{chaptercolour}\bfseries}
-    {}{0pt}{\huge\thechapter . }
+    {}{0pt}{\huge\thechapter .}
     \titlespacing*{\chapter}{0pt}{-50pt}{10pt}
 \titleformat{\section}
 	{\color{sectioncolour}\normalfont\Large\bfseries}
@@ -217,16 +217,6 @@ Una de las grandes ventajas del software libre, aparece en la educación. Es muy
 %%\definecolor{subsubsectioncolour}{HTML}{CDB380} %TERRA
 %\definecolor{subsubsectioncolour}{HTML}{748BA7}
 \chapter{Redes Informáticas}
-\section{Nodos de una red}
-\begin{description}
-%\item \textbf{\textit{Router} o enrutador:} es un dispositivo de red que reenvía los paquetes analizando la capa 3 del modelo OSI (IP) y conecta dos redes.
-%\item \textbf{Puente de red o \textit{bridge}:} Funciona en la capa 2 del modelo OSI. Es un dispositivo que conecta dos segmentos de red formando una única subred, por lo que las dos ``redes" pueden conectarse e intercambiar datos sin necesidad de un \textit{router}.
-\item \textbf{Conmutadores o \textit{switches}:} dispositivo de red que filtra los datagramas del nivel 2 OSI (\textit{Data Link Layer}, ver \ref{osi}, pág. \pageref{osi}), también conocidos como \textit{frames}, y reenvía los paquetes recibidos entre los puertos, dependiendo de la dirección MAC de cada datagrama. La diferencia entre un conmutador y un concentrador es que el conmutador sólo reenvía los paquetes por el puerto necesario. También existen un tipo especial de conmutadores que pueden hacer uso de la capa 3 OSI.
-\item \textbf{Repetidores y concentradores:} un repetidor es un dispositivo de red que, llegada una señal, limpia el ruido innecesario y la regenera. Un repetidor con múltiples puertos es un concentrador o \textit{hub}, trabajan en la capa 1 del modelo \acrshort{osi}. Los repetidores requieren de un pequeño tiempo para regenerar la señal, lo que puede crear un retardo en el tiempo de envío de la señal.
-\end{description}
-
-%\include{Enlaces de red}
-\newpage
 
 \section{Capas de Red/Modelo OSI}
 El modelo \acrshort{osi} es un modelo de referencia para redes basado en \gls{capas de abstraccion}.
@@ -364,32 +354,12 @@ Wireshark es un \textit{packet sniffer} o analizador de paquetes; te muestra los
 
 \section{Instalación}
 \subsection{Ubuntu / Debian}
-Tan sólo se debe descargar el paquete del programa. Para ello debemos usar apt-get:
-\mint{bash}|~ $ sudo apt-get install invproy|
-
 En caso de no estar en los repositorios, hay que hacerlo manualmente. Descarga el paquete de \url{https://github.com/daviddavo/InvProy/releases/latest}. Una vez descargado, abre una terminal donde se haya descargado el paquete e instálelo.
 \begin{minted}{bash}
-Descargas $ sudo dpkg -i invproy_x.y.z_all.deb
-\end{minted}
-Donde `x', `y', y `z' son la versión del paquete descargado.
-Para iniciar el programa debes usar la lista de programas de tu escritorio.
-
-\subsection{Ejecución manual / instalación portable}
-Lo primero que necesitará es descargar las dependencias. Esto depende del Sistema Operativo. En el caso de GNU/Linux, sólo es necesario descargar \texttt{python3-gobject}. Después, clonamos el repositorio de git. Ejemplo en Ubuntu:
-\begin{minted}{bash}
-~ $ sudo apt-get update && sudo apt-get upgrade
-~ $ sudo apt-get install git python3-gobject
 ~ $ cd Descargas
-Descargas $ git clone https://github.com/daviddavo/InvProy.git
+Descargas $ sudo dpkg -i invproy*.deb
 \end{minted}
 
-\noindent Una vez ya tenemos el repositorio de git clonado:
-\begin{minted}{bash}
-Descargas $ cd InvProy
-Descargas $ python3 -m invproy
-\end{minted}
-
-En el caso de querer iniciar el programa desde una interfaz gráfica, vamos con nuestro explorador de archivos a la carpeta donde queramos descargarlo. Abrimos una terminal y descargamos el programa con \mintinline{bash}|git clone https://github.com/daviddavo/InvProy.git|. Luego entramos en la carpeta y ejecutamos el archivo \texttt{Main.py}
 \section{Uso del programa}
 Esta guía ha sido creada usando la versión v0.2.4-alpha, por lo que en algunos apartados pueden haberse realizado cambios en versiones posteriores.
 
