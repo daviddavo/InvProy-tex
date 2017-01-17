@@ -16,6 +16,7 @@
 
 \usepackage[xindy, nomain, acronym, acronyms, nonumberlist, nopostdot, toc]{glossaries}
 \usepackage{glossary-mcols}
+\usepackage{multicol}
 %\usepackage{glossary-custom}
 
 \usepackage[ampersand]{easylist} %Cosas de listas
@@ -145,10 +146,11 @@ Julio Sánchez Olías}
 \renewcommand\cftchapfont{\bf\color{chaptercolour}}
 \renewcommand\cftchappagefont{\bf\color{chaptercolour}}
 
+%%% FORMATO DE TITULO PARA LA INTRODUCCION
 \titleformat{\chapter}[display]
 %    {\color{chaptercolour}\normalfont\huge\bfseries}
     {\color{chaptercolour}\bfseries}
-    {}{0pt}{\huge\thechapter . }
+    {}{0pt}{\huge}
     \titlespacing*{\chapter}{0pt}{-50pt}{10pt}
 \titleformat{\section}
 	{\color{sectioncolour}\normalfont\Large\bfseries}
@@ -170,6 +172,7 @@ Julio Sánchez Olías}
 \setlength{\parskip}{5pt plus4pt minus3pt}
 \setlength{\footskip}{1cm plus4pt minus3pt}
 
+\pagenumbering{arabic}
 \chapter*{Introducción}
 \addcontentsline{toc}{chapter}{Introducción}
 En el mundo contemporáneo, ninguna de las innovaciones tecnológicas sería posible sin algo fundamental: las redes; y, más concretamente, redes informáticas. Las redes informáticas han hecho posible, desde su nacimiento, la comunicación de grandes sumas de datos a velocidades casi instantáneas entre sitios distantes. Al principio esta tecnología era usada entre universidades, acelerando el proceso de investigación al coordinarse unas universidades con otras mucho más rápidamente. 
@@ -187,10 +190,13 @@ Son dos cosas muy importantes, que apenas son enseñadas en las clases de la ESO
 %\definecolor{subsectioncolour}{HTML}{AA3939}
 %\definecolor{subsubsectioncolour}{HTML}{CDB380} %TERRA
 %%\definecolor{subsubsectioncolour}{HTML}{D46A6A}
-
+\titleformat{\chapter}[display]
+%    {\color{chaptercolour}\normalfont\huge\bfseries}
+    {\color{chaptercolour}\bfseries}
+    {}{0pt}{\huge\thechapter . }
+    \titlespacing*{\chapter}{0pt}{-50pt}{10pt}
 \setcounter{chapter}{0}    
 \chapter{Programación y software libre}
-\pagenumbering{arabic}
 
 \subsection*{Propuesta}
 El objetivo de este proyecto es el desarrollo abierto  y colaborativo a largo plazo de un software programado en Python de código libre con el que los alumnos puedan aprender tanto sobre redes como de programación. Debe soportar los protocolos más utilizados en la actualidad y permitir una gran personalización por los usuarios. Además debe ser compatible con los sistemas operativos Ubuntu, MaX y Windows, y ser de fácil instalación para el alumnado. Debe ser intuitivo y fácil de usar e incluir una gran documentación.
@@ -262,7 +268,7 @@ Son cada serie de bits en los que se divide la información enviada por una red.
 \noindent
 \centering
 \includegraphics[width=\textwidth]{Resources/Encapsulación_OSI.pdf}
-\caption{Encapsulación de red. El Datagrama IP es lo considerado 'Paquete de red'}
+\caption[Encapsulación de red]{Encapsulación de red. El Datagrama IP es lo considerado 'Paquete de red'}
 \end{figure}
 \vspace{\fill}
 \newpage
@@ -308,15 +314,15 @@ Capa encargada del acceso al medio físico de la red. También cumple otras func
 \newcommand{\function}[1]{\texttt{\color{Orange}#1}}
 \newcommand{\class}[1]{\texttt{\color{DarkRed}#1}}
 \chapter{El simulador de redes}
-La parte práctica del Proyecto de Investigación, el simulador de redes de nombre \textit{InvProy}, ha sido la parte más extensa del proyecto, que más tiempo, esfuerzo y recursos ha ocupado. Se podría decir que el proyecto entero es la parte práctica. Como curiosidad, el nombre de \textit{InvProy} viene del acrónimo formado mediante la permutación de las palabras ``Proyecto de Investigación", quedando \textit{``Investigación \sout{de} Proyecto"} y de ahí \textit{InvProy}.
+La parte práctica del Proyecto de Investigación, el simulador de redes de nombre \textit{InvProy}, ha sido la parte más extensa del proyecto, que más tiempo, esfuerzo y recursos ha ocupado. Como curiosidad, el nombre de \textit{InvProy} viene del acrónimo formado mediante la permutación de las palabras ``Proyecto de Investigación", quedando \textit{``Investigación \sout{de} Proyecto"} y de ahí \textit{InvProy}.
 
 \section{Herramientas usadas en la creación del software}
-Todo el software que se ha usado para la creación de este programa, es software libre, debido a las ventajas citadas anteriormente. A continuación, se listan las herramientas que se han usado para la creación del programa.
+Todo el software que se ha usado para la creación de este programa es software libre. A continuación, se listan las herramientas que se han usado para la creación del programa.
 
 \begin{itemize}
 
 \item \textbf{GNU/Linux}
-También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \acrshort{gnu} (Acrónimo recursivo \textit{GNU's Not Unix}, o GNU no es Unix). Es el gran ejemplo por excelencia del Software Libre. Es el sistema operativo más utilizado, pues es usado en la mayoría de los servidores, y además, otros sistemas operativos como Android están basados en éste. Puedes instalar Linux desde el código fuente o instalar distribuciones o \textit{distros} (conjunto de software preconfigurado y compilado que contiene GNU, Linux y otros paquetes). Se han usado Arch Linux, Ubuntu 16 y MaX 8.
+También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema Operativo (OS) combinación del kernel Linux (Basado en Unix) y el OS \acrshort{gnu} (Acrónimo recursivo \textit{GNU's Not Unix}, o GNU no es Unix). Es el gran ejemplo por excelencia del Software Libre. Es el sistema operativo más utilizado, pues es usado en la mayoría de los servidores. Puedes instalar Linux desde el código fuente o instalar distribuciones o \textit{distros} (conjunto de software preconfigurado y compilado que contiene GNU, Linux y otros paquetes). Se han usado Arch Linux, Ubuntu 16 y MaX 8.
 
 \item \textbf{Python}
 \label{python}
@@ -324,8 +330,6 @@ Es un lenguaje de programación interpretado (sólo se traduce  el programa a c�
 
 \item \textbf{Gtk+}
 Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de Interfaces Gráficas de Usuario (\acrshort{GUI}), también, al igual que Linux forma parte del proyecto GNU.
-
-Al utilizar este conjunto de librerías, se ha conseguido que sólo sea necesario descargar una dependencia del programa, que además suele venir instalada en la mayoria de distros de Linux. Por ejemplo en una instalación limpia de Ubuntu 16 (sin descargar paquetes adicionales) el programa funciona perfectamente. Para usarlo en Python se ha tenido que importar la libreria de PyGtk, que también suele venir incluida en la distribución.
 
 \item \textbf{Git}
 Es un software diseñado por Linus Torvalds con el que se puede crear un Sistema de
@@ -340,14 +344,13 @@ son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama
 \caption{\textit{Gitflow} o flujo de trabajo de Git}
 \end{figure}
 
-\item \textbf{GitHub} es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público. Además, te permite tener una wiki y una página web para tu proyecto, junto a otras funciones.
+\item \textbf{GitHub} es una plataforma de desarrollo colaborativo que te permite alojar tus repositorios Git. Su uso es gratuito si el código almacenado es público.
 Una de sus funciones estrella es la visualización online del repositorio, con la que cualquier persona tiene acceso al código y los archivos antes de descargarlos. Otra función útil es el apartado de \textit{Issues}, en el que los usuarios de tu código pueden reportar los bugs del programa o aportar nuevas ideas en forma de "foro".
 Tanto el programa como este documento están disponibles en GitHub en los siguientes enlaces. \url{https://github.com/daviddavo/InvProy} y \url{https://github.com/daviddavo/InvProy-tex}
 
 \item \textbf{Wireshark}
 \label{wireshark}
-Wireshark es un \textit{packet sniffer} o analizador de paquetes; te muestra los paquetes de red reales enviados y recibidos por una tarjeta de red, lo que facilita la creación del simulador de redes. También te separa las distintas partes de la encapsulación del paquete y además te permite buscar entre los paquetes de red añadidos y recibidos, pudiendo añadir filtros de búsqueda para los distintos campos del paquete y para las distintas capas.
-
+Wireshark es un \textit{packet sniffer} o analizador de paquetes; te muestra los paquetes de red reales enviados y recibidos por una tarjeta de red, lo que facilita la creación del simulador de redes. También te separa las distintas partes de la encapsulación del paquete.
 \end{itemize}
 
 \section{Instalación}
@@ -361,15 +364,9 @@ Descargas $ sudo dpkg -i invproy*.deb
 \section{Uso del programa}
 Esta guía ha sido creada usando la versión v0.2.4-alpha, por lo que en algunos apartados pueden haberse realizado cambios en versiones posteriores.
 
-El programa está siendo diseñado para tener una mayor facilidad de uso, pensando en una interfaz intuitiva y simple que pueda ser utilizada sin la necesidad de ningún apoyo externo al programa (instrucciones, documentación, tutor). Para ello, en la versión v0.4 será añadido un asistente o `tutorial' que guíe a los alumnos la primera vez que se acceda al programa; además de añadir más información, dentro de la interfaz, sobre redes.
+El programa está siendo diseñado para tener una mayor facilidad de uso, pensando en una interfaz intuitiva y simple que pueda ser utilizada sin la necesidad de ningún apoyo externo al programa (instrucciones, documentación, tutor). Para ello, en una versión próxima será añadido un asistente o `tutorial' que guíe a los alumnos la primera vez que se acceda al programa; además de añadir más información, dentro de la interfaz, sobre redes.
 
 A continuación, se incluye una captura de pantalla de la interfaz de InvProy Alpha, explicando el funcionamiento de los distintos botones de la interfaz.
-
-\begin{figure}[H]
-\noindent\centering
-\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-07-134612_1000x700_scrot.png}
-\caption[Interfaz de InvProy Alpha]{Interfaz de InvProy Alpha. Al usar Gtk+, los temas se pueden cambiar, así que la apariencia del programa puede ser distinta dependiendo del tema de escritorio que estés usando.}
-\end{figure}
 \newenvironment{mydescr}
 { \begin{enumerate}
     \setlength{\itemsep}{0pt}
@@ -385,15 +382,19 @@ A continuación, se incluye una captura de pantalla de la interfaz de InvProy Al
 \item [10.] Aquí se encuentra una barra con información sobre el funcionamiento actual del programa.
 \end{mydescr}
 \begin{figure}[H]
+\noindent\centering
+\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-07-134612_1000x700_scrot.png}
+\caption[Interfaz de InvProy Alpha]{Interfaz de InvProy Alpha. Al usar Gtk+, los temas se pueden cambiar, así que la apariencia del programa puede ser distinta dependiendo del tema de escritorio que estés usando. La ventana es redimensionable, en este caso tiene una proporción que permita explicar la interfaz sin usar demasiado espacio vertical.}
+\end{figure}
+Para incluir un objeto en la rejilla, se hace click en el icono del objeto y luego  en el lugar donde se quiera poner. Cuando tenemos dos objetos podemos conectarlos si hacemos click primero en el icono del cable, luego en un objeto y después en otro.
+\vspace*{1cm}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{Resources/Screenshots/2016-09-07-140130_728x437_scrot.png}
 \caption[Menú de Información de Dispositivos]{Menú de \textbf{Información de Dispositivos} junto a una red de topología de malla \label{dispinfo}}
 \end{figure}
-Para incluir un objeto en la rejilla, se hace click en el icono del objeto y luego  en el lugar donde se quiera poner. Cuando tenemos dos objetos podemos conectarlos si hacemos click primero en el icono del cable, luego en un objeto y después en otro.
 
 \section{Funcionamiento del programa}
-Se ha creado haciendo uso de todas las herramientas anteriormente mencionadas.
-
 El programa posee distintas clases. Se pueden diferenciar en cuatro tipos: Clases de Interfaz (\class{MainClase}, \class{w\char`_changethings}...), 
 Clases de Dispositivos (\class{ObjetoBase, Switch, Computador}), Clases de Red (\class{packet}, \class{frame}) y clases de apoyo (\class{MAC}, \class{IP}, \class{Port}, \class{Cable}).
 
@@ -401,53 +402,52 @@ Clases de Dispositivos (\class{ObjetoBase, Switch, Computador}), Clases de Red (
 
 %\newpage
 \subsection{Main.py}
-Es el archivo principal del programa. Contiene las funciones más importantes, además de las clases para crear los objetos. Primero trata de importar los módulos necesarios, comprobando uno a uno si están instalados, y advirtiendo al usuario en el caso de que no estén instalados.
+Es el archivo principal del programa. Contiene las funciones más importantes, además de las clases para crear los objetos.
 
 \subsubsection{MainClase}
 Es la clase principal de la interfaz del programa. Se encarga de administrar la ventana principal de la interfaz.
-
-Posee varias funciones como \function{on\char`_key\char`_press\char`_event} y \function{on\char`_key\char`_release\char`_event} (\texttt{370:416}), que actúan cada vez que se pulsa una tecla y se encargan de hacer las acciones necesarias para esa tecla (o combinación de teclas). Otra función importante es \function{toolbutton\char`_clicked}, que se acciona cada vez que se pulsa un botón (de arriba) y se encarga de comunicarlo a la rejilla.
-
-También contiene una subclase, llamada \class{ObjLst} (\texttt{263:332\footnote{Notación para escribir la ubicación del código. Línea inicial:Línea final@Archivo. Si se omite el nombre de archivo, es porque ha sido anteriormente mencionado.}}), encargada de la lista de objetos de la parte izquierda de la interfaz.
+Posee varias funciones como \function{on\char`_key\char`_press\char`_event} y \function{on\char`_key\char`_release\char`_event} 
+%(\texttt{370:416})
+, que actúan cada vez que se pulsa una tecla y se encargan de hacer las acciones necesarias para esa tecla (o combinación de teclas). Otra función importante es \function{toolbutton\char`_clicked}, que se acciona cada vez que se pulsa un botón de la botonera. También contiene una subclase, \class{ObjLst} 
+%(\texttt{263:332\footnote{Notación para escribir la ubicación del código. Línea inicial:Línea final@Archivo. Si se omite el nombre de archivo, es porque ha sido anteriormente mencionado.}})
+, encargada de la lista de objetos de la parte izquierda de la interfaz.
 
 \subsubsection{Grid}
-Es la clase de la rejilla, se desarrolla de la línea 498 hasta la 677. Tiene varias `capas', una para los cables, otra para el fondo, otra para los dispositivos... Así, en el caso de que dos elementos se solapen, los dispositivos siempre permanecerán al frente del fondo y los cables. El fondo se hace creando una línea horizontal cada \texttt{sq} píxeles, y otras tantas verticales del mismo modo, siendo \texttt{sq} el parámetro \texttt{viewport-sqres} del archivo \texttt{Config.ini}.
+Es la clase de la rejilla. Tiene varias `capas', una para los cables, otra para el fondo, otra para los dispositivos... Así, en el caso de que dos elementos se solapen, los dispositivos siempre permanecerán al frente del fondo y los cables. El fondo se hace creando una línea horizontal cada \texttt{sq} píxeles, y otras tantas verticales del mismo modo, siendo \texttt{sq} el parámetro \texttt{viewport-sqres} del archivo \texttt{Config.ini}.
 
 \begin{description}
-\item \function{clicked\char`_on\char`_grid}: \texttt{578:639} Función que se encarga de realizar distintas acciones dependiendo de dónde se haya hecho click dentro de la rejilla. Para ello, primero debe comprobar si ahí hay o no un objeto, y una vez lo ha comprobado, comprobar si uno de los botones para colocar un objeto ha sido pulsado.
-\item \function{gridparser} \texttt{641:651}: Es una función muy sencilla. Te convierte coordenadas de la rejilla, a coordenadas en píxeles (usadas por Gtk).
-\item \function{resizetogrid} \texttt{653:657}: Otra función sencilla. Dada una imagen, la convierte al tamaño de un cuadrado de la rejilla.
-\item \function{searchforobject} \texttt{659:672}: Encargada de comprobar si, dadas unas coordenadas, hay un objeto en estas.
-\item \function{moveto} \texttt{563:576}: Te mueve una imagen dada a unas coordenadas dadas. En el caso de que de que no esté en la rejilla, crea la imagen, y en el caso de que ya esté en ella, la mueve al lugar designado.
+\item \function{clicked\char`_on\char`_grid}: Función que se encarga de realizar distintas acciones dependiendo de dónde se haya hecho click dentro de la rejilla.
+\item \function{gridparser}: Convierte coordenadas de la rejilla, a coordenadas en píxeles (usadas por Gtk).
+\item \function{resizetogrid}: Dada una imagen, la convierte al tamaño de un cuadrado de la rejilla.
+\item \function{searchforobject}: Dadas unas coordenadas, comprueba si hay un objeto en estas.
+\item \function{moveto}: Mueve una imagen dada a unas coordenadas dadas.
 \end{description}
 
 \subsubsection{ObjetoBase}
 En Python, existe la herencia de clases. Esto quiere decir que una clase puede heredar las funciones y los atributos de otra, en forma de cascada. La clase principal de la que heredan el resto de dispositivos de red es \class{ObjetoBase}. Algunas de sus funciones son estas:
 
 \begin{itemize}
-\item \function{compcon}: Es una función que poseen todos los dispositivos de red, que dado un objeto \class{Computador}, retorna todos los ordenadores que están conectados a la misma red. Se encuentra en \texttt{822:864}. Está formada por una lista que contendrá los ordenadores conectados y una función llamada subcompcon (\texttt{827:847}), que comprueba las conexiones del objeto, añadiendo la conexión a la lista si es un ordenador. En el caso de que sea un conmutador o un concentrador, llama a la función \texttt{subcompcon} con ese objeto como argumento, por lo que comprueba las conexiones de ese objeto y las añade a la lista del primero, entrando en un bucle hasta que ha comprobado toda la red. La función es usada por el programa cuando es necesario comprobar si dos ordenadores están conectados, por ejemplo. (Ver figura \ref{fig:compcon})
-\item \function{load}: \texttt{877:896} Al cargar un objeto de un archivo, hay determinadas propiedades del objeto que deben ser establecidas de cero, y determinadas funciones que deben ser llamadas, para ello existe esta función.
+\item \function{compcon}: Es una función que poseen todos los dispositivos de red, que dado un objeto \class{Computador}, retorna todos los ordenadores que están conectados a la misma red. Está formada por una lista que contendrá los ordenadores conectados y una función llamada subcompcon, que comprueba las conexiones del objeto, añadiendo la conexión a la lista si es un ordenador. En el caso de que sea un conmutador o un concentrador, llama a la función \texttt{subcompcon} con ese objeto como argumento, por lo que comprueba las conexiones de ese objeto y las añade a la lista del primero, entrando en un bucle hasta que ha comprobado toda la red. La función es usada por el programa cuando es necesario comprobar si dos ordenadores están conectados, por ejemplo. (Ver figura \ref{fig:compcon})
+\item \function{load}: Al cargar un objeto de un archivo, hay determinadas propiedades del objeto que deben ser establecidas de cero, y determinadas funciones que deben ser llamadas, para ello existe esta función.
 \item \function{update}: Esta función, bastante importante se encarga de actualizar la información del objeto en la interfaz de usuario. Es llamada cada vez que se produce un cambio en el objeto; como al conectarlo, editar el nombre, o desconectarlo de otros objetos.
-\item \function{connect}: \texttt{898:941} Esta función se encarga de establecer las conexiones entre dos objetos.
-\item \function{disconnect}: \texttt{942:989}. Realiza lo contrario de \function{connect}, desconecta un objeto de otro. O un objeto de todos a los que está conectado.
+\item \function{connect}: Esta función se encarga de establecer las conexiones entre dos objetos.
+%\item \function{disconnect}: \texttt{942:989}. Realiza lo contrario de \function{connect}, desconecta un objeto de otro. O un objeto de todos a los que está conectado.
 \item \function{packet\char`_received}: Esta es la función por defecto que se ejecuta cuando un dispositivo ha recibido un paquete. Todos los dispositivos de red tienen una función diferente que sobreescribe a esta (pues no es el mismo comportamiento el de un conmutador que el de un ordenador).
 \end{itemize}
 
 \subsubsection{mac}
-Esta clase es la que crea los objetos que serán una dirección MAC. Transcurre de la línea 1024 a la 1059 y contiene varias funciones técnicas, pero la única importante es \function{genmac}, encargada de generar una dirección MAC aleatoria de 48 bits de longitud.
+Esta clase es la que crea los objetos que serán una dirección MAC. Contiene varios métodos de clase, pero la única importante es \function{genmac}, encargada de generar una dirección MAC aleatoria de 48 bits de longitud.
 
-\newpage
-
-\thispagestyle{empty}
+%\thispagestyle{empty}
 \begin{figure}
 \includegraphics[width=\textwidth]{Resources/Diagramas/Compcon.pdf}
 
-\vspace*{1cm}
+%\vspace*{1cm}
 \caption[Diagrama de flujo de la función \texttt{compcon}]{\label{fig:compcon}
 Diagrama de flujo del funcionamiento de la función \function{compcon}.
 }
 \end{figure}
-\clearpage
+%\clearpage
 
 %\newpage
 %\vspace{\fill}
@@ -459,17 +459,16 @@ Diagrama de flujo del funcionamiento de la función \function{compcon}.
 %\vspace{\fill}
 
 \subsubsection{Port y w\char`_switch\char`_table}
-\class{Port} es una clase que usan los conmutadores y concentradores. Simula un puerto de red. Tan sólo posee cuatro funciones: \function{\char`_\char`_init\char`_\char`_}, que es la que se usa al crear el objeto; \function{connect}, para conectar un objeto al puerto; \function{disconnect}, para desconectarlo y \function{is\char`_available}, para saber si el puerto está disponible u ocupado. \texttt{1080:1099}
+\class{Port} es una clase que usan los conmutadores y concentradores. Simula un puerto de red. Tan sólo posee tres funciones: \function{connect}, para conectar un objeto al puerto; \function{disconnect}, para desconectarlo y \function{is\char`_available}, para saber si el puerto está disponible u ocupado.
 
-La clase \class{w\char`_switch\char`_table} es la encargada de la ventana de visualización de la tabla de enrutamiento del Switch. \texttt{1101:1160}
+La clase \class{w\char`_switch\char`_table} es la encargada de la ventana de visualización de la tabla de enrutamiento del Switch.
 
 \subsubsection{Clases de paquetes de red}
 Ocupan entre el 25\% y el 30\% del código. Son clases como \class{packet} (la clase base), \class{eth} (paquete con \textit{frame} aplicado, \class{icmp} (paquete con ICMP) y la última clase \class{Ping}, que hereda de \class{icmp} y se encarga de crear un paquete de red, bit a bit, dados una dirección IP de destino y de origen.
 Entre todas estas clases debemos destacar dos funciones:
 \begin{itemize}
-\item \function{animate} es una función que poseen todos los tipos de paquetes de red y se encarga de poner un paquete de red en la interfaz, y de que este se mueva. Para ello, hace una combinación de dos movimientos, uno en el eje x y otro en el eje y, la longitud que debe de moverse en total la divide entre el número total de fotogramas y así consigue la distancia que debe moverse cada fotograma. Cuenta dentro con una subfunción, \function{iteration}, que se encarga de poner la imagen cada fotograma en su sitio y eliminar la imagen del fotograma anterior. Esta función ha sido posible gracias a los conocimientos sobre vectores adquiridos durante primero de 
-Bachillerato.\texttt{1627:1717}
-\item \function{create} es una función propiedad de \class{Ping}, que dadas una dirección IP de destino y origen, crea un paquete de red, bit a bit, basado en el modelo real de paquetes de Ping inspeccionado por Wireshark, y confirmado en libros de teoría. Es una función que, aunque parezca sencilla, fueron bastantes horas de trabajo, pues es bastante complejo tratar con bits.
+\item \function{animate} es una función que poseen todos los tipos de paquetes de red y se encarga de poner un paquete de red en la interfaz, y de que este se mueva. Para ello, hace una combinación de dos movimientos, uno en el eje x y otro en el eje y, la longitud que debe de moverse en total la divide entre el número total de fotogramas y así consigue la distancia que debe moverse cada fotograma. Cuenta dentro con una subfunción, \function{iteration}, que se encarga de poner la imagen cada fotograma en su sitio y eliminar la imagen del fotograma anterior.
+\item \function{create} es una función propiedad de \class{Ping}, que dadas una dirección IP de destino y origen, crea un paquete de red, bit a bit, basado en el modelo real de paquetes de Ping inspeccionado por Wireshark. Es una función que, aunque parezca sencilla, fueron bastantes horas de trabajo; pues es bastante complejo tratar con bits.
 \end{itemize}
 \inputminted[firstline=1676, lastline=1711, baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{python}{Codigo/invproy/main.py}
 
@@ -500,9 +499,13 @@ Este es el código que cumple esta función. Cada elemento en la tabla tiene un 
 
 \section{Versión actual del programa (0.2.4-alpha)}
 \label{01}
-En la versión 0.1 se introdujo toda la interfaz, las conexiones, los dispositivos... Pero aún no se podían enviar ni recibir paquetes de red. En la versión 0.2 se introdujo esta posibilidad, junto a otras cosas como el enrutamiento de paquetes. El programa es considerado una versión \textit{alpha}, ya que aún está en desarrollo y no es un programa terminado.
+En la \textbf{versión 0.1} se introdujo toda la interfaz, las conexiones, los dispositivos... Pero aún no se podían enviar ni recibir paquetes de red. En la \textbf{versión 0.2} se introdujo esta posibilidad, junto a otras cosas como el enrutamiento de paquetes. El programa es considerado una versión \textit{alpha}, ya que aún está en desarrollo y no es un programa terminado.
 
-El programa te permite, por el momento, hacer una simulación de red simple. Se podría decir que es una base sobre la que se pueden ir añadiendo más funcionalidades, como el soporte para otros protocolos, o un modo `explicatorio' que enseñe a los alumnos lo que está pasando en la red. En la versión 0.2.3-alpha del programa sólo se ha introducido el ``Ping", es decir, la posibilidad de enviar un paquete de prueba a otro dispositivo de la misma red. También se han introducido algunos cambios en la interfaz, uno de ellos, bastante útil para el aprendizaje: los cuadros de texto en los que se introducen direcciones IP, cambian de color entre rojo, naranja o verde, dependiendo si la IP introducida no es válida, está incompleta o es válida, respectivamente.
+El programa te permite, por el momento, hacer una simulación de red simple. Se podría decir que es una base sobre la que se pueden ir añadiendo más funcionalidades, como el soporte para otros protocolos, o un modo `explicatorio' que enseñe a los alumnos lo que está pasando en la red. En la \textbf{versión 0.2.3-alpha} del programa se introdujo el ``Ping", es decir, la posibilidad de enviar un paquete de prueba a otro dispositivo de la misma red. También se han introducido algunos cambios en la interfaz, uno de ellos, bastante útil para el aprendizaje: los cuadros de texto en los que se introducen direcciones IP, cambian de color entre rojo, naranja o verde, dependiendo si la IP introducida no es válida, está incompleta o es válida, respectivamente.
+
+En la \textbf{última actualización}, la \texttt{0.2.4-alpha} de Enero de 2017 se han producido muchas mejoras en el código. De limpieza, optimización y adecuación a estándares (PEP 8 \cite{PEP8}), aprovechando los nuevos conocimientos adquiridos. Al final del Apéndice A se encuentran varios ejemplos.
+
+\newpage
 
 \section{Desarrollo del proyecto}
 En cuanto al código, a pesar de la gran extensión del programa, han sido escritas muchas más líneas, que han sido en algún momento eliminadas o reemplazadas. El desarrollo del proyecto puede dividirse en 4 fases a lo largo de 3 trimestres y la actualidad.
@@ -515,7 +518,7 @@ En la tercera fase se desarrolla la gran parte del programa, aquí es cuando lle
 
 La cuarta fase es la del desarrollo posterior del proyecto. A partir de Octubre, cuando se presenta como Proyecto de Investigación de Bachillerato de Excelencia en el IES Palas Atenea, se sigue desarrollando el programa con los nuevos conocimientos adquiridos, siendo presentado a concursos y con el objetivo de lanzar la versión 1.0-$\beta$ antes de Septiembre de 2017. 
 
-He notado bastante la adquisición de experiencia, ya que tardé prácticamente 5-6 meses en hacer las primeras 500 líneas; pero en verano, conforme iba programando más, conseguí llegar a hacer más de 1000 líneas en una semana. También, al leer el código antiguo se notan bastantes errores debidos a la falta de experiencia, que tiene que ser corregidos si aún no se ha hecho.
+He notado bastante la adquisición de experiencia, ya que tardé prácticamente 5-6 meses en hacer las primeras 500 líneas; pero en verano, conforme iba programando más, conseguí llegar a hacer más de 1000 líneas en una semana. También, al leer el código antiguo se notan bastantes errores debidos a la falta de experiencia, que deben ser corregidos si aún no se ha hecho (Ver Fig. \ref{fig:diff})
 
 \subsection{Obstaculos en el desarrollo del proyecto}
 Durante el desarrollo del proyecto han surgido bastantes trabas y contratiempos, que he conseguido solucionar. Muchos de ellos surgen por la falta del gran conocimiento técnico necesario para la creación de un software tan específico, han sido muchas horas de mirar la documentación de las librerías \cite{PyGiApi}, y pedir ayuda por foros para intentar solucionar dudas y bugs.
@@ -524,6 +527,7 @@ En algunas ocasiones no han sido errores, sino falta de conocimiento para el des
 
 Otro inconveniente ha sido el tiempo, que no me ha dejado implementar funciones útiles, como un visor de paquetes de red, más protocolos, o interconexión de redes.
 
+\newpage
 \section{Conclusión}
 Lo más difícil fue empezar. El tratar de aprender tanta información de golpe de forma autodidacta. Aunque ya supiese un poco sobre programación en Python, no tenía casi experiencia, aprender a usar la librería de Gtk+, aprender sobre redes, aprender sobre un uso más extenso de GNU/Linux, aprender sobre \LaTeX , etc. fue bastante cansado. pero eso es lo mejor, todo lo que he aprendido y, sobre todo, la experiencia que he adquirido en el campo de la programación.
 
@@ -543,7 +547,7 @@ Resumiendo:
 
 \appendix
 
-\chapter{Capturas de pantalla del programa}
+\chapter{Imágenes y capturas del programa}
 \noindent\begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.4\textwidth}
@@ -588,9 +592,76 @@ Resumiendo:
 
 \end{figure}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{Resources/Screenshots/2016-09-12-230644_1000x700_scrot.png}
+\centering\includegraphics[width=0.9\textwidth]{Resources/Screenshots/2016-09-12-230644_1000x700_scrot.png}
 \caption{Captura: Paquetes viajando por una red de ejemplo.}
 \label{fig:samplenet}
+\end{figure}
+\begin{figure}[H]
+\begin{multicols}{2}
+\textbf{Antes (0.2.3):}
+\begin{minted}[fontsize=\scriptsize]{python}
+#Comprueba si el objeto tiene una ip asignada
+def has_ip(self, objeto):
+    try:
+        if objeto.IP != None:
+            return True
+        else:
+            return False
+    except:
+        return False
+\end{minted}
+\columnbreak
+\textbf{Después (0.2.4):}
+\begin{minted}[fontsize=\scriptsize ,baselinestretch=1]{python}
+@staticmethod
+def has_ip(objeto):
+    """Comprueba si el objeto tiene una ip asignada"""
+    return bool(objeto.IP != None)
+\end{minted}
+\end{multicols}
+\begin{multicols}{2}
+\begin{minted}[fontsize=\scriptsize ,baselinestretch=1]{python}
+#Comprueba si un objeto está conectado a otro.
+def isconnected(self, objeto):
+    cons = compcon(self)
+    if objeto in cons:
+        return True
+    else:
+        return False
+\end{minted}
+\columnbreak
+\begin{minted}[fontsize=\scriptsize ,baselinestretch=1]{python}
+def isconnected(self, objeto):
+    """Comprueba si un objeto está conectado a otro."""
+    return bool(objeto in compcon(self))
+\end{minted}
+\end{multicols}
+\begin{multicols}{2}
+\begin{minted}[fontsize=\scriptsize ,baselinestretch=1, linenos]{python}
+def searchforobject(self, x, y):
+        global allobjects
+        localvar = False
+        for i in range(len(allobjects)):
+            if allobjects[i].x == x:
+                if allobjects[i].y == y:
+                    localvar = True
+                    objeto = allobjects[i]
+                    break
+        if localvar == True:
+            return objeto
+        else:
+            return False
+\end{minted}
+\columnbreak
+\begin{minted}[fontsize=\scriptsize ,baselinestretch=1, linenos]{python}
+def searchforobject(self, x, y):
+        for i in allobjects:
+            if i.x == x and i.y == y: return i
+        return False
+\end{minted}
+\end{multicols}
+\centering\caption[Código: Algunas de las diferencias entre versiones]{Código: Algunas de las diferencias entre versiones. Podemos observar la reducción de líneas de código.}
+\label{fig:diff}
 \end{figure}
 
 \glsaddall
@@ -635,7 +706,7 @@ Encontrará una copia del código y la licencia en \url{https://github.com/david
 Encontrará una copia de este documento en \url{https://github.com/daviddavo/InvProy-tex}\\
 
 \centering
-InvProy \hspace*{10pt} Copyright \copyright\hspace*{10pt} 2016 \hspace*{15pt} David Davó Laviña \\ \hspace*{15pt} david@ddavo.me \hspace*{10pt} \url{http://ddavo.me}
+InvProy $\alpha$ \hspace*{10pt} Copyright \copyright\hspace*{10pt} 2016--2017 \hspace*{15pt} David Davó Laviña \\ \hspace*{15pt} david@ddavo.me \hspace*{10pt} \url{http://ddavo.me}
 
 \vspace{0.7cm}
 \noindent\centering
