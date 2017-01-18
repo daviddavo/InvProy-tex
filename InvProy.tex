@@ -50,7 +50,8 @@ style=ieee
 
 %Decoraciones y formato del texto
 %\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm, headheight=14pt]{geometry}
-\usepackage[papersize={216mm,330mm}, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm, headheight=14pt]{geometry}
+\usepackage[papersize={215mm,315mm}, 
+left=2.5cm, right=2.5cm, top=3cm, bottom=3cm, headheight=14pt]{geometry}
 
 \usepackage[cache=false]{minted} %Para insertar código
 
@@ -81,6 +82,13 @@ style=ieee
 \fancyhead[RE, LO]{\bf\sffamily\color{DarkRed}\@title}
 \fancyfoot[LE, RO]{\thepage}
 \fancyfoot[C]{\leftmark}
+
+\newcommand{\blankpage}{
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+}
 
 \makeglossaries
 \include{Glosario}
@@ -120,12 +128,13 @@ Julio Sánchez Olías}
 
 \vfill
 
-{\sffamily\Large\currenttime\\ \@date\par}
+{\sffamily\Large\@date\par}
 \pagenumbering{gobble}
 \restoregeometry
 }
 \end{titlepage}
 \clearpage
+\blankpage
 
 \pagenumbering{Roman}
 
@@ -199,7 +208,7 @@ Son dos cosas muy importantes, que apenas son enseñadas en las clases de la ESO
 \chapter{Programación y software libre}
 
 \subsection*{Propuesta}
-El objetivo de este proyecto es el desarrollo abierto  y colaborativo a largo plazo de un software programado en Python de código libre con el que los alumnos puedan aprender tanto sobre redes como de programación. Debe soportar los protocolos más utilizados en la actualidad y permitir una gran personalización por los usuarios. Además debe ser compatible con los sistemas operativos Ubuntu, MaX y Windows, y ser de fácil instalación para el alumnado. Debe ser intuitivo y fácil de usar e incluir una gran documentación.
+El objetivo de este proyecto es el desarrollo abierto  y colaborativo a largo plazo de un software programado en Python de código libre con el que los alumnos puedan aprender tanto sobre redes como de programación. Debe soportar los protocolos más utilizados en la actualidad y permitir una gran personalización por los usuarios. Además debe ser compatible con los sistemas operativos Ubuntu, MaX y Windows, y ser de fácil instalación para el alumnado. Debe ser intuitivo y fácil de usar e incluir una completa documentación.
 
 \section{Software Libre}
 Según la Free Software Foundation
@@ -234,7 +243,7 @@ Su objetivo es conseguir la interoperabilidad entre sistemas haciendo uso de los
 \definecolor{even}{HTML}{FCE4EC}
 \definecolor{header}{HTML}{EF9A9A}
 %\definecolor{header}{HTML}{F48FB1}
-\vspace*{20pt}
+\vspace*{2cm}
 
 \rowcolors{1}{header}{header}
 \rowcolors{2}{odd}{even}
@@ -263,7 +272,7 @@ Son cada serie de bits en los que se divide la información enviada por una red.
 \item \textbf{Trailer} o cola: En ocasiones es inexistente (como en UDP) pero suele ser un código de comprobación de errores.
 \end{description}
 
-\vspace{1cm}
+\vspace{2cm}
 \begin{figure}[H]
 \noindent
 \centering
@@ -296,12 +305,12 @@ Es la capa en la que se envían los datos a otras aplicaciones en otro ordenador
 Se encapsulan los datos de aplicación en un segmento o datagrama, dependiendo si el protocolo usado es TCP o UDP. Se encarga de transportar los datos por una red independientemente de la topología física.
 \begin{itemize}
 \item \textbf{TCP} \textit{Transmission Control Protocol:} Protocolo de Control de Transmisión. Se aplica a los paquetes para administrarles un orden y un sistema de comprobación de errores. Con todas las funcionalidades, ocupa bastante espacio, lo que aumenta la latencia, aunque es más fiable.
-\item \textbf{UDP} \textit{User Datagram Protocol:} Es un protocolo muy minimalista. A diferencia del TCP, no garantiza que los paquetes lleguen, o lleguen en orden, o protección ante duplicados. Reduce mucho la latencia ya que no usa \textit{handshaking}. Por ello es usado por ejemplo para \textit{streamings} de televisión o videollamadas.
+\item \textbf{UDP} \textit{User Datagram Protocol:} Es un protocolo muy minimalista. A diferencia del TCP, no garantiza que los paquetes lleguen, o lleguen en orden, o protección ante duplicados. Reduce mucho la latencia ya que no usa \textit{handshaking}.% Por ello es usado por ejemplo para \textit{streamings} de televisión o videollamadas.
 \end{itemize}
 \subsubsection{Red}
 El objetivo es que los datos lleguen del origen al destino, aún cuando no están conectados directamente. Los enrutadores o \textit{routers} son los dispositivos que cumplen esta función.
 \begin{itemize}
-\item \textbf{IP} \textit{Internet Protocol}: Protocolo de Internet. Envía datagramas o paquetes de red a través de redes. Tiene una función de enrutamiento que es la que permite la interconexión de redes, y la existencia de Internet. Es un protocolo que encapsula el paquete definiendo en el \textit{header} (cabecera) las direcciones IP del servidor y el cliente, o remitente y destinatario. La versión usada actualmente es IPv4, pero poco a poco se va abriendo paso la versión IPv6.
+\item \textbf{IP} \textit{Internet Protocol}: Protocolo de Internet. Envía datagramas o paquetes de red a través de redes. Tiene función de enrutamiento que es la que permite la interconexión de redes, y la existencia de Internet. Encapsula el paquete definiendo en el \textit{header} (cabecera) las direcciones IP del servidor y el cliente, o remitente y destinatario. La versión usada actualmente es IPv4, pero poco a poco se va abriendo paso la versión IPv6.
 \item \textbf{ICMP} \textit{Internect Control Message Protocol}: Es un protocolo que no es usado por aplicaciones de usuario (a excepción de herramientas de diagnóstico como ping o traceroute). Lo usan los dispositivos de red para enviar notificaciones o mensajes de error indicando que un servicio no está disponible.
 \end{itemize}
 \subsubsection{Link}
@@ -317,7 +326,7 @@ Capa encargada del acceso al medio físico de la red. También cumple otras func
 La parte práctica del Proyecto de Investigación, el simulador de redes de nombre \textit{InvProy}, ha sido la parte más extensa del proyecto, que más tiempo, esfuerzo y recursos ha ocupado. Como curiosidad, el nombre de \textit{InvProy} viene del acrónimo formado mediante la permutación de las palabras ``Proyecto de Investigación", quedando \textit{``Investigación \sout{de} Proyecto"} y de ahí \textit{InvProy}.
 
 \section{Herramientas usadas en la creación del software}
-Todo el software que se ha usado para la creación de este programa es software libre. A continuación, se listan las herramientas que se han usado para la creación del programa.
+Todo el software que se ha usado para la creación de este programa es software libre. A continuación, se listan algunas herramientas usadas en la creación del programa.
 
 \begin{itemize}
 
@@ -326,7 +335,7 @@ También llamado incorrectamente sólo Linux, es una manera de llamar al Sistema
 
 \item \textbf{Python}
 \label{python}
-Es un lenguaje de programación interpretado (sólo se traduce  el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca porque sus programas poseen una sintaxis más legible que la de el resto de lenguajes. Soporta tanto \gls{programacion imperativa} como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. En este proyecto, la versión de Python utilizada es la 3.4 en adelante.
+Es un lenguaje de programación interpretado (sólo se traduce  el programa a código máquina cuando se debe ejecutar esa parte del código, por lo que no hace falta compilarlo) que destaca porque sus programas poseen una sintaxis más legible que la de el resto de lenguajes. Soporta tanto \gls{programacion imperativa} como programación orientada a objetos. Usa variables dinámicas, es multiplataforma, y, además, es de código abierto, lo que permite distribuir el programa en Windows al distribuir los binarios de Python junto a él. Se ha usado Python 3.4.
 
 \item \textbf{Gtk+}
 Es un conjunto de bibliotecas o \glspl{Libr} (conjunto de funciones y clases ya definidas preparadas para el uso de los programadores) desarrollado por la GNOME foundation destinado a la creación de Interfaces Gráficas de Usuario (\acrshort{GUI}), también, al igual que Linux forma parte del proyecto GNU.
@@ -337,7 +346,7 @@ Control de Versiones (VCS). Este programa te permite
 de forma sencilla volver a una versión o \textit{commit} anterior del programa, así
 como enviarlas a un \gls{repositorio} remoto. Su punto fuerte
 son las \textit{branches} o ``ramificaciones" del código, haciendo que la rama
-\textit{master} (principal) siempre sea funcional. Para ello creamos una nueva rama para cada nueva funcionalidad del programa. Otra de las funcionalidades que implementa es \texttt{clone}, que te permite descargar un proyecto si tienes la URL del \gls{repositorio} git.
+\textit{master} (principal) siempre sea funcional. Para ello creamos una nueva rama para cada nueva funcionalidad del programa.
 \begin{figure}[H]
 \noindent\flushright
 \includegraphics[width=0.9\textwidth]{Resources/Gitflow.png}
@@ -355,7 +364,7 @@ Wireshark es un \textit{packet sniffer} o analizador de paquetes; te muestra los
 
 \section{Instalación}
 \subsection{Ubuntu / Debian}
-En caso de no estar en los repositorios, hay que hacerlo manualmente. Descarga el paquete de \url{https://github.com/daviddavo/InvProy/releases/latest}. Una vez descargado, abre una terminal donde se haya descargado el paquete e instálelo.
+En caso de no estar en los repositorios, hay que hacerlo manualmente. Descargue el paquete de \url{https://github.com/daviddavo/InvProy/releases/latest}. Una vez descargado, abra una terminal donde se haya descargado el paquete e instálelo.
 \begin{minted}{bash}
 ~ $ cd Descargas
 Descargas $ sudo dpkg -i invproy*.deb
@@ -374,11 +383,11 @@ A continuación, se incluye una captura de pantalla de la interfaz de InvProy Al
     \setlength{\parsep}{0pt}     }
 { \end{enumerate}                  } 
 \begin{mydescr}
-\item [1-5.] También se puede activar con las letras Q, W, E, R, T; respectivamente. Los botones, te permiten (de izquierda a derecha): colocar un router, colocar un switch, conectar dos objetos, colocar un ordenador y colocar un hub. Para ello primero haces click en el botón y luego haces click en el lugar donde quieras colocar el objeto. En el caso de los cables debes hacer dos clicks, uno en cada objeto a conectar. 
-\item [6.] Abre el menú de ``Información de dispositivos", que proporciona información como la dirección IP y MAC, el nombre, o los dispositivos a los que está conectado. (Ver figura \ref{dispinfo}
-\item [7.] Te permite enviar un ping de un ordenador a otro (El botón funciona a partir de v0.3).
-\item [8.] Abre el menú de archivo, en el que puedes cargar un archivo, crear uno nuevo, guardarlo, y cerrar el programa.
-\item [9.] Es la ventana donde puedes colocar los objetos. Puedes moverte a través de ella y en el menú de `Ver' puedes cambiar el que se vea la rejilla de fondo.
+\item [1-5.] También se puede activar con las letras Q, W, E, R, T; respectivamente. Los botones te permiten (de izquierda a derecha): colocar un router, colocar un switch, conectar dos objetos, colocar un ordenador y colocar un hub.
+\item [6.] Abre el menú de ``Información de dispositivos", que proporciona información como la dirección IP y MAC, el nombre, o los dispositivos a los que está conectado. (Ver figura \ref{dispinfo}).
+\item [7.] Te permite enviar un ping de un ordenador a otro sin necesidad de conocer ambas direcciones IP (El botón funciona a partir de v0.3).
+\item [8.] Abre el menú de archivo, en el que puedes abrir, guardar y crear un archivo.
+\item [9.] Es la ventana donde puedes colocar los objetos. Puedes moverte a través de ella y en el menú de `Ver' puedes cambiar el que se vea la rejilla de fondo. La extensión de está puede cambiarse.
 \item [10.] Aquí se encuentra una barra con información sobre el funcionamiento actual del programa.
 \end{mydescr}
 \begin{figure}[H]
@@ -432,11 +441,11 @@ En Python, existe la herencia de clases. Esto quiere decir que una clase puede h
 \item \function{update}: Esta función, bastante importante se encarga de actualizar la información del objeto en la interfaz de usuario. Es llamada cada vez que se produce un cambio en el objeto; como al conectarlo, editar el nombre, o desconectarlo de otros objetos.
 \item \function{connect}: Esta función se encarga de establecer las conexiones entre dos objetos.
 %\item \function{disconnect}: \texttt{942:989}. Realiza lo contrario de \function{connect}, desconecta un objeto de otro. O un objeto de todos a los que está conectado.
-\item \function{packet\char`_received}: Esta es la función por defecto que se ejecuta cuando un dispositivo ha recibido un paquete. Todos los dispositivos de red tienen una función diferente que sobreescribe a esta (pues no es el mismo comportamiento el de un conmutador que el de un ordenador).
+\item \function{packet\char`_received}: Función ejecutada cuando un dispositivo recibe un paquete.
 \end{itemize}
 
-\subsubsection{mac}
-Esta clase es la que crea los objetos que serán una dirección MAC. Contiene varios métodos de clase, pero la única importante es \function{genmac}, encargada de generar una dirección MAC aleatoria de 48 bits de longitud.
+%\subsubsection{mac}
+%Esta clase es la que crea los objetos que serán una dirección MAC. Contiene varios métodos de clase, pero la única importante es \function{genmac}, encargada de generar una dirección MAC aleatoria de 48 bits de longitud.
 
 %\thispagestyle{empty}
 \begin{figure}
@@ -473,8 +482,9 @@ Entre todas estas clases debemos destacar dos funciones:
 \inputminted[firstline=1676, lastline=1711, baselinestretch=1, fontsize=\scriptsize, linenos, breaklines]{python}{Codigo/invproy/main.py}
 
 \subsection{Dispositivos}
-Existen cuatro tipos dispositivos: los Computadores, que tienen la mayor programación; los Switches, que se encargan de manejar los paquetes de red; los Hubs, que son como los Switches, pero reenvían los paquetes por todos sus puertos y los Routers, que tan sólo existen de forma visual, pero no tienen ninguna función de momento. Por lo que sólo vamos a hablar de los Switches y los Ordenadores. Para cambiar los parámetros hay que hacer click derecho en el dispositivo al que se le deseen cambiar los parámetros y luego en la entrada de `Editar objeto'. A lo que aparecerá una ventana como la de Fig. \ref{fig:editwindow} en la que se podrán cambiar parámetros como el nombre, la dirección MAC o la dirección IP.
+Existen cuatro tipos dispositivos: los ordenadores, que tienen la mayor programación; los Switches, que se encargan de manejar los paquetes de red; los Hubs, que son como los Switches, pero reenvían los paquetes por todos sus puertos y los Routers, que tan sólo existen de forma visual, pero no tienen ninguna función de momento. Por lo que sólo vamos a hablar de los Switches y los Ordenadores. Para cambiar los parámetros hay que hacer click derecho en el dispositivo al que se le deseen cambiar los parámetros y luego en la entrada de `Editar objeto'. A lo que aparecerá una ventana como la de Fig. \ref{fig:editwindow} en la que se podrán cambiar parámetros como el nombre, la dirección MAC o la dirección IP.
 
+\newpage
 Los ordenadores tienen una función especial que es la de crear y enviar los paquetes de red. Para ello, en el menú emergente que aparece al hacer click derecho en el objeto, hacemos click en la entrada de `Ping'. Para que el paquete llegue al otro computador, ambos deben tener una dirección IP, y estar conectados a la misma red. Se introduce la dirección IP del dispositivo y se pulsa en el botón de `Ping!' (Ver Fig. \ref{fig:pingwindow} y Fig. \ref{fig:pingwindow2}). A continuación veremos el paquete de red buscando su objetivo, la primera vez no irá directamente, ya que los Switches están aún aprendiendo el camino, pero el paquete de vuelta y todos los siguientes paquetes seguirán la misma ruta (Ver Fig. \ref{fig:samplenet}). El ordenador crea un paquete de red usando los protocolos de Ethernet (IEEE 802.11), TCP, IPv4 e ICMP. La función que se encarga de esto es \function{create}.
 
 Los Switches se encargan de redireccionar los paquetes de red. La primera vez que les llega un paquete, al no saber la ubicación física del destino, siguen este algoritmo:
@@ -484,15 +494,13 @@ Los Switches se encargan de redireccionar los paquetes de red. La primera vez qu
 	breaklines]{python}{Codigo/invproy/main.py}
 Este algoritmo esta basado en el que usan los conmutadores reales y, traducido a lenguaje humano, vendría a ser:
 \begin{easylist}[itemize]
-\ListProperties(Style*=,Space*=6pt)
-& Si la dirección MAC de destino del paquete recibido se encuentra directamente conectado al Switch y el TTL del paquete es mayor que cero:
-&& Enviar el paquete a ese dispositivo.
-& Al no cumplirse la condición anterior, si el paquete se encuentra en mi tabla de enrutamiento y el TTL del paquete es mayor que cero:
-&& Enviamos el paquete por el puerto al que está asignada la dirección MAC en la tabla.
-& Al no cumplirse las condiciones anteriores, si hay un Switch en mis conexiones y el TTL del paquete es mayor a 0:
-&& Enviar el paquete a uno de los Switches de forma aleatoria.
+\ListProperties(Style*=,Space*=3pt)
+& Si la dirección MAC de destino del paquete recibido se encuentra directamente conectado al Switch y el TTL del paquete es mayor que cero: Enviar el paquete a ese dispositivo.
+& Al no cumplirse la condición anterior, si el paquete se encuentra en mi tabla de enrutamiento y el TTL del paquete es mayor que cero: Enviamos el paquete por el puerto al que está asignada la dirección MAC en la tabla.
+& Al no cumplirse las condiciones anteriores, si hay un Switch en mis conexiones y el TTL del paquete es mayor a 0: Enviar el paquete a uno de los Switches de forma aleatoria.
 \end{easylist}
 
+\newpage
 Cuando recibe un paquete, también añade a la \textit{Routing Table} o tabla de enrutación una entrada con la dirección MAC del remitente del paquete y el puerto por el que ha llegado, así cuando le llegue un paquete el router conocerá el puerto por el que enviarlo.
 \inputminted[firstline=1142, lastline=1158, baselinestretch=1,fontsize=\scriptsize, linenos,breaklines]{python}{Codigo/invproy/main.py}
 Este es el código que cumple esta función. Cada elemento en la tabla tiene un tiempo establecido en el que caduca la entrada. Lo que hace esta parte del código es comprobar si este tiempo ha caducado, actualizar la fecha de caducidad si la dirección MAC ya está en la tabla o añadirlo de nuevo en la tabla si la dirección no está.
@@ -510,11 +518,11 @@ En la \textbf{última actualización}, la \texttt{0.2.4-alpha} de Enero de 2017 
 \section{Desarrollo del proyecto}
 En cuanto al código, a pesar de la gran extensión del programa, han sido escritas muchas más líneas, que han sido en algún momento eliminadas o reemplazadas. El desarrollo del proyecto puede dividirse en 4 fases a lo largo de 3 trimestres y la actualidad.
 
-En la primera fase, de Noviembre a Febrero/Marzo he ido aprendiendo sobre todo de Gtk+, la librería para la interfaz del programa. Al empezar el proyecto mis conocimientos sobre esta librería eran nulos; y sobre Python, el lenguaje de programación, eran demasiado básicos. También aprendí bastante sobre redes informáticas.
+En la primera fase, de Noviembre a Febrero/Marzo del curso 2015/2016 he ido aprendiendo sobre todo de Gtk+, la librería para la interfaz del programa. Al empezar el proyecto mis conocimientos sobre esta librería eran nulos; y sobre Python, el lenguaje de programación, eran demasiado básicos. También aprendí bastante sobre redes informáticas.
 
 En la segunda fase, se fue desarrollando la ``base" del programa, transcurre de Febrero-Marzo a finales de curso. La interfaz, las ideas, las conexiones de los cables... Se construye la versión 0.1, como menciono en \ref{01}. El programa contaba con unas 700 líneas en \texttt{Main.py}
 
-En la tercera fase se desarrolla la gran parte del programa, aquí es cuando llega a las 2000 líneas, sin mencionar los pequeños módulos y otros archivos. Transcurre en verano, entre Junio y mediados de Agosto. Con una media de 200-300 líneas semanales y picos de hasta mil líneas entre el 7 y el 14 de Agosto, ha sido posible cumplir el objetivo de crear un pequeño simulador de redes. Es el desarrollo de la versión 0.2-alpha, ya que el programa sigue en desarrollo de posteriores versiones.
+En la tercera fase se desarrolla la gran parte del programa, aquí es cuando llega a las 2000 líneas, sin mencionar los pequeños módulos y otros archivos. Transcurre en verano, entre Junio y mediados de Agosto. Con una media de 200-300 líneas semanales y picos de hasta mil líneas entre el 7 y el 14 de Agosto, ha sido posible cumplir el objetivo de crear un pequeño simulador de redes.
 
 La cuarta fase es la del desarrollo posterior del proyecto. A partir de Octubre, cuando se presenta como Proyecto de Investigación de Bachillerato de Excelencia en el IES Palas Atenea, se sigue desarrollando el programa con los nuevos conocimientos adquiridos, siendo presentado a concursos y con el objetivo de lanzar la versión 1.0-$\beta$ antes de Septiembre de 2017. 
 
@@ -524,8 +532,6 @@ He notado bastante la adquisición de experiencia, ya que tardé prácticamente 
 Durante el desarrollo del proyecto han surgido bastantes trabas y contratiempos, que he conseguido solucionar. Muchos de ellos surgen por la falta del gran conocimiento técnico necesario para la creación de un software tan específico, han sido muchas horas de mirar la documentación de las librerías \cite{PyGiApi}, y pedir ayuda por foros para intentar solucionar dudas y bugs.
 
 En algunas ocasiones no han sido errores, sino falta de conocimiento para el desarrollo de determinadas funciones lo que ha creado pausas de hasta dos semanas en la acción de escribir el programa. Gracias a comunidades como \textbf{\textit{stackoverflow}} he conseguido solucionar muchas de las dudas y errores básicos del programa.
-
-Otro inconveniente ha sido el tiempo, que no me ha dejado implementar funciones útiles, como un visor de paquetes de red, más protocolos, o interconexión de redes.
 
 \newpage
 \section{Conclusión}
@@ -548,6 +554,8 @@ Resumiendo:
 \appendix
 
 \chapter{Imágenes y capturas del programa}
+
+\vspace*{1.3cm}
 \noindent\begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.4\textwidth}
@@ -592,14 +600,14 @@ Resumiendo:
 
 \end{figure}
 \begin{figure}[H]
-\centering\includegraphics[width=0.9\textwidth]{Resources/Screenshots/2016-09-12-230644_1000x700_scrot.png}
+\centering\includegraphics[width=0.85\textwidth]{Resources/Screenshots/2016-09-12-230644_1000x700_scrot.png}
 \caption{Captura: Paquetes viajando por una red de ejemplo.}
 \label{fig:samplenet}
 \end{figure}
 \begin{figure}[H]
 \begin{multicols}{2}
 \textbf{Antes (0.2.3):}
-\begin{minted}[fontsize=\scriptsize]{python}
+\begin{minted}[fontsize=\scriptsize, baselinestretch=1, linenos]{python}
 #Comprueba si el objeto tiene una ip asignada
 def has_ip(self, objeto):
     try:
@@ -612,7 +620,7 @@ def has_ip(self, objeto):
 \end{minted}
 \columnbreak
 \textbf{Después (0.2.4):}
-\begin{minted}[fontsize=\scriptsize ,baselinestretch=1]{python}
+\begin{minted}[fontsize=\scriptsize ,baselinestretch=1, linenos]{python}
 @staticmethod
 def has_ip(objeto):
     """Comprueba si el objeto tiene una ip asignada"""
@@ -620,7 +628,7 @@ def has_ip(objeto):
 \end{minted}
 \end{multicols}
 \begin{multicols}{2}
-\begin{minted}[fontsize=\scriptsize ,baselinestretch=1]{python}
+\begin{minted}[fontsize=\scriptsize ,baselinestretch=1, linenos]{python}
 #Comprueba si un objeto está conectado a otro.
 def isconnected(self, objeto):
     cons = compcon(self)
@@ -630,7 +638,7 @@ def isconnected(self, objeto):
         return False
 \end{minted}
 \columnbreak
-\begin{minted}[fontsize=\scriptsize ,baselinestretch=1]{python}
+\begin{minted}[fontsize=\scriptsize ,baselinestretch=1, linenos]{python}
 def isconnected(self, objeto):
     """Comprueba si un objeto está conectado a otro."""
     return bool(objeto in compcon(self))
@@ -660,10 +668,12 @@ def searchforobject(self, x, y):
         return False
 \end{minted}
 \end{multicols}
-\centering\caption[Código: Algunas de las diferencias entre versiones]{Código: Algunas de las diferencias entre versiones. Podemos observar la reducción de líneas de código.}
+\centering\caption[Código: Algunas diferencias entre versiones]{Código: Algunas diferencias entre versiones. Observamos la reducción del código.}
 \label{fig:diff}
 \end{figure}
-
+%BLANKPAGE
+\newpage\thispagestyle{empty}\mbox{}%\addtocounter{page}{-1}\newpage
+%BLANKPAGE
 \glsaddall
 \renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}
 \renewglossarystyle{mcolindex}{%
@@ -677,12 +687,17 @@ def searchforobject(self, x, y):
      \renewcommand\item{\par\hangindent0pt}}%
     {\end{multicols}}%
 }
-
 \nocite{*}
 %\bibliographystyle{IEEEtranN}
+\titleformat{\chapter}[display]
+%    {\color{chaptercolour}\normalfont\huge\bfseries}
+    {\color{chaptercolour}\bfseries}
+    {}{0pt}{\huge}
+    \titlespacing*{\chapter}{0pt}{-50pt}{10pt}
 \printbibliography[heading=bibintoc]
 
 %\include{AnCode}
+\blankpage
 
 \newpage
 \thispagestyle{empty}
